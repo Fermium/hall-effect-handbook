@@ -2,7 +2,7 @@
 
 ## Downloads
 
-[PDF Handbook](/raw/master/Handbook/Exports/Hall_Handbook.pdf)
+[PDF Handbook](raw/master/Handbook/Exports/Hall_Handbook.pdf)
 
 ## Disclaimer
 
