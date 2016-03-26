@@ -2,11 +2,11 @@
 
 ## Downloads
 
-[PDF Handbook](Exports/Hall_Handbook.pdf)
+[PDF Handbook](/raw/master/Handbook/Exports/Hall_Handbook.pdf)
 
 ## Disclaimer
 
-The handbook is still not complete and the license is not definitive. 
+The handbook is still not complete and the license is not definitive.
 
 ## Corrections and Issues
 
