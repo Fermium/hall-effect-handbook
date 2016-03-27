@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Torzo Giacomo. Revision by Davide Bortolami" />
+  <title>Hall effect apparatus</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Hall effect apparatus</h1>
+<h2 class="author">Torzo Giacomo. Revision by Davide Bortolami</h2>
+<h3 class="date">April 2016</h3>
+</div>
+<!-- ################################
+to compile this document you need pandoc with the pandoc-eqnos filter
+http://pandoc.org
+https://github.com/tomduck/pandoc-eqnos
+
+Original paper by Giacomo Torzo of LABTREK
+Revision and new technical documentation by Davide Bortolami of Fermium LABS
+
+http://labtrek.it
+https://fermiumlabs.com
+
+################################ -->
+<!-- ![](Media/image1.jpeg) -->
+<h4 id="introduction">Introduction</h4>
+<p>Edwin Herbert Hall discovered the “Hall effect” in 1879 while working on his doctoral thesis in Physics investigating the influence of magnets on the resistance of a coil excited by a current. Hall discovered that a magnetic field would skew equipotential lines in a current-carrying conductor. This effect is observed as a voltage (Hall voltage) perpendicular to the direction of the current in the conductor.</p>
+<p>The magnitude of this discovery is even more impressive considering how little was known about electricity in his time. The electron, for instance, was not identified until more than 10 years later.</p>
+<p>The “Hall effect” remained a laboratory curiosity until the latter half of the XX century because the materials available, such as metals, would only produce small Hall voltages. With the advent of semiconductor technology and the development of various III-V compounds, it became possible to produce Hall voltages many orders of magnitude greater, allowing the production of Hall sensors, mostly made of indium antimonide (InSb), indium arsenide (InAs) and gallium arsenide (GaAs).</p>
+<h4 id="a-macroscopic-approach-to-ohms-laws">A macroscopic approach to Ohm’s laws</h4>
+<p>The usual <em>macroscopic</em> approach to electrical conduction is based on the following experimental observations on metallic conductors:</p>
+<ol style="list-style-type: decimal">
+<li><p>The application of a steady voltage difference <span class="math inline">\(V\)</span> to a metallic wire produces a steady electric current <span class="math inline">\(I\)</span> proportional to <span class="math inline">\(V\)</span>. This holds true at least for small values of <span class="math inline">\(I\)</span> when the temperature of the wire does not increase appreciably.</p>
+<p>This allows the definition of the <em>electric resistance</em> as follows, according to the first Ohm's law: <a name="eq:ohmLaw1"></a><span class="math display">\[R=\frac{ V }{ I }\qquad (1)\]</span></p></li>
+<li><p>For high currents the wire temperature increases and the power <span class="math inline">\(W=VI\)</span> supplied by the generator to the moving charges, instead of accelerating more and more the circulating charge, is converted into heat (Joule effect).</p>
+<p>It could appear that the moving charges are subjected to some kind of force, like a body falling in a viscous medium, so that they reach a steady motion and give up part of their kinetic energy to the “body” of the wire (i.e. to the crystal lattice).</p></li>
+<li><p>The resistance <span class="math inline">\(R\)</span> increases with increasing temperature.</p></li>
+<li><p>Using wires of different length <span class="math inline">\(l\)</span> and sections <span class="math inline">\(S\)</span> the second Ohm's law determines the resistance:</p>
+<p><a name="eq:ohmLaw2"></a><span class="math display">\[ R= \frac{ \rho l}{S} \qquad (2)\]</span></p>
+<p>Where the constant <span class="math inline">\(\rho\)</span> (the <em>electrical resistivity</em>) has a characteristic value for any material and increases with temperature.</p></li>
+</ol>
+<p>The inverse quantity, the <em>electrical conductivity</em> <span class="math inline">\(\sigma\)</span>, can be expressed using the two Ohm's laws as:</p>
+<p><a name="eq:conductivity"></a><span class="math display">\[\sigma = \frac{1}{ \rho }=\frac{J}{E}\qquad (3)\]</span></p>
+<p>Where <span class="math inline">\(J\)</span> is the current density and <span class="math inline">\(E\)</span> the electric field intensity. This is the starting relation needed to pass to a <em>microscopic</em> picture, that will allow a better understanding of the phenomena.</p>
+<h4 id="a-semiclassical-microscopic-model">A semiclassical microscopic model</h4>
+<p>The simplest microscopic model one can use is the “free electron gas&quot; model of metals, in which the valence electrons are supposed to be practically free from their original atoms, and thus to move in the crystal lattice formed by the metal ions. In the absence of an applied electric field, the electron velocities are randomly distributed, with zero mean value and a <em>root mean square</em> value <span class="math inline">\(v_{m}\)</span> that may be evaluated from the equation:</p>
+<p><a name="eq:electronVrms"></a><span class="math display">\[\frac{1}{2}mv_{m}^2=\frac{3}{2}kT\qquad (4)\]</span></p>
+<p>where <span class="math inline">\(k\)</span> is the Boltzmann constant, <span class="math inline">\(m\)</span> the electron mass and <span class="math inline">\(T\)</span> the absolute temperature: at room temperature <span class="math inline">\(v_{m}\)</span> turns out to be of the order of <span class="math inline">\(10^5 m/s\)</span>.</p>
+<p>Only when an electric field is externally applied the electron motion acquires an ordered component with a <em>mean value</em> <span class="math inline">\(v_d\)</span> (the <em>drift velocity</em>) which turns out to be very small with respect to <span class="math inline">\(v_{m}\)</span> as we will show later.</p>
+<p>The drift velocity, i.e. this ordered component of the motion due to the electric field and to the the scattering of the electrons with the lattice, is simply proportional to the electric field intensity. The constant ratio between <span class="math inline">\(v_d\)</span> and <span class="math inline">\(E\)</span> (both in modulus) is called the <em>drift mobility</em> <span class="math inline">\(\mu\)</span>.</p>
+<p>During a time <span class="math inline">\(t\)</span> of free motion between two collisions, the electrons increase their speed of the quantity: <a name="eq:electronsDelta"></a><span class="math display">\[ a t = \frac{qE}{m}t \qquad (5)\]</span> <!-- ??? dovrebbe essere in funzione del tempo --></p>
+<p>Where <span class="math inline">\(q\)</span> is electron charge. The kinetic energy of the electrons also increases, but it can be assumed that with each collision they loose additional energy. The transfer of such energy to the lattice ions explains the Joule effect.</p>
+<p>In figure 1 it can be noticed<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> that <!--FIX-->, after the application of the electric field, the average speed of the electrons is not zero but instead: <a name="eq:electronsAvgSpd"></a><span class="math display">\[v_d=a\tau=q\tau\frac{E}{m}\qquad (6)\]</span></p>
+<p>Where <span class="math inline">\(\tau\)</span> is the mean free time between collisions<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>, so that the drift mobility <span class="math inline">\(\mu\)</span> has the microscopic expression :</p>
+<p><a name="eq:driftmobility"></a><span class="math display">\[ \mu = \frac{v_d}{E} = \frac{q\tau}{m} \qquad (7)\]</span> Using these concepts of drift speed and mobility the current density <span class="math inline">\(J\)</span> can be written as:</p>
+<p><a name="eq:currentDensity"></a><span class="math display">\[ J = qn v_d \qquad (8)\]</span></p>
+<p>Where <span class="math inline">\(n\)</span> is the free electron concentration and relation (<a href="#eq:conductivity">3</a>) and (<a href="#eq:driftmobility">7</a>) allow us to give a <em>microscopic definition</em> of the electrical conductivity:</p>
+<p><a name="eq:electricalConductivity"></a><span class="math display">\[ \sigma = q n \mu \qquad (9)\]</span></p>
+<p>Relation (<a href="#eq:electricalConductivity">9</a>) tells us that all the physics of electrical conduction is described by the two parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(\mu\)</span>.</p>
+<p>In the electron gas model <span class="math inline">\(n\)</span> should be, for a monovalent metal: <a name="eq:nmonovalentmetal"></a><span class="math display">\[n=\frac{N_Am}{\delta} \qquad (10)\]</span></p>
+<p>Where <span class="math inline">\(N_A\)</span> is Avogadro's number, <span class="math inline">\(m\)</span> is the atomic mass and <span class="math inline">\(\delta\)</span> the density. As an example <span class="math inline">\(n=8.5*10^28m^{-3}\)</span> for copper. <!--maybe add a reference to a cute table somehwere--> Of course <span class="math inline">\(n\)</span> should not depend on the temperature.</p>
+<p>A rough order of magnitude for the electron mobility may be derived using (<a href="#eq:driftmobility">7</a>). A reasonable value for <span class="math inline">\(\tau\)</span> is: <span class="math inline">\(\tau\approx\lambda/v_{m}\)</span>, where <span class="math inline">\(\lambda\)</span> is the electron mean free path, of the order of the interatomic distance in the metal (i.e. a few <span class="math inline">\(\mathring{A}\)</span>) so that, at room temperature, <span class="math inline">\(\tau\)</span> is of the order of <span class="math inline">\(10^{-15}s\)</span>.</p>
+<p>Using the values of the elementary charge <span class="math inline">\(e = 1.6*10^{-19 }C\)</span> and of the electron mass <span class="math inline">\(910^{-28} g\)</span>, the electron mobility <span class="math inline">\(\mu=\frac{e\tau}{m}\)</span> should be of the order of some <span class="math inline">\(\frac{cm^2}{Vs}\)</span>.</p>
+<p>Even for very large electric fields (up to <span class="math inline">\(10^2 \frac{V}{cm}\)</span>) the drift velocity <span class="math inline">\(v_d=\mu E\)</span> is thus much smaller than <span class="math inline">\(v_{m}\)</span>.</p>
+<p>Drift mobility should decrease with increasing temperature<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> because of the increased thermal vibrations of the lattice ions. This effect can be studied by measuring the dependence of the electrical conductivity on temperature, but only if the free carrier concentration is the same at all temperatures.</p>
+<p>In order to check experimentally the microscopic model we must measure not only the electrical resistance (which gives the product of <span class="math inline">\(n\)</span> and <span class="math inline">\(\mu\)</span>) but also the free charge density <span class="math inline">\(n\)</span>: this can be obtained by performing a measurement of the Hall effect.</p>
+<h4 id="the-hall-effect">The Hall effect</h4>
+<p>The Hall effect is essentially due to the Lorentz force <span class="math inline">\(\vec { F }\)</span> acting on each electric charge <span class="math inline">\(q\)</span> moving with velocity <span class="math inline">\(v\)</span> in a magnetic field <span class="math inline">\(B\)</span>. <a name="eq:lorentzForce"></a><span class="math display">\[\vec { F } =q\vec { V } \wedge \vec { B }\qquad (11)\]</span></p>
+<p>Let us consider a conducting bar (figure 1) immersed into a uniform magnetic field <span class="math inline">\(B\)</span> directed along the <span class="math inline">\(z\)</span> axis, with an electric current <span class="math inline">\(I_x\)</span> flowing along the <span class="math inline">\(x\)</span> axis.</p>
+<div class="figure">
+<img src="media/hall-effect-geometry.jpeg" alt="Hall Effect Geometry" />
+<p class="caption">Hall Effect Geometry</p>
+</div>
+<blockquote>
+<p>Figure 1: Hall effect geometry. the Lorentz force <span class="math inline">\(F_L\)</span> on moving charges, both positive and negative, acts in the direction shown by the arrow (independently from the charge sign).</p>
+</blockquote>
+<p>In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.</p>
+<p>In a pure semiconductor the electron density <span class="math inline">\(n\)</span> and the hole density <span class="math inline">\(p\)</span> is identical, in doped semiconductor we have <span class="math inline">\(n\gg p\)</span> (in N-doped material) or <span class="math inline">\(p\gg n\)</span> (in P-doped material). In doped semiconductors only one type of charge carriers is therefore important.</p>
+<p>Let us consider first a metal or a N-doped semiconductor sample, where the relevant charge carriers are electrons.</p>
+<p>In the electric field <span class="math inline">\(E_x\)</span> the electrons gain a drift velocity <span class="math inline">\(v_d=–\mu E_x\)</span> and they are subject to the Lorentz force <span class="math inline">\(F_L=qv_dB\)</span>, pointing towards the negative <span class="math inline">\(y\)</span>. While drifting in the <span class="math inline">\(x\)</span> direction they tend to crowd at the sample surface orthogonal to the <span class="math inline">\(y\)</span> axis and placed towards the reader in figure 1.</p>
+<p>This charge density increase at the sample lateral surface produces a difference of potential along the <span class="math inline">\(y\)</span> axis and therefore an electric field <span class="math inline">\(E_H\)</span>. The value of the <em>Hall field</em> <span class="math inline">\(E_H\)</span> at equilibrium will correspond to an electric force <span class="math inline">\(qE_H\)</span> equal and opposite to the Lorentz force, i.e. <span class="math inline">\(E_H=v_d B\)</span>. This relation tells us that the Hall field is proportional both to the current density (through <span class="math inline">\(v_d\)</span>) and to the magnetic field. It is therefore convenient to define the Hall coefficient as:</p>
+<p><a name="eq:hallCoefficient"></a><span class="math display">\[ R_H=\frac{E_H}{J_x B_z}\qquad (12)\]</span></p>
+<p>Recalling the relations <span class="math inline">\(J_x=-env_d\)</span> (or <span class="math inline">\(J_x=+epv_d\)</span>) we get :</p>
+<p><a name="eq:R_Hmn"></a><span class="math display">\[ R_{ H }=V_{ d }\frac { B }{ J_{ x }B } =\frac { -1 }{ en } \qquad (13)\]</span> or otherwise, for P-doped conductors: <a name="eq:R_Hp"></a><span class="math display">\[ R_{ H }=\frac { +1 }{ ep }  \qquad (14)\]</span></p>
+<p>Depending on the type of conductor, either metal (<a href="#eq:R_Hmn">13</a>) , N-doped (<a href="#eq:R_Hmn">13</a>) or P-doped (<a href="#eq:R_Hp">14</a>).</p>
+<p>measuring <span class="math inline">\(R_H\)</span> we can determine the concentration <span class="math inline">\(n\)</span> of majority carriers and their sign (if we know the direction of the vectors <span class="math inline">\(\vec { B } ,\vec { J } ,\vec { E_{ h } }\)</span> ).</p>
+<p>We can obtain relation (<a href="#eq:R_Hmn">13</a>) by assuming identical drift velocity for all charge carriers. This is an approximate relation, found in the literature: <!--FIX, source?--></p>
+<p><a name="eq:foundInLiterature"></a><span class="math inline">\(R_H = \frac{r}{nq}\qquad (15)\)</span></p>
+<p>Where <span class="math inline">\(r\)</span> is a parameter that accounts for the statistical velocity distribution of the charge carriers, as well as the different scattering mechanisms: <span class="math inline">\(r\approx 1.2\)</span> for mainly phonon scattering (lattice vibrations) and <span class="math inline">\(r\approx 1.9\)</span> for mainly impurity scattering. <!--FIX, mainly? sounds strange--></p>
+<p>The Hall coefficient in semiconductors is many order of magnitude larger than the one in metals, due to the smaller charge density. This makes easier to measure Hall voltages in semiconductors, where a bias current <span class="math inline">\(I_x\)</span> of a few <span class="math inline">\(mA\)</span> may conveniently generate a Hall voltage <span class="math inline">\(V_H\)</span> of in the order of a few <span class="math inline">\(mV\)</span>.</p>
+<p>To measure <span class="math inline">\(R_H\)</span> we must know <span class="math inline">\(V_H\)</span>, <span class="math inline">\(I_x\)</span>, <span class="math inline">\(B\)</span> and the sample thickness <span class="math inline">\(t\)</span>:</p>
+<p><a name="eq:R_h"></a><span class="math display">\[R_{ H }=\frac { E_{ h } }{ B{ J }_{ x } } =\frac { V_{ H } }{ s } =\frac { B{ I }_{ x } }{ ts } =\frac { V_{ h }t }{ B{ I }_{ x } } \qquad (16)\]</span></p>
+<p>It is worth noting that the the Lorentz force direction does not depend on the charge sign.</p>
+<p>The general expression for <span class="math inline">\(R_H\)</span>, valid (see Appendix 1) <!-- FIX --> when <em>both electrons and holes</em> are present with densities <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> and mobility <span class="math inline">\(\mu_e\)</span> and <span class="math inline">\(\mu_h\)</span> is:</p>
+<p><a name="eq:R_hGeneralExpression"></a><span class="math display">\[R_{ H }=r\frac { p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e } }{ e(p\mu _{ h }-n\mu _{ e })^{ 2 } } \qquad (17)\]</span></p>
+<p>Which corresponds to the relations and (<a href="#eq:R_Hmn">13</a>) and (<a href="#eq:R_Hp">14</a>) for <span class="math inline">\(p\gg n\)</span> or <span class="math inline">\(n\gg p\)</span></p>
+<p>When two types of charge carriers are present the electrical conductivity becomes:</p>
+<p><a name="eq:electricalConductivity2Carriers"></a><span class="math display">\[\sigma =e(p \mu_h + n \mu_e)\qquad (18)\]</span></p>
+<p>The product <span class="math inline">\(R_H \sigma\)</span>, is named Hall mobility <span class="math inline">\(\mu_H\)</span> (note the capital index &quot;<span class="math inline">\(H\)</span>&quot; that distinguish it from hole mobility <span class="math inline">\(\mu_h\)</span>).</p>
+<p>For a doped semiconductor the Hall mobility <span class="math inline">\(\mu_H\)</span> approximates the <em>majority carriers</em> drift mobility <span class="math inline">\(\mu_{h,e}\)</span>:</p>
+<p><a name="eq:muApproximateDriftMobility"></a><span class="math display">\[\mu _{ H }=R_{ H }\sigma =r\frac { p \mu^2_h - n \mu^2_e }{p \mu_h + n \mu_e  } \approx r \mu_{h,e} \qquad (19)\]</span></p>
+<p>From relation (<a href="#eq:R_hGeneralExpression">17</a>) we see that by increasing the temperature in a <em>P-doped sample</em>, generating many intrinsic<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> carriers (i.e. electron-hole pairs), the Hall coefficient <span class="math inline">\(R_H\)</span> (which is positive at room temperature in the extrinsic region) tends to decrease, and it may even change sign. This is explained by the mobility ratio <span class="math inline">\(b=\mu_e/\mu_h&gt;1\)</span>. <em>Note that this does not happen with a</em> N<em>-doped sample</em>.</p>
+<p>From relation (<a href="#eq:R_hGeneralExpression">17</a>) at the temperature where <span class="math inline">\(R_H=0\)</span> (“<em>inversion point</em>”) we get <span class="math inline">\(nb^2=p\)</span>, with <span class="math inline">\(p=N_a+N\)</span> <!-- if it is avogadro number it should be N_A? --> and <span class="math inline">\(n=N\)</span> (where <span class="math inline">\(N_a\)</span> is the dopant density and <span class="math inline">\(N\)</span> is the thermally-generated charge density in the intrinsic zone). Therefore <span class="math inline">\(Nb^2= N_a+N\)</span>, or <span class="math inline">\(N_a/N=b^2-1\)</span>.</p>
+<p>The intrinsic conductivity <em>measured</em> at the inversion point is:</p>
+<p><a name="eq:intrinsicConductivityInvPoint"></a><span class="math display">\[ \sigma_{oi} = e(n \mu_e + p \mu_h ) = e[N( \mu_e + \mu_h)+ N_a \mu_h ] = e \mu_h [N(b+1)+N_a]\qquad (20)\]</span></p>
+<p>In the extrinsic region of a P-doped sample, where the charge carrier density is constant <span class="math inline">\(n=N_a\)</span>, the conductivity is proportional to the carrier mobility <span class="math inline">\(\mu_h\)</span>: i.e. <span class="math inline">\(\sigma_e(T) = eN_a \mu_h(T)\)</span></p>
+<p>The experimentally measured temperature dependence of the mobility is a power-law <span class="math inline">\(\mu(T)=const( T^\alpha)\)</span>, where the exponent <span class="math inline">\(\alpha\)</span> (in the range <span class="math inline">\(1.5&lt;\alpha&lt;3.0\)</span>) depends on the type of prevailing interaction of the charge carriers with phonons, lattice defects or impurities).</p>
+<p>Therefore we may <em>extrapolate the extrinsic conductivity at the inversion point</em> <span class="math inline">\(\sigma_{ei}\)</span>, and from the ratio <span class="math inline">\({\sigma_{oi}}/{\sigma_{ei}}\)</span> we get the <span class="math inline">\(b\)</span> value:</p>
+<p><a name="eq:extrinsicConductivityInvPoint"></a><span class="math display">\[ \frac{\sigma_{oi}}{\sigma_{ei}} =e\mu_h \frac{N(b+1) + N_a}{e N_a \mu_h}= \frac{b}{b-1}\qquad (21)\]</span></p>
+<p>Which can as well be written as:</p>
+<p><a name="eq:extrinsicConductivityInvPoint2"></a><span class="math display">\[b=\frac{R_e}{R_e-R_o}\qquad (22)\]</span></p>
+<p>Where <span class="math inline">\(R_o\)</span> is the measured sample resistance at the inversion point and <span class="math inline">\(R_o\)</span> is the resistance extrapolated from the extrinsic region (low temperature) to the value it would have at the inversion temperature.</p>
+<p>The dopant concentration is related to the value of the <em>Hall constant at the inversion point</em> <span class="math inline">\(R_{Ho}\)</span> (in the extrinsic region only the hole concentration is significant) by the equations (<a href="#eq:R_Hmn">13</a>) and (<a href="#eq:R_Hp">14</a>), i.e. : <a name="eq:HallConstantInvPointRelation"></a><span class="math display">\[ N_a \approx p \approx \frac{1}{e R_{Ho}}\qquad (23)\]</span></p>
+<h3 id="references">References</h3>
+<ul>
+<li>J.C. Slater <em>Quantum Theory of matter</em>, mcGraw-Hill (1951).</li>
+<li>C.L.Chin e C.R.Westgate, <em>The Hall Effect and Its Applications</em>, Plenum Press, NY, 1979</li>
+<li>J.R.Hook , H.E.Hall <em>Solid State Physics</em>, John Wiley &amp;Sons 1991.</li>
+<li>A. C melissinos <em>Experiments in modern Physics</em>, Academic Press, 1993.</li>
+<li><em>New Semiconductor materials. Characteristics and Properties</em> (Electronic archive) <a href="http://www.ioffe.rssi.ru/SVA/NSm/introduction.html"><em>http://www.ioffe.rssi.ru/SVA/NSm/introduction.html.</em></a></li>
+<li><em>The Semiconductor informations WebSite</em> (properties of Germanium) <a href="http://www.semiconductors.co.uk/propiviv5431.htm"><em>http://www.semiconductors.co.uk/propiviv5431.htm.</em></a></li>
+</ul>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>See for instance <em>The Feynman lectures on Physics</em> vol.I 43-1,3 Addison-Wesley 1963.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>This time <span class="math inline">\(\tau\)</span> does not depend on the electric field because the average speed increment due to the applied electric field (<em>vd</em>) is very small with respect to the r.m.s. speed <em>vm</em> due to thermal motion .<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Drift mobility in semiconductors decreases with the absolute temperature <span class="math inline">\(T\)</span> as <span class="math inline">\(T^{-\alpha }\)</span>, where <span class="math inline">\(1.5&lt;a&lt;3.0\)</span> depending on the prevailing type of interactions of the free carriers (with phonons, lattice defects, or impurities).<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p><em>Intrinsic</em> term labels properties related to pure semiconductors or to doped semiconductors at hight temperature, where the thermally generated carriers density is much larger than the (<em>extrinsic</em>) carrier density due to the dopant.<a href="#fnref4">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>
