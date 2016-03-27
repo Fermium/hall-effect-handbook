@@ -4,6 +4,10 @@
 
 [PDF Handbook](https://rawgit.com/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.pdf)
 
+[HTML Handbook](https://rawgit.com/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.html)
+
+
+
 ## Disclaimer
 
 The handbook is still not complete and the license is not definitive.
