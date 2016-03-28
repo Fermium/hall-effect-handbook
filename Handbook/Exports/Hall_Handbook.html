@@ -73,12 +73,9 @@ https://fermiumlabs.com
 <p>The Hall effect is essentially due to the Lorentz force <span class="math inline">\(\vec { F }\)</span> acting on each electric charge <span class="math inline">\(q\)</span> moving with velocity <span class="math inline">\(v\)</span> in a magnetic field <span class="math inline">\(B\)</span>. <a name="eq:lorentzForce"></a><span class="math display">\[\vec { F } =q\vec { V } \wedge \vec { B }\qquad (11)\]</span></p>
 <p>Let us consider a conducting bar (figure 1) immersed into a uniform magnetic field <span class="math inline">\(B\)</span> directed along the <span class="math inline">\(z\)</span> axis, with an electric current <span class="math inline">\(I_x\)</span> flowing along the <span class="math inline">\(x\)</span> axis.</p>
 <div class="figure">
-<img src="media/hall-effect-geometry.jpeg" alt="Hall Effect Geometry" />
-<p class="caption">Hall Effect Geometry</p>
+<img src="Media/hall-effect-geometry.jpeg" alt="Hall effect geometry. the Lorentz force F_L on moving charges, both positive and negative, acts in the direction shown by the arrow (independently from the charge sign)." />
+<p class="caption">Hall effect geometry. the Lorentz force <span class="math inline">\(F_L\)</span> on moving charges, both positive and negative, acts in the direction shown by the arrow (independently from the charge sign).</p>
 </div>
-<blockquote>
-<p>Figure 1: Hall effect geometry. the Lorentz force <span class="math inline">\(F_L\)</span> on moving charges, both positive and negative, acts in the direction shown by the arrow (independently from the charge sign).</p>
-</blockquote>
 <p>In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.</p>
 <p>In a pure semiconductor the electron density <span class="math inline">\(n\)</span> and the hole density <span class="math inline">\(p\)</span> is identical, in doped semiconductor we have <span class="math inline">\(n\gg p\)</span> (in N-doped material) or <span class="math inline">\(p\gg n\)</span> (in P-doped material). In doped semiconductors only one type of charge carriers is therefore important.</p>
 <p>Let us consider first a metal or a N-doped semiconductor sample, where the relevant charge carriers are electrons.</p>
@@ -88,7 +85,7 @@ https://fermiumlabs.com
 <p>Recalling the relations <span class="math inline">\(J_x=-env_d\)</span> (or <span class="math inline">\(J_x=+epv_d\)</span>) we get :</p>
 <p><a name="eq:R_Hmn"></a><span class="math display">\[ R_{ H }=V_{ d }\frac { B }{ J_{ x }B } =\frac { -1 }{ en } \qquad (13)\]</span> or otherwise, for P-doped conductors: <a name="eq:R_Hp"></a><span class="math display">\[ R_{ H }=\frac { +1 }{ ep }  \qquad (14)\]</span></p>
 <p>Depending on the type of conductor, either metal (<a href="#eq:R_Hmn">13</a>) , N-doped (<a href="#eq:R_Hmn">13</a>) or P-doped (<a href="#eq:R_Hp">14</a>).</p>
-<p>measuring <span class="math inline">\(R_H\)</span> we can determine the concentration <span class="math inline">\(n\)</span> of majority carriers and their sign (if we know the direction of the vectors <span class="math inline">\(\vec { B } ,\vec { J } ,\vec { E_{ h } }\)</span> ).</p>
+<p>Measuring <span class="math inline">\(R_H\)</span> we can determine the concentration <span class="math inline">\(n\)</span> of majority carriers and their sign (if we know the direction of the vectors <span class="math inline">\(\vec { B } ,\vec { J } ,\vec { E_{ h } }\)</span> ).</p>
 <p>We can obtain relation (<a href="#eq:R_Hmn">13</a>) by assuming identical drift velocity for all charge carriers. This is an approximate relation, found in the literature: <!--FIX, source?--></p>
 <p><a name="eq:foundInLiterature"></a><span class="math inline">\(R_H = \frac{r}{nq}\qquad (15)\)</span></p>
 <p>Where <span class="math inline">\(r\)</span> is a parameter that accounts for the statistical velocity distribution of the charge carriers, as well as the different scattering mechanisms: <span class="math inline">\(r\approx 1.2\)</span> for mainly phonon scattering (lattice vibrations) and <span class="math inline">\(r\approx 1.9\)</span> for mainly impurity scattering. <!--FIX, mainly? sounds strange--></p>
@@ -114,9 +111,9 @@ https://fermiumlabs.com
 <p><a name="eq:extrinsicConductivityInvPoint"></a><span class="math display">\[ \frac{\sigma_{oi}}{\sigma_{ei}} =e\mu_h \frac{N(b+1) + N_a}{e N_a \mu_h}= \frac{b}{b-1}\qquad (21)\]</span></p>
 <p>Which can as well be written as:</p>
 <p><a name="eq:extrinsicConductivityInvPoint2"></a><span class="math display">\[b=\frac{R_e}{R_e-R_o}\qquad (22)\]</span></p>
-<p>Where <span class="math inline">\(R_o\)</span> is the measured sample resistance at the inversion point and <span class="math inline">\(R_o\)</span> is the resistance extrapolated from the extrinsic region (low temperature) to the value it would have at the inversion temperature.</p>
+<p>Where <span class="math inline">\(R_o\)</span> is the measured sample resistance at the inversion point and <span class="math inline">\(R_e\)</span> is the resistance extrapolated from the extrinsic region (low temperature) to the value it would have at the inversion temperature.</p>
 <p>The dopant concentration is related to the value of the <em>Hall constant at the inversion point</em> <span class="math inline">\(R_{Ho}\)</span> (in the extrinsic region only the hole concentration is significant) by the equations (<a href="#eq:R_Hmn">13</a>) and (<a href="#eq:R_Hp">14</a>), i.e. : <a name="eq:HallConstantInvPointRelation"></a><span class="math display">\[ N_a \approx p \approx \frac{1}{e R_{Ho}}\qquad (23)\]</span></p>
-<h3 id="references">References</h3>
+<h1 id="references">References</h1>
 <ul>
 <li>J.C. Slater <em>Quantum Theory of matter</em>, mcGraw-Hill (1951).</li>
 <li>C.L.Chin e C.R.Westgate, <em>The Hall Effect and Its Applications</em>, Plenum Press, NY, 1979</li>

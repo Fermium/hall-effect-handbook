@@ -117,47 +117,45 @@ $$\vec { F } =q\vec { V } \wedge \vec { B }$$ {#eq:lorentzForce}
 
 Let us consider a conducting bar (figure 1) immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis.
 
- ![Hall Effect Geometry](media/hall-effect-geometry.jpeg)
+![Hall effect geometry. the Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (independently from the charge sign).](Media/hall-effect-geometry.jpeg)
 
- > Figure 1: Hall effect geometry. the Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (independently from the charge sign).
+In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.
 
- In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.
+In a pure semiconductor the electron density $n$ and the hole density $p$ is identical, in doped semiconductor we have $n\gg p$ (in N-doped material) or $p\gg n$ (in P-doped material). In doped semiconductors only one type of charge carriers is therefore important.
 
- In a pure semiconductor the electron density $n$ and the hole density $p$ is identical, in doped semiconductor we have $n\gg p$ (in N-doped material) or $p\gg n$ (in P-doped material). In doped semiconductors only one type of charge carriers is therefore important.
+Let us consider first a metal or a N-doped semiconductor sample, where the relevant charge carriers are electrons.
 
- Let us consider first a metal or a N-doped semiconductor sample, where the relevant charge carriers are electrons.
+In the electric field $E_x$ the electrons gain a drift velocity $v_d=–\mu E_x$ and they are subject to the Lorentz force $F_L=qv_dB$, pointing towards the negative $y$. While drifting in the $x$ direction they tend to crowd at the sample surface orthogonal to the $y$ axis and placed towards the reader in figure 1.
 
- In the electric field $E_x$ the electrons gain a drift velocity $v_d=–\mu E_x$ and they are subject to the Lorentz force $F_L=qv_dB$, pointing towards the negative $y$. While drifting in the $x$ direction they tend to crowd at the sample surface orthogonal to the $y$ axis and placed towards the reader in figure 1.
+This charge density increase at the sample lateral surface produces a difference of potential along the $y$ axis and therefore an electric field $E_H$. The value of the *Hall field* $E_H$ at equilibrium will correspond to an electric force $qE_H$ equal and opposite to the Lorentz force, i.e. $E_H=v_d B$. This relation tells us that the Hall field is proportional both to the current density (through $v_d$) and to the magnetic field. It is therefore convenient to define the Hall coefficient as:
 
- This charge density increase at the sample lateral surface produces a difference of potential along the $y$ axis and therefore an electric field $E_H$. The value of the *Hall field* $E_H$ at equilibrium will correspond to an electric force $qE_H$ equal and opposite to the Lorentz force, i.e. $E_H=v_d B$. This relation tells us that the Hall field is proportional both to the current density (through $v_d$) and to the magnetic field. It is therefore convenient to define the Hall coefficient as:
+$$ R_H=\frac{E_H}{J_x B_z}$$ {#eq:hallCoefficient}
 
- $$ R_H=\frac{E_H}{J_x B_z}$$ {#eq:hallCoefficient}
+Recalling the relations $J_x=-env_d$ (or $J_x=+epv_d$) we get :
 
- Recalling the relations $J_x=-env_d$ (or $J_x=+epv_d$) we get :
-
- $$ R_{ H }=V_{ d }\frac { B }{ J_{ x }B } =\frac { -1 }{ en } $$ {#eq:R_Hmn}
+$$ R_{ H }=V_{ d }\frac { B }{ J_{ x }B } =\frac { -1 }{ en } $$ {#eq:R_Hmn}
 or otherwise, for P-doped conductors:
   $$ R_{ H }=\frac { +1 }{ ep }  $$ {#eq:R_Hp}
 
- Depending on the type of conductor, either metal ({@eq:R_Hmn}) , N-doped ({@eq:R_Hmn}) or P-doped ({@eq:R_Hp}).
+Depending on the type of conductor, either metal ({@eq:R_Hmn}) , N-doped ({@eq:R_Hmn}) or P-doped ({@eq:R_Hp}).
 
- measuring $R_H$ we can determine the concentration $n$ of majority carriers and their sign (if we know the direction of the vectors $\vec { B } ,\vec { J } ,\vec { E_{ h } }$ ).
+Measuring $R_H$ we can determine the concentration $n$ of majority carriers and their sign (if we know the direction of the vectors $\vec { B } ,\vec { J } ,\vec { E_{ h } }$ ).
 
- We can obtain relation ({@eq:R_Hmn}) by assuming identical drift velocity for all charge carriers. This is an approximate relation, found in the literature: <!--FIX, source?-->
+We can obtain relation ({@eq:R_Hmn}) by assuming identical drift velocity for all charge carriers. This is an approximate relation, found in the literature: <!--FIX, source?-->
 
- $R_H = \frac{r}{nq}$ {#eq:foundInLiterature}
+$R_H = \frac{r}{nq}$ {#eq:foundInLiterature}
 
- Where $r$ is a parameter that accounts for the statistical velocity distribution of the charge carriers, as well as the different scattering mechanisms: $r\approx 1.2$ for mainly phonon scattering (lattice vibrations) and $r\approx 1.9$ for mainly impurity scattering. <!--FIX, mainly? sounds strange-->
+Where $r$ is a parameter that accounts for the statistical velocity distribution of the charge carriers, as well as the different scattering mechanisms: $r\approx 1.2$ for mainly phonon scattering (lattice vibrations) and $r\approx 1.9$ for mainly impurity scattering. <!--FIX, mainly? sounds strange-->
 
- The Hall coefficient in semiconductors is many order of magnitude larger than the one in metals, due to the smaller charge density. This makes easier to measure Hall voltages in semiconductors, where a bias current $I_x$ of a few $mA$ may conveniently generate a Hall voltage $V_H$ of in the order of a few $mV$.
+The Hall coefficient in semiconductors is many order of magnitude larger than the one in metals, due to the smaller charge density. This makes easier to measure Hall voltages in semiconductors, where a bias current $I_x$ of a few $mA$ may conveniently generate a Hall voltage $V_H$ of in the order of a few $mV$.
 
- To measure $R_H$ we must know $V_H$, $I_x$, $B$ and the sample thickness $t$:
+To measure $R_H$ we must know $V_H$, $I_x$, $B$ and the sample thickness $t$:
 
 $$R_{ H }=\frac { E_{ h } }{ B{ J }_{ x } } =\frac { V_{ H } }{ s } =\frac { B{ I }_{ x } }{ ts } =\frac { V_{ h }t }{ B{ I }_{ x } } $$   {#eq:R_h}
 
- It is worth noting that the the Lorentz force direction does not depend on the charge sign.
+It is worth noting that the the Lorentz force direction does not depend on the charge sign.
 
- The general expression for $R_H$, valid (see Appendix 1) <!-- FIX --> when *both electrons and holes* are present with densities $n$ and $p$ and mobility $\mu_e$ and $\mu_h$ is:
+The general expression for $R_H$, valid (see Appendix 1) <!-- FIX --> when *both electrons and holes* are present with densities $n$ and $p$ and mobility $\mu_e$ and $\mu_h$ is:
 
 $$R_{ H }=r\frac { p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e } }{ e(p\mu _{ h }-n\mu _{ e })^{ 2 } } $$ {#eq:R_hGeneralExpression}
 
@@ -197,7 +195,7 @@ Which can as well be written as:
 
 $$b=\frac{R_e}{R_e-R_o}$$ {#eq:extrinsicConductivityInvPoint2}
 
-Where $R_o$ is the measured sample resistance at the inversion point and $R_o$ is the resistance extrapolated from the extrinsic region (low temperature) to the value it would have at the inversion temperature.
+Where $R_o$ is the measured sample resistance at the inversion point and $R_e$ is the resistance extrapolated from the extrinsic region (low temperature) to the value it would have at the inversion temperature.
 
 The dopant concentration is related to the value of the *Hall constant at the inversion point* $R_{Ho}$ (in the extrinsic region only the hole concentration is significant) by the equations ({@eq:R_Hmn}) and ({@eq:R_Hp}), i.e. :
 $$ N_a \approx p \approx \frac{1}{e R_{Ho}}$$ {#eq:HallConstantInvPointRelation}
