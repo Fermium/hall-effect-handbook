@@ -214,6 +214,41 @@ $$ N_a \approx p \approx \frac{1}{e R_{Ho}}$$ {#eq:HallConstantInvPointRelation}
 
 ####Appendix 1: calculation of $R_H$ for small and high magnetic field
 
+The motion equation $(F=ma)$ for charge carriers can as well be written as:
+$$m(\frac{dv}{dt}+\frac{v}{\tau}) = qE+ q\vec{v} \wedge \vec{B} $$ {#eq:MotionEquationForChargeCarriers}
+
+Where the charge $q$ is the $\pm e$ for holes and electrons and we account for the mean time $\tau$ between collisions and for the Lorentz force.
+In stationary conditions the acceleration is zero. Therefore the velocities along $x$ ($B$ is directed along z) for electrons and holes are respectively:
+
+$$ V_{ex} = - \frac{e \tau}{m} E_x + \frac{e \tau}{m} \vec{v} \wedge \vec{B} = - \mu_e v_{e \space y} B  $$ {#eq:XvelocitiesForElectrons}
+
+$$ V_{hx} = \mu_h E_x + \mu_h v_{e \space  x} B $$  {#eq:XvelocitiesForHoles}
+
+And, for velocities along y:
+
+$$ V_{ e \space y} = -\mu_e E_y- \mu_e V_{e \space x} B $$ {#eq:YvelocitiesForElectrons}
+
+
+$$V_{h \space y} = \mu_h E_y + \mu_h v_{h \space x}B $$ {#eq:YvelocitiesForHoles}
+
+
+The current density along  the <!-- is it the x AXIS or x in some other way? -->$x$ axis $(J = e V_{h \space x} P - eV_{e \quad x} n)$ can as well be written as:
+
+$$ J_x \approx e(p \mu_h + n \mu_e)E_x + e(p \mu_h v \mu_{h \space y} - n \mu_e v_{e \space y})B \approx e ( p \mu_h + n \mu_e) E_x + e (p \mu_h^2 -n \mu_e^2 )BE_y $$ {#eq:currentDensityAlongX}
+
+
+Where we made the approximation $v_y \approx \mu_y E_y$, neglecting here the Lorentz force.
+Recalling that $E_y \ll E_x$, for small magnetic fields $B$ ({@eq:currentDensityAlongX}) may be approximated by:
+
+$$J_x \approx e(p \mu_h + n \mu_e) E_x$$ {#eq:currentDensityAlongXaproxymated}
+
+For negligible current density along y we have:
+
+$$ J_y = e p v_{h \space y} - env_{e \space y} = 0 $$ {#eq:currentDensityAlongYNegligible}
+or using $v_{h \space x}$ and $V_{e \space x}$ definitions:
+
+*This section of the document is imcomplete. Please be patient. If you have any need you may contact us at info@fermiumlabs.com*
+
 ####Appendix 2: Temperature dependence of $E_g$
 
 *This section of the document is being rewritten. Please be patient. If you have any need you may contact us at info@fermiumlabs.com*
