@@ -16,7 +16,7 @@ https://fermiumlabs.com
 ################################ -->
 <!-- ![](Media/image1.jpeg) -->
 
-#### Introduction
+### Introduction
 
 
 Edwin Herbert Hall discovered the “Hall effect” in 1879 while working on his doctoral thesis in Physics investigating the influence of magnets on the resistance of a coil excited by a current. Hall discovered that a magnetic field would skew equipotential lines in a current-carrying conductor. This effect is observed as a voltage (Hall voltage) perpendicular to the direction of the current in the conductor.
@@ -25,7 +25,7 @@ The magnitude of this discovery is even more impressive considering how little w
 
 The “Hall effect” remained a laboratory curiosity until the latter half of the XX century because the materials available, such as metals, would only produce small Hall voltages. With the advent of semiconductor technology and the development of various III-V compounds, it became possible to produce Hall voltages many orders of magnitude greater, allowing the production of Hall sensors, mostly made of indium antimonide (InSb), indium arsenide (InAs) and gallium arsenide (GaAs).
 
-####A macroscopic approach to Ohm’s laws
+###A macroscopic approach to Ohm’s laws
 
 The usual *macroscopic* approach to electrical conduction is based on the following experimental observations on metallic conductors:
 
@@ -55,7 +55,7 @@ $$\sigma = \frac{1}{ \rho }=\frac{J}{E}$$ {#eq:conductivity}
 Where $J$ is the current density and $E$ the electric field intensity. This is the starting relation needed to pass to a *microscopic* picture, that will allow a better understanding of the phenomena.
 
 
-####A semiclassical microscopic model
+###A semiclassical microscopic model
 
 The simplest microscopic model one can use is the “free electron gas" model of metals, in which the valence electrons are supposed to be practically free from their original atoms, and thus to move in the crystal lattice formed by the metal ions. In the absence of an applied electric field, the electron velocities are randomly distributed, with zero mean value and a *root mean square* value $v_{m}$ that may be evaluated from the equation:
 
@@ -110,7 +110,7 @@ Drift mobility should decrease with increasing temperature[^drifmobilityAndTempe
 
 In order to check experimentally the microscopic model we must measure not only the electrical resistance (which gives the product of $n$ and $\mu$) but also the free charge density $n$: this can be obtained by performing a measurement of the Hall effect.
 
-####The Hall effect
+###The Hall effect
 
 The Hall effect is essentially due to the Lorentz force $\vec { F }$ acting on each electric charge $q$ moving with velocity $v$ in a magnetic field $B$.
 $$\vec { F } =q\vec { V } \wedge \vec { B }$$ {#eq:lorentzForce}
