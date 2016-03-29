@@ -200,7 +200,41 @@ Where $R_o$ is the measured sample resistance at the inversion point and $R_e$ i
 The dopant concentration is related to the value of the *Hall constant at the inversion point* $R_{Ho}$ (in the extrinsic region only the hole concentration is significant) by the equations ({@eq:R_Hmn}) and ({@eq:R_Hp}), i.e. :
 $$ N_a \approx p \approx \frac{1}{e R_{Ho}}$$ {#eq:HallConstantInvPointRelation}
 
-#References
+###The experimental setup
+
+*This section of the document is being rewritten. Please be patient. If you have any need you may contact us at info@fermiumlabs.com*
+
+###Measurements at constant $I$ and $B$ while varying the temperature
+
+*This section of the document is being rewritten. Please be patient. If you have any need you may contact us at info@fermiumlabs.com*
+
+###Typical results
+
+*This section of the document is being rewritten. Please be patient. If you have any need you may contact us at info@fermiumlabs.com*
+
+####Appendix 1: calculation of $R_H$ for small and high magnetic field
+
+####Appendix 2: Temperature dependence of $E_g$
+
+*This section of the document is being rewritten. Please be patient. If you have any need you may contact us at info@fermiumlabs.com*
+
+#Warnings
+
+**Using high magnetic field require some caution:**
+
+* You must avoid approaching any magnetizable object (clocks, electronic devices, screwdrivers...), which when brought too close may be permanently magnetized.
+
+* A pinch hazard subsists if steel or other ferromagnetic material is placed near the magnets.
+
+* Do not attempt to unscrew the magnets.
+
+* The Magnets are brittle. A rapid shock with another magnet or ferromagnetic material may release shards dangerous for the eye.
+
+* The apparatus **MUST NOT** be used by people with pacemakers.
+
+
+
+##References
 
 * J.C. Slater *Quantum Theory of matter*, mcGraw-Hill (1951).
 * C.L.Chin e C.R.Westgate, *The Hall Effect and Its Applications*, Plenum Press, NY, 1979
