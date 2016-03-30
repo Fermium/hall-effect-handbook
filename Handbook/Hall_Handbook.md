@@ -247,6 +247,30 @@ For negligible current density along y we have:
 $$ J_y = e p v_{h \space y} - env_{e \space y} = 0 $$ {#eq:currentDensityAlongYNegligible}
 or using $v_{h \space x}$ and $V_{e \space x}$ definitions:
 
+$$ J_y = ep ( \mu_h E_y + \mu_h v_{h \space x} B) - en( -\mu_e E_y - \mu_e v_{e \space x}B) = 0 $$
+$$e(p \mu_h + n \mu_e) E_y + e(p \mu_h v_{h \space x} + n \mu_e v_{e \space x}) B = 0 $$
+
+$$ E_y = B \frac {p \mu_h v_{h \space x} + n \mu_e v_{e \space x}}{p \mu_h + n \mu_e} $$
+
+If again we assume $v_x \approx \mu_xE_x$ (neglecting, for small B, the correction for the Lorentz force <!-- is it the lorentz force ? --> we can write:
+
+$$ E_y \approx B \frac{p \mu^2_h - n \mu^2_e}{p \mu_h + n \mu_e} E_x $$
+
+In this way the Hall coefficient becomes:
+
+$$R_h = - \frac{E_y}{J_x B_z} \approx \frac {p \mu^2_h - n \mu_e^2}{e (p \mu_h + n \mu_e )^2}$$ {#eq:hallCoefficientBecomes}
+
+$$R_h = - \frac{E_y}{J_x B_z} \approx \frac {p \mu^2_h - n \mu_e^2}{e (p \mu_h + n \mu_e )^2}$$ ({#eq:hallCoefficientBecomes})
+The formula {@eq:hallCoefficientBecomes} holds true only for *small values* of $B$.
+For large $B$ values we must use ({@eq:hallCoefficientBecomes}) for $J_x$ the definition {@eq:currentDensityAlongX} instead of ({@eq:currentDensityAlongXaproxymated}), obtaining for the Hall coefficient $R_H$:
+
+
+$$ R_{ h }(B)=\frac { E_{ y } }{ BJ_{ x } } \approx \frac { \left[ B\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ (p\mu _{ h }+n\mu _{ e }) } E_{ x } \right]  }{ Be\left[ (p\mu _{ h }+n\mu _{ e })+B^{ 2 }\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e }) }  \right] { E }_{ x } } =\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ e(p\mu _{ h }+n\mu _{ e })^{ 2 }\left[ 1+B^{ 2 }\frac { (p{ \mu  }_{ h }^{ 2 }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e })^{ 2 } }  \right]  } =\frac { R_{H (B=0)}}{1+KB^2  } $$
+
+<!-- yeah i know that was long... -->
+which tends to saturate at high B values.
+
+
 *This section of the document is imcomplete. Please be patient. If you have any need you may contact us at info@fermiumlabs.com*
 
 ####Appendix 2: Temperature dependence of $E_g$
