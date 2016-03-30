@@ -115,9 +115,9 @@ In order to check experimentally the microscopic model we must measure not only 
 The Hall effect is essentially due to the Lorentz force $\vec { F }$ acting on each electric charge $q$ moving with velocity $v$ in a magnetic field $B$.
 $$\vec { F } =q\vec { V } \wedge \vec { B }$$ {#eq:lorentzForce}
 
-Let us consider a conducting bar (figure 1) immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis.
+Let us consider a conducting bar (figure 1) immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis. The Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (figure 1) (independently from the charge sign).
 
-![Hall effect geometry. the Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (independently from the charge sign).](Media/hall-effect-geometry.jpeg)
+![Hall effect geometry](Media/hall-effect-geometry.jpeg)
 
 In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.
 
@@ -270,12 +270,22 @@ $$ R_{ h }(B)=\frac { E_{ y } }{ BJ_{ x } } \approx \frac { \left[ B\frac { (p\m
 <!-- yeah i know that was long... -->
 which tends to saturate at high B values.
 
-
-*This section of the document is imcomplete. Please be patient. If you have any need you may contact us at info@fermiumlabs.com*
-
 ####Appendix 2: Temperature dependence of $E_g$
 
-*This section of the document is being rewritten. Please be patient. If you have any need you may contact us at info@fermiumlabs.com*
+Experimental results consistently shows that the energy gap depends on temperature and for Germanium we can find in the literature the following empirical law:
+$$ E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad (eV) $$
+
+This may be approximated, in the high temperature region, by a linear law
+as follows:
+
+$$ E_g (T) = A * BT $$
+
+where the costants $A$ is the value of $E_g$ *linearly extrapolated* to $T=0$:
+$$ E^0_g = A = 0.78eV $$
+
+Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature $T$ as $exp( \frac{E_G}{2kT})$, a plot of $ln(R)$ vs $\frac{1}{2} K T$ using a linear approximation for $E_g(T)$ results in a straight line with slope $E^0_g$
+
+![Temperature dependance of the energy gap](Media/Eg_vs_T.jpeg)
 
 #Warnings
 

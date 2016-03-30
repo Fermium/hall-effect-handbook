@@ -71,10 +71,10 @@ https://fermiumlabs.com
 <p>In order to check experimentally the microscopic model we must measure not only the electrical resistance (which gives the product of <span class="math inline">\(n\)</span> and <span class="math inline">\(\mu\)</span>) but also the free charge density <span class="math inline">\(n\)</span>: this can be obtained by performing a measurement of the Hall effect.</p>
 <h3 id="the-hall-effect">The Hall effect</h3>
 <p>The Hall effect is essentially due to the Lorentz force <span class="math inline">\(\vec { F }\)</span> acting on each electric charge <span class="math inline">\(q\)</span> moving with velocity <span class="math inline">\(v\)</span> in a magnetic field <span class="math inline">\(B\)</span>. <a name="eq:lorentzForce"></a><span class="math display">\[\vec { F } =q\vec { V } \wedge \vec { B }\qquad (11)\]</span></p>
-<p>Let us consider a conducting bar (figure 1) immersed into a uniform magnetic field <span class="math inline">\(B\)</span> directed along the <span class="math inline">\(z\)</span> axis, with an electric current <span class="math inline">\(I_x\)</span> flowing along the <span class="math inline">\(x\)</span> axis.</p>
+<p>Let us consider a conducting bar (figure 1) immersed into a uniform magnetic field <span class="math inline">\(B\)</span> directed along the <span class="math inline">\(z\)</span> axis, with an electric current <span class="math inline">\(I_x\)</span> flowing along the <span class="math inline">\(x\)</span> axis. The Lorentz force <span class="math inline">\(F_L\)</span> on moving charges, both positive and negative, acts in the direction shown by the arrow (figure 1) (independently from the charge sign).</p>
 <div class="figure">
-<img src="Media/hall-effect-geometry.jpeg" alt="Hall effect geometry. the Lorentz force F_L on moving charges, both positive and negative, acts in the direction shown by the arrow (independently from the charge sign)." />
-<p class="caption">Hall effect geometry. the Lorentz force <span class="math inline">\(F_L\)</span> on moving charges, both positive and negative, acts in the direction shown by the arrow (independently from the charge sign).</p>
+<img src="Media/hall-effect-geometry.jpeg" alt="Hall effect geometry" />
+<p class="caption">Hall effect geometry</p>
 </div>
 <p>In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.</p>
 <p>In a pure semiconductor the electron density <span class="math inline">\(n\)</span> and the hole density <span class="math inline">\(p\)</span> is identical, in doped semiconductor we have <span class="math inline">\(n\gg p\)</span> (in N-doped material) or <span class="math inline">\(p\gg n\)</span> (in P-doped material). In doped semiconductors only one type of charge carriers is therefore important.</p>
@@ -143,9 +143,16 @@ https://fermiumlabs.com
 <p><span class="math display">\[ R_{ h }(B)=\frac { E_{ y } }{ BJ_{ x } } \approx \frac { \left[ B\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ (p\mu _{ h }+n\mu _{ e }) } E_{ x } \right]  }{ Be\left[ (p\mu _{ h }+n\mu _{ e })+B^{ 2 }\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e }) }  \right] { E }_{ x } } =\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ e(p\mu _{ h }+n\mu _{ e })^{ 2 }\left[ 1+B^{ 2 }\frac { (p{ \mu  }_{ h }^{ 2 }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e })^{ 2 } }  \right]  } =\frac { R_{H (B=0)}}{1+KB^2  } \]</span></p>
 <!-- yeah i know that was long... -->
 <p>which tends to saturate at high B values.</p>
-<p><em>This section of the document is imcomplete. Please be patient. If you have any need you may contact us at info@fermiumlabs.com</em></p>
 <h4 id="appendix-2-temperature-dependence-of-e_g">Appendix 2: Temperature dependence of <span class="math inline">\(E_g\)</span></h4>
-<p><em>This section of the document is being rewritten. Please be patient. If you have any need you may contact us at info@fermiumlabs.com</em></p>
+<p>Experimental results consistently shows that the energy gap depends on temperature and for Germanium we can find in the literature the following empirical law: <span class="math display">\[ E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad (eV) \]</span></p>
+<p>This may be approximated, in the high temperature region, by a linear law as follows:</p>
+<p><span class="math display">\[ E_g (T) = A * BT \]</span></p>
+<p>where the costants <span class="math inline">\(A\)</span> is the value of <span class="math inline">\(E_g\)</span> <em>linearly extrapolated</em> to <span class="math inline">\(T=0\)</span>: <span class="math display">\[ E^0_g = A = 0.78eV \]</span></p>
+<p>Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature <span class="math inline">\(T\)</span> as <span class="math inline">\(exp( \frac{E_G}{2kT})\)</span>, a plot of <span class="math inline">\(ln(R)\)</span> vs <span class="math inline">\(\frac{1}{2} K T\)</span> using a linear approximation for <span class="math inline">\(E_g(T)\)</span> results in a straight line with slope <span class="math inline">\(E^0_g\)</span></p>
+<div class="figure">
+<img src="Media/Eg_vs_T.jpeg" alt="Temperature dependance of the energy gap" />
+<p class="caption">Temperature dependance of the energy gap</p>
+</div>
 <h1 id="warnings">Warnings</h1>
 <p><strong>Using high magnetic field require some caution:</strong></p>
 <ul>
