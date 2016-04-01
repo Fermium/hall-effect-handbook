@@ -1,7 +1,5 @@
 % Hall effect apparatus
-% Torzo Giacomo. Revision by Davide Bortolami
 % April 2016
-
 <!-- ################################
 to compile this document you need pandoc with the pandoc-eqnos filter
 http://pandoc.org
@@ -14,7 +12,6 @@ http://labtrek.it
 https://fermiumlabs.com
 
 ################################ -->
-<!-- ![](Media/image1.jpeg) -->
 
 ### Introduction
 
@@ -118,6 +115,8 @@ $$\vec { F } =q\vec { V } \wedge \vec { B }$$ {#eq:lorentzForce}
 Let us consider a conducting bar (figure 1) immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis. The Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (figure 1) (independently from the charge sign).
 
 ![Hall effect geometry](Media/hall-effect-geometry.jpeg)
+\
+
 
 In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.
 
@@ -143,7 +142,7 @@ Measuring $R_H$ we can determine the concentration $n$ of majority carriers and 
 
 We can obtain relation ({@eq:R_Hmn}) by assuming identical drift velocity for all charge carriers. This is an approximate relation, found in the literature: <!--FIX, source?-->
 
-$R_H = \frac{r}{nq}$ {#eq:foundInLiterature}
+$$R_H = \frac{r}{nq}$$ {#eq:foundInLiterature}
 
 Where $r$ is a parameter that accounts for the statistical velocity distribution of the charge carriers, as well as the different scattering mechanisms: $r\approx 1.2$ for mainly phonon scattering (lattice vibrations) and $r\approx 1.9$ for mainly impurity scattering. <!--FIX, mainly? sounds strange-->
 
@@ -205,17 +204,9 @@ $$ N_a \approx p \approx \frac{1}{e R_{Ho}}$$ {#eq:HallConstantInvPointRelation}
 The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two neodimium magnets and a U shaped soft-steel core, acting like a torus.
 
 The sample has 7 wires tin soldered in the positions shown in figure [FIX] as follows:
-<!--
 
-1   7
-
-2
-    6
-3
-
-4   5
-
-*   -->
+![simplified schematic of the sample circuitry](Media/sample_circuitry.png)
+\
 
 
 *   Contacts 1 and 4 are used to feed the bias current produced by a costant current generator [fix, see figure x]
@@ -227,61 +218,69 @@ It must be adjusted to obtain $V_H=0$ when there is no applied magnetic field. O
 
 The two DIAs have a gain $G$, generally set to $0.5$ for $V_r$ and to $100$ for $V_H$, but it can vary according to instrument specifications, and they're powered from a $\pm 15V$ power supply.
 
-A PGA (Programmable Gain Amplifier) is chained to each of the two DIAs, it's gain selectable from the following values $G_{ PGA}= \{ 1,2,5,10,20,50,100,200 \}$ using the front panel.
+A PGA (Programmable Gain Amplifier) is chained to each of the two DIAs, it's gain selectable from the following values $G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}$ using the front panel.
 
-The output voltages on the front panel are restrained by a number of factors:
+The output voltages on the front panel are restrained by a number of cases:
 
-*   If the input voltage is $(V_r) > \frac{30}{G}$ or $(V_H) \gtrless  \pm \frac{15}{G}$  a DIA saturates.
+*   If the input voltage is $V_r > \frac{30}{G}$ or $V_H \gtrless  \pm \frac{15}{G_{DIA}}$  a DIA saturates.
 *   If the output of the DIA is not $0 < V_{out} < 5.1$ it is clamped down by a Schottky diode to prevent damage to the circuitry.
 *   If the output voltage of a PGA is not $0 < V_{out} < 5$  the PGA saturates
 
 The bias current $I_b$ is measured from the voltage drop across a $100 \Omega$ resistor $R_i$, giving thus an output of $10 \frac{mA}{V}$.
 
-
 A digital-to-analog (DAC) converter acquires the analog values, sampling them from a $0 < V_{in} < 5$ to a integer value from $0$ to $2^{12}$
 
-[fix, insert image here]
+The best value for the bias current is a compromise between the need to obtain a large $V_H$ to make measurements precise reducing the SNR (Signal to Noise Ratio) and a low self-heating of the element due to the Joule effect: $V_R$ and $V_H$ signal are proportional to $I$ while the Joule self-heating is $P=RI^2$
 
-*This section of the document is being rewritten. Please be patient. If you have any need you may contact us at info@fermiumlabs.com*
 
 ###Hall voltage and resistance measurements at room temperature
 
-With a finite value of magnetic field B orthogonal to the large face of the sample, we must measure identical values for $V_H$ ( but with opposite sign) when rotating of $180°$ the sample.
+With a finite value of magnetic field B orthogonal to the large face of the sample, we must measure identical values for $V_H$ (but with opposite sign) when rotating of $180°$ the sample.
 This behavior must be tested before proceeding to further measurements: if reversing the $B$ direction (i.e. rotating the sample of $180°$ degrees) different values are measured, the offsets and balancing should be better adjusted.
 
-The absolute value of $B$ may be varied by changing the width of the gap between the magnetic poles (see figure 5).
-One of the two permanent-magnet  mounted on the soft-steel structure may be displaced by turning the brass-screw: increasing the gap, the B value decreases.
+The absolute value of $B$ may be varied by changing the width of the gap between the magnetic poles (see figure [fix]).
+One of the two permanent-magnet  mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of $B$ decreases.
 
-![Figure 5: The screw device for changing the effective magnetic field](media/image9.jpeg)
+[fix, update image]
 
-A calibration of B value as a function of the gap may be made using a gauss-meter probe placed between the poles (see figure 6).
+![The screw device for changing the effective magnetic field](Media/image9.jpeg)
+\
 
-![Figure 6: measured B values vs gap length d](media/image10.jpeg)
 
-Figure 7 shows the linear dependence of $V_H$ on $I$ and $B$. Deviations from linearity at high values of the magnetic field may be explained by calculating a second order approximation of $R_H$ (Appendix 1)
+A calibration of the magnetic field $B$ as a function of the gap may be made using a gauss-meter probe placed between the poles (see figure [fix]).
 
-![Figure 7: Hall voltage versus bias current $I$ ($B=4.5 kGauss$), and versus $B$ ( $I=3 mA$).](media/image11.jpeg)
+The magnetic field $B$ may be calibrated using a gauss-meter probe placed at the center between the poles.
 
+![Measured $B$ values vs gap length $d$](Media/image10.jpeg)
+\
+
+
+Figure [fix] shows the linear dependence of $V_H$ on $I$ and $B$. Deviations from linearity at high values of the magnetic field may be explained by calculating a second order approximation of $R_H$ (Appendix 1)
+
+![Hall voltage versus bias current $I$ ($B=4.5 kGauss$), and versus $B$ ( $I=3 mA$).](Media/image11.jpeg)
+\
 
 
 ###Measurements at constant $I$ and $B$ while varying the temperature
 
 The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminium bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be brought lo low temperatures.
 
-The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by the AD8495 integrated circuit. The output is  proportional to the temperature, with a sensitivity of $\approx 10\frac { mV }{ °C }$
+The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by the AD8495 integrated circuit. The output is  proportional to the temperature, with a sensitivity of $\approx 10\frac { mV }{ °C }$.
+
+In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure [fix]) of the thermocouple linearly extrapolating the following polynomial[^kpoly] :
+
+![The Seebeck coefficiently $\frac{\mu V}{°C}$ is heavly non-linear in relation to the temperature.](Media/seebeck_coefficient_vs_temperature.png)
+\
 
 
+[^kpoly]:   Burns, G. W.; Scroger, M. G.; Strouse, G. F.; Croarkin, M. C.; Guthrie, W. F. Temperature-Electromotive Force Reference Functions and Tables for the Letter-Designated Thermocouple Types Based on the ITS-90. NIST Monograph 175; 1993. 630 p.
 
-In order to get a correct measurement it is necessary to compensate for the non-linearity of the thermocouple lineraly extrapolanting the following polinomial: [^kpoly]
-
-[^kpoly]:   Burns, G. W.; Scroger, M. G.; Strouse, G. F.; Croarkin, M. C.; Guthrie, W. F. Temperature-Electromotive Force Reference Functions and Tables for the Letter-Designated Thermocouple Types Based on the ITS-90. Natl. Inst. Stand. Technol. Monograph 175; 1993. 630 p.
-
-$$t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }$$
-where $E$ is the output of the thermocouple.
+$$t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }$$ {#eq:compensatingPolynomial}
+where $E$ is the output voltage of the thermocouple.
 
 In the following table[^srdata] two different groups of coefficients are given, depending on the temperature range:
 
-[^srdata]: http://srdata.nist.gov/its90/download/type_k.tab
+[^srdata]: NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab
 [^AD8495]: AD8495 datasheet, Analog Semiconductors, page 11 http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html
 
 | t range | -200°C to 0°C  | 0°C to 500°C   |
@@ -299,21 +298,21 @@ In the following table[^srdata] two different groups of coefficients are given, 
 | **V range** | **-5.891mV to 0mV** | **0mV to 20.644mV** |
 <!-- table of thermoelectric compensation coefficients for K type termocouples -->
 
-Linearly extrapolating a polynomial of the fifth order is more that sufficient given the precision of our equipment.
+Linearly extrapolating a polynomial ({@eq:compensatingPolynomial}) of the fifth order is more that sufficient given the precision of our equipment.
 
 
 [^AD8495nist]: AN-1087, Analog Semiconductors http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF
 
 
-The voltage $E$  at the termocouple junction ca be obtained from the following equation:
-$$E=\frac { \frac { 1 }{ 2 } V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$
+The voltage $E$  at the termocouple junction can be obtained from the following equation:
+$$E=\frac { \frac { 1 }{ 2 } V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
 
 Where $V_{out}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0°C$, $V_{offset}$  is the error voltage at 0°C to achieve 125 mV at 25°C and $Gain$ is the internal gain of the AD8495 amplifier
 
 Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature:
 
-$$t={ f }_{ comp }\left( E \right)$$
-$$t={ f }_{ comp }\left( \frac { \frac { 1 }{ 2 } V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 }  \right) $$
+$$t={ f }_{ comp }\left( E \right)$$ {#eq:FcompE}
+$$t={ f }_{ comp }\left( \frac { \frac { 1 }{ 2 } V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 }  \right) $$ {#eq:ad8494Compensated}
 
 ####Cooling-Heating procedure
 
@@ -321,7 +320,7 @@ To obtain accurate measurement it's suggested to first cool off the sample by pl
 
 During the cooling process measurements may be taken, but the rapid cooling generates a large thermal gradient across the apparatus that makes such measurements less reliable.
 
-A resistive element is wound around the base of the sample, allowing to heath it up after it has reached room temperature. The resistive element it's controlled in PWM: it's rapidly powered-on and powered-off with a duty cycle that can be selected (in percetange) on the front panel of the instrument.
+A resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The resistive element it's controlled in PWM: it's rapidly powered-on and powered-off with a duty cycle that can be selected (in percetange) on the front panel of the instrument.
 
 [fix, image pwn]
 
@@ -336,19 +335,16 @@ To obtain precise measurements, at least one complete hour is required for the w
 ###Typical results
 
 The sample shown in this example has thickness $t=0.5mm$, width $w=10mm$ and lenght $l=15mm$.
-The measured Hall voltage and resistance vs temperature (with a costant bias current of $I_B=30mA$ and in a $0.T$ magnetic field) is shown in figure [fix].
+The measured Hall voltage and resistance vs temperature (with a costant bias current of $I_B=30mA$ and in a $0.5T$ magnetic field) is shown in figure [fix].
 
 In figure [fix] the resistance is calculated from data of figure [fix].
 
-The logarithmic plot of the resistance versus $\frac{1}{2} kT$ (where $k=8.617 \dot 10^{-5} \space \frac{eV}{K} is the Boltzmann costant) is shown in figure [fix].
+The logarithmic plot of the resistance versus $\frac{1}{2} kT$ (where $k=8.617 \cdot 10^{-5} \space \frac{eV}{K}$ is the Boltzmann costant) is shown in figure [fix].
 
-From the slope in the intrinsic region we get the value of the energy gap "E_g$", extrapolating linearly from $T=0k$. It can be compared to the known value for Ge ($E{_g}^o=0.78$, cfr. Appendix 2)
+From the slope in the intrinsic region we get the value of the energy gap $E_g$, extrapolating linearly from $T=0K$, that can be compared to the known value for germanium ($E{_g}^o=0.78$, cfr. Appendix 2)
 
 [fix, insert image]
 
-
-
-*This section of the document is being rewritten. Please be patient. If you have any need you may contact us at info@fermiumlabs.com*
 
 ####Appendix 1: calculation of $R_H$ for small and high magnetic field
 
@@ -396,14 +392,14 @@ $$ E_y \approx B \frac{p \mu^2_h - n \mu^2_e}{p \mu_h + n \mu_e} E_x $$
 
 In this way the Hall coefficient becomes:
 
-$$R_h = - \frac{E_y}{J_x B_z} \approx \frac {p \mu^2_h - n \mu_e^2}{e (p \mu_h + n \mu_e )^2}$$ {#eq:hallCoefficientBecomes}
+$$R_H = - \frac{E_y}{J_x B_z} \approx \frac {p \mu^2_h - n \mu_e^2}{e (p \mu_h + n \mu_e )^2}$$ {#eq:hallCoefficientBecomes}
 
-$$R_h = - \frac{E_y}{J_x B_z} \approx \frac {p \mu^2_h - n \mu_e^2}{e (p \mu_h + n \mu_e )^2}$$ ({#eq:hallCoefficientBecomes})
-The formula {@eq:hallCoefficientBecomes} holds true only for *small values* of $B$.
-For large $B$ values we must use ({@eq:hallCoefficientBecomes}) for $J_x$ the definition {@eq:currentDensityAlongX} instead of ({@eq:currentDensityAlongXaproxymated}), obtaining for the Hall coefficient $R_H$:
+The formula ({@eq:hallCoefficientBecomes}) holds true only for *small values* of $B$.
+For large $B$ values we must use ({@eq:hallCoefficientBecomes}) for $J_x$ the definition ({@eq:currentDensityAlongX}) instead of ({@eq:currentDensityAlongXaproxymated}), obtaining for the Hall coefficient $R_H$:
 
 
-$$ R_{ h }(B)=\frac { E_{ y } }{ BJ_{ x } } \approx \frac { \left[ B\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ (p\mu _{ h }+n\mu _{ e }) } E_{ x } \right]  }{ Be\left[ (p\mu _{ h }+n\mu _{ e })+B^{ 2 }\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e }) }  \right] { E }_{ x } } =\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ e(p\mu _{ h }+n\mu _{ e })^{ 2 }\left[ 1+B^{ 2 }\frac { (p{ \mu  }_{ h }^{ 2 }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e })^{ 2 } }  \right]  } =\frac { R_{H (B=0)}}{1+KB^2  } $$
+$$ R_{ H }(B)=\frac { E_{ y } }{ BJ_{ x } } \approx \frac { \left[ B\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ (p\mu _{ h }+n\mu _{ e }) } E_{ x } \right]  }{ Be\left[ (p\mu _{ h }+n\mu _{ e })+B^{ 2 }\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e }) }  \right] { E }_{ x } } =$$
+$$ =\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ e(p\mu _{ h }+n\mu _{ e })^{ 2 }\left[ 1+B^{ 2 }\frac { (p{ \mu  }_{ h }^{ 2 }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e })^{ 2 } }  \right]  } =\frac { R_{ H(B=0) } }{ 1+KB^{ 2 } } $$ {#eq:HallCoefficientBigEquation}
 
 <!-- yeah i know that was long... -->
 which tends to saturate at high B values.
@@ -411,7 +407,7 @@ which tends to saturate at high B values.
 ####Appendix 2: Temperature dependence of $E_g$
 
 Experimental results consistently shows that the energy gap depends on temperature and for Germanium we can find in the literature the following empirical law:
-$$ E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad (eV) $$
+$$ E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad [eV] $$ {#eq:eGempiricalLaw}
 
 This may be approximated, in the high temperature region, by a linear law
 as follows:
@@ -424,6 +420,7 @@ $$ E^0_g = A = 0.78eV $$
 Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature $T$ as $exp( \frac{E_G}{2kT})$, a plot of $ln(R)$ vs $\frac{1}{2} K T$ using a linear approximation for $E_g(T)$ results in a straight line with slope $E^0_g$
 
 ![Temperature dependance of the energy gap](Media/Eg_vs_T.jpeg)
+
 
 #Warnings
 
@@ -443,7 +440,7 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 
 ##References
 
-* J.C. Slater *Quantum Theory of matter*, mcGraw-Hill (1951).
+* J.C. Slater *Quantum Theory of matter*, mcGraw-Hill 1951.
 * C.L.Chin e C.R.Westgate, *The Hall Effect and Its Applications*, Plenum Press, NY, 1979
 * J.R.Hook , H.E.Hall *Solid State Physics*, John Wiley &Sons 1991.
 * A. C melissinos *Experiments in modern Physics*, Academic Press, 1993.
