@@ -6,6 +6,7 @@
 
 [HTML Handbook](https://rawgit.com/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.html)
 
+[PDF obtained from the html](https://rawgit.com/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook_fromHTML.pdf)
 
 
 ## Disclaimer
@@ -22,7 +23,12 @@ Email us at [support@fermiumlabs.com](mailto:suppot@fermiumlabs.com)
 
 ## How to compile
 
-To compile this document you need [pandoc](http://pandoc.org) with the [pandoc-eqnos](https://github.com/tomduck/pandoc-eqnos) filter installed.
+To compile this document you need:
+* [pandoc](http://pandoc.org)
+* [pandoc-eqnos](https://github.com/tomduck/pandoc-eqnos)
+* [pandoc-tablenos](https://github.com/tomduck/pandoc-tablenos)
+* [pandoc-fignos](https://github.com/tomduck/pandoc-fignos)
+* [phantom js](http://phantomjs.org/download.html)
 
 You can use the file make.sh on a unix system (linux or Mac OSX)
 ```bash

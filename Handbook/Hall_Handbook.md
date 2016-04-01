@@ -5,6 +5,7 @@ to compile this document you need pandoc with  pandoc-eqnos, pandoc-fignos and  
 http://pandoc.org
 https://github.com/tomduck/pandoc-eqnos
 https://github.com/tomduck/pandoc-tablenos
+https://github.com/tomduck/pandoc-fignos
 
 Original paper by Giacomo Torzo of LABTREK
 Revision and new technical documentation by Davide Bortolami of Fermium LABS
