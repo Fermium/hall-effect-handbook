@@ -1,9 +1,10 @@
 % Hall effect apparatus
 % April 2016
 <!-- ################################
-to compile this document you need pandoc with the pandoc-eqnos filter
+to compile this document you need pandoc with  pandoc-eqnos, pandoc-fignos and  pandoc-tablenos filters
 http://pandoc.org
 https://github.com/tomduck/pandoc-eqnos
+https://github.com/tomduck/pandoc-tablenos
 
 Original paper by Giacomo Torzo of LABTREK
 Revision and new technical documentation by Davide Bortolami of Fermium LABS
@@ -13,7 +14,7 @@ https://fermiumlabs.com
 
 ################################ -->
 
-### Introduction
+## Introduction
 
 
 Edwin Herbert Hall discovered the “Hall effect” in 1879 while working on his doctoral thesis in Physics investigating the influence of magnets on the resistance of a coil excited by a current. Hall discovered that a magnetic field would skew equipotential lines in a current-carrying conductor. This effect is observed as a voltage (Hall voltage) perpendicular to the direction of the current in the conductor.
@@ -31,8 +32,6 @@ The usual *macroscopic* approach to electrical conduction is based on the follow
     This allows the definition of the *electric resistance* as follows, according to the first Ohm's law:
  $$R=\frac{ V }{ I }$$ {#eq:ohmLaw1}
 
-
-
 2) For high currents the wire temperature increases and the power $W=VI$ supplied by the generator to the moving charges, instead of accelerating more and more the circulating charge, is converted into heat (Joule effect).
 
     It could appear that the moving charges are subjected to some kind of force, like a body falling in a viscous medium, so that they reach a steady motion and give up part of their kinetic energy to the “body” of the wire (i.e. to the crystal lattice).
@@ -43,16 +42,16 @@ The usual *macroscopic* approach to electrical conduction is based on the follow
 
     $$ R= \frac{ \rho l}{S} $$ {#eq:ohmLaw2}
 
-    Where the constant $\rho$ (the *electrical resistivity*) has a characteristic value for any material and increases with temperature.
+    where the constant $\rho$ (the *electrical resistivity*) has a characteristic value for any material and increases with temperature.
 
 The inverse quantity, the *electrical conductivity* $\sigma$, can be expressed using the two Ohm's laws as:
 
 $$\sigma = \frac{1}{ \rho }=\frac{J}{E}$$ {#eq:conductivity}
 
-Where $J$ is the current density and $E$ the electric field intensity. This is the starting relation needed to pass to a *microscopic* picture, that will allow a better understanding of the phenomena.
+where $J$ is the current density and $E$ the electric field intensity. This is the starting relation needed to pass to a *microscopic* picture, that will allow a better understanding of the phenomena.
 
 
-###A semiclassical microscopic model
+##A semiclassical microscopic model
 
 The simplest microscopic model one can use is the “free electron gas" model of metals, in which the valence electrons are supposed to be practically free from their original atoms, and thus to move in the crystal lattice formed by the metal ions. In the absence of an applied electric field, the electron velocities are randomly distributed, with zero mean value and a *root mean square* value $v_{m}$ that may be evaluated from the equation:
 
@@ -67,23 +66,23 @@ The drift velocity, i.e. this ordered component of the motion due to the electri
 During a time $t$ of free motion between two collisions, the electrons increase their speed of the quantity:
 $$ a t = \frac{qE}{m}t $$ {#eq:electronsDelta} <!-- ??? dovrebbe essere in funzione del tempo -->
 
-Where $q$ is electron charge. The kinetic energy of the electrons also increases, but it can be assumed that with each collision they loose additional energy. The transfer of such energy to the lattice ions explains the Joule effect.
+where $q$ is electron charge. The kinetic energy of the electrons also increases, but it can be assumed that with each collision they loose additional energy. The transfer of such energy to the lattice ions explains the Joule effect.
 
 In figure 1 it can be noticed[^feynman] that <!--FIX-->, after the application of the electric field, the average speed of the electrons is not zero but instead:
 $$v_d=a\tau=q\tau\frac{E}{m}$$ {#eq:electronsAvgSpd}
 
 [^feynman]: See for instance *The Feynman lectures on Physics* vol.I 43-1,3  Addison-Wesley 1963.
 
-Where $\tau$ is the mean free time between collisions[^meanFreeTimeBetweenCollisions], so that the drift mobility $\mu$ has the microscopic expression :
+where $\tau$ is the mean free time between collisions[^meanFreeTimeBetweenCollisions], so that the drift mobility $\mu$ has the microscopic expression :
 
-[^meanFreeTimeBetweenCollisions]: This time $\tau$ does not depend on the electric field because the average speed increment due to the applied electric field (*vd*) is very small with respect to the r.m.s. speed *vm* due to thermal motion .
+[^meanFreeTimeBetweenCollisions]: This time $\tau$ does not depend on the electric field because the average speed increment due to the applied electric field $V_d$ is very small with respect to the r.m.s. speed $V_m$ due to thermal motion .
 
 $$ \mu = \frac{v_d}{E} = \frac{q\tau}{m} $$ {#eq:driftmobility}
 Using these concepts of drift speed and mobility the current density $J$ can be written as:
 
 $$ J = qn v_d $$ {#eq:currentDensity}
 
-Where $n$ is the free electron concentration and relation ({@eq:conductivity}) and ({@eq:driftmobility}) allow us to give a *microscopic definition* of the electrical conductivity:
+where $n$ is the free electron concentration and relation ({@eq:conductivity}) and ({@eq:driftmobility}) allow us to give a *microscopic definition* of the electrical conductivity:
 
 $$ \sigma = q n \mu $$ {#eq:electricalConductivity}
 
@@ -92,7 +91,7 @@ Relation ({@eq:electricalConductivity}) tells us that all the physics of electri
 In the electron gas model $n$ should be, for a monovalent metal:
 $$n=\frac{N_Am}{\delta} $$ {#eq:nmonovalentmetal}
 
-Where $N_A$ is Avogadro's number, $m$ is the atomic mass and $\delta$ the density. As an example $n=8.5*10^28m^{-3}$ for copper. <!--maybe add a reference to a cute table somehwere-->
+where $N_A$ is Avogadro's number, $m$ is the atomic mass and $\delta$ the density. As an example $n=8.5*10^28m^{-3}$ for copper. <!--maybe add a reference to a cute table somehwere-->
 Of course $n$ should not depend on the temperature.
 
 A rough order of magnitude for the electron mobility may be derived using ({@eq:driftmobility}). A reasonable value for $\tau$ is: $\tau\approx\lambda/v_{m}$, where $\lambda$ is the electron mean free path, of the order of the interatomic distance in the metal (i.e. a few $\mathring{A}$) so that, at room temperature, $\tau$ is of the order of $10^{-15}s$.
@@ -107,16 +106,15 @@ Drift mobility should decrease with increasing temperature[^drifmobilityAndTempe
 
 In order to check experimentally the microscopic model we must measure not only the electrical resistance (which gives the product of $n$ and $\mu$) but also the free charge density $n$: this can be obtained by performing a measurement of the Hall effect.
 
-###The Hall effect
+##The Hall effect
 
 The Hall effect is essentially due to the Lorentz force $\vec { F }$ acting on each electric charge $q$ moving with velocity $v$ in a magnetic field $B$.
 $$\vec { F } =q\vec { V } \wedge \vec { B }$$ {#eq:lorentzForce}
 
 Let us consider a conducting bar (figure 1) immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis. The Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (figure 1) (independently from the charge sign).
 
-![Hall effect geometry](Media/hall-effect-geometry.jpeg)
+![Hall effect geometry](Media/hall-effect-geometry.jpeg){#fig:hall-effect-geometry}
 \
-
 
 In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.
 
@@ -144,7 +142,7 @@ We can obtain relation ({@eq:R_Hmn}) by assuming identical drift velocity for al
 
 $$R_H = \frac{r}{nq}$$ {#eq:foundInLiterature}
 
-Where $r$ is a parameter that accounts for the statistical velocity distribution of the charge carriers, as well as the different scattering mechanisms: $r\approx 1.2$ for mainly phonon scattering (lattice vibrations) and $r\approx 1.9$ for mainly impurity scattering. <!--FIX, mainly? sounds strange-->
+where $r$ is a parameter that accounts for the statistical velocity distribution of the charge carriers, as well as the different scattering mechanisms: $r\approx 1.2$ for mainly phonon scattering (lattice vibrations) and $r\approx 1.9$ for mainly impurity scattering. <!--FIX, mainly? sounds strange-->
 
 The Hall coefficient in semiconductors is many order of magnitude larger than the one in metals, due to the smaller charge density. This makes easier to measure Hall voltages in semiconductors, where a bias current $I_x$ of a few $mA$ may conveniently generate a Hall voltage $V_H$ of in the order of a few $mV$.
 
@@ -194,18 +192,18 @@ Which can as well be written as:
 
 $$b=\frac{R_e}{R_e-R_o}$$ {#eq:extrinsicConductivityInvPoint2}
 
-Where $R_o$ is the measured sample resistance at the inversion point and $R_e$ is the resistance extrapolated from the extrinsic region (low temperature) to the value it would have at the inversion temperature.
+where $R_o$ is the measured sample resistance at the inversion point and $R_e$ is the resistance extrapolated from the extrinsic region (low temperature) to the value it would have at the inversion temperature.
 
 The dopant concentration is related to the value of the *Hall constant at the inversion point* $R_{Ho}$ (in the extrinsic region only the hole concentration is significant) by the equations ({@eq:R_Hmn}) and ({@eq:R_Hp}), i.e. :
 $$ N_a \approx p \approx \frac{1}{e R_{Ho}}$$ {#eq:HallConstantInvPointRelation}
 
-###The experimental setup
+## The experimental setup
 
 The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two neodimium magnets and a U shaped soft-steel core, acting like a torus.
 
 The sample has 7 wires tin soldered in the positions shown in figure [FIX] as follows:
 
-![simplified schematic of the sample circuitry](Media/sample_circuitry.png)
+![simplified schematic of the sample circuitry](Media/sample_circuitry.png){#fig:sample_circuitry}
 \
 
 
@@ -233,7 +231,7 @@ A digital-to-analog (DAC) converter acquires the analog values, sampling them fr
 The best value for the bias current is a compromise between the need to obtain a large $V_H$ to make measurements precise reducing the SNR (Signal to Noise Ratio) and a low self-heating of the element due to the Joule effect: $V_R$ and $V_H$ signal are proportional to $I$ while the Joule self-heating is $P=RI^2$
 
 
-###Hall voltage and resistance measurements at room temperature
+### Hall voltage and resistance measurements at room temperature
 
 With a finite value of magnetic field B orthogonal to the large face of the sample, we must measure identical values for $V_H$ (but with opposite sign) when rotating of $180°$ the sample.
 This behavior must be tested before proceeding to further measurements: if reversing the $B$ direction (i.e. rotating the sample of $180°$ degrees) different values are measured, the offsets and balancing should be better adjusted.
@@ -243,7 +241,7 @@ One of the two permanent-magnet  mounted on the soft-steel structure may be move
 
 [fix, update image]
 
-![The screw device for changing the effective magnetic field](Media/image9.jpeg)
+![The screw device for changing the effective magnetic field](Media/image9.jpeg){#fig:screwDevice}
 \
 
 
@@ -251,17 +249,17 @@ A calibration of the magnetic field $B$ as a function of the gap may be made usi
 
 The magnetic field $B$ may be calibrated using a gauss-meter probe placed at the center between the poles.
 
-![Measured $B$ values vs gap length $d$](Media/image10.jpeg)
+![Measured $B$ values vs gap length $d$](Media/image10.jpeg){#fig:BvsGapD}
 \
 
 
 Figure [fix] shows the linear dependence of $V_H$ on $I$ and $B$. Deviations from linearity at high values of the magnetic field may be explained by calculating a second order approximation of $R_H$ (Appendix 1)
 
-![Hall voltage versus bias current $I$ ($B=4.5 kGauss$), and versus $B$ ( $I=3 mA$).](Media/image11.jpeg)
+![Hall voltage versus bias current $I$ ($B=4.5 kGauss$), and versus $B$ ( $I=3 mA$).](Media/image11.jpeg){#fig:HallvsIb}
 \
 
 
-###Measurements at constant $I$ and $B$ while varying the temperature
+### Measurements at constant $I$ and $B$ while varying the temperature
 
 The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminium bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be brought lo low temperatures.
 
@@ -269,7 +267,7 @@ The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally 
 
 In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure [fix]) of the thermocouple linearly extrapolating the following polynomial[^kpoly] :
 
-![The Seebeck coefficiently $\frac{\mu V}{°C}$ is heavly non-linear in relation to the temperature.](Media/seebeck_coefficient_vs_temperature.png)
+![The Seebeck coefficiently $\frac{\mu V}{°C}$ is heavly non-linear in relation to the temperature.](Media/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity}
 \
 
 
@@ -280,7 +278,7 @@ where $E$ is the output voltage of the thermocouple.
 
 In the following table[^srdata] two different groups of coefficients are given, depending on the temperature range:
 
-[^srdata]: NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab
+[^srdata]: NIST t-90 tables for K type thermocouples, [http://srdata.nist.gov/its90/download/type_k.tab](http://srdata.nist.gov/its90/download/type_k.tab)
 [^AD8495]: AD8495 datasheet, Analog Semiconductors, page 11 http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html
 
 | t range | -200°C to 0°C  | 0°C to 500°C   |
@@ -307,14 +305,14 @@ Linearly extrapolating a polynomial ({@eq:compensatingPolynomial}) of the fifth 
 The voltage $E$  at the termocouple junction can be obtained from the following equation:
 $$E=\frac { \frac { 1 }{ 2 } V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
 
-Where $V_{out}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0°C$, $V_{offset}$  is the error voltage at 0°C to achieve 125 mV at 25°C and $Gain$ is the internal gain of the AD8495 amplifier
+where $V_{out}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0°C$, $V_{offset}$  is the error voltage at 0°C to achieve 125 mV at 25°C and $Gain$ is the internal gain of the AD8495 amplifier
 
 Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature:
 
 $$t={ f }_{ comp }\left( E \right)$$ {#eq:FcompE}
 $$t={ f }_{ comp }\left( \frac { \frac { 1 }{ 2 } V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 }  \right) $$ {#eq:ad8494Compensated}
 
-####Cooling-Heating procedure
+### Cooling-Heating procedure
 
 To obtain accurate measurement it's suggested to first cool off the sample by placing liquid nitrogen in the dewar until a stable temperature is reached, then manually empty the dewar letting it slowly drift up to room temperature (due to the unavoidable thermal coupling sample-to-ambient).
 
@@ -332,7 +330,7 @@ To obtain precise measurements, at least one complete hour is required for the w
 
 
 
-###Typical results
+### Typical results
 
 The sample shown in this example has thickness $t=0.5mm$, width $w=10mm$ and lenght $l=15mm$.
 The measured Hall voltage and resistance vs temperature (with a costant bias current of $I_B=30mA$ and in a $0.5T$ magnetic field) is shown in figure [fix].
@@ -346,12 +344,12 @@ From the slope in the intrinsic region we get the value of the energy gap $E_g$,
 [fix, insert image]
 
 
-####Appendix 1: calculation of $R_H$ for small and high magnetic field
+##Appendix 1: calculation of $R_H$ for small and high magnetic field
 
 The motion equation $(F=ma)$ for charge carriers can as well be written as:
 $$m(\frac{dv}{dt}+\frac{v}{\tau}) = qE+ q\vec{v} \wedge \vec{B} $$ {#eq:MotionEquationForChargeCarriers}
 
-Where the charge $q$ is the $\pm e$ for holes and electrons and we account for the mean time $\tau$ between collisions and for the Lorentz force.
+where the charge $q$ is the $\pm e$ for holes and electrons and we account for the mean time $\tau$ between collisions and for the Lorentz force.
 In stationary conditions the acceleration is zero. Therefore the velocities along $x$ ($B$ is directed along z) for electrons and holes are respectively:
 
 $$ V_{ex} = - \frac{e \tau}{m} E_x + \frac{e \tau}{m} \vec{v} \wedge \vec{B} = - \mu_e v_{e \space y} B  $$ {#eq:XvelocitiesForElectrons}
@@ -371,7 +369,7 @@ The current density along  the <!-- is it the x AXIS or x in some other way? -->
 $$ J_x \approx e(p \mu_h + n \mu_e)E_x + e(p \mu_h v \mu_{h \space y} - n \mu_e v_{e \space y})B \approx e ( p \mu_h + n \mu_e) E_x + e (p \mu_h^2 -n \mu_e^2 )BE_y $$ {#eq:currentDensityAlongX}
 
 
-Where we made the approximation $v_y \approx \mu_y E_y$, neglecting here the Lorentz force.
+where we made the approximation $v_y \approx \mu_y E_y$, neglecting here the Lorentz force.
 Recalling that $E_y \ll E_x$, for small magnetic fields $B$ ({@eq:currentDensityAlongX}) may be approximated by:
 
 $$J_x \approx e(p \mu_h + n \mu_e) E_x$$ {#eq:currentDensityAlongXaproxymated}
@@ -404,7 +402,7 @@ $$ =\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ e(p\mu _{ h }+n\mu _{ e })^
 <!-- yeah i know that was long... -->
 which tends to saturate at high B values.
 
-####Appendix 2: Temperature dependence of $E_g$
+###Appendix 2: Temperature dependence of $E_g$
 
 Experimental results consistently shows that the energy gap depends on temperature and for Germanium we can find in the literature the following empirical law:
 $$ E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad [eV] $$ {#eq:eGempiricalLaw}
@@ -419,10 +417,10 @@ $$ E^0_g = A = 0.78eV $$
 
 Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature $T$ as $exp( \frac{E_G}{2kT})$, a plot of $ln(R)$ vs $\frac{1}{2} K T$ using a linear approximation for $E_g(T)$ results in a straight line with slope $E^0_g$
 
-![Temperature dependance of the energy gap](Media/Eg_vs_T.jpeg)
+![Temperature dependance of the energy gap](Media/Eg_vs_T.jpeg){#fig:EgTdependance}
 
 
-#Warnings
+##Warnings
 
 **Using high magnetic field require some caution:**
 
