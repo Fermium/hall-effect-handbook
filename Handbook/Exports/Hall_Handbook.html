@@ -4,16 +4,15 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="April 2016" />
-  <title>Hall effect apparatus</title>
+  <title>Hall Handbook</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="Media/style.css" type="text/css" />
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
 <div id="header">
-<h1 class="title">Hall effect apparatus</h1>
-<h2 class="author">April 2016</h2>
+<h1 class="title">Hall Handbook</h1>
+<h3 class="date">April 2016</h3>
 </div>
 <div id="TOC">
 <ul>
@@ -108,6 +107,7 @@ https://fermiumlabs.com
 <img src="Media/hall-effect-geometry.jpeg" alt="Figure 1. Hall effect geometry" id="fig:hall-effect-geometry" />
 <p class="caption">Figure 1. Hall effect geometry</p>
 </div>
+<p>In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.</p>
 <p>In a pure semiconductor the electron density <span class="math inline">\(n\)</span> and the hole density <span class="math inline">\(p\)</span> is identical, in doped semiconductor we have <span class="math inline">\(n\gg p\)</span> (in N-doped material) or <span class="math inline">\(p\gg n\)</span> (in P-doped material). In doped semiconductors only one type of charge carriers is therefore important.</p>
 <p>Let us consider first a metal or a N-doped semiconductor sample, where the relevant charge carriers are electrons.</p>
 <p>In the electric field <span class="math inline">\(E_x\)</span> the electrons gain a drift velocity <span class="math inline">\(v_d=–\mu E_x\)</span> and they are subject to the Lorentz force <span class="math inline">\(F_L=qv_dB\)</span>, pointing towards the negative <span class="math inline">\(y\)</span>. While drifting in the <span class="math inline">\(x\)</span> direction they tend to crowd at the sample surface orthogonal to the <span class="math inline">\(y\)</span> axis and placed towards the reader in figure 1.</p>
@@ -153,7 +153,7 @@ https://fermiumlabs.com
 <p class="caption">Figure 2. simplified schematic of the sample circuitry</p>
 </div>
 <ul>
-<li>Contacts 1 and 4 are used to feed the bias current produced by a costant current generator [fix, see figure x]</li>
+<li>Contacts 1 and 4 are used to feed the bias current produced by a constant current generator [fix, see figure x]</li>
 <li>Contacts 7 and 5 are used to measured the voltage across the sample, to obtain a 4-wire (often called kelvin) resistance measure. The input is fed to a differential instrumentation amplifier (DA for short).</li>
 <li>Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA.</li>
 </ul>
@@ -185,12 +185,14 @@ https://fermiumlabs.com
 <img src="Media/image10.jpeg" alt="Figure 4. Measured B values vs gap length d" id="fig:BvsGapD" />
 <p class="caption">Figure 4. Measured <span class="math inline">\(B\)</span> values vs gap length <span class="math inline">\(d\)</span></p>
 </div>
-<p>Figure [fix] shows the linear dependence of <span class="math inline">\(V_H\)</span> on <span class="math inline">\(I\)</span> and <span class="math inline">\(B\)</span>. Deviations from linearity at high values of the magnetic field may be explained by calculating a second order approximation of <span class="math inline">\(R_H\)</span> (Appendix 1)</p>
 <a name="fig:HallvsIb"></a>
 <div class="figure">
 <img src="Media/image11.jpeg" alt="Figure 5. Hall voltage versus bias current I (B=4.5 kGauss), and versus B ( I=3 mA)." id="fig:HallvsIb" />
 <p class="caption">Figure 5. Hall voltage versus bias current <span class="math inline">\(I\)</span> (<span class="math inline">\(B=4.5 kGauss\)</span>), and versus <span class="math inline">\(B\)</span> ( <span class="math inline">\(I=3 mA\)</span>).</p>
 </div>
+<p>Figure [fix] shows the linear dependence of <span class="math inline">\(V_H\)</span> on <span class="math inline">\(I\)</span> and <span class="math inline">\(B\)</span>. Deviations from linearity at high values of the magnetic field may be explained by calculating a second order approximation of <span class="math inline">\(R_H\)</span> (Appendix 1)</p>
+\newpage
+
 <h3 id="measurements-at-constant-i-and-b-while-varying-the-temperature">Measurements at constant <span class="math inline">\(I\)</span> and <span class="math inline">\(B\)</span> while varying the temperature</h3>
 <p>The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminium bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be brought lo low temperatures.</p>
 <p>The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by the AD8495<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> integrated circuit. The output is vaguely proportional to the temperature, with a sensitivity of <span class="math inline">\(\approx 10\frac { mV }{ °K }\)</span> While the K type thermocouple is fairly linear a room temperature, it is not in the wide temperature range covered by the apparatus.</p>
@@ -199,6 +201,7 @@ https://fermiumlabs.com
 <img src="Media/seebeck_coefficient_vs_temperature.png" alt="Figure 6. In every type of thermocouple, the Seebeck coefficiently \frac{\mu V}{°C} is heavly non-linear in relation to the temperature." id="fig:seebeckNonlinearity" />
 <p class="caption">Figure 6. In every type of thermocouple, the Seebeck coefficiently <span class="math inline">\(\frac{\mu V}{°C}\)</span> is heavly non-linear in relation to the temperature.</p>
 </div>
+<p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure [fix]) of the thermocouple linearly extrapolating the following polynomial:</p>
 <p><a name="eq:compensatingPolynomial"></a><span class="math display">\[t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }\qquad (24)\]</span> where <span class="math inline">\(E\)</span> is the output voltage of the thermocouple.</p>
 <p>In the following table<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> two different groups of coefficients are given, depending on the temperature range:</p>
 <table>
@@ -246,7 +249,7 @@ https://fermiumlabs.com
 <p>Linearly extrapolating a polynomial (<a href="#eq:compensatingPolynomial">24</a>) of the fifth order is more that sufficient given the precision of our equipment.</p>
 <p>The voltage <span class="math inline">\(E\)</span> at the termocouple junction can be obtained from the following equation: <a name="eq:voltageAtThermocoupleJunction"></a><span class="math display">\[E=\frac { \frac { 1 }{ 2 } V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } \qquad (25)\]</span></p>
 <p>where <span class="math inline">\(V_{out}\)</span> is the output of the instrument (on the front panel), <span class="math inline">\(V_{Ref}=2.5V\)</span> the voltage that indicates a temperature <span class="math inline">\(T=0°C\)</span>, <span class="math inline">\(V_{offset}\)</span> is the error voltage at 0°C to achieve 125 mV at 25°C and <span class="math inline">\(Gain\)</span> is the internal gain of the AD8495 amplifier.</p>
-<p>Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature:</p>
+<p>Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>:</p>
 <p><a name="eq:FcompE"></a><span class="math display">\[t={ f }_{ comp }\left( E \right)\qquad (26)\]</span> <a name="eq:ad8494Compensated"></a><span class="math display">\[t={ f }_{ comp }\left( \frac { \frac { 1 }{ 2 } V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) \qquad (27)\]</span></p>
 <h3 id="cooling-heating-procedure">Cooling-Heating procedure</h3>
 <p>To obtain accurate measurement it’s suggested to first cool off the sample by placing liquid nitrogen in the dewar until a stable temperature is reached, then manually empty the dewar letting it slowly drift up to room temperature (due to the unavoidable thermal coupling sample-to-ambient).</p>
@@ -254,12 +257,12 @@ https://fermiumlabs.com
 <p>A resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The resistive element it’s controlled in PWM: it’s rapidly powered-on and powered-off with a duty cycle that can be selected (in percetange) on the front panel of the instrument.</p>
 <p>[fix, image pwn]</p>
 <p>This technique allows for a linear temperature sweep. Starting with a low power allows to better approximate an equilibrium situation, considering it can subsequently be increased if necessary to reach higher temperatures. The instruments automatically shuts down if <span class="math inline">\(t \ge 150°C\)</span>.</p>
-<p>Measurements can be obtained by feeding the analog outputs [fix, quali?] to a datalogger and setting a suitable acquisition rate (e.g. 1 sample per minute)</p>
+<p>Measurements can be obtained by feeding the analog outputs [fix, quali?] to a data-logger and setting a suitable acquisition rate (e.g. 1 sample per minute)</p>
 <p>To obtain precise measurements, at least one complete hour is required for the whole temperature sweep.</p>
 <h3 id="typical-results">Typical results</h3>
-<p>The sample shown in this example has thickness <span class="math inline">\(t=0.5mm\)</span>, width <span class="math inline">\(w=10mm\)</span> and lenght <span class="math inline">\(l=15mm\)</span>. The measured Hall voltage and resistance vs temperature (with a costant bias current of <span class="math inline">\(I_B=30mA\)</span> and in a <span class="math inline">\(0.5T\)</span> magnetic field) is shown in figure [fix].</p>
+<p>The sample shown in this example has thickness <span class="math inline">\(t=0.5mm\)</span>, width <span class="math inline">\(w=10mm\)</span> and lenght <span class="math inline">\(l=15mm\)</span>. The measured Hall voltage and resistance vs temperature (with a constant bias current of <span class="math inline">\(I_B=30mA\)</span> and in a <span class="math inline">\(0.5T\)</span> magnetic field) is shown in figure [fix].</p>
 <p>In figure [fix] the resistance is calculated from data of figure [fix].</p>
-<p>The logarithmic plot of the resistance versus <span class="math inline">\(\frac{1}{2} kT\)</span> (where <span class="math inline">\(k=8.617 \cdot 10^{-5} \, \frac{eV}{K}\)</span> is the Boltzmann costant) is shown in figure [fix].</p>
+<p>The logarithmic plot of the resistance versus <span class="math inline">\(\frac{1}{2} kT\)</span> (where <span class="math inline">\(k=8.617 \cdot 10^{-5} \, \frac{eV}{K}\)</span> is the Boltzmann constant) is shown in figure [fix].</p>
 <p>From the slope in the intrinsic region we get the value of the energy gap <span class="math inline">\(E_g\)</span>, extrapolating linearly from <span class="math inline">\(T=0K\)</span>, that can be compared to the known value for germanium (<span class="math inline">\(E{_g}^o=0.78\)</span>, cfr. Appendix 2)</p>
 <p>[fix, insert image]</p>
 <h2 id="appendix-1-calculation-of-r_h-for-small-and-high-magnetic-field">Appendix 1: calculation of <span class="math inline">\(R_H\)</span> for small and high magnetic field</h2>
@@ -291,13 +294,15 @@ https://fermiumlabs.com
 <p>Experimental results consistently shows that the energy gap depends on temperature and for Germanium we can find in the literature the following empirical law: <a name="eq:eGempiricalLaw"></a><span class="math display">\[E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad [eV]\qquad (38)\]</span></p>
 <p>This may be approximated, in the high temperature region, by a linear law as follows:</p>
 <p><span class="math display">\[E_g (T) = A * BT\]</span></p>
-<p>where the costants <span class="math inline">\(A\)</span> is the value of <span class="math inline">\(E_g\)</span> <em>linearly extrapolated</em> to <span class="math inline">\(T=0\)</span>: <span class="math display">\[E^0_g = A = 0.78eV\]</span></p>
+<p>where the constants <span class="math inline">\(A\)</span> is the value of <span class="math inline">\(E_g\)</span> <em>linearly extrapolated</em> to <span class="math inline">\(T=0\)</span>: <span class="math display">\[E^0_g = A = 0.78eV\]</span></p>
 <p>Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature <span class="math inline">\(T\)</span> as <span class="math inline">\(exp( \frac{E_G}{2kT})\)</span>, a plot of <span class="math inline">\(ln(R)\)</span> vs <span class="math inline">\(\frac{1}{2} K T\)</span> using a linear approximation for <span class="math inline">\(E_g(T)\)</span> results in a straight line with slope <span class="math inline">\(E^0_g\)</span></p>
 <a name="fig:EgTdependance"></a>
 <div class="figure">
 <img src="Media/Eg_vs_T.jpeg" alt="Figure 7. Temperature dependance of the energy gap" id="fig:EgTdependance" />
 <p class="caption">Figure 7. Temperature dependance of the energy gap</p>
 </div>
+\newpage
+
 <h2 id="warnings">Warnings</h2>
 <p><strong>Using high magnetic field require some caution:</strong></p>
 <ul>
@@ -313,11 +318,11 @@ https://fermiumlabs.com
 <li>C.L.Chin e C.R.Westgate, <em>The Hall Effect and Its Applications</em>, Plenum Press, NY, 1979</li>
 <li>J.R.Hook , H.E.Hall <em>Solid State Physics</em>, John Wiley &amp;Sons 1991.</li>
 <li>A. C melissinos <em>Experiments in modern Physics</em>, Academic Press, 1993.</li>
-<li><em>New Semiconductor materials. Characteristics and Properties</em> (Electronic archive) <a href="http://www.ioffe.rssi.ru/SVA/NSm/introduction.html"><em>http://www.ioffe.rssi.ru/SVA/NSm/introduction.html.</em></a></li>
-<li><em>The Semiconductor informations WebSite</em> (properties of Germanium) <a href="http://www.semiconductors.co.uk/propiviv5431.htm"><em>http://www.semiconductors.co.uk/propiviv5431.htm.</em></a></li>
+<li><em>New Semiconductor materials. Characteristics and Properties</em>, http://www.ioffe.rssi.ru/SVA/NSm/introduction.html (Electronic archive)</li>
+<li><em>The Semiconductor informations WebSite</em> (properties of Germanium), http://www.semiconductors.co.uk/propiviv5431.htm</li>
 </ul>
 <h2 id="authorship">Authorship</h2>
-<p>This Handbook was originally writed by Giacomo Torzo of <a href="http://labtrek.it">Labtrek</a></p>
+<p>This Handbook was originally written by Giacomo Torzo of <a href="http://labtrek.it">Labtrek</a></p>
 <p>Integrations and corrections by Davide Bortolami of <a href="http://fermiumlabs.com">Fermium LABS</a></p>
 <div class="footnotes">
 <hr />
@@ -326,8 +331,9 @@ https://fermiumlabs.com
 <li id="fn2"><p>This time <span class="math inline">\(\tau\)</span> does not depend on the electric field because the average speed increment due to the applied electric field <span class="math inline">\(V_d\)</span> is very small with respect to the r.m.s. speed <span class="math inline">\(V_m\)</span> due to thermal motion .<a href="#fnref2">↩</a></p></li>
 <li id="fn3"><p>Drift mobility in semiconductors decreases with the absolute temperature <span class="math inline">\(T\)</span> as <span class="math inline">\(T^{-\alpha }\)</span>, where <span class="math inline">\(1.5&lt;a&lt;3.0\)</span> depending on the prevailing type of interactions of the free carriers (with phonons, lattice defects, or impurities).<a href="#fnref3">↩</a></p></li>
 <li id="fn4"><p><em>Intrinsic</em> term labels properties related to pure semiconductors or to doped semiconductors at hight temperature, where the thermally generated carriers density is much larger than the (<em>extrinsic</em>) carrier density due to the dopant.<a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>AD8495 datasheet, Analog Semiconductors, page 11 http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html<a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p>NIST t-90 tables for K type thermocouples, <a href="http://srdata.nist.gov/its90/download/type_k.tab" class="uri">http://srdata.nist.gov/its90/download/type_k.tab</a><a href="#fnref6">↩</a></p></li>
+<li id="fn5"><p><a href="http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html">AD8495 datasheet, Analog Semiconductors</a><a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab<a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p><a href="http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF">AN-1087, Analog Semiconductors</a><a href="#fnref7">↩</a></p></li>
 </ol>
 </div>
 </body>
