@@ -1,7 +1,7 @@
 % Hall effect apparatus
 % April 2016
 <!-- ################################
-to compile this document you need pandoc with  pandoc-eqnos, pandoc-fignos and  pandoc-tablenos filters
+to compile this document you need pandoc with pandoc-eqnos, pandoc-fignos and pandoc-tablenos filters
 http://pandoc.org
 https://github.com/tomduck/pandoc-eqnos
 https://github.com/tomduck/pandoc-tablenos
@@ -72,7 +72,7 @@ where $q$ is electron charge. The kinetic energy of the electrons also increases
 In figure 1 it can be noticed[^feynman] that <!--FIX-->, after the application of the electric field, the average speed of the electrons is not zero but instead:
 $$v_d=a\tau=q\tau\frac{E}{m}$$ {#eq:electronsAvgSpd}
 
-[^feynman]: See for instance *The Feynman lectures on Physics* vol.I 43-1,3  Addison-Wesley 1963.
+[^feynman]: See for instance *The Feynman lectures on Physics* vol.I 43-1,3 Addison-Wesley 1963.
 
 where $\tau$ is the mean free time between collisions[^meanFreeTimeBetweenCollisions], so that the drift mobility $\mu$ has the microscopic expression :
 
@@ -127,13 +127,13 @@ In the electric field $E_x$ the electrons gain a drift velocity $v_d=–\mu E_x$
 
 This charge density increase at the sample lateral surface produces a difference of potential along the $y$ axis and therefore an electric field $E_H$. The value of the *Hall field* $E_H$ at equilibrium will correspond to an electric force $qE_H$ equal and opposite to the Lorentz force, i.e. $E_H=v_d B$. This relation tells us that the Hall field is proportional both to the current density (through $v_d$) and to the magnetic field. It is therefore convenient to define the Hall coefficient as:
 
-$$ R_H=\frac{E_H}{J_x B_z}$$ {#eq:hallCoefficient}
+$$R_H=\frac{E_H}{J_x B_z}$$ {#eq:hallCoefficient}
 
 Recalling the relations $J_x=-env_d$ (or $J_x=+epv_d$) we get :
 
 $$ R_{ H }=V_{ d }\frac { B }{ J_{ x }B } =\frac { -1 }{ en } $$ {#eq:R_Hmn}
 or otherwise, for P-doped conductors:
-  $$ R_{ H }=\frac { +1 }{ ep }  $$ {#eq:R_Hp}
+$$ R_{ H }=\frac { +1 }{ ep }$$ {#eq:R_Hp}
 
 Depending on the type of conductor, either metal ({@eq:R_Hmn}) , N-doped ({@eq:R_Hmn}) or P-doped ({@eq:R_Hp}).
 
@@ -149,7 +149,7 @@ The Hall coefficient in semiconductors is many order of magnitude larger than th
 
 To measure $R_H$ we must know $V_H$, $I_x$, $B$ and the sample thickness $t$:
 
-$$R_{ H }=\frac { E_{ h } }{ B{ J }_{ x } } =\frac { V_{ H } }{ s } =\frac { B{ I }_{ x } }{ ts } =\frac { V_{ h }t }{ B{ I }_{ x } } $$   {#eq:R_h}
+$$R_{ H }=\frac { E_{ h } }{ B{ J }_{ x } } =\frac { V_{ H } }{ s } =\frac { B{ I }_{ x } }{ ts } =\frac { V_{ h }t }{ B{ I }_{ x } } $$ {#eq:R_h}
 
 It is worth noting that the the Lorentz force direction does not depend on the charge sign.
 
@@ -157,7 +157,7 @@ The general expression for $R_H$, valid (see Appendix 1) <!-- FIX --> when *both
 
 $$R_{ H }=r\frac { p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e } }{ e(p\mu _{ h }-n\mu _{ e })^{ 2 } } $$ {#eq:R_hGeneralExpression}
 
-Which corresponds to the relations   and ({@eq:R_Hmn}) and ({@eq:R_Hp}) for $p\gg n$ or $n\gg p$
+Which corresponds to the relations and ({@eq:R_Hmn}) and ({@eq:R_Hp}) for $p\gg n$ or $n\gg p$
 
 When two types of charge carriers are present the electrical conductivity becomes:
 
@@ -167,9 +167,9 @@ The product $R_H \sigma$, is named Hall mobility $\mu_H$ (note the capital index
 
 For a doped semiconductor the Hall mobility $\mu_H$ approximates the *majority carriers* drift mobility $\mu_{h,e}$:
 
-$$\mu _{ H }=R_{ H }\sigma =r\frac { p \mu^2_h - n \mu^2_e }{p \mu_h + n \mu_e  } \approx r \mu_{h,e} $$ {#eq:muApproximateDriftMobility}
+$$\mu _{ H }=R_{ H }\sigma =r\frac { p \mu^2_h - n \mu^2_e }{p \mu_h + n \mu_e} \approx r \mu_{h,e} $$ {#eq:muApproximateDriftMobility}
 
-From relation ({@eq:R_hGeneralExpression}) we see that by increasing the temperature in a *P-doped sample*, generating many intrinsic[^4] carriers (i.e. electron-hole pairs), the Hall coefficient $R_H$ (which is positive at room temperature in the extrinsic region) tends to decrease, and it may even change sign. This is explained by the mobility ratio  $b=\mu_e/\mu_h>1$. *Note that this does not happen with a* N*-doped sample*.
+From relation ({@eq:R_hGeneralExpression}) we see that by increasing the temperature in a *P-doped sample*, generating many intrinsic[^4] carriers (i.e. electron-hole pairs), the Hall coefficient $R_H$ (which is positive at room temperature in the extrinsic region) tends to decrease, and it may even change sign. This is explained by the mobility ratio $b=\mu_e/\mu_h>1$. *Note that this does not happen with a* N*-doped sample*.
 
 [^4]: *Intrinsic* term labels properties related to pure semiconductors or to doped semiconductors at hight temperature, where the thermally generated carriers density is much larger than the (*extrinsic*) carrier density due to the dopant.
 
@@ -178,7 +178,7 @@ Therefore $Nb^2= N_a+N$, or $N_a/N=b^2-1$.
 
 The intrinsic conductivity *measured* at the inversion point is:
 
-$$ \sigma_{oi} = e(n \mu_e + p \mu_h ) = e[N( \mu_e + \mu_h)+ N_a \mu_h ] = e \mu_h [N(b+1)+N_a]$$ {#eq:intrinsicConductivityInvPoint}
+$$\sigma_{oi} = e(n \mu_e + p \mu_h ) = e[N( \mu_e + \mu_h)+ N_a \mu_h ] = e \mu_h [N(b+1)+N_a]$$ {#eq:intrinsicConductivityInvPoint}
 
 
 In the extrinsic region of a P-doped sample, where the charge carrier density is constant $n=N_a$, the conductivity is proportional to the carrier mobility $\mu_h$: i.e. $\sigma_e(T) = eN_a \mu_h(T)$
@@ -187,7 +187,7 @@ The experimentally measured temperature dependence of the mobility is a power-la
 
 Therefore we may *extrapolate the extrinsic conductivity at the inversion point* $\sigma_{ei}$, and from the ratio ${\sigma_{oi}}/{\sigma_{ei}}$ we get the $b$ value:
 
-$$ \frac{\sigma_{oi}}{\sigma_{ei}} =e\mu_h \frac{N(b+1) + N_a}{e N_a \mu_h}= \frac{b}{b-1}$$ {#eq:extrinsicConductivityInvPoint}
+$$\frac{\sigma_{oi}}{\sigma_{ei}} =e\mu_h \frac{N(b+1) + N_a}{e N_a \mu_h}= \frac{b}{b-1}$$ {#eq:extrinsicConductivityInvPoint}
 
 Which can as well be written as:
 
@@ -196,7 +196,7 @@ $$b=\frac{R_e}{R_e-R_o}$$ {#eq:extrinsicConductivityInvPoint2}
 where $R_o$ is the measured sample resistance at the inversion point and $R_e$ is the resistance extrapolated from the extrinsic region (low temperature) to the value it would have at the inversion temperature.
 
 The dopant concentration is related to the value of the *Hall constant at the inversion point* $R_{Ho}$ (in the extrinsic region only the hole concentration is significant) by the equations ({@eq:R_Hmn}) and ({@eq:R_Hp}), i.e. :
-$$ N_a \approx p \approx \frac{1}{e R_{Ho}}$$ {#eq:HallConstantInvPointRelation}
+$$N_a \approx p \approx \frac{1}{e R_{Ho}}$$ {#eq:HallConstantInvPointRelation}
 
 ## The experimental setup
 
@@ -221,9 +221,9 @@ A PGA (Programmable Gain Amplifier) is chained to each of the two DIAs, it's gai
 
 The output voltages on the front panel are restrained by a number of cases:
 
-*   If the input voltage is $V_r > \frac{30}{G}$ or $V_H \gtrless  \pm \frac{15}{G_{DIA}}$  a DIA saturates.
+*   If the input voltage is $V_r > \frac{30}{G}$ or $V_H \gtrless \pm \frac{15}{G_{DIA}}$ a DIA saturates.
 *   If the output of the DIA is not $0 < V_{out} < 5.1$ it is clamped down by a Schottky diode to prevent damage to the circuitry.
-*   If the output voltage of a PGA is not $0 < V_{out} < 5$  the PGA saturates
+*   If the output voltage of a PGA is not $0 < V_{out} < 5$ the PGA saturates
 
 The bias current $I_b$ is measured from the voltage drop across a $100 \Omega$ resistor $R_i$, giving thus an output of $10 \frac{mA}{V}$.
 
@@ -238,7 +238,7 @@ With a finite value of magnetic field B orthogonal to the large face of the samp
 This behavior must be tested before proceeding to further measurements: if reversing the $B$ direction (i.e. rotating the sample of $180°$ degrees) different values are measured, the offsets and balancing should be better adjusted.
 
 The absolute value of $B$ may be varied by changing the width of the gap between the magnetic poles (see figure [fix]).
-One of the two permanent-magnet  mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of $B$ decreases.
+One of the two permanent-magnet mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of $B$ decreases.
 
 [fix, update image]
 
@@ -264,7 +264,7 @@ Figure [fix] shows the linear dependence of $V_H$ on $I$ and $B$. Deviations fro
 
 The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminium bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be brought lo low temperatures.
 
-The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by the AD8495 integrated circuit. The output is  proportional to the temperature, with a sensitivity of $\approx 10\frac { mV }{ °C }$.
+The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by the AD8495 integrated circuit. The output is proportional to the temperature, with a sensitivity of $\approx 10\frac { mV }{ °C }$.
 
 In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure [fix]) of the thermocouple linearly extrapolating the following polynomial[^kpoly] :
 
@@ -272,7 +272,7 @@ In order to get a correct measurement it is necessary to compensate for the non-
 \
 
 
-[^kpoly]:   Burns, G. W.; Scroger, M. G.; Strouse, G. F.; Croarkin, M. C.; Guthrie, W. F. Temperature-Electromotive Force Reference Functions and Tables for the Letter-Designated Thermocouple Types Based on the ITS-90. NIST Monograph 175; 1993. 630 p.
+[^kpoly]: Burns, G. W.; Scroger, M. G.; Strouse, G. F.; Croarkin, M. C.; Guthrie, W. F. Temperature-Electromotive Force Reference Functions and Tables for the Letter-Designated Thermocouple Types Based on the ITS-90. NIST Monograph 175; 1993. 630 p.
 
 $$t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }$$ {#eq:compensatingPolynomial}
 where $E$ is the output voltage of the thermocouple.
@@ -303,15 +303,15 @@ Linearly extrapolating a polynomial ({@eq:compensatingPolynomial}) of the fifth 
 [^AD8495nist]: AN-1087, Analog Semiconductors http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF
 
 
-The voltage $E$  at the termocouple junction can be obtained from the following equation:
+The voltage $E$ at the termocouple junction can be obtained from the following equation:
 $$E=\frac { \frac { 1 }{ 2 } V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
 
-where $V_{out}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0°C$, $V_{offset}$  is the error voltage at 0°C to achieve 125 mV at 25°C and $Gain$ is the internal gain of the AD8495 amplifier
+where $V_{out}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0°C$, $V_{offset}$ is the error voltage at 0°C to achieve 125 mV at 25°C and $Gain$ is the internal gain of the AD8495 amplifier.
 
 Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature:
 
 $$t={ f }_{ comp }\left( E \right)$$ {#eq:FcompE}
-$$t={ f }_{ comp }\left( \frac { \frac { 1 }{ 2 } V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 }  \right) $$ {#eq:ad8494Compensated}
+$$t={ f }_{ comp }\left( \frac { \frac { 1 }{ 2 } V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) $$ {#eq:ad8494Compensated}
 
 ### Cooling-Heating procedure
 
@@ -323,7 +323,7 @@ A resistive element is wound around the base of the sample, allowing to heath it
 
 [fix, image pwn]
 
-This technique allows for a linear temperature sweep.  Starting with a low power allows to better approximate an equilibrium situation, considering it can subsequently be increased if necessary to reach higher temperatures. The instruments automatically shuts down if $t \ge 150°C$.
+This technique allows for a linear temperature sweep. Starting with a low power allows to better approximate an equilibrium situation, considering it can subsequently be increased if necessary to reach higher temperatures. The instruments automatically shuts down if $t \ge 150°C$.
 
 Measurements can be obtained by feeding the analog outputs [fix, quali?] to a datalogger and setting a suitable acquisition rate (e.g. 1 sample per minute)
 
@@ -351,23 +351,23 @@ The motion equation $(F=ma)$ for charge carriers can as well be written as:
 $$m(\frac{dv}{dt}+\frac{v}{\tau}) = qE+ q\vec{v} \wedge \vec{B} $$ {#eq:MotionEquationForChargeCarriers}
 
 where the charge $q$ is the $\pm e$ for holes and electrons and we account for the mean time $\tau$ between collisions and for the Lorentz force.
-In stationary conditions the acceleration is zero. Therefore the velocities along $x$ ($B$ is directed along z) for electrons and holes are respectively:
+In stationary conditions the acceleration is zero. Therefore the velocities along $x$ ($B$ is directed along $z$) for electrons and holes are respectively:
 
-$$ V_{ex} = - \frac{e \tau}{m} E_x + \frac{e \tau}{m} \vec{v} \wedge \vec{B} = - \mu_e v_{e \space y} B  $$ {#eq:XvelocitiesForElectrons}
+$$V_{ex}=-\frac{e\tau}{m}E_x+\frac{e\tau}{m}\vec{v}\wedge\vec{B}=-\mu_e v_{e\space y}B$$    {#eq:XvelocitiesForElectrons}
 
-$$ V_{hx} = \mu_h E_x + \mu_h v_{e \space  x} B $$  {#eq:XvelocitiesForHoles}
+$$V_{hx}=\mu_h E_x+\mu_h v_{e\space x}B $$   {#eq:XvelocitiesForHoles}
 
 And, for velocities along y:
 
-$$ V_{ e \space y} = -\mu_e E_y- \mu_e V_{e \space x} B $$ {#eq:YvelocitiesForElectrons}
+$$V_{ e \space y} = -\mu_e E_y- \mu_e V_{e \space x} B $$ {#eq:YvelocitiesForElectrons}
 
 
 $$V_{h \space y} = \mu_h E_y + \mu_h v_{h \space x}B $$ {#eq:YvelocitiesForHoles}
 
 
-The current density along  the <!-- is it the x AXIS or x in some other way? -->$x$ axis $(J = e V_{h \space x} P - eV_{e \quad x} n)$ can as well be written as:
+The current density along the <!-- is it the x AXIS or x in some other way? -->$x$ axis $(J = e V_{h \space x} P - eV_{e \quad x} n)$ can as well be written as:
 
-$$ J_x \approx e(p \mu_h + n \mu_e)E_x + e(p \mu_h v \mu_{h \space y} - n \mu_e v_{e \space y})B \approx e ( p \mu_h + n \mu_e) E_x + e (p \mu_h^2 -n \mu_e^2 )BE_y $$ {#eq:currentDensityAlongX}
+$$J_x \approx e(p \mu_h + n \mu_e)E_x + e(p \mu_h v \mu_{h \space y} - n \mu_e v_{e \space y})B \approx e ( p \mu_h + n \mu_e) E_x + e (p \mu_h^2 -n \mu_e^2 )BE_y$$ {#eq:currentDensityAlongX}
 
 
 where we made the approximation $v_y \approx \mu_y E_y$, neglecting here the Lorentz force.
@@ -377,17 +377,18 @@ $$J_x \approx e(p \mu_h + n \mu_e) E_x$$ {#eq:currentDensityAlongXaproxymated}
 
 For negligible current density along y we have:
 
-$$ J_y = e p v_{h \space y} - env_{e \space y} = 0 $$ {#eq:currentDensityAlongYNegligible}
+$$J_y = e p v_{h \space y} - env_{e \space y} = 0 $$ {#eq:currentDensityAlongYNegligible}
 or using $v_{h \space x}$ and $V_{e \space x}$ definitions:
 
-$$ J_y = ep ( \mu_h E_y + \mu_h v_{h \space x} B) - en( -\mu_e E_y - \mu_e v_{e \space x}B) = 0 $$
-$$e(p \mu_h + n \mu_e) E_y + e(p \mu_h v_{h \space x} + n \mu_e v_{e \space x}) B = 0 $$
+$$J_y = ep ( \mu_h E_y + \mu_h v_{h \space x} B) - en( -\mu_e E_y - \mu_e v_{e \space x}B) = 0$$
 
-$$ E_y = B \frac {p \mu_h v_{h \space x} + n \mu_e v_{e \space x}}{p \mu_h + n \mu_e} $$
+$$e(p \mu_h + n \mu_e) E_y + e(p \mu_h v_{h \space x} + n \mu_e v_{e \space x}) B = 0$$
+
+$$E_y = B \frac {p \mu_h v_{h \space x} + n \mu_e v_{e \space x}}{p \mu_h + n \mu_e}$$
 
 If again we assume $v_x \approx \mu_xE_x$ (neglecting, for small B, the correction for the Lorentz force <!-- is it the lorentz force ? --> we can write:
 
-$$ E_y \approx B \frac{p \mu^2_h - n \mu^2_e}{p \mu_h + n \mu_e} E_x $$
+$$E_y \approx B \frac{p \mu^2_h - n \mu^2_e}{p \mu_h + n \mu_e} E_x$$
 
 In this way the Hall coefficient becomes:
 
@@ -397,8 +398,8 @@ The formula ({@eq:hallCoefficientBecomes}) holds true only for *small values* of
 For large $B$ values we must use ({@eq:hallCoefficientBecomes}) for $J_x$ the definition ({@eq:currentDensityAlongX}) instead of ({@eq:currentDensityAlongXaproxymated}), obtaining for the Hall coefficient $R_H$:
 
 
-$$ R_{ H }(B)=\frac { E_{ y } }{ BJ_{ x } } \approx \frac { \left[ B\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ (p\mu _{ h }+n\mu _{ e }) } E_{ x } \right]  }{ Be\left[ (p\mu _{ h }+n\mu _{ e })+B^{ 2 }\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e }) }  \right] { E }_{ x } } =$$
-$$ =\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ e(p\mu _{ h }+n\mu _{ e })^{ 2 }\left[ 1+B^{ 2 }\frac { (p{ \mu  }_{ h }^{ 2 }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e })^{ 2 } }  \right]  } =\frac { R_{ H(B=0) } }{ 1+KB^{ 2 } } $$ {#eq:HallCoefficientBigEquation}
+$$R_{ H }(B)=\frac { E_{ y } }{ BJ_{ x } } \approx \frac { \left[ B\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ (p\mu _{ h }+n\mu _{ e }) } E_{ x } \right] }{ Be\left[ (p\mu _{ h }+n\mu _{ e })+B^{ 2 }\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e }) } \right] { E }_{ x } } =$$
+$$=\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ e(p\mu _{ h }+n\mu _{ e })^{ 2 }\left[ 1+B^{ 2 }\frac { (p{ \mu }_{ h }^{ 2 }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e })^{ 2 } } \right] } =\frac { R_{ H(B=0) } }{ 1+KB^{ 2 } }$$ {#eq:HallCoefficientBigEquation}
 
 <!-- yeah i know that was long... -->
 which tends to saturate at high B values.
@@ -406,15 +407,15 @@ which tends to saturate at high B values.
 ###Appendix 2: Temperature dependence of $E_g$
 
 Experimental results consistently shows that the energy gap depends on temperature and for Germanium we can find in the literature the following empirical law:
-$$ E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad [eV] $$ {#eq:eGempiricalLaw}
+$$E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad [eV]$$ {#eq:eGempiricalLaw}
 
 This may be approximated, in the high temperature region, by a linear law
 as follows:
 
-$$ E_g (T) = A * BT $$
+$$E_g (T) = A * BT$$
 
 where the costants $A$ is the value of $E_g$ *linearly extrapolated* to $T=0$:
-$$ E^0_g = A = 0.78eV $$
+$$E^0_g = A = 0.78eV$$
 
 Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature $T$ as $exp( \frac{E_G}{2kT})$, a plot of $ln(R)$ vs $\frac{1}{2} K T$ using a linear approximation for $E_g(T)$ results in a straight line with slope $E^0_g$
 

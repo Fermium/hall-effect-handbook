@@ -14,6 +14,12 @@ pandoc Hall_Handbook.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pa
 cp Media/* Exports/Media/
 echo "Html built"
 
+
+echo "Building Docx..."
+pandoc Hall_Handbook.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos -o Exports/Hall_Handbook.docx
+echo "Docx built"
+
+
 echo "Building pdf from html..."
 cp Exports/Hall_Handbook.html ./
 phantomjs rasterize.js Hall_Handbook.html Hall_Handbook_fromHTML.pdf "A4"
