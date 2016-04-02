@@ -1,5 +1,16 @@
 % Hall effect apparatus
 % April 2016
+
+<!--
+Copyright (C)  YEAR  YOUR NAME.
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+with the Invariant Sections being "Authorship", no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+-->
+
 <!-- ################################
 to compile this document you need pandoc with pandoc-eqnos, pandoc-fignos and pandoc-tablenos filters
 http://pandoc.org
@@ -434,7 +445,6 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 * The apparatus **MUST NOT** be used by people with pacemakers.
 
 
-
 ##References
 
 * J.C. Slater *Quantum Theory of matter*, mcGraw-Hill 1951.
@@ -445,3 +455,8 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 [*http://www.ioffe.rssi.ru/SVA/NSm/introduction.html.*](http://www.ioffe.rssi.ru/SVA/NSm/introduction.html)
 * *The Semiconductor informations WebSite* (properties of Germanium)
 [*http://www.semiconductors.co.uk/propiviv5431.htm.*](http://www.semiconductors.co.uk/propiviv5431.htm)
+
+## Authorship
+This Handbook was originally writed by Giacomo Torzo of [Labtrek](http://labtrek.it)
+
+Integrations and corrections by Davide Bortolami of [Fermium LABS](http://fermiumlabs.com)

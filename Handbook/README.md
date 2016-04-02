@@ -35,6 +35,7 @@ You can use the file make.sh on a unix system (linux or Mac OSX)
 bash make.sh
 ```
 
-## Attributions
-Original paper by Giacomo Torzo of LABTREK
-http://labtrek.it
+## LICENSE
+This work is distributed under the terms of the [GNU Free Documentation License](http://www.gnu.org/licenses/fdl-1.3.html)
+
+Original paper by Giacomo Torzo of [Labtrek](http://labtrek.it)
