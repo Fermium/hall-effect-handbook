@@ -209,20 +209,20 @@ The sample has 7 wires tin soldered in the positions shown in figure [FIX] as fo
 
 
 *   Contacts 1 and 4 are used to feed the bias current produced by a costant current generator [fix, see figure x]
-*   Contacts 7 and 5 are used to measured the voltage across the sample, to obtain a 4-wire (often called kelvin) resistance measure. The input is fed to a differential instrumentation amplifier (DIA for short).
-*   Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DIA.
+*   Contacts 7 and 5 are used to measured the voltage across the sample, to obtain a 4-wire (often called kelvin) resistance measure. The input is fed to a differential instrumentation amplifier (DA for short).
+*   Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA.
 
 The potentiometer P [fix] in figure [fix] is used to adjust the balance of the Hall voltage, since the contacts 2 and 3 cannot be precisely positioned.
 It must be adjusted to obtain $V_H=0$ when there is no applied magnetic field. Of course the presumed $V_H \neq 0$ we obtain if we do not adjust correctly P is not due to the magnetic field, but to the resistance of the sample itself.
 
-The two DIAs have a gain $G$, generally set to $0.5$ for $V_r$ and to $100$ for $V_H$, but it can vary according to instrument specifications, and they're powered from a $\pm 15V$ power supply.
+The two DAs have a gain $G$, generally set to $0.5$ for $V_r$ and to $100$ for $V_H$, but it can vary according to instrument specifications, and they're powered from a $\pm 15V$ power supply.
 
-A PGA (Programmable Gain Amplifier) is chained to each of the two DIAs, it's gain selectable from the following values $G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}$ using the front panel.
+A PGA (Programmable Gain Amplifier) is chained to each of the two DAs, it's gain selectable from the following values $G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}$ using the front panel.
 
 The output voltages on the front panel are restrained by a number of cases:
 
-*   If the input voltage is $V_r > \frac{30}{G}$ or $V_H \gtrless \pm \frac{15}{G_{DIA}}$ a DIA saturates.
-*   If the output of the DIA is not $0 < V_{out} < 5.1$ it is clamped down by a Schottky diode to prevent damage to the circuitry.
+*   If the input voltage is $V_r > \frac{30}{G}$ the  DA saturates.
+*   If the output of the DA is not $0 < V_{out} < 5.1$ it is clamped down by a Schottky diode to prevent damage to the circuitry.
 *   If the output voltage of a PGA is not $0 < V_{out} < 5$ the PGA saturates
 
 The bias current $I_b$ is measured from the voltage drop across a $100 \Omega$ resistor $R_i$, giving thus an output of $10 \frac{mA}{V}$.
@@ -282,18 +282,13 @@ In the following table[^srdata] two different groups of coefficients are given, 
 [^srdata]: NIST t-90 tables for K type thermocouples, [http://srdata.nist.gov/its90/download/type_k.tab](http://srdata.nist.gov/its90/download/type_k.tab)
 [^AD8495]: AD8495 datasheet, Analog Semiconductors, page 11 http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html
 
-| t range | -200°C to 0°C  | 0°C to 500°C   |
-| :------------- | :------------- | :------------- |
-| $d_0$ | 0.0000000E+00  | 0.000000E+00   |
-| $d_2$ |  2.5173462E+01 | 2.508355E+01   |
-| $d_3$ | -1.1662878E+00 | 7.860106E-02   |
-| $d_4$ | -1.0833638E+00 | -2.503131E-01  |
-| $d_5$ | -8.9773540E-01 | 8.315270E-02   |
-| $d_6$ | -3.7342377E-01 | -1.228034E-02  |
-| $d_7$ | -8.6632643E-02 |  9.804036E-04  |
-| $d_8$ | -1.0450598E-02 | -4.413030E-05  |
-| $d_9$ | -5.1920577E-04 | 1.057734E-06   |
-| $d_{10}$ |  0.0000000E+00 | -1.052755E-08  |
+| t range     | -200°C to 0°C  | 0°C to 500°C   |
+| :---------- | :------------- | :------------- |
+| $d_0$       | 0.0000000E+00  | 0.000000E+00   |
+| $d_2$       |  2.5173462E+01 | 2.508355E+01   |
+| $d_3$       | -1.1662878E+00 | 7.860106E-02   |
+| $d_4$       | -1.0833638E+00 | -2.503131E-01  |
+| $d_5$       | -8.9773540E-01 | 8.315270E-02   |
 | **V range** | **-5.891mV to 0mV** | **0mV to 20.644mV** |
 <!-- table of thermoelectric compensation coefficients for K type termocouples -->
 
@@ -338,7 +333,7 @@ The measured Hall voltage and resistance vs temperature (with a costant bias cur
 
 In figure [fix] the resistance is calculated from data of figure [fix].
 
-The logarithmic plot of the resistance versus $\frac{1}{2} kT$ (where $k=8.617 \cdot 10^{-5} \space \frac{eV}{K}$ is the Boltzmann costant) is shown in figure [fix].
+The logarithmic plot of the resistance versus $\frac{1}{2} kT$ (where $k=8.617 \cdot 10^{-5} \, \frac{eV}{K}$ is the Boltzmann costant) is shown in figure [fix].
 
 From the slope in the intrinsic region we get the value of the energy gap $E_g$, extrapolating linearly from $T=0K$, that can be compared to the known value for germanium ($E{_g}^o=0.78$, cfr. Appendix 2)
 
@@ -353,21 +348,21 @@ $$m(\frac{dv}{dt}+\frac{v}{\tau}) = qE+ q\vec{v} \wedge \vec{B} $$ {#eq:MotionEq
 where the charge $q$ is the $\pm e$ for holes and electrons and we account for the mean time $\tau$ between collisions and for the Lorentz force.
 In stationary conditions the acceleration is zero. Therefore the velocities along $x$ ($B$ is directed along $z$) for electrons and holes are respectively:
 
-$$V_{ex}=-\frac{e\tau}{m}E_x+\frac{e\tau}{m}\vec{v}\wedge\vec{B}=-\mu_e v_{e\space y}B$$    {#eq:XvelocitiesForElectrons}
+$$V_{ex}=-\frac{e\tau}{m}E_x+\frac{e\tau}{m}\vec{v}\wedge\vec{B}=-\mu_e v_{e\, y}B$$    {#eq:XvelocitiesForElectrons}
 
-$$V_{hx}=\mu_h E_x+\mu_h v_{e\space x}B $$   {#eq:XvelocitiesForHoles}
+$$V_{hx}=\mu_h E_x+\mu_h v_{e\, x}B $$   {#eq:XvelocitiesForHoles}
 
 And, for velocities along y:
 
-$$V_{ e \space y} = -\mu_e E_y- \mu_e V_{e \space x} B $$ {#eq:YvelocitiesForElectrons}
+$$V_{ e \, y} = -\mu_e E_y- \mu_e V_{e \, x} B $$ {#eq:YvelocitiesForElectrons}
 
 
-$$V_{h \space y} = \mu_h E_y + \mu_h v_{h \space x}B $$ {#eq:YvelocitiesForHoles}
+$$V_{h \, y} = \mu_h E_y + \mu_h v_{h \, x}B $$ {#eq:YvelocitiesForHoles}
 
 
-The current density along the <!-- is it the x AXIS or x in some other way? -->$x$ axis $(J = e V_{h \space x} P - eV_{e \quad x} n)$ can as well be written as:
+The current density along the <!-- is it the x AXIS or x in some other way? -->$x$ axis $(J = e V_{h \, x} P - eV_{e \quad x} n)$ can as well be written as:
 
-$$J_x \approx e(p \mu_h + n \mu_e)E_x + e(p \mu_h v \mu_{h \space y} - n \mu_e v_{e \space y})B \approx e ( p \mu_h + n \mu_e) E_x + e (p \mu_h^2 -n \mu_e^2 )BE_y$$ {#eq:currentDensityAlongX}
+$$J_x \approx e(p \mu_h + n \mu_e)E_x + e(p \mu_h v \mu_{h \, y} - n \mu_e v_{e \, y})B \approx e ( p \mu_h + n \mu_e) E_x + e (p \mu_h^2 -n \mu_e^2 )BE_y$$ {#eq:currentDensityAlongX}
 
 
 where we made the approximation $v_y \approx \mu_y E_y$, neglecting here the Lorentz force.
@@ -377,14 +372,14 @@ $$J_x \approx e(p \mu_h + n \mu_e) E_x$$ {#eq:currentDensityAlongXaproxymated}
 
 For negligible current density along y we have:
 
-$$J_y = e p v_{h \space y} - env_{e \space y} = 0 $$ {#eq:currentDensityAlongYNegligible}
-or using $v_{h \space x}$ and $V_{e \space x}$ definitions:
+$$J_y = e p v_{h \, y} - env_{e \, y} = 0 $$ {#eq:currentDensityAlongYNegligible}
+or using $v_{h \, x}$ and $V_{e \, x}$ definitions:
 
-$$J_y = ep ( \mu_h E_y + \mu_h v_{h \space x} B) - en( -\mu_e E_y - \mu_e v_{e \space x}B) = 0$$
+$$J_y = ep ( \mu_h E_y + \mu_h v_{h \, x} B) - en( -\mu_e E_y - \mu_e v_{e \, x}B) = 0$$
 
-$$e(p \mu_h + n \mu_e) E_y + e(p \mu_h v_{h \space x} + n \mu_e v_{e \space x}) B = 0$$
+$$e(p \mu_h + n \mu_e) E_y + e(p \mu_h v_{h \, x} + n \mu_e v_{e \, x}) B = 0$$
 
-$$E_y = B \frac {p \mu_h v_{h \space x} + n \mu_e v_{e \space x}}{p \mu_h + n \mu_e}$$
+$$E_y = B \frac {p \mu_h v_{h \, x} + n \mu_e v_{e \, x}}{p \mu_h + n \mu_e}$$
 
 If again we assume $v_x \approx \mu_xE_x$ (neglecting, for small B, the correction for the Lorentz force <!-- is it the lorentz force ? --> we can write:
 

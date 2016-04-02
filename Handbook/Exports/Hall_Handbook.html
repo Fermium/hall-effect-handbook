@@ -144,16 +144,16 @@ https://fermiumlabs.com
 </div>
 <ul>
 <li>Contacts 1 and 4 are used to feed the bias current produced by a costant current generator [fix, see figure x]</li>
-<li>Contacts 7 and 5 are used to measured the voltage across the sample, to obtain a 4-wire (often called kelvin) resistance measure. The input is fed to a differential instrumentation amplifier (DIA for short).</li>
-<li>Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DIA.</li>
+<li>Contacts 7 and 5 are used to measured the voltage across the sample, to obtain a 4-wire (often called kelvin) resistance measure. The input is fed to a differential instrumentation amplifier (DA for short).</li>
+<li>Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA.</li>
 </ul>
 <p>The potentiometer P [fix] in figure [fix] is used to adjust the balance of the Hall voltage, since the contacts 2 and 3 cannot be precisely positioned. It must be adjusted to obtain <span class="math inline">\(V_H=0\)</span> when there is no applied magnetic field. Of course the presumed <span class="math inline">\(V_H \neq 0\)</span> we obtain if we do not adjust correctly P is not due to the magnetic field, but to the resistance of the sample itself.</p>
-<p>The two DIAs have a gain <span class="math inline">\(G\)</span>, generally set to <span class="math inline">\(0.5\)</span> for <span class="math inline">\(V_r\)</span> and to <span class="math inline">\(100\)</span> for <span class="math inline">\(V_H\)</span>, but it can vary according to instrument specifications, and they’re powered from a <span class="math inline">\(\pm 15V\)</span> power supply.</p>
-<p>A PGA (Programmable Gain Amplifier) is chained to each of the two DIAs, it’s gain selectable from the following values <span class="math inline">\(G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}\)</span> using the front panel.</p>
+<p>The two DAs have a gain <span class="math inline">\(G\)</span>, generally set to <span class="math inline">\(0.5\)</span> for <span class="math inline">\(V_r\)</span> and to <span class="math inline">\(100\)</span> for <span class="math inline">\(V_H\)</span>, but it can vary according to instrument specifications, and they’re powered from a <span class="math inline">\(\pm 15V\)</span> power supply.</p>
+<p>A PGA (Programmable Gain Amplifier) is chained to each of the two DAs, it’s gain selectable from the following values <span class="math inline">\(G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}\)</span> using the front panel.</p>
 <p>The output voltages on the front panel are restrained by a number of cases:</p>
 <ul>
-<li>If the input voltage is <span class="math inline">\(V_r &gt; \frac{30}{G}\)</span> or <span class="math inline">\(V_H \gtrless \pm \frac{15}{G_{DIA}}\)</span> a DIA saturates.</li>
-<li>If the output of the DIA is not <span class="math inline">\(0 &lt; V_{out} &lt; 5.1\)</span> it is clamped down by a Schottky diode to prevent damage to the circuitry.</li>
+<li>If the input voltage is <span class="math inline">\(V_r &gt; \frac{30}{G}\)</span> the DA saturates.</li>
+<li>If the output of the DA is not <span class="math inline">\(0 &lt; V_{out} &lt; 5.1\)</span> it is clamped down by a Schottky diode to prevent damage to the circuitry.</li>
 <li>If the output voltage of a PGA is not <span class="math inline">\(0 &lt; V_{out} &lt; 5\)</span> the PGA saturates</li>
 </ul>
 <p>The bias current <span class="math inline">\(I_b\)</span> is measured from the voltage drop across a <span class="math inline">\(100 \Omega\)</span> resistor <span class="math inline">\(R_i\)</span>, giving thus an output of <span class="math inline">\(10 \frac{mA}{V}\)</span>.</p>
@@ -227,31 +227,6 @@ https://fermiumlabs.com
 <td align="left">8.315270E-02</td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(d_6\)</span></td>
-<td align="left">-3.7342377E-01</td>
-<td align="left">-1.228034E-02</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(d_7\)</span></td>
-<td align="left">-8.6632643E-02</td>
-<td align="left">9.804036E-04</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(d_8\)</span></td>
-<td align="left">-1.0450598E-02</td>
-<td align="left">-4.413030E-05</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(d_9\)</span></td>
-<td align="left">-5.1920577E-04</td>
-<td align="left">1.057734E-06</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(d_{10}\)</span></td>
-<td align="left">0.0000000E+00</td>
-<td align="left">-1.052755E-08</td>
-</tr>
-<tr class="odd">
 <td align="left"><strong>V range</strong></td>
 <td align="left"><strong>-5.891mV to 0mV</strong></td>
 <td align="left"><strong>0mV to 20.644mV</strong></td>
@@ -275,26 +250,26 @@ https://fermiumlabs.com
 <h3 id="typical-results">Typical results</h3>
 <p>The sample shown in this example has thickness <span class="math inline">\(t=0.5mm\)</span>, width <span class="math inline">\(w=10mm\)</span> and lenght <span class="math inline">\(l=15mm\)</span>. The measured Hall voltage and resistance vs temperature (with a costant bias current of <span class="math inline">\(I_B=30mA\)</span> and in a <span class="math inline">\(0.5T\)</span> magnetic field) is shown in figure [fix].</p>
 <p>In figure [fix] the resistance is calculated from data of figure [fix].</p>
-<p>The logarithmic plot of the resistance versus <span class="math inline">\(\frac{1}{2} kT\)</span> (where <span class="math inline">\(k=8.617 \cdot 10^{-5} \space \frac{eV}{K}\)</span> is the Boltzmann costant) is shown in figure [fix].</p>
+<p>The logarithmic plot of the resistance versus <span class="math inline">\(\frac{1}{2} kT\)</span> (where <span class="math inline">\(k=8.617 \cdot 10^{-5} \, \frac{eV}{K}\)</span> is the Boltzmann costant) is shown in figure [fix].</p>
 <p>From the slope in the intrinsic region we get the value of the energy gap <span class="math inline">\(E_g\)</span>, extrapolating linearly from <span class="math inline">\(T=0K\)</span>, that can be compared to the known value for germanium (<span class="math inline">\(E{_g}^o=0.78\)</span>, cfr. Appendix 2)</p>
 <p>[fix, insert image]</p>
 <h2 id="appendix-1-calculation-of-r_h-for-small-and-high-magnetic-field">Appendix 1: calculation of <span class="math inline">\(R_H\)</span> for small and high magnetic field</h2>
 <p>The motion equation <span class="math inline">\((F=ma)\)</span> for charge carriers can as well be written as: <a name="eq:MotionEquationForChargeCarriers"></a><span class="math display">\[m(\frac{dv}{dt}+\frac{v}{\tau}) = qE+ q\vec{v} \wedge \vec{B} \qquad (28)\]</span></p>
 <p>where the charge <span class="math inline">\(q\)</span> is the <span class="math inline">\(\pm e\)</span> for holes and electrons and we account for the mean time <span class="math inline">\(\tau\)</span> between collisions and for the Lorentz force. In stationary conditions the acceleration is zero. Therefore the velocities along <span class="math inline">\(x\)</span> (<span class="math inline">\(B\)</span> is directed along <span class="math inline">\(z\)</span>) for electrons and holes are respectively:</p>
-<p><a name="eq:XvelocitiesForElectrons"></a><span class="math display">\[V_{ex}=-\frac{e\tau}{m}E_x+\frac{e\tau}{m}\vec{v}\wedge\vec{B}=-\mu_e v_{e\space y}B\qquad (29)\]</span></p>
-<p><a name="eq:XvelocitiesForHoles"></a><span class="math display">\[V_{hx}=\mu_h E_x+\mu_h v_{e\space x}B\qquad (30)\]</span></p>
+<p><a name="eq:XvelocitiesForElectrons"></a><span class="math display">\[V_{ex}=-\frac{e\tau}{m}E_x+\frac{e\tau}{m}\vec{v}\wedge\vec{B}=-\mu_e v_{e\, y}B\qquad (29)\]</span></p>
+<p><a name="eq:XvelocitiesForHoles"></a><span class="math display">\[V_{hx}=\mu_h E_x+\mu_h v_{e\, x}B \qquad (30)\]</span></p>
 <p>And, for velocities along y:</p>
-<p><a name="eq:YvelocitiesForElectrons"></a><span class="math display">\[V_{ e \space y} = -\mu_e E_y- \mu_e V_{e \space x} B\qquad (31)\]</span></p>
-<p><a name="eq:YvelocitiesForHoles"></a><span class="math display">\[V_{h \space y} = \mu_h E_y + \mu_h v_{h \space x}B\qquad (32)\]</span></p>
-<p>The current density along the <!-- is it the x AXIS or x in some other way? --><span class="math inline">\(x\)</span> axis <span class="math inline">\((J = e V_{h \space x} P - eV_{e \quad x} n)\)</span> can as well be written as:</p>
-<p><a name="eq:currentDensityAlongX"></a><span class="math display">\[J_x \approx e(p \mu_h + n \mu_e)E_x + e(p \mu_h v \mu_{h \space y} - n \mu_e v_{e \space y})B \approx e ( p \mu_h + n \mu_e) E_x + e (p \mu_h^2 -n \mu_e^2 )BE_y\qquad (33)\]</span></p>
+<p><a name="eq:YvelocitiesForElectrons"></a><span class="math display">\[V_{ e \, y} = -\mu_e E_y- \mu_e V_{e \, x} B \qquad (31)\]</span></p>
+<p><a name="eq:YvelocitiesForHoles"></a><span class="math display">\[V_{h \, y} = \mu_h E_y + \mu_h v_{h \, x}B \qquad (32)\]</span></p>
+<p>The current density along the <!-- is it the x AXIS or x in some other way? --><span class="math inline">\(x\)</span> axis <span class="math inline">\((J = e V_{h \, x} P - eV_{e \quad x} n)\)</span> can as well be written as:</p>
+<p><a name="eq:currentDensityAlongX"></a><span class="math display">\[J_x \approx e(p \mu_h + n \mu_e)E_x + e(p \mu_h v \mu_{h \, y} - n \mu_e v_{e \, y})B \approx e ( p \mu_h + n \mu_e) E_x + e (p \mu_h^2 -n \mu_e^2 )BE_y\qquad (33)\]</span></p>
 <p>where we made the approximation <span class="math inline">\(v_y \approx \mu_y E_y\)</span>, neglecting here the Lorentz force. Recalling that <span class="math inline">\(E_y \ll E_x\)</span>, for small magnetic fields <span class="math inline">\(B\)</span> (<a href="#eq:currentDensityAlongX">33</a>) may be approximated by:</p>
 <p><a name="eq:currentDensityAlongXaproxymated"></a><span class="math display">\[J_x \approx e(p \mu_h + n \mu_e) E_x\qquad (34)\]</span></p>
 <p>For negligible current density along y we have:</p>
-<p><a name="eq:currentDensityAlongYNegligible"></a><span class="math display">\[J_y = e p v_{h \space y} - env_{e \space y} = 0 \qquad (35)\]</span> or using <span class="math inline">\(v_{h \space x}\)</span> and <span class="math inline">\(V_{e \space x}\)</span> definitions:</p>
-<p><span class="math display">\[J_y = ep ( \mu_h E_y + \mu_h v_{h \space x} B) - en( -\mu_e E_y - \mu_e v_{e \space x}B) = 0\]</span></p>
-<p><span class="math display">\[e(p \mu_h + n \mu_e) E_y + e(p \mu_h v_{h \space x} + n \mu_e v_{e \space x}) B = 0\]</span></p>
-<p><span class="math display">\[E_y = B \frac {p \mu_h v_{h \space x} + n \mu_e v_{e \space x}}{p \mu_h + n \mu_e}\]</span></p>
+<p><a name="eq:currentDensityAlongYNegligible"></a><span class="math display">\[J_y = e p v_{h \, y} - env_{e \, y} = 0 \qquad (35)\]</span> or using <span class="math inline">\(v_{h \, x}\)</span> and <span class="math inline">\(V_{e \, x}\)</span> definitions:</p>
+<p><span class="math display">\[J_y = ep ( \mu_h E_y + \mu_h v_{h \, x} B) - en( -\mu_e E_y - \mu_e v_{e \, x}B) = 0\]</span></p>
+<p><span class="math display">\[e(p \mu_h + n \mu_e) E_y + e(p \mu_h v_{h \, x} + n \mu_e v_{e \, x}) B = 0\]</span></p>
+<p><span class="math display">\[E_y = B \frac {p \mu_h v_{h \, x} + n \mu_e v_{e \, x}}{p \mu_h + n \mu_e}\]</span></p>
 <p>If again we assume <span class="math inline">\(v_x \approx \mu_xE_x\)</span> (neglecting, for small B, the correction for the Lorentz force <!-- is it the lorentz force ? --> we can write:</p>
 <p><span class="math display">\[E_y \approx B \frac{p \mu^2_h - n \mu^2_e}{p \mu_h + n \mu_e} E_x\]</span></p>
 <p>In this way the Hall coefficient becomes:</p>
