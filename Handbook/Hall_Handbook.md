@@ -132,7 +132,7 @@ $$\vec { F } =q\vec { V } \wedge \vec { B }$$ {#eq:lorentzForce}
 Let us consider a conducting bar (figure 1) immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis. The Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (figure 1) (independently from the charge sign).
 
 ![Hall effect geometry](Media/hall-effect-geometry.jpeg){#fig:hall-effect-geometry}
-
+\
 
 In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.
 
@@ -222,12 +222,14 @@ The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside
 The sample has 7 wires tin soldered in the positions shown in figure [FIX] as follows:
 
 ![simplified schematic of the sample circuitry](Media/sample_circuitry.png){#fig:sample_circuitry}
-
+\
 
 
 *   Contacts 1 and 4 are used to feed the bias current produced by a constant current generator [fix, see figure x]
 *   Contacts 7 and 5 are used to measured the voltage across the sample, to obtain a 4-wire (often called kelvin) resistance measure. The input is fed to a differential instrumentation amplifier (DA for short).
 *   Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA.
+
+The numbering of the contact on the sample corresponds to the number of the pins in the rj45 connector of the sample assembly.
 
 The potentiometer P [fix] in figure [fix] is used to adjust the balance of the Hall voltage, since the contacts 2 and 3 cannot be precisely positioned.
 It must be adjusted to obtain $V_H=0$ when there is no applied magnetic field. Of course the presumed $V_H \neq 0$ we obtain if we do not adjust correctly P is not due to the magnetic field, but to the resistance of the sample itself.
@@ -259,8 +261,8 @@ One of the two permanent-magnet mounted on the soft-steel structure may be moved
 
 [fix, update image]
 
-![The screw device for changing the effective magnetic field](Media/image9.jpeg){#fig:screwDevice}
-
+![The screw device for changing the effective magnetic field](Media/image9.jpeg){#fig:screwDevice}   
+\
 
 
 A calibration of the magnetic field $B$ as a function of the gap may be made using a gauss-meter probe placed between the poles (see figure [fix]).
@@ -268,14 +270,16 @@ A calibration of the magnetic field $B$ as a function of the gap may be made usi
 The magnetic field $B$ may be calibrated using a gauss-meter probe placed at the center between the poles.
 
 ![Measured $B$ values vs gap length $d$](Media/image10.jpeg){#fig:BvsGapD}
-
+\
 
 ![Hall voltage versus bias current $I$ ($B=4.5 kGauss$), and versus $B$ ( $I=3 mA$).](Media/image11.jpeg){#fig:HallvsIb}
-
+\
 
 Figure [fix] shows the linear dependence of $V_H$ on $I$ and $B$. Deviations from linearity at high values of the magnetic field may be explained by calculating a second order approximation of $R_H$ (Appendix 1)
 
-\newpage
+\clearpage
+
+
 ### Measurements at constant $I$ and $B$ while varying the temperature
 
 
@@ -324,7 +328,7 @@ $$t={ f }_{ comp }\left( E \right)$$ {#eq:FcompE}
 $$t={ f }_{ comp }\left( \frac { \frac { 1 }{ 2 } V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) $$ {#eq:ad8494Compensated}
 
 [^AD8495nist]: [AN-1087, Analog Semiconductors](http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF)
-
+\
 
 ### Cooling-Heating procedure
 
@@ -342,8 +346,6 @@ Measurements can be obtained by feeding the analog outputs [fix, quali?] to a da
 
 To obtain precise measurements, at least one complete hour is required for the whole temperature sweep.
 
-
-
 ### Typical results
 
 The sample shown in this example has thickness $t=0.5mm$, width $w=10mm$ and lenght $l=15mm$.
@@ -356,7 +358,6 @@ The logarithmic plot of the resistance versus $\frac{1}{2} kT$ (where $k=8.617 \
 From the slope in the intrinsic region we get the value of the energy gap $E_g$, extrapolating linearly from $T=0K$, that can be compared to the known value for germanium ($E{_g}^o=0.78$, cfr. Appendix 2)
 
 [fix, insert image]
-
 
 ##Appendix 1: calculation of $R_H$ for small and high magnetic field
 
@@ -433,9 +434,9 @@ $$E^0_g = A = 0.78eV$$
 Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature $T$ as $exp( \frac{E_G}{2kT})$, a plot of $ln(R)$ vs $\frac{1}{2} K T$ using a linear approximation for $E_g(T)$ results in a straight line with slope $E^0_g$
 
 ![Temperature dependance of the energy gap](Media/Eg_vs_T.jpeg){#fig:EgTdependance}
+\
 
-
-\newpage
+\clearpage
 ##Warnings
 
 **Using high magnetic field require some caution:**
@@ -450,7 +451,7 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 
 * The apparatus **MUST NOT** be used by people with pacemakers.
 
-
+\clearpage
 ##References
 
 * J.C. Slater *Quantum Theory of matter*, mcGraw-Hill 1951.
