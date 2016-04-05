@@ -132,7 +132,7 @@ $$\vec { F } =q\vec { V } \wedge \vec { B }$$ {#eq:lorentzForce}
 Let us consider a conducting bar (figure 1) immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis. The Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (figure 1) (independently from the charge sign).
 
 ![Hall effect geometry](Media/hall-effect-geometry.jpeg){#fig:hall-effect-geometry}
-\
+\ 
 
 In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.
 
@@ -222,7 +222,7 @@ The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside
 The sample has 7 wires tin soldered in the positions shown in figure [FIX] as follows:
 
 ![simplified schematic of the sample circuitry](Media/sample_circuitry.png){#fig:sample_circuitry}
-\
+\ 
 
 
 *   Contacts 1 and 4 are used to feed the bias current produced by a constant current generator [fix, see figure x]
@@ -262,7 +262,7 @@ One of the two permanent-magnet mounted on the soft-steel structure may be moved
 [fix, update image]
 
 ![The screw device for changing the effective magnetic field](Media/image9.jpeg){#fig:screwDevice}   
-\
+\ 
 
 
 A calibration of the magnetic field $B$ as a function of the gap may be made using a gauss-meter probe placed between the poles (see figure [fix]).
@@ -270,10 +270,10 @@ A calibration of the magnetic field $B$ as a function of the gap may be made usi
 The magnetic field $B$ may be calibrated using a gauss-meter probe placed at the center between the poles.
 
 ![Measured $B$ values vs gap length $d$](Media/image10.jpeg){#fig:BvsGapD}
-\
+\ 
 
 ![Hall voltage versus bias current $I$ ($B=4.5 kGauss$), and versus $B$ ( $I=3 mA$).](Media/image11.jpeg){#fig:HallvsIb}
-\
+\ 
 
 Figure [fix] shows the linear dependence of $V_H$ on $I$ and $B$. Deviations from linearity at high values of the magnetic field may be explained by calculating a second order approximation of $R_H$ (Appendix 1)
 
@@ -328,7 +328,7 @@ $$t={ f }_{ comp }\left( E \right)$$ {#eq:FcompE}
 $$t={ f }_{ comp }\left( \frac { \frac { 1 }{ 2 } V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) $$ {#eq:ad8494Compensated}
 
 [^AD8495nist]: [AN-1087, Analog Semiconductors](http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF)
-\
+\ 
 
 ### Cooling-Heating procedure
 
@@ -434,7 +434,7 @@ $$E^0_g = A = 0.78eV$$
 Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature $T$ as $exp( \frac{E_G}{2kT})$, a plot of $ln(R)$ vs $\frac{1}{2} K T$ using a linear approximation for $E_g(T)$ results in a straight line with slope $E^0_g$
 
 ![Temperature dependance of the energy gap](Media/Eg_vs_T.jpeg){#fig:EgTdependance}
-\
+\ 
 
 \clearpage
 ##Warnings
