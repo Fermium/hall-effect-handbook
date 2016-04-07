@@ -227,13 +227,20 @@ The sample has 7 wires tin soldered in the positions shown in figure 2 as follow
 
 *   Contacts 1 and 4 (with Test Points named TP1 and TP4) are used to feed the bias current Ib produced by a constant current generator [fix, see figure x]
 *   Contacts 7 and 5 (TP7 and TP5) are used to measure (through a differential amplifier, DA for short) the voltage across the sample, in a 4-wire (often called kelvin) resistance measurement. 
-*   Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA. Contact 6 (TP6) is the reference point for the  Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). The potentiometer P is needed  since the contacts 2 and 3 cannot be precisely positioned.
+*   Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA. 
+
+    Contact 6 (TP6) is the reference point for the  Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). 
+    The potentiometer P is needed  since the contacts 2 and 3 cannot be precisely positioned.
 
 The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger. 
 
 The numbering of the contact on the sample corresponds to the number of the pins in the rj45 connector of the sample assembly.
 
-The two DAs have fixed gains $G$, set to $0.5$ for $V_r$ and to $100$ for $V_H$, and they're powered from a $\pm 15V$ power supply.
+The two DAs have fixed gains $G$, set to $0.5$ for $V_r$ and to $100$ for $V_H$[^GainMayChange], and they're powered from a $\pm 15V$ power supply. 
+
+
+[^GainMayChange]: The gain can change due to specifications and calibration. Please refer to the values calculated on the screen of the device.
+
 
 The PGA gains are selectable among the following values $G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}$ through the front panel.
 
