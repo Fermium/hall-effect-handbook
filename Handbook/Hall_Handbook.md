@@ -219,7 +219,7 @@ $$N_a \approx p \approx \frac{1}{e R_{Ho}}$$ {#eq:HallConstantInvPointRelation}
 
 The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two neodimium magnets and a U shaped soft-steel core, acting like a torus.
 
-The sample has 7 wires tin soldered in the positions shown in figure 2 as follows:
+The sample has 7 wires tin soldered in the positions shown in figure {@fig:sample_circuitry} as follows:
 
 ![simplified schematic of the sample circuitry](Media/sample_circuitry.png){#fig:sample_circuitry}
 \ 
