@@ -247,7 +247,7 @@ Saturation gives a warning (ERROR) message on the front panel.
 
 The bias current $I_b$ is measured from the voltage drop across a $100 \Omega$ resistor $R_i$, giving thus an output of $10 \frac{mA}{V}$.
 
-A digital-to-analog (DAC) converter acquires the analog values, sampling them from a $0 < V_{in} < 5$ to a integer value from $0$ to $2^{12}$
+A digital-to-analog converter (DAC) acquires the analog values, sampling them from a $0 < V_{in} < 5$ to a integer value from $0$ to $2^{12}=4096$
 
 The best value for the bias current is a compromise between the need to obtain a large $V_H$ to make measurements precise reducing the SNR (Signal to Noise Ratio) and a low self-heating of the element due to the Joule effect: $V_R$ and $V_H$ signal are proportional to $I$ while the Joule self-heating is $P=RI^2$
 
