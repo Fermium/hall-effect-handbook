@@ -8,7 +8,7 @@ links-as-notes: false
 ---
 
 <!--
-Copyright (C)  YEAR  YOUR NAME.
+Copyright (C)  2016  YOUR NAME.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -206,7 +206,7 @@ Therefore we may *extrapolate the extrinsic conductivity at the inversion point*
 
 $$\frac{\sigma_{oi}}{\sigma_{ei}} =e\mu_h \frac{N(b+1) + N_a}{e N_a \mu_h}= \frac{b}{b-1}$$ {#eq:extrinsicConductivityInvPoint}
 
-Which can as well be written as:
+which can as well be written as:
 
 $$b=\frac{R_e}{R_e-R_o}$$ {#eq:extrinsicConductivityInvPoint2}
 
@@ -219,30 +219,31 @@ $$N_a \approx p \approx \frac{1}{e R_{Ho}}$$ {#eq:HallConstantInvPointRelation}
 
 The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two neodimium magnets and a U shaped soft-steel core, acting like a torus.
 
-The sample has 7 wires tin soldered in the positions shown in figure [FIX] as follows:
+The sample has 7 wires tin soldered in the positions shown in figure 2 as follows:
 
 ![simplified schematic of the sample circuitry](Media/sample_circuitry.png){#fig:sample_circuitry}
 \ 
 
 
-*   Contacts 1 and 4 are used to feed the bias current produced by a constant current generator [fix, see figure x]
-*   Contacts 7 and 5 are used to measured the voltage across the sample, to obtain a 4-wire (often called kelvin) resistance measure. The input is fed to a differential instrumentation amplifier (DA for short).
-*   Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA.
+*   Contacts 1 and 4 (with Test Points named TP1 and TP4) are used to feed the bias current Ib produced by a constant current generator [fix, see figure x]
+*   Contacts 7 and 5 (TP7 and TP5) are used to measure (through a differential amplifier, DA for short) the voltage across the sample, in a 4-wire (often called kelvin) resistance measurement. 
+*   Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA. Contact 6 (TP6) is the reference point for the  Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). The potentiometer P is needed  since the contacts 2 and 3 cannot be precisely positioned.
+
+The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger. 
 
 The numbering of the contact on the sample corresponds to the number of the pins in the rj45 connector of the sample assembly.
 
-The potentiometer P [fix] in figure {@fig:sample_circuitry} is used to adjust the balance of the Hall voltage, since the contacts 2 and 3 cannot be precisely positioned.
-It must be adjusted to obtain $V_H=0$ when there is no applied magnetic field. Of course the presumed $V_H \neq 0$ we obtain if we do not adjust correctly P is not due to the magnetic field, but to the resistance of the sample itself.
+The two DAs have fixed gains $G$, set to $0.5$ for $V_r$ and to $100$ for $V_H$, and they're powered from a $\pm 15V$ power supply.
 
-The two DAs have a gain $G$ generally set to $0.5$ for $V_r$ and to $100$ for $V_H$, but it can vary according to instrument specifications, and they're powered from a $\pm 15V$ power supply.
+The PGA gains are selectable among the following values $G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}$ through the front panel.
 
-A PGA (Programmable Gain Amplifier) is chained to each of the two DAs, it's gain selectable from the following values $G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}$ using the front panel.
-
-The output voltages on the front panel are restrained by a number of cases:
+The output voltages on the front panel are restrained in a number of cases:
 
 *   If the input voltage is $V_r > \frac{30}{G}$ the  DA saturates.
 *   If the output of the DA is not $0 < V_{out} < 5.1$ it is clamped down by a Schottky diode to prevent damage to the circuitry.
 *   If the output voltage of a PGA is not $0 < V_{out} < 5$ the PGA saturates
+
+Saturation gives a warning (ERROR) message on the front panel.
 
 The bias current $I_b$ is measured from the voltage drop across a $100 \Omega$ resistor $R_i$, giving thus an output of $10 \frac{mA}{V}$.
 
