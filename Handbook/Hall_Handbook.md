@@ -313,10 +313,10 @@ In the following table[^srdata] two different groups of coefficients are given, 
 | t range     | -200°C to 0°C  | 0°C to 500°C   |
 | :---------- | :------------- | :------------- |
 | $d_0$       | 0.0000000E+00  | 0.000000E+00   |
-| $d_2$       |  2.5173462E+01 | 2.508355E+01   |
-| $d_3$       | -1.1662878E+00 | 7.860106E-02   |
-| $d_4$       | -1.0833638E+00 | -2.503131E-01  |
-| $d_5$       | -8.9773540E-01 | 8.315270E-02   |
+| $d_1$       |  2.5173462E+01 | 2.508355E+01   |
+| $d_2$       | -1.1662878E+00 | 7.860106E-02   |
+| $d_3$       | -1.0833638E+00 | -2.503131E-01  |
+| $d_4$       | -8.9773540E-01 | 8.315270E-02   |
 | **E range** | **-5.891mV to 0mV** | **0mV to 20.644mV** |
 <!-- table of thermoelectric compensation coefficients for K type termocouples -->
 
@@ -325,7 +325,7 @@ Linearly extrapolating a polynomial ({@eq:compensatingPolynomial}) of the fifth 
 
 
 The voltage $E$ at the termocouple junction can be obtained[^AD8495nist] from the following equation:
-$$E=\frac { \frac { 1 }{ 2 } V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
+$$E=\frac { 1 }{ 2 } \frac {  V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
 
 
 where $V_{out}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0°C$, $V_{offset}$ is the error voltage at 0°C to achieve 125 mV at 25°C and $Gain$ is the internal gain of the AD8495 amplifier.
@@ -333,7 +333,7 @@ where $V_{out}$ is the output of the instrument (on the front panel), $V_{Ref}=2
 Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature[^AD8495nist]:
 
 $$t={ f }_{ comp }\left( E \right)$$ {#eq:FcompE}
-$$t={ f }_{ comp }\left( \frac { \frac { 1 }{ 2 } V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) $$ {#eq:ad8494Compensated}
+$$t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) $$ {#eq:ad8494Compensated}
 
 [^AD8495nist]: [AN-1087, Analog Semiconductors](http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF)
 \ 
