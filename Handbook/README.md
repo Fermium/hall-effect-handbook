@@ -8,7 +8,7 @@
 
 [PDF obtained from the html (experimental) ](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook_fromHTML.pdf)
 
-[DOCX Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.docx)]
+[DOCX Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.docx)
 
 Please note, the download links are automatically updated every 2 hours. 
 

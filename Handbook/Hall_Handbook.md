@@ -299,10 +299,10 @@ The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally 
 
 ![In every type of thermocouple, the Seebeck coefficiently $\frac{\mu V}{°C}$ is heavly non-linear in relation to the temperature.](Media/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity}
 
-In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure {@fig:seebeckNonlinearity}) of the thermocouple linearly extrapolating the following polynomial:w
+In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure {@fig:seebeckNonlinearity}) of the thermocouple linearly extrapolating the following polynomial:
 
 $$t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }$$ {#eq:compensatingPolynomial}
-where $E$ is the output voltage of the thermocouple.
+where $E$ is the output voltage of the thermocouple in $mV$.
 
 In the following table[^srdata] two different groups of coefficients are given, depending on the temperature range:
 
@@ -317,6 +317,7 @@ In the following table[^srdata] two different groups of coefficients are given, 
 | $d_2$       | -1.1662878E+00 | 7.860106E-02   |
 | $d_3$       | -1.0833638E+00 | -2.503131E-01  |
 | $d_4$       | -8.9773540E-01 | 8.315270E-02   |
+| $d_5$ | -3.7342377E-01 | -1.228034E-02  |
 | **E range** | **-5.891mV to 0mV** | **0mV to 20.644mV** |
 <!-- table of thermoelectric compensation coefficients for K type termocouples -->
 

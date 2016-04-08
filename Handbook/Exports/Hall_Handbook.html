@@ -201,8 +201,8 @@ https://fermiumlabs.com
 <img src="Media/seebeck_coefficient_vs_temperature.png" alt="Figure 6. In every type of thermocouple, the Seebeck coefficiently \frac{\mu V}{°C} is heavly non-linear in relation to the temperature." id="fig:seebeckNonlinearity" />
 <p class="caption">Figure 6. In every type of thermocouple, the Seebeck coefficiently <span class="math inline">\(\frac{\mu V}{°C}\)</span> is heavly non-linear in relation to the temperature.</p>
 </div>
-<p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure <a href="#fig:seebeckNonlinearity">6</a>) of the thermocouple linearly extrapolating the following polynomial:w</p>
-<p><a name="eq:compensatingPolynomial"></a><span class="math display">\[t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }\qquad (24)\]</span> where <span class="math inline">\(E\)</span> is the output voltage of the thermocouple.</p>
+<p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure <a href="#fig:seebeckNonlinearity">6</a>) of the thermocouple linearly extrapolating the following polynomial:</p>
+<p><a name="eq:compensatingPolynomial"></a><span class="math display">\[t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }\qquad (24)\]</span> where <span class="math inline">\(E\)</span> is the output voltage of the thermocouple in <span class="math inline">\(mV\)</span>.</p>
 <p>In the following table<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> two different groups of coefficients are given, depending on the temperature range:</p>
 <table>
 <thead>
@@ -239,6 +239,11 @@ https://fermiumlabs.com
 <td align="left">8.315270E-02</td>
 </tr>
 <tr class="even">
+<td align="left"><span class="math inline">\(d_5\)</span></td>
+<td align="left">-3.7342377E-01</td>
+<td align="left">-1.228034E-02</td>
+</tr>
+<tr class="odd">
 <td align="left"><strong>E range</strong></td>
 <td align="left"><strong>-5.891mV to 0mV</strong></td>
 <td align="left"><strong>0mV to 20.644mV</strong></td>
