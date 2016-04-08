@@ -2,16 +2,16 @@
 
 ## Downloads
 
-[PDF Handbook](https://rawgit.com/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.pdf)
+[PDF Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.pdf)
 
-[HTML Handbook](https://rawgit.com/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.html)
+[HTML Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.html)
 
-[PDF obtained from the html](https://rawgit.com/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook_fromHTML.pdf)
+[PDF obtained from the html (experimental) ](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook_fromHTML.pdf)
 
+[DOCX Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.docx)]
 
-## Disclaimer
+Please note, the download links are automatically updated every 2 hours. 
 
-The handbook is still not complete and the license is not definitive.
 
 ## Corrections and Issues
 
@@ -19,7 +19,7 @@ If you find a problem with the documentation or the code please open an issue on
 
 > what is a repository? how do i open an issue?? i don't want this crap, just let me correct an equation!!!
 
-Email us at [support@fermiumlabs.com](mailto:suppot@fermiumlabs.com)
+Email us at [support@fermiumlabs.com](mailto:support@fermiumlabs.com)
 
 ## How to compile
 
@@ -32,6 +32,8 @@ To compile this document you need:
 
 You can use the file make.sh on a unix system (linux or Mac OSX)
 ```bash
+git clone https://github.com/fermiumlabs/Hall-effect-apparatus.git
+cd Hall-effect-apparatus/Handbook
 bash make.sh
 ```
 
