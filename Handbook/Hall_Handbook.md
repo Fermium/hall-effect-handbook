@@ -317,13 +317,11 @@ In the following table[^srdata] two different groups of coefficients are given, 
 | $d_2$       | -1.1662878E+00 | 7.860106E-02   |
 | $d_3$       | -1.0833638E+00 | -2.503131E-01  |
 | $d_4$       | -8.9773540E-01 | 8.315270E-02   |
-| $d_5$ | -3.7342377E-01 | -1.228034E-02  |
+| $d_5$       | -3.7342377E-01 | -1.228034E-02  |
 | **E range** | **-5.891mV to 0mV** | **0mV to 20.644mV** |
 <!-- table of thermoelectric compensation coefficients for K type termocouples -->
 
 Linearly extrapolating a polynomial ({@eq:compensatingPolynomial}) of the fifth order is more that sufficient given the precision of our equipment.
-
-
 
 The voltage $E$ at the termocouple junction can be obtained[^AD8495nist] from the following equation:
 $$E=\frac { 1 }{ 2 } \frac {  V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
@@ -446,6 +444,7 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 \ 
 
 \clearpage
+
 ##Warnings
 
 **Using high magnetic field require some caution:**
@@ -461,6 +460,7 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 * The apparatus **MUST NOT** be used by people with pacemakers.
 
 \clearpage
+
 ##References
 
 * J.C. Slater *Quantum Theory of matter*, mcGraw-Hill 1951.
