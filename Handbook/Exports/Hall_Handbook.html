@@ -146,7 +146,11 @@ https://fermiumlabs.com
 <p>The dopant concentration is related to the value of the <em>Hall constant at the inversion point</em> <span class="math inline">\(R_{Ho}\)</span> (in the extrinsic region only the hole concentration is significant) by the equations (<a href="#eq:R_Hmn">13</a>) and (<a href="#eq:R_Hp">14</a>), i.e. : <a name="eq:HallConstantInvPointRelation"></a><span class="math display">\[N_a \approx p \approx \frac{1}{e R_{Ho}}\qquad (23)\]</span></p>
 <h2 id="the-experimental-setup">The experimental setup</h2>
 <p>The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two neodimium magnets and a U shaped soft-steel core, acting like a torus.</p>
+<<<<<<< Updated upstream
 <p>The sample has 7 wires tin soldered in the positions shown in figure <a href="#fig:sample_circuitry">2</a> as follows:</p>
+=======
+<p>The sample has 7 wires tin soldered in the positions shown in figure 2 as follows:</p>
+>>>>>>> Stashed changes
 <a name="fig:sample_circuitry"></a>
 <div class="figure">
 <img src="Media/sample_circuitry.png" alt="Figure 2. simplified schematic of the sample circuitry" id="fig:sample_circuitry" />
@@ -155,12 +159,20 @@ https://fermiumlabs.com
 <ul>
 <li>Contacts 1 and 4 (with Test Points named TP1 and TP4) are used to feed the bias current Ib produced by a constant current generator [fix, see figure x]</li>
 <li>Contacts 7 and 5 (TP7 and TP5) are used to measure (through a differential amplifier, DA for short) the voltage across the sample, in a 4-wire (often called kelvin) resistance measurement.</li>
+<<<<<<< Updated upstream
 <li><p>Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA.</p>
 <p>Contact 6 (TP6) is the reference point for the Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). The potentiometer P is needed since the contacts 2 and 3 cannot be precisely positioned.</p></li>
 </ul>
 <p>The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger.</p>
 <p>The numbering of the contact on the sample corresponds to the number of the pins in the rj45 connector of the sample assembly.</p>
 <p>The two DAs have fixed gains <span class="math inline">\(G\)</span>, set to <span class="math inline">\(0.5\)</span> for <span class="math inline">\(V_r\)</span> and to <span class="math inline">\(100\)</span> for <span class="math inline">\(V_H\)</span><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>, and they’re powered from a <span class="math inline">\(\pm 15V\)</span> power supply.</p>
+=======
+<li>Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA. Contact 6 (TP6) is the reference point for the Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). The potentiometer P is needed since the contacts 2 and 3 cannot be precisely positioned.</li>
+</ul>
+<p>The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger.</p>
+<p>The numbering of the contact on the sample corresponds to the number of the pins in the rj45 connector of the sample assembly.</p>
+<p>The two DAs have fixed gains <span class="math inline">\(G\)</span>, set to <span class="math inline">\(0.5\)</span> for <span class="math inline">\(V_r\)</span> and to <span class="math inline">\(100\)</span> for <span class="math inline">\(V_H\)</span>, and they’re powered from a <span class="math inline">\(\pm 15V\)</span> power supply.</p>
+>>>>>>> Stashed changes
 <p>The PGA gains are selectable among the following values <span class="math inline">\(G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}\)</span> through the front panel.</p>
 <p>The output voltages on the front panel are restrained in a number of cases:</p>
 <ul>
@@ -203,9 +215,15 @@ https://fermiumlabs.com
 <img src="Media/seebeck_coefficient_vs_temperature.png" alt="Figure 6. In every type of thermocouple, the Seebeck coefficiently \frac{\mu V}{°C} is heavly non-linear in relation to the temperature." id="fig:seebeckNonlinearity" />
 <p class="caption">Figure 6. In every type of thermocouple, the Seebeck coefficiently <span class="math inline">\(\frac{\mu V}{°C}\)</span> is heavly non-linear in relation to the temperature.</p>
 </div>
+<<<<<<< Updated upstream
 <p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure <a href="#fig:seebeckNonlinearity">6</a>) of the thermocouple linearly extrapolating the following polynomial:</p>
 <p><a name="eq:compensatingPolynomial"></a><span class="math display">\[t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }\qquad (24)\]</span> where <span class="math inline">\(E\)</span> is the output voltage of the thermocouple in <span class="math inline">\(mV\)</span>.</p>
 <p>In the following table<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> two different groups of coefficients are given, depending on the temperature range:</p>
+=======
+<p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure <a href="#fig:seebeckNonlinearity">6</a>) of the thermocouple linearly extrapolating the following polynomial:w</p>
+<p><a name="eq:compensatingPolynomial"></a><span class="math display">\[t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }\qquad (24)\]</span> where <span class="math inline">\(E\)</span> is the output voltage of the thermocouple.</p>
+<p>In the following table<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> two different groups of coefficients are given, depending on the temperature range:</p>
+>>>>>>> Stashed changes
 <table>
 <thead>
 <tr class="header">

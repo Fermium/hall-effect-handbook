@@ -300,18 +300,24 @@ The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally 
 ![In every type of thermocouple, the Seebeck coefficiently $\frac{\mu V}{°C}$ is heavly non-linear in relation to the temperature.](Media/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity}
 
 In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure {@fig:seebeckNonlinearity}) of the thermocouple linearly extrapolating the following polynomial:
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 
 $$t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }$$ {#eq:compensatingPolynomial}
 where $E$ is the output voltage of the thermocouple in $mV$.
 
-In the following table[^srdata] two different groups of coefficients are given, depending on the temperature range:
+In the following table we give the coefficients of a fifth order polinomial that best fits the NIST data in the temperature range -200°C to +200°C:
 
 [^srdata]: NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab
 
 
 
-| t range     | -200°C to 0°C  | 0°C to 500°C   |
+
 | :---------- | :------------- | :------------- |
+<<<<<<< Updated upstream
 | $d_0$       | 0.0000000E+00  | 0.000000E+00   |
 | $d_1$       |  2.5173462E+01 | 2.508355E+01   |
 | $d_2$       | -1.1662878E+00 | 7.860106E-02   |
@@ -319,6 +325,15 @@ In the following table[^srdata] two different groups of coefficients are given, 
 | $d_4$       | -8.9773540E-01 | 8.315270E-02   |
 | $d_5$       | -3.7342377E-01 | -1.228034E-02  |
 | **E range** | **-5.891mV to 0mV** | **0mV to 20.644mV** |
+=======
+| $d_0$       | -0.3837E+00  |
+| $d_1$       |  2.51222E+01 |
+| $d_2$       | -0.2795+00 |
+| $d_3$       | 0.7205E-01 |
+| $d_4$       | -0.1409E-01 |
+| $d_5$       | -0.10560E-02 |
+| **E range** | **-5.891mV to +8.138mV** |
+>>>>>>> Stashed changes
 <!-- table of thermoelectric compensation coefficients for K type termocouples -->
 
 Linearly extrapolating a polynomial ({@eq:compensatingPolynomial}) of the fifth order is more that sufficient given the precision of our equipment.
@@ -343,11 +358,11 @@ To obtain accurate measurement it's suggested to first cool off the sample by pl
 
 During the cooling process measurements may be taken, but the rapid cooling generates a large thermal gradient across the apparatus that makes such measurements less reliable.
 
-A resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The resistive element it's controlled in PWM: it's rapidly powered-on and powered-off with a duty cycle that can be selected (in percetange) on the front panel of the instrument.
+A resistive element (heater) is wound around the base of the sample, allowing to heath it up after reaching room temperature. The resistive element may be fed by a current ( ??? mA) that can be switched-on in the front panel of the instrument.
 
-[fix, image pwn]
 
-This technique allows for a linear temperature sweep. Starting with a low power allows to better approximate an equilibrium situation, considering it can subsequently be increased if necessary to reach higher temperatures. The instruments automatically shuts down if $t \ge 150°C$.
+
+The instruments automatically shuts down the heater current if $t \ge 150°C$.  [fix 200 ]
 
 Measurements can be obtained by feeding the analog outputs [fix, quali?] to a data-logger and setting a suitable acquisition rate (e.g. 1 sample per minute)
 
