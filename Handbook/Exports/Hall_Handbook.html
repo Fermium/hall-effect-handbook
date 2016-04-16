@@ -146,11 +146,7 @@ https://fermiumlabs.com
 <p>The dopant concentration is related to the value of the <em>Hall constant at the inversion point</em> <span class="math inline">\(R_{Ho}\)</span> (in the extrinsic region only the hole concentration is significant) by the equations (<a href="#eq:R_Hmn">13</a>) and (<a href="#eq:R_Hp">14</a>), i.e. : <a name="eq:HallConstantInvPointRelation"></a><span class="math display">\[N_a \approx p \approx \frac{1}{e R_{Ho}}\qquad (23)\]</span></p>
 <h2 id="the-experimental-setup">The experimental setup</h2>
 <p>The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two neodimium magnets and a U shaped soft-steel core, acting like a torus.</p>
-<<<<<<< Updated upstream
 <p>The sample has 7 wires tin soldered in the positions shown in figure <a href="#fig:sample_circuitry">2</a> as follows:</p>
-=======
-<p>The sample has 7 wires tin soldered in the positions shown in figure 2 as follows:</p>
->>>>>>> Stashed changes
 <a name="fig:sample_circuitry"></a>
 <div class="figure">
 <img src="Media/sample_circuitry.png" alt="Figure 2. simplified schematic of the sample circuitry" id="fig:sample_circuitry" />
@@ -159,20 +155,12 @@ https://fermiumlabs.com
 <ul>
 <li>Contacts 1 and 4 (with Test Points named TP1 and TP4) are used to feed the bias current Ib produced by a constant current generator [fix, see figure x]</li>
 <li>Contacts 7 and 5 (TP7 and TP5) are used to measure (through a differential amplifier, DA for short) the voltage across the sample, in a 4-wire (often called kelvin) resistance measurement.</li>
-<<<<<<< Updated upstream
 <li><p>Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA.</p>
 <p>Contact 6 (TP6) is the reference point for the Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). The potentiometer P is needed since the contacts 2 and 3 cannot be precisely positioned.</p></li>
 </ul>
 <p>The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger.</p>
 <p>The numbering of the contact on the sample corresponds to the number of the pins in the rj45 connector of the sample assembly.</p>
 <p>The two DAs have fixed gains <span class="math inline">\(G\)</span>, set to <span class="math inline">\(0.5\)</span> for <span class="math inline">\(V_r\)</span> and to <span class="math inline">\(100\)</span> for <span class="math inline">\(V_H\)</span><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>, and they’re powered from a <span class="math inline">\(\pm 15V\)</span> power supply.</p>
-=======
-<li>Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA. Contact 6 (TP6) is the reference point for the Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). The potentiometer P is needed since the contacts 2 and 3 cannot be precisely positioned.</li>
-</ul>
-<p>The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger.</p>
-<p>The numbering of the contact on the sample corresponds to the number of the pins in the rj45 connector of the sample assembly.</p>
-<p>The two DAs have fixed gains <span class="math inline">\(G\)</span>, set to <span class="math inline">\(0.5\)</span> for <span class="math inline">\(V_r\)</span> and to <span class="math inline">\(100\)</span> for <span class="math inline">\(V_H\)</span>, and they’re powered from a <span class="math inline">\(\pm 15V\)</span> power supply.</p>
->>>>>>> Stashed changes
 <p>The PGA gains are selectable among the following values <span class="math inline">\(G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}\)</span> through the front panel.</p>
 <p>The output voltages on the front panel are restrained in a number of cases:</p>
 <ul>
@@ -215,73 +203,58 @@ https://fermiumlabs.com
 <img src="Media/seebeck_coefficient_vs_temperature.png" alt="Figure 6. In every type of thermocouple, the Seebeck coefficiently \frac{\mu V}{°C} is heavly non-linear in relation to the temperature." id="fig:seebeckNonlinearity" />
 <p class="caption">Figure 6. In every type of thermocouple, the Seebeck coefficiently <span class="math inline">\(\frac{\mu V}{°C}\)</span> is heavly non-linear in relation to the temperature.</p>
 </div>
-<<<<<<< Updated upstream
 <p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure <a href="#fig:seebeckNonlinearity">6</a>) of the thermocouple linearly extrapolating the following polynomial:</p>
 <p><a name="eq:compensatingPolynomial"></a><span class="math display">\[t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }\qquad (24)\]</span> where <span class="math inline">\(E\)</span> is the output voltage of the thermocouple in <span class="math inline">\(mV\)</span>.</p>
-<p>In the following table<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> two different groups of coefficients are given, depending on the temperature range:</p>
-=======
-<p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure <a href="#fig:seebeckNonlinearity">6</a>) of the thermocouple linearly extrapolating the following polynomial:w</p>
-<p><a name="eq:compensatingPolynomial"></a><span class="math display">\[t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }\qquad (24)\]</span> where <span class="math inline">\(E\)</span> is the output voltage of the thermocouple.</p>
-<p>In the following table<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> two different groups of coefficients are given, depending on the temperature range:</p>
->>>>>>> Stashed changes
+<p>In the following table we give the coefficients of a fifth order polinomial that best fits the NIST data in the temperature range -200°C to +200°C:</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">t range</th>
-<th align="left">-200°C to 0°C</th>
-<th align="left">0°C to 500°C</th>
+<th align="left">coefficient</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><span class="math inline">\(d_0\)</span></td>
-<td align="left">0.0000000E+00</td>
-<td align="left">0.000000E+00</td>
+<td align="left">-0.3837E+00</td>
 </tr>
 <tr class="even">
 <td align="left"><span class="math inline">\(d_1\)</span></td>
-<td align="left">2.5173462E+01</td>
-<td align="left">2.508355E+01</td>
+<td align="left">2.51222E+01</td>
 </tr>
 <tr class="odd">
 <td align="left"><span class="math inline">\(d_2\)</span></td>
-<td align="left">-1.1662878E+00</td>
-<td align="left">7.860106E-02</td>
+<td align="left">-0.2795+00</td>
 </tr>
 <tr class="even">
 <td align="left"><span class="math inline">\(d_3\)</span></td>
-<td align="left">-1.0833638E+00</td>
-<td align="left">-2.503131E-01</td>
+<td align="left">0.7205E-01</td>
 </tr>
 <tr class="odd">
 <td align="left"><span class="math inline">\(d_4\)</span></td>
-<td align="left">-8.9773540E-01</td>
-<td align="left">8.315270E-02</td>
+<td align="left">-0.1409E-01</td>
 </tr>
 <tr class="even">
 <td align="left"><span class="math inline">\(d_5\)</span></td>
-<td align="left">-3.7342377E-01</td>
-<td align="left">-1.228034E-02</td>
+<td align="left">-0.10560E-02</td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>E range</strong></td>
-<td align="left"><strong>-5.891mV to 0mV</strong></td>
-<td align="left"><strong>0mV to 20.644mV</strong></td>
+<td align="left"><strong>-5.891mV to +8.138mV</strong></td>
 </tr>
 </tbody>
 </table>
 <!-- table of thermoelectric compensation coefficients for K type termocouples -->
 <p>Linearly extrapolating a polynomial (<a href="#eq:compensatingPolynomial">24</a>) of the fifth order is more that sufficient given the precision of our equipment.</p>
-<p>The voltage <span class="math inline">\(E\)</span> at the termocouple junction can be obtained<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> from the following equation: <a name="eq:voltageAtThermocoupleJunction"></a><span class="math display">\[E=\frac { 1 }{ 2 } \frac {  V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } \qquad (25)\]</span></p>
+<p>The voltage <span class="math inline">\(E\)</span> at the termocouple junction can be obtained<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> from the following equation: <a name="eq:voltageAtThermocoupleJunction"></a><span class="math display">\[E=\frac { 1 }{ 2 } \frac {  V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } \qquad (25)\]</span></p>
 <p>where <span class="math inline">\(V_{out}\)</span> is the output of the instrument (on the front panel), <span class="math inline">\(V_{Ref}=2.5V\)</span> the voltage that indicates a temperature <span class="math inline">\(T=0°C\)</span>, <span class="math inline">\(V_{offset}\)</span> is the error voltage at 0°C to achieve 125 mV at 25°C and <span class="math inline">\(Gain\)</span> is the internal gain of the AD8495 amplifier.</p>
-<p>Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>:</p>
+<p>Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>:</p>
 <p><a name="eq:FcompE"></a><span class="math display">\[t={ f }_{ comp }\left( E \right)\qquad (26)\]</span> <a name="eq:ad8494Compensated"></a><span class="math display">\[t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) \qquad (27)\]</span></p>
 <h3 id="cooling-heating-procedure">Cooling-Heating procedure</h3>
 <p>To obtain accurate measurement it’s suggested to first cool off the sample by placing liquid nitrogen in the dewar until a stable temperature is reached, then manually empty the dewar letting it slowly drift up to room temperature (due to the unavoidable thermal coupling sample-to-ambient).</p>
 <p>During the cooling process measurements may be taken, but the rapid cooling generates a large thermal gradient across the apparatus that makes such measurements less reliable.</p>
-<p>A resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The resistive element it’s controlled in PWM: it’s rapidly powered-on and powered-off with a duty cycle that can be selected (in percetange) on the front panel of the instrument.</p>
-<p>[fix, image pwn]</p>
-<p>This technique allows for a linear temperature sweep. Starting with a low power allows to better approximate an equilibrium situation, considering it can subsequently be increased if necessary to reach higher temperatures. The instruments automatically shuts down if <span class="math inline">\(t \ge 150°C\)</span>.</p>
+<p>A resistive element (heater) is wound around the base of the sample, allowing to heath it up after reaching room temperature. The resistive element may be fed by a current ( ??? mA) that can be switched-on in the front panel of the instrument.</p>
+<p>The instruments automatically shuts down the heater current if <span class="math inline">\(t \ge 150°C\)</span>. [fix 200 ]</p>
 <p>Measurements can be obtained by feeding the analog outputs [fix, quali?] to a data-logger and setting a suitable acquisition rate (e.g. 1 sample per minute)</p>
 <p>To obtain precise measurements, at least one complete hour is required for the whole temperature sweep.</p>
 <h3 id="typical-results">Typical results</h3>
@@ -358,9 +331,8 @@ https://fermiumlabs.com
 <li id="fn4"><p><em>Intrinsic</em> term labels properties related to pure semiconductors or to doped semiconductors at hight temperature, where the thermally generated carriers density is much larger than the (<em>extrinsic</em>) carrier density due to the dopant.<a href="#fnref4">↩</a></p></li>
 <li id="fn5"><p>The gain can change due to specifications and calibration. Please refer to the values calculated on the screen of the device.<a href="#fnref5">↩</a></p></li>
 <li id="fn6"><p><a href="http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html">AD8495 datasheet, Analog Semiconductors</a><a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p>NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab<a href="#fnref7">↩</a></p></li>
+<li id="fn7"><p><a href="http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF">AN-1087, Analog Semiconductors</a>  <a href="#fnref7">↩</a></p></li>
 <li id="fn8"><p><a href="http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF">AN-1087, Analog Semiconductors</a>  <a href="#fnref8">↩</a></p></li>
-<li id="fn9"><p><a href="http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF">AN-1087, Analog Semiconductors</a>  <a href="#fnref9">↩</a></p></li>
 </ol>
 </div>
 </body>
