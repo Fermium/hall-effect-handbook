@@ -86,7 +86,7 @@ $$ a t = \frac{qE}{m}t $$ {#eq:electronsDelta} <!-- ??? dovrebbe essere in funzi
 
 where $q$ is electron charge. The kinetic energy of the electrons also increases, but it can be assumed that with each collision they loose additional energy. The transfer of such energy to the lattice ions explains the Joule effect.
 
-In figure 1 it can be noticed[^feynman] that <!--FIX-->, after the application of the electric field, the average speed of the electrons is not zero but instead:
+In figure 1 it can be noticed[^feynman] that, <!--FIX--> after the application of the electric field, the average speed of the electrons is not zero but instead:
 $$v_d=a\tau=q\tau\frac{E}{m}$$ {#eq:electronsAvgSpd}
 
 [^feynman]: See for instance *The Feynman lectures on Physics* vol.I 43-1,3 Addison-Wesley 1963.
@@ -109,12 +109,12 @@ Relation ({@eq:electricalConductivity}) tells us that all the physics of electri
 In the electron gas model $n$ should be, for a monovalent metal:
 $$n=\frac{N_Am}{\delta} $$ {#eq:nmonovalentmetal}
 
-where $N_A$ is Avogadro's number, $m$ is the atomic mass and $\delta$ the density. As an example $n=8.5*10^28m^{-3}$ for copper. <!--maybe add a reference to a cute table somehwere-->
+where $N_A$ is Avogadro's number, $m$ is the atomic mass and $\delta$ the density. As an example $n=8.5 \cdot 10^{28}m^{-3}$ for copper. <!--maybe add a reference to a cute table somehwere-->
 Of course $n$ should not depend on the temperature.
 
 A rough order of magnitude for the electron mobility may be derived using ({@eq:driftmobility}). A reasonable value for $\tau$ is: $\tau\approx\lambda/v_{m}$, where $\lambda$ is the electron mean free path, of the order of the interatomic distance in the metal (i.e. a few $\mathring{A}$) so that, at room temperature, $\tau$ is of the order of $10^{-15}s$.
 
-Using the values of the elementary charge $e = 1.6*10^{-19 }C$ and of the electron mass $910^{-28} g$, the electron mobility $\mu=\frac{e\tau}{m}$ should be of the order of some $\frac{cm^2}{Vs}$.
+Using the values of the elementary charge $e = 1.6 \cdot 10^{-19 }C$ and of the electron mass $9 \cdot 10^{-28} g$, the electron mobility $\mu=\frac{e\tau}{m}$ should be of the order of some $\frac{cm^2}{Vs}$.
 
 Even for very large electric fields (up to $10^2 \frac{V}{cm}$) the drift velocity $v_d=\mu E$ is thus much smaller than $v_{m}$.
 
@@ -129,7 +129,8 @@ In order to check experimentally the microscopic model we must measure not only 
 The Hall effect is essentially due to the Lorentz force $\vec { F }$ acting on each electric charge $q$ moving with velocity $v$ in a magnetic field $B$.
 $$\vec { F } =q\vec { V } \wedge \vec { B }$$ {#eq:lorentzForce}
 
-Let us consider a conducting bar (figure 1) immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis. The Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (figure 1) (independently from the charge sign).
+Let us consider a conducting bar (figure {@fig:hall-effect-geometry}
+) immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis. The Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (figure {@fig:hall-effect-geometry}) (independently from the charge sign).
 
 ![Hall effect geometry](Media/hall-effect-geometry.jpeg){#fig:hall-effect-geometry}
 \ 
@@ -140,7 +141,7 @@ In a pure semiconductor the electron density $n$ and the hole density $p$ is ide
 
 Let us consider first a metal or a N-doped semiconductor sample, where the relevant charge carriers are electrons.
 
-In the electric field $E_x$ the electrons gain a drift velocity $v_d=–\mu E_x$ and they are subject to the Lorentz force $F_L=qv_dB$, pointing towards the negative $y$. While drifting in the $x$ direction they tend to crowd at the sample surface orthogonal to the $y$ axis and placed towards the reader in figure 1.
+In the electric field $E_x$ the electrons gain a drift velocity $v_d=–\mu E_x$ and they are subject to the Lorentz force $F_L=qv_dB$, pointing towards the negative $y$. While drifting in the $x$ direction they tend to crowd at the sample surface orthogonal to the $y$ axis and placed towards the reader in figure {@fig:hall-effect-geometry}.
 
 This charge density increase at the sample lateral surface produces a difference of potential along the $y$ axis and therefore an electric field $E_H$. The value of the *Hall field* $E_H$ at equilibrium will correspond to an electric force $qE_H$ equal and opposite to the Lorentz force, i.e. $E_H=v_d B$. This relation tells us that the Hall field is proportional both to the current density (through $v_d$) and to the magnetic field. It is therefore convenient to define the Hall coefficient as:
 
@@ -250,7 +251,7 @@ The output voltages on the front panel are restrained in a number of cases:
 *   If the output of the DA is not $0 < V_{out} < 5.1$ it is clamped down by a Schottky diode to prevent damage to the circuitry.
 *   If the output voltage of a PGA is not $0 < V_{out} < 5$ the PGA saturates
 
-Saturation gives a warning (ERROR) message on the front panel.
+Saturation gives a warning ("OVERLOAD") message on the front panel.
 
 The bias current $I_b$ is measured from the voltage drop across a $100 \Omega$ resistor $R_i$, giving thus an output of $10 \frac{mA}{V}$.
 
@@ -261,8 +262,8 @@ The best value for the bias current is a compromise between the need to obtain a
 
 ### Hall voltage and resistance measurements at room temperature
 
-With a finite value of magnetic field B orthogonal to the large face of the sample, we must measure identical values for $V_H$ (but with opposite sign) when rotating of $180°$ the sample.
-This behavior must be tested before proceeding to further measurements: if reversing the $B$ direction (i.e. rotating the sample of $180°$ degrees) different values are measured, the offsets should be better adjusted using potetiometer P in figure {@fig:sample_circuitry}.
+With a finite value of magnetic field B orthogonal to the large face of the sample, we must measure identical values for $V_H$ (but with opposite sign) when rotating of $180\,^{\circ}$ the sample.
+This behavior must be tested before proceeding to further measurements: if reversing the $B$ direction (i.e. rotating the sample of $180\,^{\circ}$ degrees) different values are measured, the offsets should be better adjusted using potetiometer P in figure {@fig:sample_circuitry}.
 
 The absolute value of $B$ may be varied by changing the width of the gap between the magnetic poles (see figure {@fig:screwDevice}).
 One of the two permanent-magnet mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of $B$ decreases.
@@ -293,11 +294,11 @@ Figure [fix] shows the linear dependence of $V_H$ on $I$ and $B$. Deviations fro
 
 The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminum bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be brought lo low temperatures.
 
-The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by the AD8495[^AD8495] integrated circuit. The output is vaguely proportional to the temperature, with a sensitivity of $\approx 5\frac { mV }{ °K }$. It is successively amplified by a non-inverting amplifier (not shown in picture [fix] ) to get $\approx 10\frac { mV }{ °K }$ with $2.5V=273.2°K=0°C$. While the K type thermocouple is fairly linear a room temperature, it is not in the wide temperature range covered by the apparatus, as can be seen in figure {@fig:seebeckNonlinearity}.
+The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by the AD8495[^AD8495] integrated circuit. The output is vaguely proportional to the temperature, with a sensitivity of $\approx 5\frac { mV }{ \,^{\circ}\mathrm{K} }$. It is successively amplified by a non-inverting amplifier (not shown in picture [fix] ) to get $\approx 10\frac { mV }{ \,^{\circ}\mathrm{K} }$ with $2.5V=273.2\,^{\circ}\mathrm{K}=0\,^{\circ}\mathrm{C}$. While the K type thermocouple is fairly linear a room temperature, it is not in the wide temperature range covered by the apparatus, as can be seen in figure {@fig:seebeckNonlinearity}.
 
 [^AD8495]: [AD8495 datasheet, Analog Semiconductors](http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html)
 
-![In every type of thermocouple, the Seebeck coefficiently $\frac{\mu V}{°C}$ is heavly non-linear in relation to the temperature.](Media/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity}
+![In every type of thermocouple, the Seebeck coefficiently $\frac{\mu V}{\,^{\circ}\mathrm{C}}$ is heavly non-linear in relation to the temperature.](Media/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity}
 
 In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure {@fig:seebeckNonlinearity}) of the thermocouple linearly extrapolating the following polynomial:
 
@@ -329,7 +330,7 @@ The voltage $E$ at the termocouple junction can be obtained[^AD8495nist] from th
 $$E=\frac { 1 }{ 2 } \frac {  V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
 
 
-where $V_{out}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0°C$, $V_{offset}$ is the error voltage at 0°C to achieve 125 mV at 25°C and $Gain$ is the internal gain of the AD8495 amplifier.
+where $V_{out}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0\,^{\circ}\mathrm{C}$, $V_{offset}$ is the error voltage at $0\,^{\circ}\mathrm{C}$ to achieve $125 mV$ at $25\,^{\circ}\mathrm{C}$ and $Gain$ is the internal gain of the AD8495 amplifier.
 
 Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature[^AD8495nist]:
 
@@ -345,13 +346,9 @@ To obtain accurate measurement it's suggested to first cool off the sample by pl
 
 During the cooling process measurements may be taken, but the rapid cooling generates a large thermal gradient across the apparatus that makes such measurements less reliable.
 
-A resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The resistive element it's controlled in PWM: it's rapidly powered-on and powered-off with a duty cycle that can be selected (in percetange) on the front panel of the instrument.
+A digitally controlled resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The instruments automatically shuts down if $t \ge 150\,^{\circ}\mathrm{C}$.
 
-[fix, image pwn]
-
-This technique allows for a linear temperature sweep. Starting with a low power allows to better approximate an equilibrium situation, considering it can subsequently be increased if necessary to reach higher temperatures. The instruments automatically shuts down if $t \ge 150\,^{\circ}\mathrm{C}$.
-
-Measurements can be obtained by feeding the analog outputs [fix, quali?] to a data-logger and setting a suitable acquisition rate (e.g. 1 sample per minute)
+Measurements can be obtained by feeding the analog outputs on the front panel to a data-logger and setting a suitable acquisition rate (e.g. a few samples/minute)
 
 To obtain precise measurements, at least one complete hour is required for the whole temperature sweep.
 
@@ -364,7 +361,7 @@ In figure [fix] the resistance is calculated from data of figure [fix].
 
 The logarithmic plot of the resistance versus $\frac{1}{2} kT$ (where $k=8.617 \cdot 10^{-5} \, \frac{eV}{K}$ is the Boltzmann constant) is shown in figure [fix].
 
-From the slope in the intrinsic region we get the value of the energy gap $E_g$, extrapolating linearly from $T=0K$, that can be compared to the known value for germanium ($E{_g}^o=0.78$, cfr. Appendix 2)
+From the slope in the intrinsic region we get the value of the energy gap $E_g$, extrapolating linearly from $T=0^{\circ}\mathrm{K}$, that can be compared to the known value for germanium ($E{_g}^o=0.78$, cfr. Appendix 2)
 
 [fix, insert image]
 
@@ -390,7 +387,8 @@ $$V_{h \, y} = \mu_h E_y + \mu_h v_{h \, x}B $$ {#eq:YvelocitiesForHoles}
 
 The current density along the <!-- is it the x AXIS or x in some other way? -->$x$ axis $(J = e V_{h \, x} P - eV_{e \quad x} n)$ can as well be written as:
 
-$$J_x \approx e(p \mu_h + n \mu_e)E_x + e(p \mu_h v \mu_{h \, y} - n \mu_e v_{e \, y})B \approx e ( p \mu_h + n \mu_e) E_x + e (p \mu_h^2 -n \mu_e^2 )BE_y$$ {#eq:currentDensityAlongX}
+$$J_x \approx e(p \mu_h + n \mu_e)E_x + e(p \mu_h v \mu_{h \, y} - n \mu_e v_{e \, y})B \approx $$
+$$ \approx e ( p \mu_h + n \mu_e) E_x + e (p \mu_h^2 -n \mu_e^2 )BE_y$$ {#eq:currentDensityAlongX}
 
 
 where we made the approximation $v_y \approx \mu_y E_y$, neglecting here the Lorentz force.
@@ -435,7 +433,7 @@ $$E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad [eV]
 This may be approximated, in the high temperature region, by a linear law
 as follows:
 
-$$E_g (T) = A * BT$$
+$$E_g (T) = A \cdot BT$$
 
 where the constants $A$ is the value of $E_g$ *linearly extrapolated* to $T=0$:
 $$E^0_g = A = 0.78eV$$
@@ -446,6 +444,7 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 \ 
 
 \clearpage
+
 ##Warnings
 
 **Using high magnetic field require some caution:**
@@ -461,6 +460,7 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 * The apparatus **MUST NOT** be used by people with pacemakers.
 
 \clearpage
+
 ##References
 
 * J.C. Slater *Quantum Theory of matter*, mcGraw-Hill 1951.
