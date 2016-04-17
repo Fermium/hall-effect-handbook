@@ -8,7 +8,7 @@ links-as-notes: false
 ---
 
 <!--
-Copyright (C)  2016  Labtrek & Fermium LABS.
+Copyright (C)  2016  YOUR NAME.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -349,7 +349,7 @@ A resistive element is wound around the base of the sample, allowing to heath it
 
 [fix, image pwn]
 
-This technique allows for a linear temperature sweep. Starting with a low power allows to better approximate an equilibrium situation, considering it can subsequently be increased if necessary to reach higher temperatures. The instruments automatically shuts down if $t \ge 150\,^{\circ}\mathrm{C}$.
+This technique allows for a linear temperature sweep. Starting with a low power allows to better approximate an equilibrium situation, considering it can subsequently be increased if necessary to reach higher temperatures. The instruments automatically shuts down if $t \ge 150°C$.
 
 Measurements can be obtained by feeding the analog outputs [fix, quali?] to a data-logger and setting a suitable acquisition rate (e.g. 1 sample per minute)
 
@@ -440,7 +440,7 @@ $$E_g (T) = A * BT$$
 where the constants $A$ is the value of $E_g$ *linearly extrapolated* to $T=0$:
 $$E^0_g = A = 0.78eV$$
 
-Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature $T$ as $exp( \frac{E_G}{2kT})$, a plot of $ln( R )$ vs $\frac{1}{2} K T$ using a linear approximation for $E_g(T)$ results in a straight line with slope $E^0_g$
+Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature $T$ as $exp( \frac{E_G}{2kT})$, a plot of $ln(R)$ vs $\frac{1}{2} K T$ using a linear approximation for $E_g(T)$ results in a straight line with slope $E^0_g$
 
 ![Temperature dependance of the energy gap](Media/Eg_vs_T.jpeg){#fig:EgTdependance}
 \ 
