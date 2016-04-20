@@ -4,7 +4,13 @@ date: April 2016
 abstract: |
   Theory and practice of the usage of the apparatus to measure Hall effect, Energy gap and Resistance of a germanium sample over a wide range of temperatures.
 fontfamily: fourier
+cover-image: Media/complete_apparatus.JPG
 links-as-notes: false
+documentclass: article
+fontsize: 12pt
+mainfont: Palatino
+geometry: [top=2cm, bottom=1.5cm, left=2cm, right=2cm]
+
 ---
 
 <!--
