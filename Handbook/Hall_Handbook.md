@@ -346,6 +346,27 @@ $$t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ 
 [^AD8495nist]: [AN-1087, Analog Semiconductors](http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF)
 \ 
 
+A possible implementation in C code is the following:
+
+```
+#define THERMOCOUPLE_OFFSET 0.00125
+#define THERMOCOUPLE_GAIN 122.4
+float b[6]={-0.383695902,25.215123839,-0.279516961,0.072045800,-0.014094503,0.001055528};
+
+float lin_extrap_temp(float E){ //E is the voltage at the thermocouple output
+    float t=0;
+    E=E*1000; //from V to mV
+    t=b[0]+b[1]*E+b[2]*pow(E,2)+b[3]*pow(E,3)+b[4]*pow(E,4)+b[5]*pow(E,5);
+    return t;
+  }
+
+Float thermocouple_voltage(float vout,float vref){
+    return ((vout)-(vref)-THERMOCOUPLE_OFFSET)/(2*THERMOCOUPLE_GAIN);
+}
+
+```
+
+
 ### Cooling-Heating procedure
 
 To obtain accurate measurement it's suggested to first cool off the sample by placing liquid nitrogen in the dewar until a stable temperature is reached, then manually empty the dewar letting it slowly drift up to room temperature (due to the unavoidable thermal coupling sample-to-ambient).
