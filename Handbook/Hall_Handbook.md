@@ -36,7 +36,7 @@ Revision and new technical documentation by Davide Bortolami of Fermium LABS
 http://labtrek.it
 https://fermiumlabs.com
 
-################################ -->
+################################ --> 
 
 ## Introduction
 
@@ -226,7 +226,7 @@ $$N_a \approx p \approx \frac{1}{e R_{Ho}}$$ {#eq:HallConstantInvPointRelation}
 
 The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two neodimium magnets and a U shaped soft-steel core, acting like a torus.
 
-The sample has 7 wires tin soldered in the positions shown in figure {@fig:sample_circuitry} as follows:
+The sample has 7 wires tin soldered in the positions shown in figure {@fig:sample_circuitry} and {@fig:sample_pcb}  as follows:
 
 ![simplified schematic of the sample circuitry](Media/sample_circuitry.png){#fig:sample_circuitry}
 \ 
@@ -238,6 +238,9 @@ The sample has 7 wires tin soldered in the positions shown in figure {@fig:sampl
 
     Contact 6 (TP6) is the reference point for the  Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). 
     The potentiometer P is needed  since the contacts 2 and 3 cannot be precisely positioned.
+    
+![Printed circuit board with germanium sample and thermocuple](Media/sample_pcb.jpg){#fig:sample_pcb}
+    
 
 The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger. 
 
@@ -276,7 +279,7 @@ One of the two permanent-magnet mounted on the soft-steel structure may be moved
 
 [fix, update image]
 
-![The screw device for changing the effective magnetic field](Media/image9.jpeg){#fig:screwDevice}   
+![The screw device for changing the effective magnetic field](Media/screw_device.JPG){#fig:screwDevice}   
 \ 
 
 
@@ -470,6 +473,10 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 ![Temperature dependance of the energy gap](Media/Eg_vs_T.jpeg){#fig:EgTdependance}
 \ 
 
+###Appendix 3: Data analysis using open-source R-Studio software
+
+*This appendix is being written.*
+
 \clearpage
 
 ##Warnings
@@ -500,4 +507,6 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 ## Authorship
 This Handbook was originally written by Giacomo Torzo of [Labtrek](http://labtrek.it)
 
-Integrations and corrections by Davide Bortolami of [Fermium LABS](http://fermiumlabs.com)
+Integrations and corrections by Davide Bortolami and
+Statistical analysis by Simone Tosato  of [Fermium LABS](http://fermiumlabs.com)
+

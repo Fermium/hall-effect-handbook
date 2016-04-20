@@ -29,6 +29,7 @@
 </ul></li>
 <li><a href="#appendix-1-calculation-of-r_h-for-small-and-high-magnetic-field">Appendix 1: calculation of <span class="math inline">\(R_H\)</span> for small and high magnetic field</a><ul>
 <li><a href="#appendix-2-temperature-dependence-of-e_g">Appendix 2: Temperature dependence of <span class="math inline">\(E_g\)</span></a></li>
+<li><a href="#appendix-3-data-analysis-using-open-source-r-studio-software">Appendix 3: Data analysis using open-source R-Studio software</a></li>
 </ul></li>
 <li><a href="#warnings">Warnings</a></li>
 <li><a href="#references">References</a></li>
@@ -146,7 +147,7 @@ https://fermiumlabs.com
 <p>The dopant concentration is related to the value of the <em>Hall constant at the inversion point</em> <span class="math inline">\(R_{Ho}\)</span> (in the extrinsic region only the hole concentration is significant) by the equations (<a href="#eq:R_Hmn">13</a>) and (<a href="#eq:R_Hp">14</a>), i.e. : <a name="eq:HallConstantInvPointRelation"></a><span class="math display">\[N_a \approx p \approx \frac{1}{e R_{Ho}}\qquad (23)\]</span></p>
 <h2 id="the-experimental-setup">The experimental setup</h2>
 <p>The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two neodimium magnets and a U shaped soft-steel core, acting like a torus.</p>
-<p>The sample has 7 wires tin soldered in the positions shown in figure <a href="#fig:sample_circuitry">2</a> as follows:</p>
+<p>The sample has 7 wires tin soldered in the positions shown in figure <a href="#fig:sample_circuitry">2</a> and <a href="#fig:sample_pcb">3</a> as follows:</p>
 <a name="fig:sample_circuitry"></a>
 <div class="figure">
 <img src="Media/sample_circuitry.png" alt="Figure 2. simplified schematic of the sample circuitry" id="fig:sample_circuitry" />
@@ -158,6 +159,11 @@ https://fermiumlabs.com
 <li><p>Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA.</p>
 <p>Contact 6 (TP6) is the reference point for the Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). The potentiometer P is needed since the contacts 2 and 3 cannot be precisely positioned.</p></li>
 </ul>
+<a name="fig:sample_pcb"></a>
+<div class="figure">
+<img src="Media/sample_pcb.jpg" alt="Figure 3. Printed circuit board with germanium sample and thermocuple" id="fig:sample_pcb" />
+<p class="caption">Figure 3. Printed circuit board with germanium sample and thermocuple</p>
+</div>
 <p>The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger.</p>
 <p>The numbering of the contact on the sample corresponds to the number of the pins in the rj45 connector of the sample assembly.</p>
 <p>The two DAs have fixed gains <span class="math inline">\(G\)</span>, set to <span class="math inline">\(0.5\)</span> for <span class="math inline">\(V_r\)</span> and to <span class="math inline">\(100\)</span> for <span class="math inline">\(V_H\)</span><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>, and they’re powered from a <span class="math inline">\(\pm 15V\)</span> power supply.</p>
@@ -174,36 +180,36 @@ https://fermiumlabs.com
 <p>The best value for the bias current is a compromise between the need to obtain a large <span class="math inline">\(V_H\)</span> to make measurements precise reducing the SNR (Signal to Noise Ratio) and a low self-heating of the element due to the Joule effect: <span class="math inline">\(V_R\)</span> and <span class="math inline">\(V_H\)</span> signal are proportional to <span class="math inline">\(I\)</span> while the Joule self-heating is <span class="math inline">\(P=RI^2\)</span></p>
 <h3 id="hall-voltage-and-resistance-measurements-at-room-temperature">Hall voltage and resistance measurements at room temperature</h3>
 <p>With a finite value of magnetic field B orthogonal to the large face of the sample, we must measure identical values for <span class="math inline">\(V_H\)</span> (but with opposite sign) when rotating of <span class="math inline">\(180\,^{\circ}\)</span> the sample. This behavior must be tested before proceeding to further measurements: if reversing the <span class="math inline">\(B\)</span> direction (i.e. rotating the sample of <span class="math inline">\(180\,^{\circ}\)</span> degrees) different values are measured, the offsets should be better adjusted using potetiometer P in figure <a href="#fig:sample_circuitry">2</a>.</p>
-<p>The absolute value of <span class="math inline">\(B\)</span> may be varied by changing the width of the gap between the magnetic poles (see figure <a href="#fig:screwDevice">3</a>). One of the two permanent-magnet mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of <span class="math inline">\(B\)</span> decreases.</p>
+<p>The absolute value of <span class="math inline">\(B\)</span> may be varied by changing the width of the gap between the magnetic poles (see figure <a href="#fig:screwDevice">4</a>). One of the two permanent-magnet mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of <span class="math inline">\(B\)</span> decreases.</p>
 <p>[fix, update image]</p>
 <a name="fig:screwDevice"></a>
 <div class="figure">
-<img src="Media/image9.jpeg" alt="Figure 3. The screw device for changing the effective magnetic field" id="fig:screwDevice" />
-<p class="caption">Figure 3. The screw device for changing the effective magnetic field</p>
+<img src="Media/screw_device.JPG" alt="Figure 4. The screw device for changing the effective magnetic field" id="fig:screwDevice" />
+<p class="caption">Figure 4. The screw device for changing the effective magnetic field</p>
 </div>
 <p>A calibration of the magnetic field <span class="math inline">\(B\)</span> as a function of the gap may be made using a gauss-meter probe placed between the poles (see figure [fix]).</p>
 <p>The magnetic field <span class="math inline">\(B\)</span> may be calibrated using a gauss-meter probe placed at the center between the poles.</p>
 <a name="fig:BvsGapD"></a>
 <div class="figure">
-<img src="Media/image10.jpeg" alt="Figure 4. Measured B values vs gap length d" id="fig:BvsGapD" />
-<p class="caption">Figure 4. Measured <span class="math inline">\(B\)</span> values vs gap length <span class="math inline">\(d\)</span></p>
+<img src="Media/image10.jpeg" alt="Figure 5. Measured B values vs gap length d" id="fig:BvsGapD" />
+<p class="caption">Figure 5. Measured <span class="math inline">\(B\)</span> values vs gap length <span class="math inline">\(d\)</span></p>
 </div>
 <a name="fig:HallvsIb"></a>
 <div class="figure">
-<img src="Media/image11.jpeg" alt="Figure 5. Hall voltage versus bias current I (B=4.5 kGauss), and versus B ( I=3 mA)." id="fig:HallvsIb" />
-<p class="caption">Figure 5. Hall voltage versus bias current <span class="math inline">\(I\)</span> (<span class="math inline">\(B=4.5 kGauss\)</span>), and versus <span class="math inline">\(B\)</span> ( <span class="math inline">\(I=3 mA\)</span>).</p>
+<img src="Media/image11.jpeg" alt="Figure 6. Hall voltage versus bias current I (B=4.5 kGauss), and versus B ( I=3 mA)." id="fig:HallvsIb" />
+<p class="caption">Figure 6. Hall voltage versus bias current <span class="math inline">\(I\)</span> (<span class="math inline">\(B=4.5 kGauss\)</span>), and versus <span class="math inline">\(B\)</span> ( <span class="math inline">\(I=3 mA\)</span>).</p>
 </div>
 <p>Figure [fix] shows the linear dependence of <span class="math inline">\(V_H\)</span> on <span class="math inline">\(I\)</span> and <span class="math inline">\(B\)</span>. Deviations from linearity at high values of the magnetic field may be explained by calculating a second order approximation of <span class="math inline">\(R_H\)</span> (Appendix 1)</p>
 <p></p>
 <h3 id="measurements-at-constant-i-and-b-while-varying-the-temperature">Measurements at constant <span class="math inline">\(I\)</span> and <span class="math inline">\(B\)</span> while varying the temperature</h3>
 <p>The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminum bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be brought lo low temperatures.</p>
-<p>The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by the AD8495<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> integrated circuit. The output is vaguely proportional to the temperature, with a sensitivity of <span class="math inline">\(\approx 5\frac { mV }{ \,^{\circ}\mathrm{K} }\)</span>. It is successively amplified by a non-inverting amplifier (not shown in picture [fix] ) to get <span class="math inline">\(\approx 10\frac { mV }{ \,^{\circ}\mathrm{K} }\)</span> with <span class="math inline">\(2.5V=273.2\,^{\circ}\mathrm{K}=0\,^{\circ}\mathrm{C}\)</span>. While the K type thermocouple is fairly linear a room temperature, it is not in the wide temperature range covered by the apparatus, as can be seen in figure <a href="#fig:seebeckNonlinearity">6</a>.</p>
+<p>The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by the AD8495<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> integrated circuit. The output is vaguely proportional to the temperature, with a sensitivity of <span class="math inline">\(\approx 5\frac { mV }{ \,^{\circ}\mathrm{K} }\)</span>. It is successively amplified by a non-inverting amplifier (not shown in picture [fix] ) to get <span class="math inline">\(\approx 10\frac { mV }{ \,^{\circ}\mathrm{K} }\)</span> with <span class="math inline">\(2.5V=273.2\,^{\circ}\mathrm{K}=0\,^{\circ}\mathrm{C}\)</span>. While the K type thermocouple is fairly linear a room temperature, it is not in the wide temperature range covered by the apparatus, as can be seen in figure <a href="#fig:seebeckNonlinearity">7</a>.</p>
 <a name="fig:seebeckNonlinearity"></a>
 <div class="figure">
-<img src="Media/seebeck_coefficient_vs_temperature.png" alt="Figure 6. In every type of thermocouple, the Seebeck coefficiently \frac{\mu V}{\,^{\circ}\mathrm{C}} is heavly non-linear in relation to the temperature." id="fig:seebeckNonlinearity" />
-<p class="caption">Figure 6. In every type of thermocouple, the Seebeck coefficiently <span class="math inline">\(\frac{\mu V}{\,^{\circ}\mathrm{C}}\)</span> is heavly non-linear in relation to the temperature.</p>
+<img src="Media/seebeck_coefficient_vs_temperature.png" alt="Figure 7. In every type of thermocouple, the Seebeck coefficiently \frac{\mu V}{\,^{\circ}\mathrm{C}} is heavly non-linear in relation to the temperature." id="fig:seebeckNonlinearity" />
+<p class="caption">Figure 7. In every type of thermocouple, the Seebeck coefficiently <span class="math inline">\(\frac{\mu V}{\,^{\circ}\mathrm{C}}\)</span> is heavly non-linear in relation to the temperature.</p>
 </div>
-<p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure <a href="#fig:seebeckNonlinearity">6</a>) of the thermocouple linearly extrapolating the following polynomial:</p>
+<p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure <a href="#fig:seebeckNonlinearity">7</a>) of the thermocouple linearly extrapolating the following polynomial:</p>
 <p><a name="eq:compensatingPolynomial"></a><span class="math display">\[t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }\qquad (24)\]</span> where <span class="math inline">\(E\)</span> is the output voltage of the thermocouple in <span class="math inline">\(mV\)</span>.</p>
 <p>In the following table<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> two different groups of coefficients are given, depending on the temperature range:</p>
 <table>
@@ -258,6 +264,22 @@ https://fermiumlabs.com
 <p>where <span class="math inline">\(V_{out}\)</span> is the output of the instrument (on the front panel), <span class="math inline">\(V_{Ref}=2.5V\)</span> the voltage that indicates a temperature <span class="math inline">\(T=0\,^{\circ}\mathrm{C}\)</span>, <span class="math inline">\(V_{offset}\)</span> is the error voltage at <span class="math inline">\(0\,^{\circ}\mathrm{C}\)</span> to achieve <span class="math inline">\(125 mV\)</span> at <span class="math inline">\(25\,^{\circ}\mathrm{C}\)</span> and <span class="math inline">\(Gain\)</span> is the internal gain of the AD8495 amplifier.</p>
 <p>Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>:</p>
 <p><a name="eq:FcompE"></a><span class="math display">\[t={ f }_{ comp }\left( E \right)\qquad (26)\]</span> <a name="eq:ad8494Compensated"></a><span class="math display">\[t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) \qquad (27)\]</span></p>
+<p>A possible implementation in C code is the following:</p>
+<pre><code>#define THERMOCOUPLE_OFFSET 0.00125
+#define THERMOCOUPLE_GAIN 122.4
+float b[6]={-0.383695902,25.215123839,-0.279516961,0.072045800,-0.014094503,0.001055528};
+
+float lin_extrap_temp(float E){ //E is the voltage at the thermocouple output
+    float t=0;
+    E=E*1000; //from V to mV
+    t=b[0]+b[1]*E+b[2]*pow(E,2)+b[3]*pow(E,3)+b[4]*pow(E,4)+b[5]*pow(E,5);
+    return t;
+  }
+
+Float thermocouple_voltage(float vout,float vref){
+    return ((vout)-(vref)-THERMOCOUPLE_OFFSET)/(2*THERMOCOUPLE_GAIN);
+}
+</code></pre>
 <h3 id="cooling-heating-procedure">Cooling-Heating procedure</h3>
 <p>To obtain accurate measurement it’s suggested to first cool off the sample by placing liquid nitrogen in the dewar until a stable temperature is reached, then manually empty the dewar letting it slowly drift up to room temperature (due to the unavoidable thermal coupling sample-to-ambient).</p>
 <p>During the cooling process measurements may be taken, but the rapid cooling generates a large thermal gradient across the apparatus that makes such measurements less reliable.</p>
@@ -303,9 +325,11 @@ https://fermiumlabs.com
 <p>Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature <span class="math inline">\(T\)</span> as <span class="math inline">\(exp( \frac{E_G}{2kT})\)</span>, a plot of <span class="math inline">\(ln( R )\)</span> vs <span class="math inline">\(\frac{1}{2} K T\)</span> using a linear approximation for <span class="math inline">\(E_g(T)\)</span> results in a straight line with slope <span class="math inline">\(E^0_g\)</span></p>
 <a name="fig:EgTdependance"></a>
 <div class="figure">
-<img src="Media/Eg_vs_T.jpeg" alt="Figure 7. Temperature dependance of the energy gap" id="fig:EgTdependance" />
-<p class="caption">Figure 7. Temperature dependance of the energy gap</p>
+<img src="Media/Eg_vs_T.jpeg" alt="Figure 8. Temperature dependance of the energy gap" id="fig:EgTdependance" />
+<p class="caption">Figure 8. Temperature dependance of the energy gap</p>
 </div>
+<h3 id="appendix-3-data-analysis-using-open-source-r-studio-software">Appendix 3: Data analysis using open-source R-Studio software</h3>
+<p><em>This appendix is being written.</em></p>
 <p></p>
 <h2 id="warnings">Warnings</h2>
 <p><strong>Using high magnetic field require some caution:</strong></p>
@@ -328,7 +352,7 @@ https://fermiumlabs.com
 </ul>
 <h2 id="authorship">Authorship</h2>
 <p>This Handbook was originally written by Giacomo Torzo of <a href="http://labtrek.it">Labtrek</a></p>
-<p>Integrations and corrections by Davide Bortolami of <a href="http://fermiumlabs.com">Fermium LABS</a></p>
+<p>Integrations and corrections by Davide Bortolami and Statistical analysis by Simone Tosato of <a href="http://fermiumlabs.com">Fermium LABS</a></p>
 <div class="footnotes">
 <hr />
 <ol>
