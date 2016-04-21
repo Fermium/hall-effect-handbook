@@ -232,11 +232,11 @@ The sample has 7 wires tin soldered in the positions shown in figure {@fig:sampl
 \ 
 
 
-*   Contacts 1 and 4 (with Test Points named TP1 and TP4) are used to feed the bias current Ib produced by a constant current generator [fix, see figure x]
-*   Contacts 7 and 5 (TP7 and TP5) are used to measure (through a differential amplifier, DA for short) the voltage across the sample, in a 4-wire (often called kelvin) resistance measurement. 
+*   Contacts 1 and 4 are used to feed the bias current Ib produced by a constant current generator [fix, see figure x]
+*   Contacts 7 and 5 are used to measure (through a differential amplifier, DA for short) the voltage across the sample, in a 4-wire (often called kelvin) resistance measurement. 
 *   Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA. 
 
-    Contact 6 (TP6) is the reference point for the  Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). 
+    Contact 6 is the reference point for the  Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). 
     The potentiometer P is needed  since the contacts 2 and 3 cannot be precisely positioned.
     
 ![Printed circuit board with germanium sample and thermocuple](Media/sample_pcb.jpg){#fig:sample_pcb}
@@ -259,23 +259,22 @@ The output voltages on the front panel are restrained in a number of cases:
 *   If the input voltage is $V_r > \frac{30}{G}$ the  DA saturates.
 *   If the output of the DA is not $0 < V_{out} < 5.1$ it is clamped down by a Schottky diode to prevent damage to the circuitry.
 *   If the output voltage of a PGA is not $0 < V_{out} < 5$ the PGA saturates
+* 	If the $I_b$  current is set to values smaller than 7 mA or greater than 25 mA a warning message appears  (“TOO LOW !”  or “TOO HIGH !” respectively), because the constant current generator does not work properly outside of this range. 
 
-Saturation gives a warning ("OVERLOAD") message on the front panel.
+Saturation in any channel gives a warning message ("OVERLOAD") on the front panel.
 
-The bias current $I_b$ is measured from the voltage drop across a $100 \Omega$ resistor $R_i$, giving thus an output of $10 \frac{mA}{V}$.
-
-A digital-to-analog converter (DAC) acquires the analog values, sampling them from a $0 < V_{in} < 5$ to a integer value from $0$ to $2^{12}=4096$
+The bias current $I_b$ is  is set by rotating the knob on the front panel, and its value is measured from the voltage drop across a $100 \Omega$ resistor, and displayed on the front panel.   
 
 The best value for the bias current is a compromise between the need to obtain a large $V_H$ to make measurements precise reducing the SNR (Signal to Noise Ratio) and a low self-heating of the element due to the Joule effect: $V_R$ and $V_H$ signal are proportional to $I$ while the Joule self-heating is $P=RI^2$
 
 
 ### Hall voltage and resistance measurements at room temperature
 
-With a finite value of magnetic field B orthogonal to the large face of the sample, we must measure identical values for $V_H$ (but with opposite sign) when rotating of $180\,^{\circ}$ the sample.
+With a finite value of magnetic field B orthogonal to the large face of the sample, we should measure identical values for $V_H$ (but with opposite sign) when rotating of $180\,^{\circ}$ the sample.
 This behavior must be tested before proceeding to further measurements: if reversing the $B$ direction (i.e. rotating the sample of $180\,^{\circ}$ degrees) different values are measured, the offsets should be better adjusted using potetiometer P in figure {@fig:sample_circuitry}.
 
 The absolute value of $B$ may be varied by changing the width of the gap between the magnetic poles (see figure {@fig:screwDevice}).
-One of the two permanent-magnet mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of $B$ decreases.
+One of the two permanent-magnets mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of $B$ decreases.
 
 [fix, update image]
 
@@ -509,4 +508,3 @@ This Handbook was originally written by Giacomo Torzo of [Labtrek](http://labtre
 
 Integrations and corrections by Davide Bortolami and
 Statistical analysis by Simone Tosato  of [Fermium LABS](http://fermiumlabs.com)
-
