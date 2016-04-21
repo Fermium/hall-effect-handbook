@@ -371,7 +371,22 @@ Float thermocouple_voltage(float vout,float vref){
 
 ### Cooling-Heating procedure
 
-To obtain accurate measurement it's suggested to first cool off the sample by placing liquid nitrogen in the dewar until a stable temperature is reached, then manually empty the dewar letting it slowly drift up to room temperature (due to the unavoidable thermal coupling sample-to-ambient).
+To obtain accurate measurements the best procedure is the following:
+
+1. Connect the sample cables to the HUB and the HUB to the controller (two ethernet cables , A with A and B with B) connect all the controller outputs to your data-logger and choose an acquisition run with approximately 0.1Hz rate (i.e. 1 sample every 10 seconds) and duration at least 6000 seconds.
+2. Choose the width of gap between the permanent magnets and measure the magnetic field B in the middle. Place the sample far from the magnetic field and trim the balance-potentiometer to minimize the VH signal. Lock the potentiometer knob.
+3. PLace the sample in the middle of the gap. Choose a proper value for the current Ib within the 7-25 mA allowed range, and select the proper Gains for VH and VR channels. Note that the resistance at higher temperature may exceed the value at room temperature of a factor 2, and that also the VH signal increase with temperature. Therefore at room temperature your data-logger should read  VoutHall <0.4V and VoutR<2.5V. Check that the VoutHall values changes sign when rotating the sample of 180° around vertical axis. Choose the orientation that gives positive VoutHall.
+4.  Prepare all the data conversion you think useful, for example : from VoutR(V) and the known Ib and Gr gain values obtain R(ohm), from VoutHallH and Gh gain values obtain VH, from VoutT obtain the K-thermocouple efm 
+E E=0.5* 1000 *(VoutT-2.5-0.00125)/122.4)
+5. Fill about half of the dewar with liquid nitrogen and wait until the liquid surface is quiet.
+6. Prepare a graph with temperature vs time in your data-logger. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover). Adjust the sample in the mid of the magnet-gap and start the data acquisition.
+7. When the plot temperature vs time shows a slope close to zero, stop the data acquisition and save your data.
+8. Empty the dewar (e.g. transferring the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap and start a new data acquisition for increasing temperature.
+9. When the temperature vs. time slope start approaching zero, switch-ON the heater (Press the control knob 3 times, until the arrow reaches the OFF and turn the knob). 
+
+
+
+   cool the sample at the lowest temperature by placing  into the dewar (about 1/2 liter) until a stable temperature is reached, then manually empty the dewar letting it slowly drift up to room temperature (due to the unavoidable thermal coupling sample-to-ambient).
 
 During the cooling process measurements may be taken, but the rapid cooling generates a large thermal gradient across the apparatus that makes such measurements less reliable.
 
