@@ -393,15 +393,15 @@ An example of calibration of the magnetic field intensity $B$ vs. gap $d$ betwee
 ![Measured $B$ values vs gap length $d$](Media/image10.jpeg){#fig:BvsGapD}
 \ 
 
-An example of the measured $V_H$ vs.absolute temperature $T$ and vs. bias current $I_b$  are shown in figure 7.
+An example of the measured $V_H$ vs. magnetic field $B$ is shown in figure 7.
 
-![Hall voltage versus bias current $I$ ($B$=4.5  kGauss), and versus $B$ ( $I$=3 mA).](Media/image11.jpeg){#fig:HallvsIb}
+![Hall voltage versus magnetic field intensity $B$  .](Media/image11.jpeg){#fig:HallvsIb}
 \ 
 
-Figure [fix] shows the linear dependence of $V_H$ on $I$ and $B$. Deviations from linearity at high values of the magnetic field may be explained by calculating a second order approximation of $R_H$ (Appendix 1)
+
+The measured values of the 3 output signals vs temperature (with a constant bias current of $I_B=10mA$ and in a $0.4T$ magnetic field) is shown in figure 8[fix].
 
 
-The measured Hall voltage and resistance vs temperature (with a constant bias current of $I_B=30mA$ and in a $0.5T$ magnetic field) is shown in figure [fix].
 
 In figure [fix] the resistance is calculated from data of figure [fix].
 
