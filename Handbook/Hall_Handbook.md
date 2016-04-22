@@ -6,9 +6,7 @@ abstract: |
 fontfamily: fourier
 cover-image: Media/complete_apparatus.JPG
 links-as-notes: false
-documentclass: article
 fontsize: 12pt
-mainfont: Palatino
 geometry: [top=2cm, bottom=1.5cm, left=2cm, right=2cm]
 
 ---
