@@ -230,7 +230,7 @@ The sample has 7 wires tin soldered in the positions shown in figure {@fig:sampl
 \ 
 
 
-*   Contacts 1 and 4 are used to feed the bias current Ib produced by a constant current generator [fix, see figure x]
+*   Contacts 1 and 4 are used to feed the bias current Ib produced by a constant current generator (figure {#fig:sample_circuitry}).
 *   Contacts 7 and 5 are used to measure (through a differential amplifier, DA for short) the voltage across the sample, in a 4-wire resistance measurement. 
 *   Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA. 
 
