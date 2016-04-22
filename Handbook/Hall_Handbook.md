@@ -224,7 +224,7 @@ $$N_a \approx p \approx \frac{1}{e R_{Ho}}$$ {#eq:HallConstantInvPointRelation}
 
 ## The experimental setup
 
-The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two neodimium magnets and a U shaped soft-steel core, acting like a torus.
+The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two Nd-Fe-B magnets and a U shaped soft-steel core, acting like a torus.
 
 The sample has 7 wires tin soldered in the positions shown in figure {@fig:sample_circuitry} and {@fig:sample_pcb}  as follows:
 
@@ -273,12 +273,11 @@ The best value for the bias current is a compromise between the need to obtain a
 With a finite value of magnetic field B orthogonal to the large face of the sample, we should measure identical values for $V_H$ (but with opposite sign) when rotating of $180\,^{\circ}$ the sample.
 This behavior must be tested before proceeding to further measurements: if reversing the $B$ direction (i.e. rotating the sample of $180\,^{\circ}$ degrees) different values are measured, the offsets should be better adjusted using potentiometer P in figure {@fig:sample_circuitry}.
 
-The absolute value of $B$ may be varied by changing the width of the gap between the magnetic poles (see figure {@fig:screwDevice}).
+The absolute value of $B$ may be varied by changing the width of the gap between the magnetic poles (see figure {@fig:ScrewDevice}).
 One of the two permanent-magnets mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of $B$ decreases.
 
-[fix, update image]
 
-![The screw device for changing the effective magnetic field](Media/screw_device.JPG){#fig:screwDevice}   
+![The screw device for changing the effective magnetic field](Media/screw_device.JPG){#fig:ScrewDevice}   
 \ 
 
 
@@ -346,19 +345,15 @@ A possible implementation in C code is the following:
 #define THERMOCOUPLE_OFFSET 0.00125
 #define THERMOCOUPLE_GAIN 122.4
 float b[6]={-0.383695902,25.215123839,-0.279516961,0.072045800,-0.014094503,0.001055528};
-
 float lin_extrap_temp(float E){ //E is the voltage at the thermocouple output
     float t=0;
     E=E*1000; //from V to mV
     t=b[0]+b[1]*E+b[2]*pow(E,2)+b[3]*pow(E,3)+b[4]*pow(E,4)+b[5]*pow(E,5);
     return t;
   }
-
 Float thermocouple_voltage(float vout,float vref){
     return ((vout)-(vref)-THERMOCOUPLE_OFFSET)/(2*THERMOCOUPLE_GAIN);
 }
-
-
 ```
 A digitally controlled resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The instruments automatically shuts down if $t \ge 170\,^{\circ}\mathrm{C}$.
 
@@ -370,19 +365,19 @@ The display on the controller box shows the sample temperature in Celsius (calcu
 
  To obtain accurate measurements the best procedure is the following:
 
-1. Connect the sample cables to the HUB and the HUB to the controller (two ethernet cables , A with A and B with B) connect all the controller outputs to your data-logger and choose an acquisition run with approximately 0.1Hz rate (i.e. 1 sample every 10 seconds) and duration at least 6000 seconds.
-2. Choose the width of gap between the permanent magnets and measure the magnetic field B in the middle. Place the sample far from the magnetic field and trim the balance-potentiometer to minimize the $V_H$ signal. Lock the potentiometer knob.
-3. PLace the sample in the middle of the gap. Choose a proper value for the current $I_b$ within the 7-25 mA allowed range, and select the proper gains for $V_H$ and $V_R$ channels. Note that the resistance at higher temperature may exceed the value at room temperature of a factor 2, and that also the VH signal increase with temperature. Therefore at room temperature your data-logger should read  $V_{out}$$_H$ <0.4V and $V_{out}$$_R$<2.5V. 
-4. Check that the $V_H$ values changes sign when rotating the sample of 180° around vertical axis. Choose the orientation that gives positive $V_H$.
-5.  Prepare all the data conversion you think useful, for example : from $V_{out}$$_R$ and the known $I_b$ and $G_R$ gain values obtain R(ohm), from $V_{out}$$_H$ and $G_H$ gain values obtain $V_H$(mV), from $V_{out}$$_T$ obtain the K-thermocouple efm 
+1. Connect the sample cables to the HUB and the HUB to the controller with the two ethernet cables (note: connect the controller port A with HUB port A ,and B with B), connect all the controller outputs (BNC ports) to your data-logger sensor inputs,  and choose an acquisition run with approximately 0.1Hz rate (i.e. 1 sample every 10 seconds) and duration at least 6000 seconds.
+2. Choose a width for gap between the permanent magnets and measure the magnetic field B in the middle, using a gauss-meter. Place the sample far from the magnetic field and trim the balance-potentiometer to minimize the $V_H$ signal. Lock the potentiometer knob.
+3. Place the sample in the middle of the gap. Choose a proper value for the current $I_b$ within the 7-25 mA allowed range, and select the proper gains for $V_H$ and $V_R$ channels. Note : the resistance at higher temperature may exceed the value at room temperature of a factor 2, and  also the VH signal increase with temperature. Therefore at room temperature your data-logger should read typically $V_{out}$$_H$ <0.4V and $V_{out}$$_R$<2.5V. 
+4. Check that the $V_H$ value changes sign when rotating the sample of 180° around vertical axis. Choose the orientation that gives positive $V_H$.
+5.  Prepare all the data conversion you think useful. For example : from $V_{out}$$_R$ and the known $I_b$ and $G_R$ gain values obtain R(ohm), from $V_{out}$$_H$ and $G_H$ gain values obtain $V_H$(mV), from $V_{out}$$_T$ obtain the K-thermocouple efm 
 E(mV) [E=0.5* 1000 *($V_{out}$$_T$-2.5-0.00125)/122.4)], from the calculated E(mV) obtain the Celsius temperature $Tc$ using the fitting polynomial,...
 6. Fill about half of the dewar with liquid nitrogen and wait until the liquid surface is quiet.
-7. Prepare a graph with temperature vs time in your data-logger. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover). Adjust the sample in the mid of the magnet-gap and start the data acquisition.
+7. Prepare at least one graph with temperature vs time, and one with output signals vs time in your data-logger. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover) as shown in figure {@fig:ScrewDevice}. Adjust the sample in the mid of the magnet-gap and start the data acquisition.
 8. When the plot temperature vs time shows a slope close to zero, stop the data acquisition and save your data.
-9. Empty the dewar (e.g. transferring the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap and start a new data acquisition for increasing temperature.
+9. Empty the dewar (e.g. transfering the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap and start a new data acquisition for increasing temperature.
 10. When the temperature vs. time slope start approaching zero, switch-ON the heater (Press the control knob 3 times, until the arrow reaches the OFF and turn the knob). 
 
-To obtain precise measurements, at least one hour is required for the whole temperature sweep.
+To obtain precise measurements, at least one hour is required for the whole temperature sweep. Note: it is not suggested to keep liquid nitrogen inside the dewar while heating-up the sample: the temperature would rise more slowly and more humidity would condense onto the outer surface of the aluminum probe envelope. It is also useful to blow-off the frost in order to prevent water entering the probe envelope (this might affect the thermocouple signal).
 
 ### Typical results
 
@@ -408,20 +403,37 @@ Figure 8 shows the measured values of the 3 output signals vs temperature obtain
 Figure 9  shows an example of calculated data obtained using LoggerPro software. 
 The Hall voltage in mV $VH$ is is obtained from $V_{out}$$_H$ by subtracting the offset 2.5 V and by accounting for the used value of the channel-H gain (here GainH=10). The resistance $R$ is calculated from $V_{out}$$_R$ by  accounting for the used value of the channel-R gain (here GainR=0.5)and the measured value of the bias current $Ib$ .
 
+![Example of calculated data ](Media/image9.png){#fig:Example}
+\ 
+
 In order to evaluate the Ge energy gap $E_g$, a plot of $ln(R)$ vs. $1/2kT$ was built, after calculating from the Celsius temperature $Tc$ the absolute temperature $T$ ($k$ is the Boltzmann constant $k$ = 8.617*10$^-$$^5$).
 
-![Example of calculated data ](Media/image9.png){#fig:Example}
+From the slope in the intrinsic region (high temperature region, see Fig. {@fig:EgFit} ) we get the value of the energy gap $E_g$, extrapolated linearly from $T=0^{\circ}\mathrm{K}$, that can be compared to the known value for germanium ($E{_g}^o=0.78$, cfr. Appendix 2)
+
+
+
+![Example of linear best fit in the intrinsic region (high temperature) ](Media/ImageEgFit.jpg){#fig:EgFit}
 \ 
 
 
 
+##Appendix 1: Use of the optional Extension HUB
+
+An optional Extension HUB (ExtHUB)is provided with the device. This allows the user to measure the voltages (with respect to the ground or as differential voltages) at the 7 contacts on the Ge sample, by using an high impedance multimeter. 
+
+The ExtHUB must be connected between the sample and the fixed HUB (FixHUB) placed on the magnet holder using the black cable with phone-plugs. Note: do not unplug the cable from the ExtHUB; the cable should be connected to the FixHUB and the sample cable should be connected to the ExtHUB (see Fig. {@fig:ExtensionHUB}). 
+
+![The Extension HUB connections ](Media/imageExtensionHub.jpg){#fig:ExtensionHUB}
+\ 
+
+  
+For example a two-wire resistance measurement between the Test Points (TP) 1- or 1-6 or 7- or 7-6 will give a value larger than the real resistance measured by the 4-contacts method, and displayed on the front panel. 
+
+Note: be shure to switch-off the controller while taking measurements with the ExtHUB !
 
 
-From the slope in the intrinsic region (high temperature) we get the value of the energy gap $E_g$, extrapolated linearly from $T=0^{\circ}\mathrm{K}$, that can be compared to the known value for germanium ($E{_g}^o=0.78$, cfr. Appendix 2)
 
-[fix, insert image]
-
-##Appendix 1: calculation of $R_H$ for small and high magnetic field
+##Appendix 2: calculation of $R_H$ for small and high magnetic field
 
 The motion equation $(F=ma)$ for charge carriers can as well be written as:
 $$m(\frac{dv}{dt}+\frac{v}{\tau}) = qE+ q\vec{v} \wedge \vec{B} $$ {#eq:MotionEquationForChargeCarriers}
@@ -481,7 +493,7 @@ $$=\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ e(p\mu _{ h }+n\mu _{ e })^{
 <!-- yeah i know that was long... -->
 which tends to saturate at high B values.
 
-###Appendix 2: Temperature dependence of $E_g$
+###Appendix 3: Temperature dependence of $E_g$
 
 Experimental results consistently shows that the energy gap depends on temperature and for Germanium we can find in the literature the following empirical law:
 $$E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad [eV]$$ {#eq:eGempiricalLaw}
