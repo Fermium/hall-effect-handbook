@@ -90,7 +90,7 @@ $$ a t = \frac{qE}{m}t $$ {#eq:electronsDelta} <!-- ??? dovrebbe essere in funzi
 
 where $q$ is electron charge. The kinetic energy of the electrons also increases, but it can be assumed that with each collision they loose additional energy. The transfer of such energy to the lattice ions explains the Joule effect.
 
-In figure 1 it can be noticed[^feynman] that, <!--FIX--> after the application of the electric field, the average speed of the electrons is not zero but instead:
+In figure {@fig:hall-effect-geometry} it can be noticed[^feynman] that, <!--FIX--> after the application of the electric field, the average speed of the electrons is not zero but instead:
 $$v_d=a\tau=q\tau\frac{E}{m}$$ {#eq:electronsAvgSpd}
 
 [^feynman]: See for instance *The Feynman lectures on Physics* vol.I 43-1,3 Addison-Wesley 1963.
@@ -339,7 +339,7 @@ $$t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ 
 
 A possible implementation in C code is the following:
 
-```
+```c
 #define THERMOCOUPLE_OFFSET 0.00125
 #define THERMOCOUPLE_GAIN 122.4
 float b[6]={-0.383695902,25.215123839,-0.279516961,0.072045800,-0.014094503,0.001055528};
@@ -363,12 +363,11 @@ The display on the controller box shows the sample temperature in Celsius (calcu
 
  To obtain accurate measurements the best procedure is the following:
 
-1. Connect the sample cables to the HUB and the HUB to the controller with the two ethernet cables (note: connect the controller port A with HUB port A ,and B with B), connect all the controller outputs (BNC ports) to your data-logger sensor inputs,  and choose an acquisition run with approximately 0.1Hz rate (i.e. 1 sample every 10 seconds) and duration at least 6000 seconds.
+1. Connect the sample cables to the HUB and the HUB to the controller with the two ethernet cables (note: connect the controller port A with HUB port A ,and B with B), connect all the controller outputs (BNC ports) to your data-logger sensor inputs,  and choose an acquisition run with approximately $0.1Hz$ rate (i.e. 1 sample every 10 seconds) and duration at least 6000 seconds.
 2. Choose a width for gap between the permanent magnets and measure the magnetic field B in the middle, using a gauss-meter. Place the sample far from the magnetic field and trim the balance-potentiometer to minimize the $V_H$ signal. Lock the potentiometer knob.
-3. Place the sample in the middle of the gap. Choose a proper value for the current $I_b$ within the 7-25 mA allowed range, and select the proper gains for $V_H$ and $V_R$ channels. Note : the resistance at higher temperature may exceed the value at room temperature of a factor 2, and  also the VH signal increase with temperature. Therefore at room temperature your data-logger should read typically $V_{out}$$_H$ <0.4V and $V_{out}$$_R$<2.5V. 
+3. Place the sample in the middle of the gap. Choose a proper value for the current $I_b$ within the 7-25 mA allowed range, and select the proper gains for $V_H$ and $V_R$ channels. Note : the resistance at higher temperature may exceed the value at room temperature of a factor 2, and  also the VH signal increase with temperature. Therefore at room temperature your data-logger should read typically $V_{out \, H} <0.4V$ and $V_{out \, R}<2.5V$. 
 4. Check that the $V_H$ value changes sign when rotating the sample of 180° around vertical axis. Choose the orientation that gives positive $V_H$.
-5.  Prepare all the data conversion you think useful. For example : from $V_{out}$$_R$ and the known $I_b$ and $G_R$ gain values obtain R(ohm), from $V_{out}$$_H$ and $G_H$ gain values obtain $V_H$(mV), from $V_{out}$$_T$ obtain the K-thermocouple efm 
-E(mV) [E=0.5* 1000 *($V_{out}$$_T$-2.5-0.00125)/122.4)], from the calculated E(mV) obtain the Celsius temperature $Tc$ using the fitting polynomial,...
+5.  Prepare all the data conversion you think useful. For example : from $V_{out \, R}$ and the known $I_b$ and $G_R$ gain values obtain R(ohm), from $V_{out \, H}$ and $G_H$ gain values obtain $V_H$ (in $mV$), from $V_{out \, T}$ obtain the K-thermocouple efm E(mV) $[E=0.5 \cdot 1000 \cdot \frac{ (V_{out \, T}-2.5-0.00125)}{122.4}]$, from the calculated $E(mV)$ obtain the Celsius temperature $t$ using the fitting polynomial,...
 6. Fill about half of the dewar with liquid nitrogen and wait until the liquid surface is quiet.
 7. Prepare at least one graph with temperature vs time, and one with output signals vs time in your data-logger. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover) as shown in figure {@fig:ScrewDevice}. Adjust the sample in the mid of the magnet-gap and start the data acquisition.
 8. When the plot temperature vs time shows a slope close to zero, stop the data acquisition and save your data.
@@ -381,30 +380,30 @@ To obtain precise measurements, at least one hour is required for the whole temp
 
 The sample shown in this example has thickness $t=0.5mm$, width $w=10mm$ and lenght $l=15mm$.
 
-An example of calibration of the magnetic field intensity $B$ vs. gap $d$ between magnets is shown in figure 6. 
+An example of calibration of the magnetic field intensity $B$ vs. gap $d$ between magnets is shown in figure {@fig:BvsGapD}. 
 
 ![Measured $B$ values vs gap length $d$](Media/image6.jpeg){#fig:BvsGapD}
 \ 
 
-An example of the measured $V_H$ vs. magnetic field $B$ is shown in figure 7.
+An example of the measured $V_H$ vs. magnetic field $B$ is shown in figure {@fig:HallvsIb}.
 
 ![Hall voltage versus magnetic field intensity $B$  .](Media/image7.jpeg){#fig:HallvsIb}
 \ 
 
 
-Figure 8 shows the measured values of the 3 output signals vs temperature obtained with a constant bias current $I_B=10mA$ and in a 0.4 $T$ magnetic field, using Vernier-LabPro interface. The plot shows *Potential 1* = $V_{out}$$_T$, *Potential 2* = $V_{out}$$_H$, *Potential 3* = $V_{out}$$_R$. 
+Figure {@fig:Output_voltages_versus_time} shows the measured values of the 3 output signals vs temperature obtained with a constant bias current $I_B=10mA$ and in a 0.4 $T$ magnetic field, using Vernier-LabPro interface. The plot shows *Potential 1* = $V_{out}$$_T$, *Potential 2* = $V_{out}$$_H$, *Potential 3* = $V_{out}$$_R$. 
 
-![Output voltages versus time.](Media/image8.jpg){#fig:OutputsvsTime}
+![Output voltages versus time.](Media/image8.jpg){#fig:Output_voltages_versus_time}
 \ 
 
 
 Figure 9  shows an example of calculated data obtained using LoggerPro software. 
-The Hall voltage in mV $VH$ is is obtained from $V_{out}$$_H$ by subtracting the offset 2.5 V and by accounting for the used value of the channel-H gain (here GainH=10). The resistance $R$ is calculated from $V_{out}$$_R$ by  accounting for the used value of the channel-R gain (here GainR=0.5)and the measured value of the bias current $Ib$ .
+The Hall voltage in mV $VH$ is is obtained from $V_{outH}$ by subtracting the offset 2.5 V and by accounting for the used value of the channel-H gain (here GainH=10). The resistance $R$ is calculated from $V_{outR}$ by  accounting for the used value of the channel-R gain (here GainR=0.5)and the measured value of the bias current $Ib$ .
 
 ![Example of calculated data ](Media/image9.png){#fig:Example}
 \ 
 
-In order to evaluate the Ge energy gap $E_g$, a plot of $ln(R)$ vs. $1/2kT$ was built, after calculating from the Celsius temperature $Tc$ the absolute temperature $T$ ($k$ is the Boltzmann constant $k$ = 8.617*10$^-$$^5$).
+In order to evaluate the Ge energy gap $E_g$, a plot of $ln(R)$ vs. $1/2kT$ was built, after calculating from the Celsius temperature $Tc$ the absolute temperature $T$ ($k$ is the Boltzmann constant $k = 8.617 \cdot 10^{-5}$.
 
 From the slope in the intrinsic region (high temperature region, see Fig. {@fig:EgFit} ) we get the value of the energy gap $E_g$, extrapolated linearly from $T=0^{\circ}\mathrm{K}$, that can be compared to the known value for germanium ($E{_g}^o=0.78$, cfr. Appendix 2)
 
@@ -427,7 +426,7 @@ The ExtHUB must be connected between the sample and the fixed HUB (FixHUB) place
   
 For example a two-wire resistance measurement between the Test Points (TP) 1- or 1-6 or 7- or 7-6 will give a value larger than the real resistance measured by the 4-contacts method, and displayed on the front panel. 
 
-Note: be shure to switch-off the controller while taking measurements with the ExtHUB !
+Note: be sure to switch-off the controller while taking measurements with the ExtHUB !
 
 
 

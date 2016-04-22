@@ -6,6 +6,43 @@
   <meta name="generator" content="pandoc" />
   <title>Hall Handbook</title>
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="Media/style.css" type="text/css" />
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
@@ -27,8 +64,9 @@
 <li><a href="#suggested-procedure">Suggested procedure</a></li>
 <li><a href="#typical-results">Typical results</a></li>
 </ul></li>
-<li><a href="#appendix-1-calculation-of-r_h-for-small-and-high-magnetic-field">Appendix 1: calculation of <span class="math inline">\(R_H\)</span> for small and high magnetic field</a><ul>
-<li><a href="#appendix-2-temperature-dependence-of-e_g">Appendix 2: Temperature dependence of <span class="math inline">\(E_g\)</span></a></li>
+<li><a href="#appendix-1-use-of-the-optional-extension-hub">Appendix 1: Use of the optional Extension HUB</a></li>
+<li><a href="#appendix-2-calculation-of-r_h-for-small-and-high-magnetic-field">Appendix 2: calculation of <span class="math inline">\(R_H\)</span> for small and high magnetic field</a><ul>
+<li><a href="#appendix-3-temperature-dependence-of-e_g">Appendix 3: Temperature dependence of <span class="math inline">\(E_g\)</span></a></li>
 <li><a href="#appendix-3-data-analysis-using-open-source-r-studio-software">Appendix 3: Data analysis using open-source R-Studio software</a></li>
 </ul></li>
 <li><a href="#warnings">Warnings</a></li>
@@ -86,7 +124,7 @@ https://fermiumlabs.com
 <p>The drift velocity, i.e. this ordered component of the motion due to the electric field and to the the scattering of the electrons with the lattice, is simply proportional to the electric field intensity. The constant ratio between <span class="math inline">\(v_d\)</span> and <span class="math inline">\(E\)</span> (both in modulus) is called the <em>drift mobility</em> <span class="math inline">\(\mu\)</span>.</p>
 <p>During a time <span class="math inline">\(t\)</span> of free motion between two collisions, the electrons increase their speed of the quantity: <a name="eq:electronsDelta"></a><span class="math display">\[ a t = \frac{qE}{m}t \qquad (5)\]</span> <!-- ??? dovrebbe essere in funzione del tempo --></p>
 <p>where <span class="math inline">\(q\)</span> is electron charge. The kinetic energy of the electrons also increases, but it can be assumed that with each collision they loose additional energy. The transfer of such energy to the lattice ions explains the Joule effect.</p>
-<p>In figure 1 it can be noticed<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> that, <!--FIX--> after the application of the electric field, the average speed of the electrons is not zero but instead: <a name="eq:electronsAvgSpd"></a><span class="math display">\[v_d=a\tau=q\tau\frac{E}{m}\qquad (6)\]</span></p>
+<p>In figure <a href="#fig:hall-effect-geometry">1</a> it can be noticed<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> that, <!--FIX--> after the application of the electric field, the average speed of the electrons is not zero but instead: <a name="eq:electronsAvgSpd"></a><span class="math display">\[v_d=a\tau=q\tau\frac{E}{m}\qquad (6)\]</span></p>
 <p>where <span class="math inline">\(\tau\)</span> is the mean free time between collisions<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>, so that the drift mobility <span class="math inline">\(\mu\)</span> has the microscopic expression :</p>
 <p><a name="eq:driftmobility"></a><span class="math display">\[ \mu = \frac{v_d}{E} = \frac{q\tau}{m} \qquad (7)\]</span> Using these concepts of drift speed and mobility the current density <span class="math inline">\(J\)</span> can be written as:</p>
 <p><a name="eq:currentDensity"></a><span class="math display">\[ J = qn v_d \qquad (8)\]</span></p>
@@ -146,7 +184,7 @@ https://fermiumlabs.com
 <p>where <span class="math inline">\(R_o\)</span> is the measured sample resistance at the inversion point and <span class="math inline">\(R_e\)</span> is the resistance extrapolated from the extrinsic region (low temperature) to the value it would have at the inversion temperature.</p>
 <p>The dopant concentration is related to the value of the <em>Hall constant at the inversion point</em> <span class="math inline">\(R_{Ho}\)</span> (in the extrinsic region only the hole concentration is significant) by the equations (<a href="#eq:R_Hmn">13</a>) and (<a href="#eq:R_Hp">14</a>), i.e. : <a name="eq:HallConstantInvPointRelation"></a><span class="math display">\[N_a \approx p \approx \frac{1}{e R_{Ho}}\qquad (23)\]</span></p>
 <h2 id="the-experimental-setup">The experimental setup</h2>
-<p>The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two neodimium magnets and a U shaped soft-steel core, acting like a torus.</p>
+<p>The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two Nd-Fe-B magnets and a U shaped soft-steel core, acting like a torus.</p>
 <p>The sample has 7 wires tin soldered in the positions shown in figure <a href="#fig:sample_circuitry">2</a> and <a href="#fig:sample_pcb">3</a> as follows:</p>
 <a name="fig:sample_circuitry"></a>
 <div class="figure">
@@ -154,7 +192,7 @@ https://fermiumlabs.com
 <p class="caption">Figure 2. simplified schematic of the sample circuitry</p>
 </div>
 <ul>
-<li>Contacts 1 and 4 are used to feed the bias current Ib produced by a constant current generator [fix, see figure x]</li>
+<li>Contacts 1 and 4 are used to feed the bias current Ib produced by a constant current generator (figure {#fig:sample_circuitry}).</li>
 <li>Contacts 7 and 5 are used to measure (through a differential amplifier, DA for short) the voltage across the sample, in a 4-wire resistance measurement.</li>
 <li><p>Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA.</p>
 <p>Contact 6 is the reference point for the Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). <em>Three contacts</em> are needed for the Hall voltage because *two contacts cannot be precisely aligned.</p></li>
@@ -180,11 +218,10 @@ https://fermiumlabs.com
 <p>The best value for the bias current is a compromise between the need to obtain a large <span class="math inline">\(V_H\)</span> to make measurements precise reducing the SNR (Signal to Noise Ratio) and a low self-heating of the element due to the Joule effect: <span class="math inline">\(V_R\)</span> and <span class="math inline">\(V_H\)</span> signal are proportional to <span class="math inline">\(I\)</span> while the Joule self-heating is <span class="math inline">\(P=RI^2\)</span></p>
 <h3 id="hall-voltage-and-resistance-measurements-at-room-temperature">Hall voltage and resistance measurements at room temperature</h3>
 <p>With a finite value of magnetic field B orthogonal to the large face of the sample, we should measure identical values for <span class="math inline">\(V_H\)</span> (but with opposite sign) when rotating of <span class="math inline">\(180\,^{\circ}\)</span> the sample. This behavior must be tested before proceeding to further measurements: if reversing the <span class="math inline">\(B\)</span> direction (i.e. rotating the sample of <span class="math inline">\(180\,^{\circ}\)</span> degrees) different values are measured, the offsets should be better adjusted using potentiometer P in figure <a href="#fig:sample_circuitry">2</a>.</p>
-<p>The absolute value of <span class="math inline">\(B\)</span> may be varied by changing the width of the gap between the magnetic poles (see figure <a href="#fig:screwDevice">4</a>). One of the two permanent-magnets mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of <span class="math inline">\(B\)</span> decreases.</p>
-<p>[fix, update image]</p>
-<a name="fig:screwDevice"></a>
+<p>The absolute value of <span class="math inline">\(B\)</span> may be varied by changing the width of the gap between the magnetic poles (see figure <a href="#fig:ScrewDevice">4</a>). One of the two permanent-magnets mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of <span class="math inline">\(B\)</span> decreases.</p>
+<a name="fig:ScrewDevice"></a>
 <div class="figure">
-<img src="Media/screw_device.JPG" alt="Figure 4. The screw device for changing the effective magnetic field" id="fig:screwDevice" />
+<img src="Media/screw_device.JPG" alt="Figure 4. The screw device for changing the effective magnetic field" id="fig:ScrewDevice" />
 <p class="caption">Figure 4. The screw device for changing the effective magnetic field</p>
 </div>
 <p>A calibration of the magnetic field <span class="math inline">\(B\)</span> as a function of the gap may be made using a gauss-meter probe placed between the poles (see next chapter [fix]).</p>
@@ -254,69 +291,79 @@ https://fermiumlabs.com
 <p>Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>:</p>
 <p><a name="eq:FcompE"></a><span class="math display">\[t={ f }_{ comp }\left( E \right)\qquad (26)\]</span> <a name="eq:ad8494Compensated"></a><span class="math display">\[t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) \qquad (27)\]</span></p>
 <p>A possible implementation in C code is the following:</p>
-<pre><code>#define THERMOCOUPLE_OFFSET 0.00125
-#define THERMOCOUPLE_GAIN 122.4
-float b[6]={-0.383695902,25.215123839,-0.279516961,0.072045800,-0.014094503,0.001055528};
-
-float lin_extrap_temp(float E){ //E is the voltage at the thermocouple output
-    float t=0;
-    E=E*1000; //from V to mV
-    t=b[0]+b[1]*E+b[2]*pow(E,2)+b[3]*pow(E,3)+b[4]*pow(E,4)+b[5]*pow(E,5);
-    return t;
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#define THERMOCOUPLE_OFFSET 0.00125</span>
+<span class="ot">#define THERMOCOUPLE_GAIN 122.4</span>
+<span class="dt">float</span> b[<span class="dv">6</span>]={-<span class="fl">0.383695902</span>,<span class="fl">25.215123839</span>,-<span class="fl">0.279516961</span>,<span class="fl">0.072045800</span>,-<span class="fl">0.014094503</span>,<span class="fl">0.001055528</span>};
+<span class="dt">float</span> lin_extrap_temp(<span class="dt">float</span> E){ <span class="co">//E is the voltage at the thermocouple output</span>
+    <span class="dt">float</span> t=<span class="dv">0</span>;
+    E=E*<span class="dv">1000</span>; <span class="co">//from V to mV</span>
+    t=b[<span class="dv">0</span>]+b[<span class="dv">1</span>]*E+b[<span class="dv">2</span>]*pow(E,<span class="dv">2</span>)+b[<span class="dv">3</span>]*pow(E,<span class="dv">3</span>)+b[<span class="dv">4</span>]*pow(E,<span class="dv">4</span>)+b[<span class="dv">5</span>]*pow(E,<span class="dv">5</span>);
+    <span class="kw">return</span> t;
   }
-
-Float thermocouple_voltage(float vout,float vref){
-    return ((vout)-(vref)-THERMOCOUPLE_OFFSET)/(2*THERMOCOUPLE_GAIN);
-}
-
-</code></pre>
+Float thermocouple_voltage(<span class="dt">float</span> vout,<span class="dt">float</span> vref){
+    <span class="kw">return</span> ((vout)-(vref)-THERMOCOUPLE_OFFSET)/(<span class="dv">2</span>*THERMOCOUPLE_GAIN);
+}</code></pre></div>
 <p>A digitally controlled resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The instruments automatically shuts down if <span class="math inline">\(t \ge 170\,^{\circ}\mathrm{C}\)</span>.</p>
 <h3 id="suggested-procedure">Suggested procedure</h3>
 <p>The display on the controller box shows the sample temperature in Celsius (calculated from the measured thermocouple signal), the measured bias current <span class="math inline">\(I_b\)</span> (mA), the sample resistance (calculated from the measured voltage drop across the sample) and the selected values of the <span class="math inline">\(V_H\)</span> and <span class="math inline">\(V_R\)</span> channels.</p>
 <p>To obtain accurate measurements the best procedure is the following:</p>
 <ol style="list-style-type: decimal">
-<li>Connect the sample cables to the HUB and the HUB to the controller (two ethernet cables , A with A and B with B) connect all the controller outputs to your data-logger and choose an acquisition run with approximately 0.1Hz rate (i.e. 1 sample every 10 seconds) and duration at least 6000 seconds.</li>
-<li>Choose the width of gap between the permanent magnets and measure the magnetic field B in the middle. Place the sample far from the magnetic field and trim the balance-potentiometer to minimize the <span class="math inline">\(V_H\)</span> signal. Lock the potentiometer knob.</li>
-<li>PLace the sample in the middle of the gap. Choose a proper value for the current <span class="math inline">\(I_b\)</span> within the 7-25 mA allowed range, and select the proper gains for <span class="math inline">\(V_H\)</span> and <span class="math inline">\(V_R\)</span> channels. Note that the resistance at higher temperature may exceed the value at room temperature of a factor 2, and that also the VH signal increase with temperature. Therefore at room temperature your data-logger should read <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_H\)</span> &lt;0.4V and <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_R\)</span>&lt;2.5V.</li>
-<li>Check that the <span class="math inline">\(V_H\)</span> values changes sign when rotating the sample of 180° around vertical axis. Choose the orientation that gives positive <span class="math inline">\(V_H\)</span>.</li>
-<li>Prepare all the data conversion you think useful, for example : from <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_R\)</span> and the known <span class="math inline">\(I_b\)</span> and <span class="math inline">\(G_R\)</span> gain values obtain R(ohm), from <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_H\)</span> and <span class="math inline">\(G_H\)</span> gain values obtain <span class="math inline">\(V_H\)</span>(mV), from <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_T\)</span> obtain the K-thermocouple efm E(mV) [E=0.5* 1000 *(<span class="math inline">\(V_{out}\)</span><span class="math inline">\(_T\)</span>-2.5-0.00125)/122.4)], from the calculated E(mV) obtain the Celsius temperature <span class="math inline">\(Tc\)</span> using the fitting polynomial,…</li>
+<li>Connect the sample cables to the HUB and the HUB to the controller with the two ethernet cables (note: connect the controller port A with HUB port A ,and B with B), connect all the controller outputs (BNC ports) to your data-logger sensor inputs, and choose an acquisition run with approximately 0.1Hz rate (i.e. 1 sample every 10 seconds) and duration at least 6000 seconds.</li>
+<li>Choose a width for gap between the permanent magnets and measure the magnetic field B in the middle, using a gauss-meter. Place the sample far from the magnetic field and trim the balance-potentiometer to minimize the <span class="math inline">\(V_H\)</span> signal. Lock the potentiometer knob.</li>
+<li>Place the sample in the middle of the gap. Choose a proper value for the current <span class="math inline">\(I_b\)</span> within the 7-25 mA allowed range, and select the proper gains for <span class="math inline">\(V_H\)</span> and <span class="math inline">\(V_R\)</span> channels. Note : the resistance at higher temperature may exceed the value at room temperature of a factor 2, and also the VH signal increase with temperature. Therefore at room temperature your data-logger should read typically <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_H\)</span> &lt;0.4V and <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_R\)</span>&lt;2.5V.</li>
+<li>Check that the <span class="math inline">\(V_H\)</span> value changes sign when rotating the sample of 180° around vertical axis. Choose the orientation that gives positive <span class="math inline">\(V_H\)</span>.</li>
+<li>Prepare all the data conversion you think useful. For example : from <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_R\)</span> and the known <span class="math inline">\(I_b\)</span> and <span class="math inline">\(G_R\)</span> gain values obtain R(ohm), from <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_H\)</span> and <span class="math inline">\(G_H\)</span> gain values obtain <span class="math inline">\(V_H\)</span>(mV), from <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_T\)</span> obtain the K-thermocouple efm E(mV) [E=0.5* 1000 *(<span class="math inline">\(V_{out}\)</span><span class="math inline">\(_T\)</span>-2.5-0.00125)/122.4)], from the calculated E(mV) obtain the Celsius temperature <span class="math inline">\(Tc\)</span> using the fitting polynomial,…</li>
 <li>Fill about half of the dewar with liquid nitrogen and wait until the liquid surface is quiet.</li>
-<li>Prepare a graph with temperature vs time in your data-logger. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover). Adjust the sample in the mid of the magnet-gap and start the data acquisition.</li>
+<li>Prepare at least one graph with temperature vs time, and one with output signals vs time in your data-logger. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover) as shown in figure <a href="#fig:ScrewDevice">4</a>. Adjust the sample in the mid of the magnet-gap and start the data acquisition.</li>
 <li>When the plot temperature vs time shows a slope close to zero, stop the data acquisition and save your data.</li>
-<li>Empty the dewar (e.g. transferring the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap and start a new data acquisition for increasing temperature.</li>
+<li>Empty the dewar (e.g. transfering the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap and start a new data acquisition for increasing temperature.</li>
 <li>When the temperature vs. time slope start approaching zero, switch-ON the heater (Press the control knob 3 times, until the arrow reaches the OFF and turn the knob).</li>
 </ol>
-<p>To obtain precise measurements, at least one hour is required for the whole temperature sweep.</p>
+<p>To obtain precise measurements, at least one hour is required for the whole temperature sweep. Note: it is not suggested to keep liquid nitrogen inside the dewar while heating-up the sample: the temperature would rise more slowly and more humidity would condense onto the outer surface of the aluminum probe envelope. It is also useful to blow-off the frost in order to prevent water entering the probe envelope (this might affect the thermocouple signal).</p>
 <h3 id="typical-results">Typical results</h3>
 <p>The sample shown in this example has thickness <span class="math inline">\(t=0.5mm\)</span>, width <span class="math inline">\(w=10mm\)</span> and lenght <span class="math inline">\(l=15mm\)</span>.</p>
-<p>An example of calibration of the magnetic field intensity <span class="math inline">\(B\)</span> vs. gap <span class="math inline">\(d\)</span> between magnets is shown in figure 6.</p>
+<p>An example of calibration of the magnetic field intensity <span class="math inline">\(B\)</span> vs. gap <span class="math inline">\(d\)</span> between magnets is shown in figure <a href="#fig:BvsGapD">6</a>.</p>
 <a name="fig:BvsGapD"></a>
 <div class="figure">
 <img src="Media/image6.jpeg" alt="Figure 6. Measured B values vs gap length d" id="fig:BvsGapD" />
 <p class="caption">Figure 6. Measured <span class="math inline">\(B\)</span> values vs gap length <span class="math inline">\(d\)</span></p>
 </div>
-<p>An example of the measured <span class="math inline">\(V_H\)</span> vs. magnetic field <span class="math inline">\(B\)</span> is shown in figure 7.</p>
+<p>An example of the measured <span class="math inline">\(V_H\)</span> vs. magnetic field <span class="math inline">\(B\)</span> is shown in figure <a href="#fig:HallvsIb">7</a>.</p>
 <a name="fig:HallvsIb"></a>
 <div class="figure">
 <img src="Media/image7.jpeg" alt="Figure 7. Hall voltage versus magnetic field intensity B ." id="fig:HallvsIb" />
 <p class="caption">Figure 7. Hall voltage versus magnetic field intensity <span class="math inline">\(B\)</span> .</p>
 </div>
-<p>Figure 8 shows the measured values of the 3 output signals vs temperature obtained with a constant bias current <span class="math inline">\(I_B=10mA\)</span> and in a 0.4 <span class="math inline">\(T\)</span> magnetic field, using Vernier-LabPro interface. The plot shows <em>Potential 1</em> = <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_T\)</span>, <em>Potential 2</em> = <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_H\)</span>, <em>Potential 3</em> = <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_R\)</span>.</p>
-<a name="fig:OutputsvsTime"></a>
+<p>Figure <a href="#fig:Output_voltages_versus_time">8</a> shows the measured values of the 3 output signals vs temperature obtained with a constant bias current <span class="math inline">\(I_B=10mA\)</span> and in a 0.4 <span class="math inline">\(T\)</span> magnetic field, using Vernier-LabPro interface. The plot shows <em>Potential 1</em> = <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_T\)</span>, <em>Potential 2</em> = <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_H\)</span>, <em>Potential 3</em> = <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_R\)</span>.</p>
+<a name="fig:Output_voltages_versus_time"></a>
 <div class="figure">
-<img src="Media/image8.jpg" alt="Figure 8. Output voltages versus time." id="fig:OutputsvsTime" />
+<img src="Media/image8.jpg" alt="Figure 8. Output voltages versus time." id="fig:Output_voltages_versus_time" />
 <p class="caption">Figure 8. Output voltages versus time.</p>
 </div>
 <p>Figure 9 shows an example of calculated data obtained using LoggerPro software. The Hall voltage in mV <span class="math inline">\(VH\)</span> is is obtained from <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_H\)</span> by subtracting the offset 2.5 V and by accounting for the used value of the channel-H gain (here GainH=10). The resistance <span class="math inline">\(R\)</span> is calculated from <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_R\)</span> by accounting for the used value of the channel-R gain (here GainR=0.5)and the measured value of the bias current <span class="math inline">\(Ib\)</span> .</p>
-<p>In order to evaluate the Ge energy gap <span class="math inline">\(E_g\)</span>, a plot of <span class="math inline">\(ln(R)\)</span> vs. <span class="math inline">\(1/2kT\)</span> was built, after calculating from the Celsius temperature <span class="math inline">\(Tc\)</span> the absolute temperature <span class="math inline">\(T\)</span> (<span class="math inline">\(k\)</span> is the Boltzmann constant <span class="math inline">\(k\)</span> = 8.617*10<span class="math inline">\(^-\)</span><span class="math inline">\(^5\)</span>).</p>
 <a name="fig:Example"></a>
 <div class="figure">
 <img src="Media/image9.png" alt="Figure 9. Example of calculated data" id="fig:Example" />
 <p class="caption">Figure 9. Example of calculated data</p>
 </div>
-<p>From the slope in the intrinsic region (high temperature) we get the value of the energy gap <span class="math inline">\(E_g\)</span>, extrapolated linearly from <span class="math inline">\(T=0^{\circ}\mathrm{K}\)</span>, that can be compared to the known value for germanium (<span class="math inline">\(E{_g}^o=0.78\)</span>, cfr. Appendix 2)</p>
-<p>[fix, insert image]</p>
-<h2 id="appendix-1-calculation-of-r_h-for-small-and-high-magnetic-field">Appendix 1: calculation of <span class="math inline">\(R_H\)</span> for small and high magnetic field</h2>
+<p>In order to evaluate the Ge energy gap <span class="math inline">\(E_g\)</span>, a plot of <span class="math inline">\(ln(R)\)</span> vs. <span class="math inline">\(1/2kT\)</span> was built, after calculating from the Celsius temperature <span class="math inline">\(Tc\)</span> the absolute temperature <span class="math inline">\(T\)</span> (<span class="math inline">\(k\)</span> is the Boltzmann constant <span class="math inline">\(k\)</span> = 8.617*10<span class="math inline">\(^-\)</span><span class="math inline">\(^5\)</span>).</p>
+<p>From the slope in the intrinsic region (high temperature region, see Fig. <a href="#fig:EgFit">10</a> ) we get the value of the energy gap <span class="math inline">\(E_g\)</span>, extrapolated linearly from <span class="math inline">\(T=0^{\circ}\mathrm{K}\)</span>, that can be compared to the known value for germanium (<span class="math inline">\(E{_g}^o=0.78\)</span>, cfr. Appendix 2)</p>
+<a name="fig:EgFit"></a>
+<div class="figure">
+<img src="Media/ImageEgFit.jpg" alt="Figure 10. Example of linear best fit in the intrinsic region (high temperature)" id="fig:EgFit" />
+<p class="caption">Figure 10. Example of linear best fit in the intrinsic region (high temperature)</p>
+</div>
+<h2 id="appendix-1-use-of-the-optional-extension-hub">Appendix 1: Use of the optional Extension HUB</h2>
+<p>An optional Extension HUB (ExtHUB)is provided with the device. This allows the user to measure the voltages (with respect to the ground or as differential voltages) at the 7 contacts on the Ge sample, by using an high impedance multimeter.</p>
+<p>The ExtHUB must be connected between the sample and the fixed HUB (FixHUB) placed on the magnet holder using the black cable with phone-plugs. Note: do not unplug the cable from the ExtHUB; the cable should be connected to the FixHUB and the sample cable should be connected to the ExtHUB (see Fig. <a href="#fig:ExtensionHUB">11</a>).</p>
+<a name="fig:ExtensionHUB"></a>
+<div class="figure">
+<img src="Media/imageExtensionHub.jpg" alt="Figure 11. The Extension HUB connections" id="fig:ExtensionHUB" />
+<p class="caption">Figure 11. The Extension HUB connections</p>
+</div>
+<p>For example a two-wire resistance measurement between the Test Points (TP) 1- or 1-6 or 7- or 7-6 will give a value larger than the real resistance measured by the 4-contacts method, and displayed on the front panel.</p>
+<p>Note: be shure to switch-off the controller while taking measurements with the ExtHUB !</p>
+<h2 id="appendix-2-calculation-of-r_h-for-small-and-high-magnetic-field">Appendix 2: calculation of <span class="math inline">\(R_H\)</span> for small and high magnetic field</h2>
 <p>The motion equation <span class="math inline">\((F=ma)\)</span> for charge carriers can as well be written as: <a name="eq:MotionEquationForChargeCarriers"></a><span class="math display">\[m(\frac{dv}{dt}+\frac{v}{\tau}) = qE+ q\vec{v} \wedge \vec{B} \qquad (28)\]</span></p>
 <p>where the charge <span class="math inline">\(q\)</span> is the <span class="math inline">\(\pm e\)</span> for holes and electrons and we account for the mean time <span class="math inline">\(\tau\)</span> between collisions and for the Lorentz force. In stationary conditions the acceleration is zero. Therefore the velocities along <span class="math inline">\(x\)</span> (<span class="math inline">\(B\)</span> is directed along <span class="math inline">\(z\)</span>) for electrons and holes are respectively:</p>
 <p><a name="eq:XvelocitiesForElectrons"></a><span class="math display">\[V_{ex}=-\frac{e\tau}{m}E_x+\frac{e\tau}{m}\vec{v}\wedge\vec{B}=-\mu_e v_{e\, y}B\qquad (29)\]</span></p>
@@ -341,7 +388,7 @@ Float thermocouple_voltage(float vout,float vref){
 <p><span class="math display">\[R_{ H }(B)=\frac { E_{ y } }{ BJ_{ x } } \approx \frac { \left[ B\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ (p\mu _{ h }+n\mu _{ e }) } E_{ x } \right] }{ Be\left[ (p\mu _{ h }+n\mu _{ e })+B^{ 2 }\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e }) } \right] { E }_{ x } } =\]</span> <a name="eq:HallCoefficientBigEquation"></a><span class="math display">\[=\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ e(p\mu _{ h }+n\mu _{ e })^{ 2 }\left[ 1+B^{ 2 }\frac { (p{ \mu }_{ h }^{ 2 }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e })^{ 2 } } \right] } =\frac { R_{ H(B=0) } }{ 1+KB^{ 2 } }\qquad (37)\]</span></p>
 <!-- yeah i know that was long... -->
 <p>which tends to saturate at high B values.</p>
-<h3 id="appendix-2-temperature-dependence-of-e_g">Appendix 2: Temperature dependence of <span class="math inline">\(E_g\)</span></h3>
+<h3 id="appendix-3-temperature-dependence-of-e_g">Appendix 3: Temperature dependence of <span class="math inline">\(E_g\)</span></h3>
 <p>Experimental results consistently shows that the energy gap depends on temperature and for Germanium we can find in the literature the following empirical law: <a name="eq:eGempiricalLaw"></a><span class="math display">\[E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad [eV]\qquad (38)\]</span></p>
 <p>This may be approximated, in the high temperature region, by a linear law as follows:</p>
 <p><span class="math display">\[E_g (T) = A \cdot BT\]</span></p>
@@ -349,8 +396,8 @@ Float thermocouple_voltage(float vout,float vref){
 <p>Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature <span class="math inline">\(T\)</span> as <span class="math inline">\(exp( \frac{E_G}{2kT})\)</span>, a plot of <span class="math inline">\(ln( R )\)</span> vs <span class="math inline">\(\frac{1}{2} K T\)</span> using a linear approximation for <span class="math inline">\(E_g(T)\)</span> results in a straight line with slope <span class="math inline">\(E^0_g\)</span></p>
 <a name="fig:EgTdependance"></a>
 <div class="figure">
-<img src="Media/Eg_vs_T.jpeg" alt="Figure 10. Temperature dependance of the energy gap" id="fig:EgTdependance" />
-<p class="caption">Figure 10. Temperature dependance of the energy gap</p>
+<img src="Media/Eg_vs_T.jpeg" alt="Figure 12. Temperature dependance of the energy gap" id="fig:EgTdependance" />
+<p class="caption">Figure 12. Temperature dependance of the energy gap</p>
 </div>
 <h3 id="appendix-3-data-analysis-using-open-source-r-studio-software">Appendix 3: Data analysis using open-source R-Studio software</h3>
 <p><em>This appendix is being written.</em></p>
