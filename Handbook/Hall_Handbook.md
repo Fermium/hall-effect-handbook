@@ -390,24 +390,34 @@ The sample shown in this example has thickness $t=0.5mm$, width $w=10mm$ and len
 
 An example of calibration of the magnetic field intensity $B$ vs. gap $d$ between magnets is shown in figure 6. 
 
-![Measured $B$ values vs gap length $d$](Media/image10.jpeg){#fig:BvsGapD}
+![Measured $B$ values vs gap length $d$](Media/image6.jpeg){#fig:BvsGapD}
 \ 
 
 An example of the measured $V_H$ vs. magnetic field $B$ is shown in figure 7.
 
-![Hall voltage versus magnetic field intensity $B$  .](Media/image11.jpeg){#fig:HallvsIb}
+![Hall voltage versus magnetic field intensity $B$  .](Media/image7.jpeg){#fig:HallvsIb}
 \ 
 
 
-The measured values of the 3 output signals vs temperature (with a constant bias current of $I_B=10mA$ and in a $0.4T$ magnetic field) is shown in figure 8[fix].
+Figure 8 shows the measured values of the 3 output signals vs temperature obtained with a constant bias current $I_B=10mA$ and in a 0.4 $T$ magnetic field, using Vernier-LabPro interface. The plot shows *Potential 1* = $V_{out}$$_T$, *Potential 2* = $V_{out}$$_H$, *Potential 3* = $V_{out}$$_R$. 
+
+![Output voltages versus time.](Media/image8.jpg){#fig:OutputsvsTime}
+\ 
+
+
+Figure 9  shows an example of calculated data obtained using LoggerPro software. 
+The Hall voltage in mV $VH$ is is obtained from $V_{out}$$_H$ by subtracting the offset 2.5 V and by accounting for the used value of the channel-H gain (here GainH=10). The resistance $R$ is calculated from $V_{out}$$_R$ by  accounting for the used value of the channel-R gain (here GainR=0.5)and the measured value of the bias current $Ib$ .
+
+In order to evaluate the Ge energy gap $E_g$, a plot of $ln(R)$ vs. $1/2kT$ was built, after calculating from the Celsius temperature $Tc$ the absolute temperature $T$ ($k$ is the Boltzmann constant $k$ = 8.617*10$^-$$^5$).
+
+![Example of calculated data ](Media/image9.png){#fig:Example}
+\ 
 
 
 
-In figure [fix] the resistance is calculated from data of figure [fix].
 
-The logarithmic plot of the resistance versus $\frac{1}{2} kT$ (where $k=8.617 \cdot 10^{-5} \, \frac{eV}{K}$ is the Boltzmann constant) is shown in figure [fix].
 
-From the slope in the intrinsic region we get the value of the energy gap $E_g$, extrapolating linearly from $T=0^{\circ}\mathrm{K}$, that can be compared to the known value for germanium ($E{_g}^o=0.78$, cfr. Appendix 2)
+From the slope in the intrinsic region (high temperature) we get the value of the energy gap $E_g$, extrapolated linearly from $T=0^{\circ}\mathrm{K}$, that can be compared to the known value for germanium ($E{_g}^o=0.78$, cfr. Appendix 2)
 
 [fix, insert image]
 
