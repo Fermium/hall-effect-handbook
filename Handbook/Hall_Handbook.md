@@ -233,11 +233,11 @@ The sample has 7 wires tin soldered in the positions shown in figure {@fig:sampl
 
 
 *   Contacts 1 and 4 are used to feed the bias current Ib produced by a constant current generator [fix, see figure x]
-*   Contacts 7 and 5 are used to measure (through a differential amplifier, DA for short) the voltage across the sample, in a 4-wire (often called kelvin) resistance measurement. 
+*   Contacts 7 and 5 are used to measure (through a differential amplifier, DA for short) the voltage across the sample, in a 4-wire resistance measurement. 
 *   Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA. 
 
     Contact 6 is the reference point for the  Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). 
-    The potentiometer P is needed  since the contacts 2 and 3 cannot be precisely positioned.
+    *Three contacts* are needed for the Hall voltage because *two contacts cannot be precisely aligned.
     
 ![Printed circuit board with germanium sample and thermocuple](Media/sample_pcb.jpg){#fig:sample_pcb}
     
@@ -246,7 +246,7 @@ The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) who
 
 The numbering of the contact on the sample corresponds to the number of the pins in the rj45 connector of the sample assembly.
 
-The two DAs have fixed gains $G$, set to $0.5$ for $V_r$ and to $100$ for $V_H$[^GainMayChange], and they're powered from a $\pm 15V$ power supply. 
+The two DAs have fixed gains $G$, set to $0.5$ for $V_{out}$$_R$ and to $100$ for $V_{out}$$_H$[^GainMayChange], and they're powered from a $\pm 15V$ power supply. 
 
 
 [^GainMayChange]: The gain can change due to specifications and calibration. Please refer to the values calculated on the screen of the device.
@@ -256,7 +256,7 @@ The PGA gains are selectable among the following values $G_{ PGA}= \{ 1,2,5,10,2
 
 The output voltages on the front panel are restrained in a number of cases:
 
-*   If the input voltage is $V_r > \frac{30}{G}$ the  DA saturates.
+*   If the input voltage is $V_{out} > \frac{30}{G}$ the  DA saturates.
 *   If the output of the DA is not $0 < V_{out} < 5.1$ it is clamped down by a Schottky diode to prevent damage to the circuitry.
 *   If the output voltage of a PGA is not $0 < V_{out} < 5$ the PGA saturates
 * 	If the $I_b$  current is set to values smaller than 7 mA or greater than 25 mA a warning message appears  (“TOO LOW !”  or “TOO HIGH !” respectively), because the constant current generator does not work properly outside of this range. 
@@ -271,7 +271,7 @@ The best value for the bias current is a compromise between the need to obtain a
 ### Hall voltage and resistance measurements at room temperature
 
 With a finite value of magnetic field B orthogonal to the large face of the sample, we should measure identical values for $V_H$ (but with opposite sign) when rotating of $180\,^{\circ}$ the sample.
-This behavior must be tested before proceeding to further measurements: if reversing the $B$ direction (i.e. rotating the sample of $180\,^{\circ}$ degrees) different values are measured, the offsets should be better adjusted using potetiometer P in figure {@fig:sample_circuitry}.
+This behavior must be tested before proceeding to further measurements: if reversing the $B$ direction (i.e. rotating the sample of $180\,^{\circ}$ degrees) different values are measured, the offsets should be better adjusted using potentiometer P in figure {@fig:sample_circuitry}.
 
 The absolute value of $B$ may be varied by changing the width of the gap between the magnetic poles (see figure {@fig:screwDevice}).
 One of the two permanent-magnets mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of $B$ decreases.
@@ -282,17 +282,9 @@ One of the two permanent-magnets mounted on the soft-steel structure may be move
 \ 
 
 
-A calibration of the magnetic field $B$ as a function of the gap may be made using a gauss-meter probe placed between the poles (see figure [fix]).
+A calibration of the magnetic field $B$ as a function of the gap may be made using a gauss-meter probe placed between the poles (see next chapter [fix]).
 
 The magnetic field $B$ may be calibrated using a gauss-meter probe placed at the center between the poles.
-
-![Measured $B$ values vs gap length $d$](Media/image10.jpeg){#fig:BvsGapD}
-\ 
-
-![Hall voltage versus bias current $I$ ($B=4.5 kGauss$), and versus $B$ ( $I=3 mA$).](Media/image11.jpeg){#fig:HallvsIb}
-\ 
-
-Figure [fix] shows the linear dependence of $V_H$ on $I$ and $B$. Deviations from linearity at high values of the magnetic field may be explained by calculating a second order approximation of $R_H$ (Appendix 1)
 
 \clearpage
 
@@ -300,9 +292,9 @@ Figure [fix] shows the linear dependence of $V_H$ on $I$ and $B$. Deviations fro
 ### Measurements at constant $I$ and $B$ while varying the temperature
 
 
-The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminum bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be brought lo low temperatures.
+The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminum bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be cooled .
 
-The temperature is measured by a tipe K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by the AD8495[^AD8495] integrated circuit. The output is vaguely proportional to the temperature, with a sensitivity of $\approx 5\frac { mV }{ \,^{\circ}\mathrm{K} }$. It is successively amplified by a non-inverting amplifier (not shown in picture [fix] ) to get $\approx 10\frac { mV }{ \,^{\circ}\mathrm{K} }$ with $2.5V=273.2\,^{\circ}\mathrm{K}=0\,^{\circ}\mathrm{C}$. While the K type thermocouple is fairly linear a room temperature, it is not in the wide temperature range covered by the apparatus, as can be seen in figure {@fig:seebeckNonlinearity}.
+The temperature is measured by a type K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by an AD8495[^AD8495] integrated circuit. The output (roughly proportional to the temperature with a sensitivity of $\approx 5\frac { mV }{ \,^{\circ}\mathrm{K} }$ is amplified by a non-inverting amplifier (not shown in picture) to get $\approx 10\frac { mV }{ \,^{\circ}\mathrm{K} }$ and shifted to obtain $V_{out}$$_T$=2.5V at $273.15\,^{\circ}\mathrm{K}=0\,^{\circ}\mathrm{C}$. While the K type thermocouple is fairly linear in a small range near room temperature, it is not linear in the whole temperature range covered by the apparatus, as can be seen in figure {@fig:seebeckNonlinearity}.
 
 [^AD8495]: [AD8495 datasheet, Analog Semiconductors](http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html)
 
@@ -366,39 +358,49 @@ Float thermocouple_voltage(float vout,float vref){
     return ((vout)-(vref)-THERMOCOUPLE_OFFSET)/(2*THERMOCOUPLE_GAIN);
 }
 
+
 ```
+A digitally controlled resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The instruments automatically shuts down if $t \ge 170\,^{\circ}\mathrm{C}$.
 
 
-### Cooling-Heating procedure
 
-To obtain accurate measurements the best procedure is the following:
+### Suggested procedure 
+
+The display on the controller box shows the sample temperature in Celsius (calculated from the measured thermocouple signal), the measured bias current $I_b$ (mA), the sample resistance (calculated from the measured voltage drop across the sample) and the selected values of the $V_H$ and $V_R$ channels.
+
+ To obtain accurate measurements the best procedure is the following:
 
 1. Connect the sample cables to the HUB and the HUB to the controller (two ethernet cables , A with A and B with B) connect all the controller outputs to your data-logger and choose an acquisition run with approximately 0.1Hz rate (i.e. 1 sample every 10 seconds) and duration at least 6000 seconds.
-2. Choose the width of gap between the permanent magnets and measure the magnetic field B in the middle. Place the sample far from the magnetic field and trim the balance-potentiometer to minimize the VH signal. Lock the potentiometer knob.
-3. PLace the sample in the middle of the gap. Choose a proper value for the current Ib within the 7-25 mA allowed range, and select the proper Gains for VH and VR channels. Note that the resistance at higher temperature may exceed the value at room temperature of a factor 2, and that also the VH signal increase with temperature. Therefore at room temperature your data-logger should read  VoutHall <0.4V and VoutR<2.5V. Check that the VoutHall values changes sign when rotating the sample of 180° around vertical axis. Choose the orientation that gives positive VoutHall.
-4.  Prepare all the data conversion you think useful, for example : from VoutR(V) and the known Ib and Gr gain values obtain R(ohm), from VoutHallH and Gh gain values obtain VH, from VoutT obtain the K-thermocouple efm 
-E E=0.5* 1000 *(VoutT-2.5-0.00125)/122.4)
-5. Fill about half of the dewar with liquid nitrogen and wait until the liquid surface is quiet.
-6. Prepare a graph with temperature vs time in your data-logger. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover). Adjust the sample in the mid of the magnet-gap and start the data acquisition.
-7. When the plot temperature vs time shows a slope close to zero, stop the data acquisition and save your data.
-8. Empty the dewar (e.g. transferring the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap and start a new data acquisition for increasing temperature.
-9. When the temperature vs. time slope start approaching zero, switch-ON the heater (Press the control knob 3 times, until the arrow reaches the OFF and turn the knob). 
+2. Choose the width of gap between the permanent magnets and measure the magnetic field B in the middle. Place the sample far from the magnetic field and trim the balance-potentiometer to minimize the $V_H$ signal. Lock the potentiometer knob.
+3. PLace the sample in the middle of the gap. Choose a proper value for the current $I_b$ within the 7-25 mA allowed range, and select the proper gains for $V_H$ and $V_R$ channels. Note that the resistance at higher temperature may exceed the value at room temperature of a factor 2, and that also the VH signal increase with temperature. Therefore at room temperature your data-logger should read  $V_{out}$$_H$ <0.4V and $V_{out}$$_R$<2.5V. 
+4. Check that the $V_H$ values changes sign when rotating the sample of 180° around vertical axis. Choose the orientation that gives positive $V_H$.
+5.  Prepare all the data conversion you think useful, for example : from $V_{out}$$_R$ and the known $I_b$ and $G_R$ gain values obtain R(ohm), from $V_{out}$$_H$ and $G_H$ gain values obtain $V_H$(mV), from $V_{out}$$_T$ obtain the K-thermocouple efm 
+E(mV) [E=0.5* 1000 *($V_{out}$$_T$-2.5-0.00125)/122.4)], from the calculated E(mV) obtain the Celsius temperature $Tc$ using the fitting polynomial,...
+6. Fill about half of the dewar with liquid nitrogen and wait until the liquid surface is quiet.
+7. Prepare a graph with temperature vs time in your data-logger. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover). Adjust the sample in the mid of the magnet-gap and start the data acquisition.
+8. When the plot temperature vs time shows a slope close to zero, stop the data acquisition and save your data.
+9. Empty the dewar (e.g. transferring the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap and start a new data acquisition for increasing temperature.
+10. When the temperature vs. time slope start approaching zero, switch-ON the heater (Press the control knob 3 times, until the arrow reaches the OFF and turn the knob). 
 
-
-
-   cool the sample at the lowest temperature by placing  into the dewar (about 1/2 liter) until a stable temperature is reached, then manually empty the dewar letting it slowly drift up to room temperature (due to the unavoidable thermal coupling sample-to-ambient).
-
-During the cooling process measurements may be taken, but the rapid cooling generates a large thermal gradient across the apparatus that makes such measurements less reliable.
-
-A digitally controlled resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The instruments automatically shuts down if $t \ge 150\,^{\circ}\mathrm{C}$.
-
-Measurements can be obtained by feeding the analog outputs on the front panel to a data-logger and setting a suitable acquisition rate (e.g. a few samples/minute)
-
-To obtain precise measurements, at least one complete hour is required for the whole temperature sweep.
+To obtain precise measurements, at least one hour is required for the whole temperature sweep.
 
 ### Typical results
 
 The sample shown in this example has thickness $t=0.5mm$, width $w=10mm$ and lenght $l=15mm$.
+
+An example of calibration of the magnetic field intensity $B$ vs. gap $d$ between magnets is shown in figure 6. 
+
+![Measured $B$ values vs gap length $d$](Media/image10.jpeg){#fig:BvsGapD}
+\ 
+
+An example of the measured $V_H$ vs.absolute temperature $T$ and vs. bias current $I_b$  are shown in figure 7.
+
+![Hall voltage versus bias current $I$ ($B$=4.5  kGauss), and versus $B$ ( $I$=3 mA).](Media/image11.jpeg){#fig:HallvsIb}
+\ 
+
+Figure [fix] shows the linear dependence of $V_H$ on $I$ and $B$. Deviations from linearity at high values of the magnetic field may be explained by calculating a second order approximation of $R_H$ (Appendix 1)
+
+
 The measured Hall voltage and resistance vs temperature (with a constant bias current of $I_B=30mA$ and in a $0.5T$ magnetic field) is shown in figure [fix].
 
 In figure [fix] the resistance is calculated from data of figure [fix].
