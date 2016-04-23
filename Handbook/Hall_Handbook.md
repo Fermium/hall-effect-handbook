@@ -247,7 +247,7 @@ The numbering of the contact on the sample corresponds to the number of the pins
 The two DAs have fixed gains $G$, set to $0.5$ for $V_{out}$$_R$ and to $100$ for $V_{out}$$_H$[^GainMayChange], and they're powered from a $\pm 15V$ power supply. 
 
 
-[^GainMayChange]: The gain can change due to specifications and calibration. Please refer to the values calculated on the screen of the device.
+[^GainMayChange]: The gain can change due to specifications and calibration. Please refer to the values displayed on the front panel.
 
 
 The PGA gains are selectable among the following values $G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}$ through the front panel.
@@ -303,7 +303,7 @@ where $E$ is the output voltage of the thermocouple in $mV$.
 
 A fitting polynomial ({@eq:compensatingPolynomial}) of the fifth order is sufficient, given the precision of our equipment.
 
-The table {@tbl:kcoefftable} shows the polynomial coefficients obtained from a best fit of the NIST[^srdata] correction tables.
+The table {@tbl:kcoefftable} shows the polynomial coefficients obtained from a best fit of the NIST[^srdata] data tables.
 
 | Coefficient     | Value        |
 | :-------------- | :------------ |
@@ -318,13 +318,13 @@ Table: Polynomial coefficients obtained from NIST K thermocouple tables ($-200< 
 
 [^srdata]: NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab
 
-The voltage $E$ at the termocouple junction can be obtained[^AD8495nist] from the following equation:
+The voltage $E$ at the thermocouple junction can be obtained[^AD8495nist] from the following equation:
 $$E=\frac { 1 }{ 2 } \frac {  V_{ outT }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
 
 
 where $V_{outT}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0\,^{\circ}\mathrm{C}$, $V_{offset}$ is the error voltage at $0\,^{\circ}\mathrm{C}$ to achieve 125 mV at $25\,^{\circ}\mathrm{C}$ and $Gain$ is the internal gain of the AD8495 amplifier.
 
-Using the fitting polynomial  ({@eq:compensatingPolynomial}) allows us to finally obtain the  temperature in Celsius [^AD8495nist]:
+Using the fitting polynomial  ({@eq:compensatingPolynomial}) allows us to finally obtain the  temperature in Celsius:
 
 $$t={ f }_{ comp }\left( E \right)$$ {#eq:FcompE}
 $$t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) $$ {#eq:ad8494Compensated}
@@ -334,6 +334,8 @@ $$t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ 
 
 A possible implementation in C code is the following:
 
+
+\clearpage
 ```c
 #define THERMOCOUPLE_OFFSET 0.00125
 #define THERMOCOUPLE_GAIN 122.4
