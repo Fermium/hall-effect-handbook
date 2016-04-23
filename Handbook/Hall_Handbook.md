@@ -238,7 +238,7 @@ The sample has 7 wires tin soldered in the positions shown in figure {@fig:sampl
     *Three contacts* are needed for the Hall voltage because *two contacts cannot be precisely aligned.
     
 ![Printed circuit board with germanium sample and thermocuple](Media/sample_pcb.jpg){#fig:sample_pcb}
-    
+\     
 
 The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger. 
 
@@ -283,8 +283,6 @@ A calibration of the magnetic field $B$ as a function of the gap may be made usi
 
 The magnetic field $B$ may be calibrated using a gauss-meter probe placed at the center between the poles.
 
-\clearpage
-
 
 ### Measurements at constant $I$ and $B$ while varying the temperature
 
@@ -296,6 +294,7 @@ The temperature is measured by a type K (Chromel-Alumel) thermocouple thermally 
 [^AD8495]: [AD8495 datasheet, Analog Semiconductors](http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html)
 
 ![In every type of thermocouple, the Seebeck coefficiently $\frac{\mu V}{\,^{\circ}\mathrm{C}}$ is heavly non-linear in relation to the temperature.](Media/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity}
+\ 
 
 In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure {@fig:seebeckNonlinearity}) of the thermocouple linearly extrapolating the following polynomial:
 
@@ -387,11 +386,14 @@ An example of calibration of the magnetic field intensity $B$ vs. gap $d$ betwee
 
 An example of the measured $V_H$ vs. magnetic field $B$ is shown in figure {@fig:HallvsIb}.
 
+
 ![Hall voltage versus magnetic field intensity $B$  .](Media/image7.jpeg){#fig:HallvsIb}
 \ 
 
 
 Figure {@fig:Output_voltages_versus_time} shows the measured values of the 3 output signals vs temperature obtained with a constant bias current $I_B=10mA$ and in a 0.4 $T$ magnetic field, using Vernier-LabPro interface. The plot shows *Potential 1* = $V_{out}$$_T$, *Potential 2* = $V_{out}$$_H$, *Potential 3* = $V_{out}$$_R$. 
+
+
 
 ![Output voltages versus time.](Media/image8.jpg){#fig:Output_voltages_versus_time}
 \ 
@@ -400,12 +402,13 @@ Figure {@fig:Output_voltages_versus_time} shows the measured values of the 3 out
 Figure 9  shows an example of calculated data obtained using LoggerPro software. 
 The Hall voltage in mV $VH$ is is obtained from $V_{outH}$ by subtracting the offset 2.5 V and by accounting for the used value of the channel-H gain (here GainH=10). The resistance $R$ is calculated from $V_{outR}$ by  accounting for the used value of the channel-R gain (here GainR=0.5)and the measured value of the bias current $Ib$ .
 
+
 ![Example of calculated data ](Media/image9.png){#fig:Example}
-\ 
+\  
 
 In order to evaluate the Ge energy gap $E_g$, a plot of $ln(R)$ vs. $1/2kT$ was built, after calculating from the Celsius temperature $Tc$ the absolute temperature $T$ ($k$ is the Boltzmann constant $k = 8.617 \cdot 10^{-5}$.
 
-From the slope in the intrinsic region (high temperature region, see Fig. {@fig:EgFit} ) we get the value of the energy gap $E_g$, extrapolated linearly from $T=0^{\circ}\mathrm{K}$, that can be compared to the known value for germanium ($E{_g}^o=0.78$, cfr. Appendix 2)
+From the slope in the intrinsic region (high temperature region, see Fig. {@fig:EgFit} ) we get the value of the energy gap $E_g$, extrapolated linearly from $T=0^{\circ}\mathrm{K}$, that can be compared to the known value for germanium ($E{_g}^o=0.78$, see Appendix 3)
 
 
 
