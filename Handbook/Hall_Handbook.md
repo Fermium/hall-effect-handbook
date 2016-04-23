@@ -28,7 +28,7 @@ https://github.com/tomduck/pandoc-eqnos
 https://github.com/tomduck/pandoc-tablenos
 https://github.com/tomduck/pandoc-fignos
 
-Original paper by Giacomo Torzo of LABTREK
+Original paper by Giacomo Torzo of LabTrek
 Revision and new technical documentation by Davide Bortolami of Fermium LABS
 
 http://labtrek.it
@@ -220,7 +220,7 @@ where $R_o$ is the measured sample resistance at the inversion point and $R_e$ i
 The dopant concentration is related to the value of the *Hall constant at the inversion point* $R_{Ho}$ (in the extrinsic region only the hole concentration is significant) by the equations ({@eq:R_Hmn}) and ({@eq:R_Hp}), i.e. :
 $$N_a \approx p \approx \frac{1}{e R_{Ho}}$$ {#eq:HallConstantInvPointRelation}
 
-## The experimental setup
+### The experimental setup
 
 The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two Nd-Fe-B magnets and a U shaped soft-steel core, acting like a torus.
 
@@ -296,39 +296,30 @@ The temperature is measured by a type K (Chromel-Alumel) thermocouple thermally 
 ![In every type of thermocouple, the Seebeck coefficiently $\frac{\mu V}{\,^{\circ}\mathrm{C}}$ is heavly non-linear in relation to the temperature.](Media/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity}
 \ 
 
-In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure {@fig:seebeckNonlinearity}) of the thermocouple linearly extrapolating the following polynomial:
+In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure {@fig:seebeckNonlinearity}) of the thermocouple using the following polynomial:
 
 $$t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }$$ {#eq:compensatingPolynomial}
 where $E$ is the output voltage of the thermocouple in $mV$.
 
-In the following table[^srdata] two different groups of coefficients are given, depending on the temperature range:
+A fitting polynomial ({@eq:compensatingPolynomial}) of the fifth order is sufficient, given the precision of our equipment.
 
-[^srdata]: NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab
+The following table[^srdata] shows the polynomial  coefficients obtained from a best fit of .....................:
 
 
+[FIX!!!]
 
-| t range     | -200°C to 0°C  | 0°C to 500°C   |
-| :---------- | :------------- | :------------- |
-| $d_0$       | 0.0000000E+00  | 0.000000E+00   |
-| $d_1$       |  2.5173462E+01 | 2.508355E+01   |
-| $d_2$       | -1.1662878E+00 | 7.860106E-02   |
-| $d_3$       | -1.0833638E+00 | -2.503131E-01  |
-| $d_4$       | -8.9773540E-01 | 8.315270E-02   |
-| $d_5$ | -3.7342377E-01 | -1.228034E-02  |
-| **E range** | **-5.891mV to 0mV** | **0mV to 20.644mV** |
+
 <!-- table of thermoelectric compensation coefficients for K type termocouples -->
-
-Linearly extrapolating a polynomial ({@eq:compensatingPolynomial}) of the fifth order is more that sufficient given the precision of our equipment.
 
 
 
 The voltage $E$ at the termocouple junction can be obtained[^AD8495nist] from the following equation:
-$$E=\frac { 1 }{ 2 } \frac {  V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
+$$E=\frac { 1 }{ 2 } \frac {  V_{ outT }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
 
 
-where $V_{out}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0\,^{\circ}\mathrm{C}$, $V_{offset}$ is the error voltage at $0\,^{\circ}\mathrm{C}$ to achieve $125 mV$ at $25\,^{\circ}\mathrm{C}$ and $Gain$ is the internal gain of the AD8495 amplifier.
+where $V_{outT}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0\,^{\circ}\mathrm{C}$, $V_{offset}$ is the error voltage at $0\,^{\circ}\mathrm{C}$ to achieve $125 mV$ at $25\,^{\circ}\mathrm{C}$ and $Gain$ is the internal gain of the AD8495 amplifier.
 
-Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature[^AD8495nist]:
+Using the fitting polynomial allows us to finally obtain the  temperature in Celsius [^AD8495nist]:
 
 $$t={ f }_{ comp }\left( E \right)$$ {#eq:FcompE}
 $$t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) $$ {#eq:ad8494Compensated}
