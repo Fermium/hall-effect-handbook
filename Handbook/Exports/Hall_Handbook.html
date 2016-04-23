@@ -1,67 +1,40 @@
-\documentclass[12pt,]{}
-\usepackage[]{palatino}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-\else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-\fi
-% use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\usepackage[top=2cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
-\usepackage{hyperref}
-\hypersetup{unicode=true,
-            pdfauthor={Torzo G. Bortolami D. Tosato S.},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-\title{Hall Handbook}
-\author{Torzo G. Bortolami D. Tosato S.}
-\date{April 2016}
-
-\begin{document}
-\maketitle
-\begin{abstract}
-<p>An appararatus for the measurement of Hall effect, Energy gap and Resistance over a wide range of temperatures. Theory, practice and usage</p>
-\end{abstract}
-
-{
-\setcounter{tocdepth}{}
-\tableofcontents
-}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Hall Handbook</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="Media/style.css" type="text/css" />
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Hall Handbook</h1>
+<h3 class="date">April 2016</h3>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#a-macroscopic-approach-to-ohms-laws">A macroscopic approach to Ohm’s laws</a></li>
+</ul></li>
+<li><a href="#a-semiclassical-microscopic-model">A semiclassical microscopic model</a></li>
+<li><a href="#the-hall-effect">The Hall effect</a><ul>
+<li><a href="#the-experimental-setup">The experimental setup</a></li>
+<li><a href="#hall-voltage-and-resistance-measurements-at-room-temperature">Hall voltage and resistance measurements at room temperature</a></li>
+<li><a href="#measurements-at-constant-i-and-b-while-varying-the-temperature">Measurements at constant <span class="math inline">\(I\)</span> and <span class="math inline">\(B\)</span> while varying the temperature</a></li>
+<li><a href="#suggested-procedure">Suggested procedure</a></li>
+<li><a href="#typical-results">Typical results</a></li>
+</ul></li>
+<li><a href="#appendix-1-use-of-the-optional-extension-hub">Appendix 1: Use of the optional Extension HUB</a></li>
+<li><a href="#appendix-2-calculation-of-r_h-for-small-and-high-magnetic-field">Appendix 2: calculation of <span class="math inline">\(R_H\)</span> for small and high magnetic field</a></li>
+<li><a href="#appendix-3-temperature-dependence-of-e_g">Appendix 3: Temperature dependence of <span class="math inline">\(E_g\)</span></a></li>
+<li><a href="#warnings">Warnings</a></li>
+<li><a href="#references">References</a></li>
+<li><a href="#authorship">Authorship</a></li>
+</ul>
+</div>
 <!--
 Copyright (C)  2016  Labtrek & Fermium LABS.
 Permission is granted to copy, distribute and/or modify this document
@@ -190,10 +163,14 @@ https://fermiumlabs.com
 <img src="Media/sample_pcb.jpg" alt="Figure 3. Printed circuit board with germanium sample and thermocuple" id="fig:sample_pcb" />
 <p class="caption">Figure 3. Printed circuit board with germanium sample and thermocuple</p>
 </div>
+<a name="fig:frontPanel"></a>
+<div class="figure">
+<img src="Media/imageFrontPanel0.jpg" alt="Figure 4. Device front panel" id="fig:frontPanel" />
+<p class="caption">Figure 4. Device front panel</p>
+</div>
 <p>The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger.</p>
 <p>The numbering of the contact on the sample corresponds to the number of the pins in the rj45 connector of the sample assembly.</p>
-<p>The two DAs have fixed gains <span class="math inline">\(G\)</span>, set to <span class="math inline">\(0.5\)</span> for <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_R\)</span> and to <span class="math inline">\(100\)</span> for <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_H\)</span><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>, and they’re powered from a <span class="math inline">\(\pm 15V\)</span> power supply.</p>
-<p>The PGA gains are selectable among the following values <span class="math inline">\(G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}\)</span> through the front panel.</p>
+<p>The two DAs have fixed gains <span class="math inline">\(G\)</span>, set to <span class="math inline">\(0.5\)</span> for <span class="math inline">\(V_{out \, R}\)</span> and to <span class="math inline">\(100\)</span> for <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_H\)</span><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>, and they’re powered from a <span class="math inline">\(\pm 15V\)</span> power supply.</p>
 <p>The output voltages on the front panel are restrained in a number of cases:</p>
 <ul>
 <li>If the input voltage is <span class="math inline">\(V_{out} &gt; \frac{30}{G}\)</span> the DA saturates.</li>
@@ -206,46 +183,68 @@ https://fermiumlabs.com
 <p>The best value for the bias current is a compromise between the need to obtain a large <span class="math inline">\(V_H\)</span> to make measurements precise reducing the SNR (Signal to Noise Ratio) and a low self-heating of the element due to the Joule effect: <span class="math inline">\(V_R\)</span> and <span class="math inline">\(V_H\)</span> signal are proportional to <span class="math inline">\(I\)</span> while the Joule self-heating is <span class="math inline">\(P=RI^2\)</span></p>
 <h3 id="hall-voltage-and-resistance-measurements-at-room-temperature">Hall voltage and resistance measurements at room temperature</h3>
 <p>With a finite value of magnetic field B orthogonal to the large face of the sample, we should measure identical values for <span class="math inline">\(V_H\)</span> (but with opposite sign) when rotating of <span class="math inline">\(180\,^{\circ}\)</span> the sample. This behavior must be tested before proceeding to further measurements: if reversing the <span class="math inline">\(B\)</span> direction (i.e. rotating the sample of <span class="math inline">\(180\,^{\circ}\)</span> degrees) different values are measured, the offsets should be better adjusted using potentiometer P in figure <a href="#fig:sample_circuitry">2</a>.</p>
-<p>The absolute value of <span class="math inline">\(B\)</span> may be varied by changing the width of the gap between the magnetic poles (see figure <a href="#fig:ScrewDevice">4</a>). One of the two permanent-magnets mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of <span class="math inline">\(B\)</span> decreases.</p>
+<p>The absolute value of <span class="math inline">\(B\)</span> may be varied by changing the width of the gap between the magnetic poles (see figure <a href="#fig:ScrewDevice">5</a>). One of the two permanent-magnets mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of <span class="math inline">\(B\)</span> decreases.</p>
 <a name="fig:ScrewDevice"></a>
 <div class="figure">
-<img src="Media/screw_device.JPG" alt="Figure 4. The screw device for changing the effective magnetic field" id="fig:ScrewDevice" />
-<p class="caption">Figure 4. The screw device for changing the effective magnetic field</p>
+<img src="Media/screw_device.JPG" alt="Figure 5. The screw device for changing the effective magnetic field" id="fig:ScrewDevice" />
+<p class="caption">Figure 5. The screw device for changing the effective magnetic field</p>
 </div>
 <p>A calibration of the magnetic field <span class="math inline">\(B\)</span> as a function of the gap may be made using a gauss-meter probe placed between the poles (see next chapter [fix]).</p>
 <p>The magnetic field <span class="math inline">\(B\)</span> may be calibrated using a gauss-meter probe placed at the center between the poles.</p>
 <h3 id="measurements-at-constant-i-and-b-while-varying-the-temperature">Measurements at constant <span class="math inline">\(I\)</span> and <span class="math inline">\(B\)</span> while varying the temperature</h3>
 <p>The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminum bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be cooled .</p>
-<p>The temperature is measured by a type K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by an AD8495<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> integrated circuit. The output (roughly proportional to the temperature with a sensitivity of <span class="math inline">\(\approx 5\frac { mV }{ \,^{\circ}\mathrm{K} }\)</span> is amplified by a non-inverting amplifier (not shown in picture) to get <span class="math inline">\(\approx 10\frac { mV }{ \,^{\circ}\mathrm{K} }\)</span> and shifted to obtain <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_T\)</span>=2.5V at <span class="math inline">\(273.15\,^{\circ}\mathrm{K}=0\,^{\circ}\mathrm{C}\)</span>. While the K type thermocouple is fairly linear in a small range near room temperature, it is not linear in the whole temperature range covered by the apparatus, as can be seen in figure <a href="#fig:seebeckNonlinearity">5</a>.</p>
+<p>The temperature is measured by a type K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by an AD8495<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> integrated circuit. The output (roughly proportional to the temperature with a sensitivity of <span class="math inline">\(\approx 5\frac { mV }{ \,^{\circ}\mathrm{K} }\)</span> is amplified by a non-inverting amplifier (not shown in picture) to get <span class="math inline">\(\approx 10\frac { mV }{ \,^{\circ}\mathrm{K} }\)</span> and shifted to obtain <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_T\)</span>=2.5V at <span class="math inline">\(273.15\,^{\circ}\mathrm{K}=0\,^{\circ}\mathrm{C}\)</span>. While the K type thermocouple is fairly linear in a small range near room temperature, it is not linear in the whole temperature range covered by the apparatus, as can be seen in figure <a href="#fig:seebeckNonlinearity">6</a>.</p>
 <a name="fig:seebeckNonlinearity"></a>
 <div class="figure">
-<img src="Media/seebeck_coefficient_vs_temperature.png" alt="Figure 5. In every type of thermocouple, the Seebeck coefficiently \frac{\mu V}{\,^{\circ}\mathrm{C}} is heavly non-linear in relation to the temperature." id="fig:seebeckNonlinearity" />
-<p class="caption">Figure 5. In every type of thermocouple, the Seebeck coefficiently <span class="math inline">\(\frac{\mu V}{\,^{\circ}\mathrm{C}}\)</span> is heavly non-linear in relation to the temperature.</p>
+<img src="Media/seebeck_coefficient_vs_temperature.png" alt="Figure 6. In every type of thermocouple, the Seebeck coefficiently \frac{\mu V}{\,^{\circ}\mathrm{C}} is heavly non-linear in relation to the temperature." id="fig:seebeckNonlinearity" />
+<p class="caption">Figure 6. In every type of thermocouple, the Seebeck coefficiently <span class="math inline">\(\frac{\mu V}{\,^{\circ}\mathrm{C}}\)</span> is heavly non-linear in relation to the temperature.</p>
 </div>
-<p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure <a href="#fig:seebeckNonlinearity">5</a>) of the thermocouple using the following polynomial:</p>
+<p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure <a href="#fig:seebeckNonlinearity">6</a>) of the thermocouple using the following polynomial:</p>
 <p><a name="eq:compensatingPolynomial"></a><span class="math display">\[t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }\qquad (24)\]</span> where <span class="math inline">\(E\)</span> is the output voltage of the thermocouple in <span class="math inline">\(mV\)</span>.</p>
 <p>A fitting polynomial (<a href="#eq:compensatingPolynomial">24</a>) of the fifth order is sufficient, given the precision of our equipment.</p>
-<p>The following table[^srdata] shows the polynomial coefficients obtained from a best fit of …………………:</p>
-<p>[FIX!!!]</p>
-<!-- table of thermoelectric compensation coefficients for K type termocouples -->
-<p>The voltage <span class="math inline">\(E\)</span> at the termocouple junction can be obtained<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> from the following equation: <a name="eq:voltageAtThermocoupleJunction"></a><span class="math display">\[E=\frac { 1 }{ 2 } \frac {  V_{ outT }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } \qquad (25)\]</span></p>
+<p>The table <a href="#tbl:kcoefftable">1</a> shows the polynomial coefficients obtained from a best fit of the NIST<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> data tables.</p>
+<a name="tbl:kcoefftable"></a>
+<table>
+<caption>Table 1. Polynomial coefficients obtained from NIST K thermocouple tables (<span class="math inline">\(-200&lt; t \, [^{\circ}\mathrm{C}] &lt;200\)</span>).</caption>
+<thead>
+<tr class="header">
+<th align="left">Coefficient</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(d_0\)</span></td>
+<td align="left"><span class="math inline">\(0.3837\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(d_1\)</span></td>
+<td align="left"><span class="math inline">\(25.22\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(d_2\)</span></td>
+<td align="left">­<span class="math inline">\(0.2795\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(d_3\)</span></td>
+<td align="left"><span class="math inline">\(0.07205\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(d_4\)</span></td>
+<td align="left"><span class="math inline">\(0.01409\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(d_5\)</span></td>
+<td align="left"><span class="math inline">\(0.001056\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The voltage <span class="math inline">\(E\)</span> at the thermocouple junction can be obtained<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> from the following equation: <a name="eq:voltageAtThermocoupleJunction"></a><span class="math display">\[E=\frac { 1 }{ 2 } \frac {  V_{ outT }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } \qquad (25)\]</span></p>
 <p>where <span class="math inline">\(V_{outT}\)</span> is the output of the instrument (on the front panel), <span class="math inline">\(V_{Ref}=2.5V\)</span> the voltage that indicates a temperature <span class="math inline">\(T=0\,^{\circ}\mathrm{C}\)</span>, <span class="math inline">\(V_{offset}\)</span> is the error voltage at <span class="math inline">\(0\,^{\circ}\mathrm{C}\)</span> to achieve 125 mV at <span class="math inline">\(25\,^{\circ}\mathrm{C}\)</span> and <span class="math inline">\(Gain\)</span> is the internal gain of the AD8495 amplifier.</p>
-<p>Using the fitting polynomial (<a href="#eq:compensatingPolynomial">24</a>) allows us to finally obtain the temperature in Celsius <a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>:</p>
+<p>Using the fitting polynomial (<a href="#eq:compensatingPolynomial">24</a>) allows us to finally obtain the temperature in Celsius:</p>
 <p><a name="eq:FcompE"></a><span class="math display">\[t={ f }_{ comp }\left( E \right)\qquad (26)\]</span> <a name="eq:ad8494Compensated"></a><span class="math display">\[t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) \qquad (27)\]</span></p>
 <p>A possible implementation in C code is the following:</p>
-<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#define THERMOCOUPLE_OFFSET 0.00125</span>
-<span class="ot">#define THERMOCOUPLE_GAIN 122.4</span>
-<span class="dt">float</span> b[<span class="dv">6</span>]={-<span class="fl">0.383695902</span>,<span class="fl">25.215123839</span>,-<span class="fl">0.279516961</span>,<span class="fl">0.072045800</span>,-<span class="fl">0.014094503</span>,<span class="fl">0.001055528</span>};
-<span class="dt">float</span> lin_extrap_temp(<span class="dt">float</span> E){ <span class="co">//E is the voltage at the thermocouple output</span>
-    <span class="dt">float</span> t=<span class="dv">0</span>;
-    E=E*<span class="dv">1000</span>; <span class="co">//from V to mV</span>
-    t=b[<span class="dv">0</span>]+b[<span class="dv">1</span>]*E+b[<span class="dv">2</span>]*pow(E,<span class="dv">2</span>)+b[<span class="dv">3</span>]*pow(E,<span class="dv">3</span>)+b[<span class="dv">4</span>]*pow(E,<span class="dv">4</span>)+b[<span class="dv">5</span>]*pow(E,<span class="dv">5</span>);
-    <span class="kw">return</span> t;
-  }
-Float thermocouple_voltage(<span class="dt">float</span> vout,<span class="dt">float</span> vref){
-    <span class="kw">return</span> ((vout)-(vref)-THERMOCOUPLE_OFFSET)/(<span class="dv">2</span>*THERMOCOUPLE_GAIN);
-}</code></pre></div>
-<p>A digitally controlled resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The instruments automatically shuts down if <span class="math inline">\(t \ge 170\,^{\circ}\mathrm{C}\)</span>.</p>
+<p><code>c #define THERMOCOUPLE_OFFSET 0.00125 #define THERMOCOUPLE_GAIN 122.4 float b[6]={-0.383695902,25.215123839,-0.279516961,0.072045800,-0.014094503,0.001055528}; float lin_extrap_temp(float E){ //E is the voltage at the thermocouple output     float t=0;     E=E*1000; //from V to mV     t=b[0]+b[1]*E+b[2]*pow(E,2)+b[3]*pow(E,3)+b[4]*pow(E,4)+b[5]*pow(E,5);     return t;   } Float thermocouple_voltage(float vout,float vref){     return ((vout)-(vref)-THERMOCOUPLE_OFFSET)/(2*THERMOCOUPLE_GAIN); }</code> A digitally controlled resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The instruments automatically shuts down if <span class="math inline">\(t \ge 170\, \,^{\circ}\mathrm{C}\)</span>.</p>
 <h3 id="suggested-procedure">Suggested procedure</h3>
 <p>The display on the controller box shows the sample temperature in Celsius (calculated from the measured thermocouple signal), the measured bias current <span class="math inline">\(I_b\)</span> (mA), the sample resistance (calculated from the measured voltage drop across the sample) and the selected values of the <span class="math inline">\(V_H\)</span> and <span class="math inline">\(V_R\)</span> channels.</p>
 <p>To obtain accurate measurements the best procedure is the following:</p>
@@ -256,7 +255,7 @@ Float thermocouple_voltage(<span class="dt">float</span> vout,<span class="dt">f
 <li>Check that the <span class="math inline">\(V_H\)</span> value changes sign when rotating the sample of 180° around vertical axis. Choose the orientation that gives positive <span class="math inline">\(V_H\)</span>.</li>
 <li>Prepare all the data conversion you think useful. For example : from <span class="math inline">\(V_{out \, R}\)</span> and the known <span class="math inline">\(I_b\)</span> and <span class="math inline">\(G_R\)</span> gain values obtain R(ohm), from <span class="math inline">\(V_{out \, H}\)</span> and <span class="math inline">\(G_H\)</span> gain values obtain <span class="math inline">\(V_H\)</span> (in <span class="math inline">\(mV\)</span>), from <span class="math inline">\(V_{out \, T}\)</span> obtain the K-thermocouple efm E(mV) <span class="math inline">\([E=0.5 \cdot 1000 \cdot \frac{ (V_{out \, T}-2.5-0.00125)}{122.4}]\)</span>, from the calculated <span class="math inline">\(E(mV)\)</span> obtain the Celsius temperature <span class="math inline">\(t\)</span> using the fitting polynomial,…</li>
 <li>Fill about half of the dewar with liquid nitrogen and wait until the liquid surface is quiet.</li>
-<li>Prepare at least one graph with temperature vs time, and one with output signals vs time in your data-logger. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover) as shown in figure <a href="#fig:ScrewDevice">4</a>. Adjust the sample in the mid of the magnet-gap and start the data acquisition.</li>
+<li>Prepare at least one graph with temperature vs time, and one with output signals vs time in your data-logger. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover) as shown in figure <a href="#fig:ScrewDevice">5</a>. Adjust the sample in the mid of the magnet-gap and start the data acquisition.</li>
 <li>When the plot temperature vs time shows a slope close to zero, stop the data acquisition and save your data.</li>
 <li>Empty the dewar (e.g. transfering the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap and start a new data acquisition for increasing temperature.</li>
 <li>When the temperature vs. time slope start approaching zero, switch-ON the heater (Press the control knob 3 times, until the arrow reaches the OFF and turn the knob).</li>
@@ -264,46 +263,46 @@ Float thermocouple_voltage(<span class="dt">float</span> vout,<span class="dt">f
 <p>To obtain precise measurements, at least one hour is required for the whole temperature sweep. Note: it is not suggested to keep liquid nitrogen inside the dewar while heating-up the sample: the temperature would rise more slowly and more humidity would condense onto the outer surface of the aluminum probe envelope. It is also useful to blow-off the frost in order to prevent water entering the probe envelope (this might affect the thermocouple signal).</p>
 <h3 id="typical-results">Typical results</h3>
 <p>The sample shown in this example has thickness <span class="math inline">\(t=0.5mm\)</span>, width <span class="math inline">\(w=10mm\)</span> and lenght <span class="math inline">\(l=15mm\)</span>.</p>
-<p>An example of calibration of the magnetic field intensity <span class="math inline">\(B\)</span> vs. gap <span class="math inline">\(d\)</span> between magnets is shown in figure <a href="#fig:BvsGapD">6</a>.</p>
+<p>An example of calibration of the magnetic field intensity <span class="math inline">\(B\)</span> vs. gap <span class="math inline">\(d\)</span> between magnets is shown in figure <a href="#fig:BvsGapD">7</a>.</p>
 <a name="fig:BvsGapD"></a>
 <div class="figure">
-<img src="Media/image6.jpeg" alt="Figure 6. Measured B values vs gap length d" id="fig:BvsGapD" />
-<p class="caption">Figure 6. Measured <span class="math inline">\(B\)</span> values vs gap length <span class="math inline">\(d\)</span></p>
+<img src="Media/image6.jpeg" alt="Figure 7. Measured B values vs gap length d" id="fig:BvsGapD" />
+<p class="caption">Figure 7. Measured <span class="math inline">\(B\)</span> values vs gap length <span class="math inline">\(d\)</span></p>
 </div>
-<p>An example of the measured <span class="math inline">\(V_H\)</span> vs. magnetic field <span class="math inline">\(B\)</span> is shown in figure <a href="#fig:HallvsIb">7</a>.</p>
+<p>An example of the measured <span class="math inline">\(V_H\)</span> vs. magnetic field <span class="math inline">\(B\)</span> is shown in figure <a href="#fig:HallvsIb">8</a>.</p>
 <a name="fig:HallvsIb"></a>
 <div class="figure">
-<img src="Media/image7.jpeg" alt="Figure 7. Hall voltage versus magnetic field intensity B ." id="fig:HallvsIb" />
-<p class="caption">Figure 7. Hall voltage versus magnetic field intensity <span class="math inline">\(B\)</span> .</p>
+<img src="Media/image7.jpeg" alt="Figure 8. Hall voltage versus magnetic field intensity B ." id="fig:HallvsIb" />
+<p class="caption">Figure 8. Hall voltage versus magnetic field intensity <span class="math inline">\(B\)</span> .</p>
 </div>
-<p>Figure <a href="#fig:Output_voltages_versus_time">8</a> shows the measured values of the 3 output signals vs temperature obtained with a constant bias current <span class="math inline">\(I_B=10mA\)</span> and in a 0.4 <span class="math inline">\(T\)</span> magnetic field, using Vernier-LabPro interface. The plot shows <em>Potential 1</em> = <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_T\)</span>, <em>Potential 2</em> = <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_H\)</span>, <em>Potential 3</em> = <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_R\)</span>.</p>
+<p>Figure <a href="#fig:Output_voltages_versus_time">9</a> shows the measured values of the 3 output signals vs temperature obtained with a constant bias current <span class="math inline">\(I_B=10mA\)</span> and in a 0.4 <span class="math inline">\(T\)</span> magnetic field, using Vernier-LabPro interface. The plot shows <em>Potential 1</em> = <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_T\)</span>, <em>Potential 2</em> = <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_H\)</span>, <em>Potential 3</em> = <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_R\)</span>.</p>
 <a name="fig:Output_voltages_versus_time"></a>
 <div class="figure">
-<img src="Media/image8.jpg" alt="Figure 8. Output voltages versus time." id="fig:Output_voltages_versus_time" />
-<p class="caption">Figure 8. Output voltages versus time.</p>
+<img src="Media/image8.jpg" alt="Figure 9. Output voltages versus time." id="fig:Output_voltages_versus_time" />
+<p class="caption">Figure 9. Output voltages versus time.</p>
 </div>
 <p>Figure 9 shows an example of calculated data obtained using LoggerPro software. The Hall voltage in mV <span class="math inline">\(VH\)</span> is is obtained from <span class="math inline">\(V_{outH}\)</span> by subtracting the offset 2.5 V and by accounting for the used value of the channel-H gain (here GainH=10). The resistance <span class="math inline">\(R\)</span> is calculated from <span class="math inline">\(V_{outR}\)</span> by accounting for the used value of the channel-R gain (here GainR=0.5)and the measured value of the bias current <span class="math inline">\(Ib\)</span> .</p>
 <a name="fig:Example"></a>
 <div class="figure">
-<img src="Media/image9.png" alt="Figure 9. Example of calculated data" id="fig:Example" />
-<p class="caption">Figure 9. Example of calculated data</p>
+<img src="Media/image9.png" alt="Figure 10. Example of calculated data" id="fig:Example" />
+<p class="caption">Figure 10. Example of calculated data</p>
 </div>
 <p>In order to evaluate the Ge energy gap <span class="math inline">\(E_g\)</span>, a plot of <span class="math inline">\(ln(R)\)</span> vs. <span class="math inline">\(1/2kT\)</span> was built, after calculating from the Celsius temperature <span class="math inline">\(Tc\)</span> the absolute temperature <span class="math inline">\(T\)</span> (<span class="math inline">\(k\)</span> is the Boltzmann constant <span class="math inline">\(k = 8.617 \cdot 10^{-5}\)</span>.</p>
-<p>From the slope in the intrinsic region (high temperature region, see Fig. <a href="#fig:EgFit">10</a> ) we get the value of the energy gap <span class="math inline">\(E_g\)</span>, extrapolated linearly from <span class="math inline">\(T=0^{\circ}\mathrm{K}\)</span>, that can be compared to the known value for germanium (<span class="math inline">\(E{_g}^o=0.78\)</span>, see Appendix 3)</p>
+<p>From the slope in the intrinsic region (high temperature region, see Fig. <a href="#fig:EgFit">11</a> ) we get the value of the energy gap <span class="math inline">\(E_g\)</span>, extrapolated linearly from <span class="math inline">\(T=0^{\circ}\mathrm{K}\)</span>, that can be compared to the known value for germanium (<span class="math inline">\(E{_g}^o=0.78\)</span>, see Appendix 3)</p>
 <a name="fig:EgFit"></a>
 <div class="figure">
-<img src="Media/ImageEgFit.jpg" alt="Figure 10. Example of linear best fit in the intrinsic region (high temperature)" id="fig:EgFit" />
-<p class="caption">Figure 10. Example of linear best fit in the intrinsic region (high temperature)</p>
+<img src="Media/ImageEgFit.jpg" alt="Figure 11. Example of linear best fit in the intrinsic region (high temperature)" id="fig:EgFit" />
+<p class="caption">Figure 11. Example of linear best fit in the intrinsic region (high temperature)</p>
 </div>
 <h2 id="appendix-1-use-of-the-optional-extension-hub">Appendix 1: Use of the optional Extension HUB</h2>
 <p>An optional Extension HUB (ExtHUB)is provided with the device. This allows the user to measure the voltages (with respect to the ground or as differential voltages) at the 7 contacts on the Ge sample, by using an high impedance multimeter.</p>
-<p>The ExtHUB must be connected between the sample and the fixed HUB (FixHUB) placed on the magnet holder using the black cable with phone-plugs. Note: do not unplug the cable from the ExtHUB; the cable should be connected to the FixHUB and the sample cable should be connected to the ExtHUB (see Fig. <a href="#fig:ExtensionHUB">11</a>).</p>
+<p>The ExtHUB must be connected between the sample and the fixed HUB (FixHUB) placed on the magnet holder using the black cable with phone-plugs. Note: do not unplug the cable from the ExtHUB; the cable should be connected to the FixHUB and the sample cable should be connected to the ExtHUB (see Fig. <a href="#fig:ExtensionHUB">12</a>).</p>
 <a name="fig:ExtensionHUB"></a>
 <div class="figure">
-<img src="Media/imageExtensionHub.jpg" alt="Figure 11. The Extension HUB connections" id="fig:ExtensionHUB" />
-<p class="caption">Figure 11. The Extension HUB connections</p>
+<img src="Media/imageExtensionHub.jpg" alt="Figure 12. The Extension HUB connections" id="fig:ExtensionHUB" />
+<p class="caption">Figure 12. The Extension HUB connections</p>
 </div>
-<p>For example a two-wire resistance measurement between the Test Points (TP) 1- or 1-6 or 7- or 7-6 will give a value larger than the real resistance measured by the 4-contacts method, and displayed on the front panel.</p>
+<p>For example a two-wire resistance measurement between the Test Points (TP) 1-4, 1-5, 7-4 or 7-5 will give a value larger than the real resistance measured by the 4-contacts method, and displayed on the front panel.</p>
 <p>Note: be sure to switch-off the controller while taking measurements with the ExtHUB !</p>
 <h2 id="appendix-2-calculation-of-r_h-for-small-and-high-magnetic-field">Appendix 2: calculation of <span class="math inline">\(R_H\)</span> for small and high magnetic field</h2>
 <p>The motion equation <span class="math inline">\((F=ma)\)</span> for charge carriers can as well be written as: <a name="eq:MotionEquationForChargeCarriers"></a><span class="math display">\[m(\frac{dv}{dt}+\frac{v}{\tau}) = qE+ q\vec{v} \wedge \vec{B} \qquad (28)\]</span></p>
@@ -330,7 +329,7 @@ Float thermocouple_voltage(<span class="dt">float</span> vout,<span class="dt">f
 <p><span class="math display">\[R_{ H }(B)=\frac { E_{ y } }{ BJ_{ x } } \approx \frac { \left[ B\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ (p\mu _{ h }+n\mu _{ e }) } E_{ x } \right] }{ Be\left[ (p\mu _{ h }+n\mu _{ e })+B^{ 2 }\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e }) } \right] { E }_{ x } } =\]</span> <a name="eq:HallCoefficientBigEquation"></a><span class="math display">\[=\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ e(p\mu _{ h }+n\mu _{ e })^{ 2 }\left[ 1+B^{ 2 }\frac { (p{ \mu }_{ h }^{ 2 }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e })^{ 2 } } \right] } =\frac { R_{ H(B=0) } }{ 1+KB^{ 2 } }\qquad (37)\]</span></p>
 <!-- yeah i know that was long... -->
 <p>which tends to saturate at high B values.</p>
-<h3 id="appendix-3-temperature-dependence-of-e_g">Appendix 3: Temperature dependence of <span class="math inline">\(E_g\)</span></h3>
+<h2 id="appendix-3-temperature-dependence-of-e_g">Appendix 3: Temperature dependence of <span class="math inline">\(E_g\)</span></h2>
 <p>Experimental results consistently shows that the energy gap depends on temperature and for Germanium we can find in the literature the following empirical law: <a name="eq:eGempiricalLaw"></a><span class="math display">\[E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad [eV]\qquad (38)\]</span></p>
 <p>This may be approximated, in the high temperature region, by a linear law as follows:</p>
 <p><span class="math display">\[E_g (T) = A \cdot BT\]</span></p>
@@ -338,11 +337,12 @@ Float thermocouple_voltage(<span class="dt">float</span> vout,<span class="dt">f
 <p>Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature <span class="math inline">\(T\)</span> as <span class="math inline">\(exp( \frac{E_G}{2kT})\)</span>, a plot of <span class="math inline">\(ln( R )\)</span> vs <span class="math inline">\(\frac{1}{2} K T\)</span> using a linear approximation for <span class="math inline">\(E_g(T)\)</span> results in a straight line with slope <span class="math inline">\(E^0_g\)</span></p>
 <a name="fig:EgTdependance"></a>
 <div class="figure">
-<img src="Media/Eg_vs_T.jpeg" alt="Figure 12. Temperature dependance of the energy gap" id="fig:EgTdependance" />
-<p class="caption">Figure 12. Temperature dependance of the energy gap</p>
+<img src="Media/Eg_vs_T.jpeg" alt="Figure 13. Temperature dependance of the energy gap" id="fig:EgTdependance" />
+<p class="caption">Figure 13. Temperature dependance of the energy gap</p>
 </div>
-<h3 id="appendix-3-data-analysis-using-open-source-r-studio-software">Appendix 3: Data analysis using open-source R-Studio software</h3>
-<p><em>This appendix is being written.</em></p>
+<!-- ##Appendix 4: Data analysis using open-source R-Studio software
+
+*This appendix is being written.* -->
 <p></p>
 <h2 id="warnings">Warnings</h2>
 <p><strong>Using high magnetic field require some caution:</strong></p>
@@ -373,11 +373,11 @@ Float thermocouple_voltage(<span class="dt">float</span> vout,<span class="dt">f
 <li id="fn2"><p>This time <span class="math inline">\(\tau\)</span> does not depend on the electric field because the average speed increment due to the applied electric field <span class="math inline">\(V_d\)</span> is very small with respect to the r.m.s. speed <span class="math inline">\(V_m\)</span> due to thermal motion .<a href="#fnref2">↩</a></p></li>
 <li id="fn3"><p>Drift mobility in semiconductors decreases with the absolute temperature <span class="math inline">\(T\)</span> as <span class="math inline">\(T^{-\alpha }\)</span>, where <span class="math inline">\(1.5&lt;a&lt;3.0\)</span> depending on the prevailing type of interactions of the free carriers (with phonons, lattice defects, or impurities).<a href="#fnref3">↩</a></p></li>
 <li id="fn4"><p><em>Intrinsic</em> term labels properties related to pure semiconductors or to doped semiconductors at hight temperature, where the thermally generated carriers density is much larger than the (<em>extrinsic</em>) carrier density due to the dopant.<a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>The gain can change due to specifications and calibration. Please refer to the values calculated on the screen of the device.<a href="#fnref5">↩</a></p></li>
+<li id="fn5"><p>The gain can change due to specifications and calibration. Please refer to the values displayed on the front panel. The PGA gains are selectable among the following values <span class="math inline">\(G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}\)</span> through the front panel as shown in figure <a href="#fig:frontPanel">4</a>. The gain values shown on the front panel are the product of DA and PGA gains for both channels.<a href="#fnref5">↩</a></p></li>
 <li id="fn6"><p><a href="http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html">AD8495 datasheet, Analog Semiconductors</a><a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p><a href="http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF">AN-1087, Analog Semiconductors</a>  <a href="#fnref7">↩</a></p></li>
+<li id="fn7"><p>NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab<a href="#fnref7">↩</a></p></li>
 <li id="fn8"><p><a href="http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF">AN-1087, Analog Semiconductors</a>  <a href="#fnref8">↩</a></p></li>
 </ol>
 </div>
-
-\end{document}
+</body>
+</html>
