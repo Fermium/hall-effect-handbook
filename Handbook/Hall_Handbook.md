@@ -314,7 +314,7 @@ The table {@tbl:kcoefftable} shows the polynomial coefficients obtained from a b
 | $d_4$           | $0.01409$     |
 | $d_5$           | $0.001056$    |
 
-Table: Polynomial coefficients obtained from NIST[^srdata] K thermocouple tables ($-200< t \, [^{\circ}\mathrm{C}] <200$). {#tbl:kcoefftable}
+Table: Polynomial coefficients obtained from NIST K thermocouple tables ($-200< t \, [^{\circ}\mathrm{C}] <200$). {#tbl:kcoefftable}
 
 [^srdata]: NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab
 
@@ -348,7 +348,7 @@ Float thermocouple_voltage(float vout,float vref){
     return ((vout)-(vref)-THERMOCOUPLE_OFFSET)/(2*THERMOCOUPLE_GAIN);
 }
 ```
-A digitally controlled resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The instruments automatically shuts down if $t \ge 170\,^{\circ}\mathrm{C}$.
+A digitally controlled resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The instruments automatically shuts down if $t \ge 170\, \,^{\circ}\mathrm{C}$.
 
 
 

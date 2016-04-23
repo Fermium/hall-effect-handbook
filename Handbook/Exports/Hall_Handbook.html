@@ -1,79 +1,67 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
-  <title>Hall Handbook</title>
-  <style type="text/css">code{white-space: pre;}</style>
-  <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-  </style>
-  <link rel="stylesheet" href="Media/style.css" type="text/css" />
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-</head>
-<body>
-<div id="header">
-<h1 class="title">Hall Handbook</h1>
-<h3 class="date">April 2016</h3>
-</div>
-<div id="TOC">
-<ul>
-<li><a href="#introduction">Introduction</a><ul>
-<li><a href="#a-macroscopic-approach-to-ohms-laws">A macroscopic approach to Ohm’s laws</a></li>
-</ul></li>
-<li><a href="#a-semiclassical-microscopic-model">A semiclassical microscopic model</a></li>
-<li><a href="#the-hall-effect">The Hall effect</a></li>
-<li><a href="#the-experimental-setup">The experimental setup</a><ul>
-<li><a href="#hall-voltage-and-resistance-measurements-at-room-temperature">Hall voltage and resistance measurements at room temperature</a></li>
-<li><a href="#measurements-at-constant-i-and-b-while-varying-the-temperature">Measurements at constant <span class="math inline">\(I\)</span> and <span class="math inline">\(B\)</span> while varying the temperature</a></li>
-<li><a href="#suggested-procedure">Suggested procedure</a></li>
-<li><a href="#typical-results">Typical results</a></li>
-</ul></li>
-<li><a href="#appendix-1-use-of-the-optional-extension-hub">Appendix 1: Use of the optional Extension HUB</a></li>
-<li><a href="#appendix-2-calculation-of-r_h-for-small-and-high-magnetic-field">Appendix 2: calculation of <span class="math inline">\(R_H\)</span> for small and high magnetic field</a><ul>
-<li><a href="#appendix-3-temperature-dependence-of-e_g">Appendix 3: Temperature dependence of <span class="math inline">\(E_g\)</span></a></li>
-<li><a href="#appendix-3-data-analysis-using-open-source-r-studio-software">Appendix 3: Data analysis using open-source R-Studio software</a></li>
-</ul></li>
-<li><a href="#warnings">Warnings</a></li>
-<li><a href="#references">References</a></li>
-<li><a href="#authorship">Authorship</a></li>
-</ul>
-</div>
+\documentclass[12pt,]{}
+\usepackage[]{palatino}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[top=2cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfauthor={Torzo G. Bortolami D. Tosato S.},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\title{Hall Handbook}
+\author{Torzo G. Bortolami D. Tosato S.}
+\date{April 2016}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+<p>An appararatus for the measurement of Hall effect, Energy gap and Resistance over a wide range of temperatures. Theory, practice and usage</p>
+\end{abstract}
+
+{
+\setcounter{tocdepth}{}
+\tableofcontents
+}
 <!--
 Copyright (C)  2016  Labtrek & Fermium LABS.
 Permission is granted to copy, distribute and/or modify this document
@@ -90,7 +78,7 @@ https://github.com/tomduck/pandoc-eqnos
 https://github.com/tomduck/pandoc-tablenos
 https://github.com/tomduck/pandoc-fignos
 
-Original paper by Giacomo Torzo of LABTREK
+Original paper by Giacomo Torzo of LabTrek
 Revision and new technical documentation by Davide Bortolami of Fermium LABS
 
 http://labtrek.it
@@ -183,7 +171,7 @@ https://fermiumlabs.com
 <p><a name="eq:extrinsicConductivityInvPoint2"></a><span class="math display">\[b=\frac{R_e}{R_e-R_o}\qquad (22)\]</span></p>
 <p>where <span class="math inline">\(R_o\)</span> is the measured sample resistance at the inversion point and <span class="math inline">\(R_e\)</span> is the resistance extrapolated from the extrinsic region (low temperature) to the value it would have at the inversion temperature.</p>
 <p>The dopant concentration is related to the value of the <em>Hall constant at the inversion point</em> <span class="math inline">\(R_{Ho}\)</span> (in the extrinsic region only the hole concentration is significant) by the equations (<a href="#eq:R_Hmn">13</a>) and (<a href="#eq:R_Hp">14</a>), i.e. : <a name="eq:HallConstantInvPointRelation"></a><span class="math display">\[N_a \approx p \approx \frac{1}{e R_{Ho}}\qquad (23)\]</span></p>
-<h2 id="the-experimental-setup">The experimental setup</h2>
+<h3 id="the-experimental-setup">The experimental setup</h3>
 <p>The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two Nd-Fe-B magnets and a U shaped soft-steel core, acting like a torus.</p>
 <p>The sample has 7 wires tin soldered in the positions shown in figure <a href="#fig:sample_circuitry">2</a> and <a href="#fig:sample_pcb">3</a> as follows:</p>
 <a name="fig:sample_circuitry"></a>
@@ -226,7 +214,6 @@ https://fermiumlabs.com
 </div>
 <p>A calibration of the magnetic field <span class="math inline">\(B\)</span> as a function of the gap may be made using a gauss-meter probe placed between the poles (see next chapter [fix]).</p>
 <p>The magnetic field <span class="math inline">\(B\)</span> may be calibrated using a gauss-meter probe placed at the center between the poles.</p>
-<p></p>
 <h3 id="measurements-at-constant-i-and-b-while-varying-the-temperature">Measurements at constant <span class="math inline">\(I\)</span> and <span class="math inline">\(B\)</span> while varying the temperature</h3>
 <p>The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminum bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be cooled .</p>
 <p>The temperature is measured by a type K (Chromel-Alumel) thermocouple thermally coupled to the sample. The small voltage generated by the thermocouple is amplified by an AD8495<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> integrated circuit. The output (roughly proportional to the temperature with a sensitivity of <span class="math inline">\(\approx 5\frac { mV }{ \,^{\circ}\mathrm{K} }\)</span> is amplified by a non-inverting amplifier (not shown in picture) to get <span class="math inline">\(\approx 10\frac { mV }{ \,^{\circ}\mathrm{K} }\)</span> and shifted to obtain <span class="math inline">\(V_{out}\)</span><span class="math inline">\(_T\)</span>=2.5V at <span class="math inline">\(273.15\,^{\circ}\mathrm{K}=0\,^{\circ}\mathrm{C}\)</span>. While the K type thermocouple is fairly linear in a small range near room temperature, it is not linear in the whole temperature range covered by the apparatus, as can be seen in figure <a href="#fig:seebeckNonlinearity">5</a>.</p>
@@ -235,60 +222,15 @@ https://fermiumlabs.com
 <img src="Media/seebeck_coefficient_vs_temperature.png" alt="Figure 5. In every type of thermocouple, the Seebeck coefficiently \frac{\mu V}{\,^{\circ}\mathrm{C}} is heavly non-linear in relation to the temperature." id="fig:seebeckNonlinearity" />
 <p class="caption">Figure 5. In every type of thermocouple, the Seebeck coefficiently <span class="math inline">\(\frac{\mu V}{\,^{\circ}\mathrm{C}}\)</span> is heavly non-linear in relation to the temperature.</p>
 </div>
-<p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure <a href="#fig:seebeckNonlinearity">5</a>) of the thermocouple linearly extrapolating the following polynomial:</p>
+<p>In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure <a href="#fig:seebeckNonlinearity">5</a>) of the thermocouple using the following polynomial:</p>
 <p><a name="eq:compensatingPolynomial"></a><span class="math display">\[t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }\qquad (24)\]</span> where <span class="math inline">\(E\)</span> is the output voltage of the thermocouple in <span class="math inline">\(mV\)</span>.</p>
-<p>In the following table<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> two different groups of coefficients are given, depending on the temperature range:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">t range</th>
-<th align="left">-200°C to 0°C</th>
-<th align="left">0°C to 500°C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><span class="math inline">\(d_0\)</span></td>
-<td align="left">0.0000000E+00</td>
-<td align="left">0.000000E+00</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(d_1\)</span></td>
-<td align="left">2.5173462E+01</td>
-<td align="left">2.508355E+01</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(d_2\)</span></td>
-<td align="left">-1.1662878E+00</td>
-<td align="left">7.860106E-02</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(d_3\)</span></td>
-<td align="left">-1.0833638E+00</td>
-<td align="left">-2.503131E-01</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(d_4\)</span></td>
-<td align="left">-8.9773540E-01</td>
-<td align="left">8.315270E-02</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(d_5\)</span></td>
-<td align="left">-3.7342377E-01</td>
-<td align="left">-1.228034E-02</td>
-</tr>
-<tr class="odd">
-<td align="left"><strong>E range</strong></td>
-<td align="left"><strong>-5.891mV to 0mV</strong></td>
-<td align="left"><strong>0mV to 20.644mV</strong></td>
-</tr>
-</tbody>
-</table>
+<p>A fitting polynomial (<a href="#eq:compensatingPolynomial">24</a>) of the fifth order is sufficient, given the precision of our equipment.</p>
+<p>The following table[^srdata] shows the polynomial coefficients obtained from a best fit of …………………:</p>
+<p>[FIX!!!]</p>
 <!-- table of thermoelectric compensation coefficients for K type termocouples -->
-<p>Linearly extrapolating a polynomial (<a href="#eq:compensatingPolynomial">24</a>) of the fifth order is more that sufficient given the precision of our equipment.</p>
-<p>The voltage <span class="math inline">\(E\)</span> at the termocouple junction can be obtained<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> from the following equation: <a name="eq:voltageAtThermocoupleJunction"></a><span class="math display">\[E=\frac { 1 }{ 2 } \frac {  V_{ out }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } \qquad (25)\]</span></p>
-<p>where <span class="math inline">\(V_{out}\)</span> is the output of the instrument (on the front panel), <span class="math inline">\(V_{Ref}=2.5V\)</span> the voltage that indicates a temperature <span class="math inline">\(T=0\,^{\circ}\mathrm{C}\)</span>, <span class="math inline">\(V_{offset}\)</span> is the error voltage at <span class="math inline">\(0\,^{\circ}\mathrm{C}\)</span> to achieve <span class="math inline">\(125 mV\)</span> at <span class="math inline">\(25\,^{\circ}\mathrm{C}\)</span> and <span class="math inline">\(Gain\)</span> is the internal gain of the AD8495 amplifier.</p>
-<p>Consequently, linearly extrapolating with the compensation polynomial allows us to finally obtain the correct temperature<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>:</p>
+<p>The voltage <span class="math inline">\(E\)</span> at the termocouple junction can be obtained<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> from the following equation: <a name="eq:voltageAtThermocoupleJunction"></a><span class="math display">\[E=\frac { 1 }{ 2 } \frac {  V_{ outT }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } \qquad (25)\]</span></p>
+<p>where <span class="math inline">\(V_{outT}\)</span> is the output of the instrument (on the front panel), <span class="math inline">\(V_{Ref}=2.5V\)</span> the voltage that indicates a temperature <span class="math inline">\(T=0\,^{\circ}\mathrm{C}\)</span>, <span class="math inline">\(V_{offset}\)</span> is the error voltage at <span class="math inline">\(0\,^{\circ}\mathrm{C}\)</span> to achieve 125 mV at <span class="math inline">\(25\,^{\circ}\mathrm{C}\)</span> and <span class="math inline">\(Gain\)</span> is the internal gain of the AD8495 amplifier.</p>
+<p>Using the fitting polynomial (<a href="#eq:compensatingPolynomial">24</a>) allows us to finally obtain the temperature in Celsius <a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>:</p>
 <p><a name="eq:FcompE"></a><span class="math display">\[t={ f }_{ comp }\left( E \right)\qquad (26)\]</span> <a name="eq:ad8494Compensated"></a><span class="math display">\[t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) \qquad (27)\]</span></p>
 <p>A possible implementation in C code is the following:</p>
 <div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#define THERMOCOUPLE_OFFSET 0.00125</span>
@@ -347,7 +289,7 @@ Float thermocouple_voltage(<span class="dt">float</span> vout,<span class="dt">f
 <p class="caption">Figure 9. Example of calculated data</p>
 </div>
 <p>In order to evaluate the Ge energy gap <span class="math inline">\(E_g\)</span>, a plot of <span class="math inline">\(ln(R)\)</span> vs. <span class="math inline">\(1/2kT\)</span> was built, after calculating from the Celsius temperature <span class="math inline">\(Tc\)</span> the absolute temperature <span class="math inline">\(T\)</span> (<span class="math inline">\(k\)</span> is the Boltzmann constant <span class="math inline">\(k = 8.617 \cdot 10^{-5}\)</span>.</p>
-<p>From the slope in the intrinsic region (high temperature region, see Fig. <a href="#fig:EgFit">10</a> ) we get the value of the energy gap <span class="math inline">\(E_g\)</span>, extrapolated linearly from <span class="math inline">\(T=0^{\circ}\mathrm{K}\)</span>, that can be compared to the known value for germanium (<span class="math inline">\(E{_g}^o=0.78\)</span>, cfr. Appendix 2)</p>
+<p>From the slope in the intrinsic region (high temperature region, see Fig. <a href="#fig:EgFit">10</a> ) we get the value of the energy gap <span class="math inline">\(E_g\)</span>, extrapolated linearly from <span class="math inline">\(T=0^{\circ}\mathrm{K}\)</span>, that can be compared to the known value for germanium (<span class="math inline">\(E{_g}^o=0.78\)</span>, see Appendix 3)</p>
 <a name="fig:EgFit"></a>
 <div class="figure">
 <img src="Media/ImageEgFit.jpg" alt="Figure 10. Example of linear best fit in the intrinsic region (high temperature)" id="fig:EgFit" />
@@ -433,10 +375,9 @@ Float thermocouple_voltage(<span class="dt">float</span> vout,<span class="dt">f
 <li id="fn4"><p><em>Intrinsic</em> term labels properties related to pure semiconductors or to doped semiconductors at hight temperature, where the thermally generated carriers density is much larger than the (<em>extrinsic</em>) carrier density due to the dopant.<a href="#fnref4">↩</a></p></li>
 <li id="fn5"><p>The gain can change due to specifications and calibration. Please refer to the values calculated on the screen of the device.<a href="#fnref5">↩</a></p></li>
 <li id="fn6"><p><a href="http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html">AD8495 datasheet, Analog Semiconductors</a><a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p>NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab<a href="#fnref7">↩</a></p></li>
+<li id="fn7"><p><a href="http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF">AN-1087, Analog Semiconductors</a>  <a href="#fnref7">↩</a></p></li>
 <li id="fn8"><p><a href="http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF">AN-1087, Analog Semiconductors</a>  <a href="#fnref8">↩</a></p></li>
-<li id="fn9"><p><a href="http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF">AN-1087, Analog Semiconductors</a>  <a href="#fnref9">↩</a></p></li>
 </ol>
 </div>
-</body>
-</html>
+
+\end{document}
