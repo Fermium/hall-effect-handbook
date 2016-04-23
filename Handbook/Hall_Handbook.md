@@ -303,15 +303,20 @@ where $E$ is the output voltage of the thermocouple in $mV$.
 
 A fitting polynomial ({@eq:compensatingPolynomial}) of the fifth order is sufficient, given the precision of our equipment.
 
-The following table[^srdata] shows the polynomial  coefficients obtained from a best fit of .....................:
+The table {@tbl:kcoefftable} shows the polynomial coefficients obtained from a best fit of the NIST[^srdata] correction tables.
 
+| Coefficient     | Value        |
+| :-------------- | :------------ |
+| $d_0$           | $0.3837$      |
+| $d_1$           | $25.22$       |
+| $d_2$           | ­$0.2795$      |
+| $d_3$           | $0.07205$     |
+| $d_4$           | $0.01409$     |
+| $d_5$           | $0.001056$    |
 
-[FIX!!!]
+Table: Polynomial coefficients obtained from NIST[^srdata] K thermocouple tables ($-200< t \, [^{\circ}\mathrm{C}] <200$). {#tbl:kcoefftable}
 
-
-<!-- table of thermoelectric compensation coefficients for K type termocouples -->
-
-
+[^srdata]: NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab
 
 The voltage $E$ at the termocouple junction can be obtained[^AD8495nist] from the following equation:
 $$E=\frac { 1 }{ 2 } \frac {  V_{ outT }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
