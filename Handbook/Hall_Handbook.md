@@ -2,8 +2,8 @@
 title: Hall Handbook
 date: April 2016
 abstract: |
-  Theory and practice of the usage of the apparatus to measure Hall effect, Energy gap and Resistance of a germanium sample over a wide range of temperatures.
-fontfamily: fourier
+  An appararatus for the measurement of Hall effect, Energy gap and Resistance over a wide range of temperatures. Theory, practice and usage
+fontfamily: palatino
 cover-image: Media/complete_apparatus.JPG
 links-as-notes: false
 fontsize: 12pt
