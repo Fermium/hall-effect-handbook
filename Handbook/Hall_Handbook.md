@@ -238,19 +238,20 @@ The sample has 7 wires tin soldered in the positions shown in figure {@fig:sampl
     *Three contacts* are needed for the Hall voltage because *two contacts cannot be precisely aligned.
     
 ![Printed circuit board with germanium sample and thermocuple](Media/sample_pcb.jpg){#fig:sample_pcb}
-\     
+\ 
+
+![Device front panel](Media/imageFrontPanel0.jpg){#fig:frontPanel}
+\ 
 
 The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger. 
 
 The numbering of the contact on the sample corresponds to the number of the pins in the rj45 connector of the sample assembly.
 
-The two DAs have fixed gains $G$, set to $0.5$ for $V_{out}$$_R$ and to $100$ for $V_{out}$$_H$[^GainMayChange], and they're powered from a $\pm 15V$ power supply. 
+The two DAs have fixed gains $G$, set to $0.5$ for $V_{out \, R}$ and to $100$ for $V_{out}$$_H$[^GainMayChange], and they're powered from a $\pm 15V$ power supply. 
 
 
 [^GainMayChange]: The gain can change due to specifications and calibration. Please refer to the values displayed on the front panel.
-
-
-The PGA gains are selectable among the following values $G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}$ through the front panel.
+The PGA gains are selectable among the following values $G_{ PGA}= \{ 1,2,5,10,20,50,100,200\}$ through the front panel as shown in figure {@fig:frontPanel}. The gain values shown on the front panel are the product of DA and PGA gains for both channels.
 
 The output voltages on the front panel are restrained in a number of cases:
 
@@ -425,7 +426,7 @@ The ExtHUB must be connected between the sample and the fixed HUB (FixHUB) place
 \ 
 
   
-For example a two-wire resistance measurement between the Test Points (TP) 1- or 1-6 or 7- or 7-6 will give a value larger than the real resistance measured by the 4-contacts method, and displayed on the front panel. 
+For example a two-wire resistance measurement between the Test Points (TP) 1-4, 1-5, 7-4 or 7-5 will give a value larger than the real resistance measured by the 4-contacts method, and displayed on the front panel. 
 
 Note: be sure to switch-off the controller while taking measurements with the ExtHUB !
 
@@ -491,7 +492,7 @@ $$=\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ e(p\mu _{ h }+n\mu _{ e })^{
 <!-- yeah i know that was long... -->
 which tends to saturate at high B values.
 
-###Appendix 3: Temperature dependence of $E_g$
+##Appendix 3: Temperature dependence of $E_g$
 
 Experimental results consistently shows that the energy gap depends on temperature and for Germanium we can find in the literature the following empirical law:
 $$E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad [eV]$$ {#eq:eGempiricalLaw}
@@ -509,9 +510,9 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 ![Temperature dependance of the energy gap](Media/Eg_vs_T.jpeg){#fig:EgTdependance}
 \ 
 
-###Appendix 3: Data analysis using open-source R-Studio software
+<!-- ##Appendix 4: Data analysis using open-source R-Studio software
 
-*This appendix is being written.*
+*This appendix is being written.* -->
 
 \clearpage
 
