@@ -20,12 +20,12 @@ pandoc Hall_Handbook.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pa
 echo "Docx built"
 
 
-echo "Building pdf from html..."
-cp Exports/Hall_Handbook.html ./
-phantomjs rasterize.js Hall_Handbook.html Hall_Handbook_fromHTML.pdf "A4"
-mv Hall_Handbook_fromHTML.pdf Exports/
-rm Hall_Handbook.html
-echo "Pdf from html built"
+#echo "Building pdf from html..."
+#cp Exports/Hall_Handbook.html ./
+#phantomjs rasterize.js Hall_Handbook.html Hall_Handbook_fromHTML.pdf "A4"
+#mv Hall_Handbook_fromHTML.pdf Exports/
+#rm Hall_Handbook.html
+#echo "Pdf from html built"
 
 echo "COMPLETE!"
 #open  Exports/Hall_Handbook.pdf
