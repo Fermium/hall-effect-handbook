@@ -260,7 +260,7 @@ The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) who
 
 The numbering of the contact on the sample corresponds to the number of the pins in the rj45 connector of the sample assembly.
 
-The two DAs have fixed gains $G$, set to $0.5$ for $V_{out \, R}$ and to $100$ for $V_{out \, H$[^GainMayChange], and they're powered from a $\pm 15V$ power supply. 
+The two DAs have fixed gains $G$, set to $0.5$ for $V_{out \, R}$ and to $10$ for $V_{out \, H}$ [^GainMayChange], and they're powered from a $\pm 15V$ power supply. 
 
 
 [^GainMayChange]: The gain can change due to specifications and calibration. Please refer to the values displayed on the front panel.
