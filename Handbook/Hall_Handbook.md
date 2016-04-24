@@ -1,13 +1,22 @@
 ---
 title: Hall Handbook
-date: April 2016
-abstract: |
-  An appararatus for the measurement of Hall effect, Energy gap and Resistance over a wide range of temperatures. Theory, practice and usage
+header-includes:
+    - \usepackage{siunitx}
+    - \thispagestyle{empty} 
+    - \usepackage{fancyhdr}
+    - \pagestyle{fancy}
+    - \headheight = 3cm
+    - \fancyhead[R]{\includegraphics[height=1.5cm, trim=0cm 7.5cm 0cm 0cm]{Media/logo.eps}} 
+    - \fancyhead[L]{Hall Handbook}
+    - \fancyfoot[L]{\href{http://fermiumlabs.com}{fermiumlabs.com}}
+    - \fancyfoot[C]{}
+    - \fancyfoot[R]{\thepage}
+include-before:
+    - \thispagestyle{empty}
+    - \begin{center} \includegraphics[height=8cm]{Media/cover.jpg} \end{center}
 fontfamily: palatino
-cover-image: Media/complete_apparatus.JPG
-links-as-notes: false
 fontsize: 12pt
-geometry: [top=2cm, bottom=1.5cm, left=2cm, right=2cm]
+geometry: [top=1pt, bottom=4cm, left=2.1cm, right=2.1cm]
 
 ---
 
@@ -35,6 +44,10 @@ http://labtrek.it
 https://fermiumlabs.com
 
 ################################ --> 
+
+
+\clearpage
+
 
 ## Introduction
 
@@ -539,8 +552,10 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 * C.L.Chin e C.R.Westgate, *The Hall Effect and Its Applications*, Plenum Press, NY, 1979
 * J.R.Hook , H.E.Hall *Solid State Physics*, John Wiley &Sons 1991.
 * A. C. Melissinos *Experiments in modern Physics*, Academic Press, 1993.
-* *New Semiconductor materials. Characteristics and Properties*, http://www.ioffe.ru/SVA/NSM/Semicond/Ge/index.html (Electronic archive)
-* *The Semiconductor informations WebSite* (properties of Germanium), http://www.semiconductors.co.uk/propiviv5431.htm
+* *New Semiconductor materials. Characteristics and Properties*, 
+    \newline http://www.ioffe.ru/SVA/NSM/Semicond/Ge/index.html (Electronic archive)
+* *The Semiconductor informations WebSite* (properties of Germanium), 
+    \newline http://www.semiconductors.co.uk/propiviv5431.htm
 
 ## Authorship
 This Handbook was originally written by Giacomo Torzo of [Labtrek](http://labtrek.it)
