@@ -2,11 +2,9 @@
 
 ## Downloads
 
-[PDF Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.pdf)
+[PDF Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.pdf) [shortlink: frm.li/hallhandbookmaster](http://frm.li/hallhandbookmaster)
 
 [HTML Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.html)
-
-[PDF obtained from the html (experimental) ](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook_fromHTML.pdf)
 
 [DOCX Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.docx)
 
@@ -28,14 +26,25 @@ To compile this document you need:
 * [pandoc-eqnos](https://github.com/tomduck/pandoc-eqnos)
 * [pandoc-tablenos](https://github.com/tomduck/pandoc-tablenos)
 * [pandoc-fignos](https://github.com/tomduck/pandoc-fignos)
-* [phantom js](http://phantomjs.org/download.html)
 
-You can use the file make.sh on a unix system (linux or Mac OSX)
+You can use the standard make utils on any unix system
 ```bash
-git clone https://github.com/fermiumlabs/Hall-effect-apparatus.git
-cd Hall-effect-apparatus/Handbook
-bash make.sh
+make all #clean and build everything
+make clean #clean
+make pdf
+make html
+make docx
 ```
+
+If you're on a osx, you can also run:
+
+```bash
+make open_pdf
+make open_html
+make open_docx
+```
+
+which will open the various files with your default app.
 
 ## LICENSE
 This work is distributed under the terms of the [GNU Free Documentation License](http://www.gnu.org/licenses/fdl-1.3.html)
