@@ -11,14 +11,14 @@ open_pdf: pdf
 
 clean_html:
 	rm -f Exports/Hall_Handbook.html
-	rm -r -f Exports/html_files/*
-	rm -r -f Exports/html_files
+	rm -r -f Exports/Media/*
+	rm -r -f Exports/Media
 	
-html: clean_html dir 
+html: dir 
 	@echo "Building Html..."
-	mkdir -p Exports/html_files/
+	mkdir -p Exports/Media/
 	pandoc Hall_Handbook.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --mathjax -s -S --toc -H Media/header.html -c Media/style.css  -o Exports/Hall_Handbook.html
-	cp Media/* Exports/html_files/
+	cp Media/* Exports/Media/
 	@echo "Html built"
   
 
