@@ -2,7 +2,7 @@
 
 ## Downloads
 
-[PDF Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.pdf) [shortlink: frm.li/hallhandbookmaster](http://frm.li/hallhandbookmaster)
+[PDF Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.pdf) [**shortlink: frm.li/hallhandbookmaster**](http://frm.li/hallhandbookmaster)
 
 [HTML Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.html)
 
@@ -13,19 +13,24 @@ Please note, the download links are automatically updated every 2 hours.
 
 ## Corrections and Issues
 
-If you find a problem with the documentation or the code please open an issue on this repository.
+If you find a problem with the documentation or the code please [open an issue](https://github.com/fermiumlabs/Hall-effect-apparatus/issues/new) (you need a Github account) on this repository.
 
 > what is a repository? how do i open an issue?? i don't want this crap, just let me correct an equation!!!
 
 Email us at [support@fermiumlabs.com](mailto:support@fermiumlabs.com)
 
-## How to compile
+##How was it written?
 
-To compile this document you need:
+This document is written in Pandoc Markdown, with the use of a few extensions.
+
+## How to compile from markdown
+
+To compile this document you need installed:
 * [pandoc](http://pandoc.org)
 * [pandoc-eqnos](https://github.com/tomduck/pandoc-eqnos)
 * [pandoc-tablenos](https://github.com/tomduck/pandoc-tablenos)
 * [pandoc-fignos](https://github.com/tomduck/pandoc-fignos)
+* make [(osx)](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/)
 
 You can use the standard make utils on any unix system
 ```bash
@@ -43,6 +48,7 @@ make open_pdf
 make open_html
 make open_docx
 ```
+
 
 which will open the various files with your default app.
 
