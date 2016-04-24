@@ -13,7 +13,7 @@ header-includes:
     - \fancyfoot[R]{\thepage}
 include-before:
     - \thispagestyle{empty}
-    - \begin{center} \includegraphics[height=8cm]{Media/cover.jpg} \end{center}
+    - \centering\includegraphics[height=8cm]{Media/cover.jpg}
 fontfamily: palatino
 fontsize: 12pt
 geometry: [top=1pt, bottom=4cm, left=2.1cm, right=2.1cm]
