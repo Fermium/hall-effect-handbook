@@ -6,14 +6,14 @@ header-includes:
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
     - \headheight = 3cm
-    - \fancyhead[R]{\includegraphics[height=1.5cm, trim=0cm 7.5cm 0cm 0cm]{Media/logo.eps}} 
+    - \fancyhead[R]{\includegraphics[height=1.5cm, trim=0cm 9cm 0cm 0cm]{Media/logo.eps}} 
     - \fancyhead[L]{Hall Handbook}
     - \fancyfoot[L]{\href{http://fermiumlabs.com}{fermiumlabs.com}}
     - \fancyfoot[C]{}
     - \fancyfoot[R]{\thepage}
 include-before:
     - \thispagestyle{empty}
-    - \centering\includegraphics[height=8cm]{Media/cover.jpg}
+    - \begin{center}\includegraphics[height=8cm]{Media/cover.jpg}\end{center}
 fontfamily: palatino
 fontsize: 12pt
 geometry: [top=1pt, bottom=4cm, left=2.1cm, right=2.1cm]
