@@ -1,0 +1,29 @@
+language: c
+install:
+  - sudo apt-get update
+  - sudo apt-get -y install jq
+  - wget `curl https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.assets[] | .browser_download_url | select(endswith("deb"))'` -O pandoc.deb
+  - sudo dpkg -i pandoc.deb
+  - mkdir build
+  - wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu && chmod +x ./build/install-tl-ubuntu
+  - sudo ./build/install-tl-ubuntu   
+  - sudo apt-get -y install zip
+sudo: true
+script: 
+  - cd Handbook && make all
+  - mv Handbook/Exports/ ./build
+  - zip -r ./build/Hall_Handbook_html.zip ./build/Media ./build/Hall_Handbook.html  
+notifications:
+  email:
+    on_success: always
+    on_failure: always
+deploy:
+  provider: releases
+  api_key:
+    secure: hnYQIAqK1XOzXzVBa+wtgHFWORiiwVBjKBNRqw7t3VPyzxQQL84SAtaMVre0B7HGzHUGYC7MQdXUGe/Yh15dbu4/oAeA3MNNVcl5ou+Ixu3snZiH4x7097kGXh3EbbFBFZ9aNiJ78vnH3k0jtH8ft8e$
+  file: 
+    - build/Hall_Handbook.pdf
+    - build/Hall_Handbook_html.zip
+    - build/Hall_Handbook.docx
+  on:
+    repo: fermiumlabs/Hall-effect-apparatus
