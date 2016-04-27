@@ -15,6 +15,7 @@ install:
   - sudo ./build/install-tl-ubuntu   
   - sudo apt-get -y install texlive-xetex 
   - sudo apt-get -y install texlive-latex-extra
+  - sudo apt-get install texlive-science
   - sudo apt-get -y install zip
 sudo: true
 script: 
