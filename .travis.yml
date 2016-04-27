@@ -2,7 +2,7 @@ language: c
 install:
   - sudo apt-get update
   - sudo apt-get -y install jq
-  - apt-get -y install python-pip
+  - sudo apt-get -y install python-pip
   - pip install pandoc-fignos
   - pip install pandoc-eqnos
   - pip install pandoc-tablenos
