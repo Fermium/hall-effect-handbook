@@ -13,6 +13,7 @@ install:
   - wget -O ./build/install-tl-ubuntu https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu 
   - chmod +x ./build/install-tl-ubuntu
   - sudo ./build/install-tl-ubuntu   
+  - sudo apt-get install texlive-xetex
   - sudo apt-get -y install zip
 sudo: true
 script: 
@@ -20,7 +21,7 @@ script:
   - mv Handbook/Exports/ ./build
   - zip -r ./build/Hall_Handbook_html.zip ./build/Media ./build/Hall_Handbook.html  
 notifications:
-  email:
+  slack: fermiumlabs:0BfrFyD9uqr9bFhsH0Etn4wo
     on_success: always
     on_failure: always
 deploy:
