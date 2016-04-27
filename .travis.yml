@@ -13,7 +13,7 @@ install:
   - wget -O ./build/install-tl-ubuntu https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu 
   - chmod +x ./build/install-tl-ubuntu
   - sudo ./build/install-tl-ubuntu   
-  - sudo apt-get install texlive-xetex
+  - sudo apt-get install texlive-xetex 
   - sudo apt-get -y install zip
 sudo: true
 script: 
