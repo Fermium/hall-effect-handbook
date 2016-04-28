@@ -22,7 +22,8 @@ script:
 after_success:
   - curl --upload-file ./Hall_Handbook.zip https://transfer.sh/Hall_Handbook.zip 
 notifications:
-  slack: fermiumlabs:0BfrFyD9uqr9bFhsH0Etn4wo
+  slack: 
+    secure: "bPPKilNUc+bazYqvfvv0tnhddPjVA/J9RslRW1EB8554K8tLYkUKgtqvRPrnsQeMP+P9x9hoEh1GvUiQgyUiBnbr9lEFH5euGAD2iMu365c299x79nLH3BCCQuxiIa4S5aQ1lyjTfCKjzYg0MSyOyFDtM295fh36f/88IOcR9dxLfvQyUehMVciGHjCqUMf7rn6fOCQoq4rhjtdMZOEB1tugR+AhSFtHLq0b/smgHPAiD0U9UN/leTVHZyVzkSiB8p/aDNE9guW0GmjAnbyykLX3OQrsPffy8T0bX26Pd/U59ZG7xCGG54KFwrzl1MBCHCm23smXKjKsOrvUP3JVSM64Bu4deOuVRGCymtyjkEQQGks5nvIpr0xqnwe+ybJv+74Li0h7ACcRxH89HPlEsnsqldAVYFpNM1cAR/ULmLd4GVchAt8w8ZNYTOyhfV5zdAa9NNMG1ToWSgDRwQSzLiky8Zhjqsezn3eOznMtdcntgs4jIBhhDI3Rq2FLiZIGMcC3y5wV7Xdg21wXmzVOG3x2a1qRouUD51hHpiCRtmUOrW0DYUhRjYYKqM/BC2eV8DGHcvQtdZaKC6XwRJp2EyxMxE78HcijnV+d4QpbJYK3/jK9lr8LyrdqbdWA28/QtU4rt5Fy4RLBuvjL5uiS8AnnA4xJ4C2skG4xkQ3fwGY="
     on_start: true
   email: false
 deploy:
