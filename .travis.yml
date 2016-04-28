@@ -11,6 +11,8 @@ install:
   - sudo dpkg -i pandoc.deb
   - tlmgr update --self
   - tlmgr update --all
+  - tlmgr install microtype
+  - tlmgr install geometry
 sudo: true
 script:
   - mkdir build
@@ -18,6 +20,10 @@ script:
   - make all
   - zip -r ./Exports/Hall_Handbook_html.zip ./Exports/Media ./Exports/Hall_Handbook.html
   - cd Exports && ls
+after_success:
+  - curl --upload-file ./Hall_Handbook.pdf https://transfer.sh/Hall_Handbook.pdf 
+  - curl --upload-file ./Hall_Handbook_html.zip https://transfer.sh/Hall_Handbook_html.zip 
+  - curl --upload-file ./Hall_Handbook.docx https://transfer.sh/Hall_Handbook.docx 
 notifications:
   slack: fermiumlabs:0BfrFyD9uqr9bFhsH0Etn4wo
   email: false
