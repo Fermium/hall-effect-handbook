@@ -12,10 +12,24 @@ install:
   - mkdir build
   - wget -O ./build/install-tl-ubuntu https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu 
   - chmod +x ./build/install-tl-ubuntu
-  - sudo ./build/install-tl-ubuntu   
-  - sudo apt-get -y install texlive-xetex 
-  - sudo apt-get -y install texlive-latex-extra
-  - sudo apt-get install texlive-science
+  - sudo ./build/install-tl-ubuntu
+  - sudo /opt/texbin/tlmgr update --self
+  - sudo /opt/texbin/tlmgr update --all
+  - sudo /opt/texbin/tlmgr install xetex
+  - sudo /opt/texbin/tlmgr install siunitx
+  - sudo /opt/texbin/tlmgr install collection-fontsrecommended
+  - sudo /opt/texbin/tlmgr install tufte-latex
+  - sudo /opt/texbin/tlmgr install changepage
+  - sudo /opt/texbin/tlmgr install paralist
+  - sudo /opt/texbin/tlmgr install titlesec
+  - sudo /opt/texbin/tlmgr install ec
+  - sudo /opt/texbin/tlmgr install units
+  - sudo /opt/texbin/tlmgr install lipsum
+  - sudo /opt/texbin/tlmgr install mathpazo
+  - sudo /opt/texbin/tlmgr install fpl
+  - sudo /opt/texbin/tlmgr install ucs
+  - sudo /opt/texbin/tlmgr install etoolbox
+  - sudo /opt/texbin/tlmgr install fancyhdr
   - sudo apt-get -y install zip
 sudo: true
 script: 
