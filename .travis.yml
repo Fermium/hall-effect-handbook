@@ -33,3 +33,4 @@ deploy:
     - build/Hall_Handbook.docx
   on:
     repo: fermiumlabs/Hall-effect-apparatus
+  skip_cleanup: true
