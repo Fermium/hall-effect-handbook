@@ -1,14 +1,10 @@
 # Handbook
-[![Build Status](https://travis-ci.org/fermiumlabs/Hall-effect-apparatus.svg?branch=travis-ci)](https://travis-ci.org/fermiumlabs/Hall-effect-apparatus)
+[![Build Status](https://travis-ci.org/fermiumlabs/Hall-effect-apparatus.svg?branch=master)](https://travis-ci.org/fermiumlabs/Hall-effect-apparatus)
 
 
 ## Downloads
 
-[PDF Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.pdf) [**shortlink: frm.li/hallhandbookmaster**](http://frm.li/hallhandbookmaster)
-
-[HTML Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.html)
-
-[DOCX Handbook](https://gitcdn.xyz/repo/fermiumlabs/Hall-effect-apparatus/master/Handbook/Exports/Hall_Handbook.docx)
+You can download the handbook to use the instrument here: [Latest Version](https://github.com/fermiumlabs/Hall-effect-apparatus/releases/latest/)
 
 Please note, the download links are automatically updated every 2 hours. 
 
