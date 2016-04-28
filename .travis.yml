@@ -30,33 +30,36 @@ install:
   - sudo /opt/texbin/tlmgr install ucs
   - sudo /opt/texbin/tlmgr install etoolbox
   - sudo /opt/texbin/tlmgr install fancyhdr
-  - sudo /opt/texbin/tlmgr install graphicx
-  - sudo /opt/texbin/tlmgr installl modern
-  - sudo /opt/texbin/tlmgr installl setspaceamssymb
-  - sudo /opt/texbin/tlmgr installl amsmath
-  - sudo /opt/texbin/tlmgr installl ifxetex
-  - sudo /opt/texbin/tlmgr installl ifluatex
-  - sudo /opt/texbin/tlmgr installl T1
-  - sudo /opt/texbin/tlmgr installl fontenc
-  - sudo /opt/texbin/tlmgr installl inputenc
-  - sudo /opt/texbin/tlmgr installl eurosym
-  - sudo /opt/texbin/tlmgr installl mathspec
-  - sudo /opt/texbin/tlmgr installl fontspec
-  - sudo /opt/texbin/tlmgr installl upquote
-  - sudo /opt/texbin/tlmgr installl microtype
-  - sudo /opt/texbin/tlmgr installl geometry
-  - sudo /opt/texbin/tlmgr installl hyperref
-  - sudo /opt/texbin/tlmgr installl sep
-  - sudo /opt/texbin/tlmgr installl babel-lang
-  - sudo /opt/texbin/tlmgr installl polyglossia
-  - sudo /opt/texbin/tlmgr installl  natbi
-  - sudo /opt/texbin/tlmgr installl bbiblatex
-  - sudo /opt/texbin/tlmgr installl listings
-  - sudo /opt/texbin/tlmgr installl fancyvrb
-  - sudo /opt/texbin/tlmgr installl longtable
-  - sudo /opt/texbin/tlmgr installl booktabsgraphicx
-  - sudo /opt/texbin/tlmgr installl grffileulemparskip
-  - sudo /opt/texbin/tlmgr installl bidi
+  - sudo /opt/texbin/tlmgr install graphics
+  - sudo /opt/texbin/tlmgr install modern
+  - sudo /opt/texbin/tlmgr install setspace
+  - sudo /opt/texbin/tlmgr install amssymb
+  - sudo /opt/texbin/tlmgr install amsmath
+  - sudo /opt/texbin/tlmgr install ifxetex
+  - sudo /opt/texbin/tlmgr install ifluatex
+  - sudo /opt/texbin/tlmgr install T1
+  - sudo /opt/texbin/tlmgr install fontenc
+  - sudo /opt/texbin/tlmgr install inputenc
+  - sudo /opt/texbin/tlmgr install eurosym
+  - sudo /opt/texbin/tlmgr install mathspec
+  - sudo /opt/texbin/tlmgr install fontspec
+  - sudo /opt/texbin/tlmgr install upquote
+  - sudo /opt/texbin/tlmgr install microtype
+  - sudo /opt/texbin/tlmgr install geometry
+  - sudo /opt/texbin/tlmgr install hyperref
+  - sudo /opt/texbin/tlmgr install sep
+  - sudo /opt/texbin/tlmgr install babel-lang
+  - sudo /opt/texbin/tlmgr install polyglossia
+  - sudo /opt/texbin/tlmgr install natbi
+  - sudo /opt/texbin/tlmgr install bbiblatex
+  - sudo /opt/texbin/tlmgr install listings
+  - sudo /opt/texbin/tlmgr install fancyvrb
+  - sudo /opt/texbin/tlmgr install longtable
+  - sudo /opt/texbin/tlmgr install booktabs
+  - sudo /opt/texbin/tlmgr install grffile
+  - sudo /opt/texbin/tlmgr install ulem
+  - sudo /opt/texbin/tlmgr install parskip
+  - sudo /opt/texbin/tlmgr install bidi
   - sudo apt-get -y install zip
 sudo: true
 script: 
