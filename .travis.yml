@@ -12,9 +12,6 @@ install:
   - mkdir build
   - tlmgr update --self
   - tlmgr update --all
-  - tlmgr install lm
-  - tlmgr install ucs
-  - tlmgr install etoolbox
   - sudo apt-get -y install zip
 sudo: true
 script: 
