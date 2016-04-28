@@ -10,11 +10,11 @@ before_install:
   - wget `curl https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.assets[] | .browser_download_url | select(endswith("deb"))'` -O pandoc.deb
   - sudo dpkg -i pandoc.deb
   - mkdir build
-  - sudo tlmgr update --self
-  - sudo tlmgr update --all
-  - sudo tlmgr install lm
-  - sudo tlmgr install ucs
-  - sudo tlmgr install etoolbox
+  - tlmgr update --self
+  - tlmgr update --all
+  - tlmgr install lm
+  - tlmgr install ucs
+  - tlmgr install etoolbox
   - sudo apt-get -y install zip
 sudo: true
 script: 
