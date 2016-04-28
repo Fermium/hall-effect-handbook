@@ -30,6 +30,7 @@ install:
   - sudo /opt/texbin/tlmgr install ucs
   - sudo /opt/texbin/tlmgr install etoolbox
   - sudo /opt/texbin/tlmgr install fancyhdr
+  - sudo /opt/texbin/tlmgr install graphicx
   - sudo apt-get -y install zip
 sudo: true
 script: 
