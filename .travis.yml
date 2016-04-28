@@ -1,7 +1,7 @@
 language: R
 install:
   - sudo apt-get update
-  - sudo apt-get -y install jq python-pip zip #used to get the last pandoc version
+  - sudo apt-get -y install jq python-pip zip tree #used to get the last pandoc version
   - sudo apt-get -y remove pandoc #remove obsolete pandoc version
   - sudo pip install --upgrade pip
   - sudo pip install pandoc-fignos #pandoc filter for numbering figures
