@@ -1,4 +1,6 @@
 # Handbook
+[![Build Status](https://travis-ci.org/fermiumlabs/Hall-effect-apparatus.svg?branch=travis-ci)](https://travis-ci.org/fermiumlabs/Hall-effect-apparatus)
+
 
 ## Downloads
 

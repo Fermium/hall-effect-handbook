@@ -1,0 +1,38 @@
+language: R
+install:
+  - sudo apt-get update
+  - sudo apt-get -y install jq python-pip zip
+  - sudo apt-get -y remove pandoc
+  - sudo pip install --upgrade pip
+  - sudo pip install 'pandoc-fignos<0.11'
+  - sudo pip install pandoc-eqnos
+  - sudo pip install pandoc-tablenos
+  - wget `curl https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.assets[] | .browser_download_url | select(endswith("deb"))'` -O pandoc.deb && sudo dpkg -i pandoc.deb && rm pandoc.deb
+  - tlmgr update --self
+  - tlmgr update --all
+sudo: true
+script:
+  - mkdir build
+  - cd Handbook
+  - make all
+  - cd Exports
+  - zip -r Hall_Handbook_html.zip Media Hall_Handbook.html
+  - zip -r Hall_Handbook.zip ../../*
+after_success:
+  - curl --upload-file ./Hall_Handbook.zip https://transfer.sh/Hall_Handbook.zip 
+notifications:
+  slack: 
+    secure: "bPPKilNUc+bazYqvfvv0tnhddPjVA/J9RslRW1EB8554K8tLYkUKgtqvRPrnsQeMP+P9x9hoEh1GvUiQgyUiBnbr9lEFH5euGAD2iMu365c299x79nLH3BCCQuxiIa4S5aQ1lyjTfCKjzYg0MSyOyFDtM295fh36f/88IOcR9dxLfvQyUehMVciGHjCqUMf7rn6fOCQoq4rhjtdMZOEB1tugR+AhSFtHLq0b/smgHPAiD0U9UN/leTVHZyVzkSiB8p/aDNE9guW0GmjAnbyykLX3OQrsPffy8T0bX26Pd/U59ZG7xCGG54KFwrzl1MBCHCm23smXKjKsOrvUP3JVSM64Bu4deOuVRGCymtyjkEQQGks5nvIpr0xqnwe+ybJv+74Li0h7ACcRxH89HPlEsnsqldAVYFpNM1cAR/ULmLd4GVchAt8w8ZNYTOyhfV5zdAa9NNMG1ToWSgDRwQSzLiky8Zhjqsezn3eOznMtdcntgs4jIBhhDI3Rq2FLiZIGMcC3y5wV7Xdg21wXmzVOG3x2a1qRouUD51hHpiCRtmUOrW0DYUhRjYYKqM/BC2eV8DGHcvQtdZaKC6XwRJp2EyxMxE78HcijnV+d4QpbJYK3/jK9lr8LyrdqbdWA28/QtU4rt5Fy4RLBuvjL5uiS8AnnA4xJ4C2skG4xkQ3fwGY="
+  email: false
+deploy:
+  provider: releases
+  api_key:
+    secure: X6L1ozlHXnDE1yhwCIppWTRUCYxQ7kH1BeDc/NXj7o52PXKOTF+4NodNrU+NYeCBuZ1fGMyfHnGxjoiXqEWHR7ENZjSfu/dUC1UWZjFtYRrmf/kGbChT6TC4Sc4VWSS3oCliD7tWirCV5acT0mysHfo+ucyHAGCXOB7EXAY0s6a61+x0/TfYAYhU+dF7+SrXSybdLsUPLiueX7pQ3rxQu/2mPyQs1FO98j79gPxSOcILn+SOIaEUQaJRJVUTmaXWBC3kNFr0pLXwqdkNtybEuvCqwSQ0gPzQj1CtMb8gLTYUP8BZAxCX/CGiwit+PkWPPHuOMEh7v4mLIifWvA2Dy9C36xcXBQXGsPNfjZj1OGH6N6wvgx0pzZyrODV2hIAKxJONwS1NrkceuzplXvkJPd7mwYo78oRYmLtQmOdnLQFiymMlEqAelRX0ruQNNdGI+yl5cnteTzRqpFpo/ZIu0xrNMviUb69lzSjYxQmVxQkVQ0Dil7vKzs8fh0GFqHPJ/ZzsbVtS19LfRavdn68LTjYFGP+nrJaLkf7vkwzkvC+DrXyiwvbrEq2ktsphOE0roUirR+mfqr/awnEJGpwLY5C6oRpdPVLHDBWbgsCz9rbJTjfGUIhuG+soQa6YAOKBTeS5yTr7ovNNeut1INzChD9s7dh4APbE+cZ03ekeB/Y=
+  file: 
+    - Hall_Handbook.pdf
+    - Hall_Handbook_html.zip
+    - Hall_Handbook.docx
+  on:
+    repo: fermiumlabs/Hall-effect-apparatus
+    branch: travis-ci
+  skip_cleanup: true
