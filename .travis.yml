@@ -1,4 +1,4 @@
-language: c
+language: R
 install:
   - sudo apt-get update
   - sudo apt-get -y install jq
@@ -10,19 +10,14 @@ install:
   - wget `curl https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.assets[] | .browser_download_url | select(endswith("deb"))'` -O pandoc.deb
   - sudo dpkg -i pandoc.deb
   - mkdir build
-  - wget -O ./build/install-tl-ubuntu https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu 
-  - chmod +x ./build/install-tl-ubuntu
-  - sudo ./build/install-tl-ubuntu --more-tex
-  - sudo /opt/texbin/tlmgr update --self
-  - sudo /opt/texbin/tlmgr update --all
-  - sudo /opt/texbin/tlmgr install lm
-  - sudo /opt/texbin/tlmgr install ucs
-  - sudo /opt/texbin/tlmgr install etoolbox
+  - tlmgr update --self
+  - tlmgr update --all
   - sudo apt-get -y install zip
 sudo: true
 script: 
-  - cd Handbook && make all
-  - mv Handbook/Exports/ ./build
+  - cd Handbook
+  - make all
+  - mv Exports/ ./build
   - zip -r ./build/Hall_Handbook_html.zip ./build/Media ./build/Hall_Handbook.html  
 notifications:
   slack: fermiumlabs:0BfrFyD9uqr9bFhsH0Etn4wo
