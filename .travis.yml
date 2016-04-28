@@ -34,5 +34,5 @@ deploy:
     - Hall_Handbook.docx
   on:
     repo: fermiumlabs/Hall-effect-apparatus
-    branch: travis-ci
+    branch: master
   skip_cleanup: true
