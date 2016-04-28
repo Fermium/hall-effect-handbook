@@ -32,3 +32,4 @@ deploy:
   on:
     repo: fermiumlabs/Hall-effect-apparatus
     branch: travis-ci
+  skip_cleanup: true
