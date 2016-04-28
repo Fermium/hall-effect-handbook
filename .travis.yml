@@ -26,9 +26,9 @@ deploy:
   api_key:
     secure: hnYQIAqK1XOzXzVBa+wtgHFWORiiwVBjKBNRqw7t3VPyzxQQL84SAtaMVre0B7HGzHUGYC7MQdXUGe/Yh15dbu4/oAeA3MNNVcl5ou+Ixu3snZiH4x7097kGXh3EbbFBFZ9aNiJ78vnH3k0jtH8ft8e$
   file: 
-    - Handbook/Exports/Hall_Handbook.pdf
-    - Handbook/Exports/Hall_Handbook_html.zip
-    - Handbook/Exports/Hall_Handbook.docx
+    - Exports/Hall_Handbook.pdf
+    - Exports/Hall_Handbook_html.zip
+    - Exports/Hall_Handbook.docx
   on:
     repo: fermiumlabs/Hall-effect-apparatus
   skip_cleanup: true
