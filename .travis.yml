@@ -1,7 +1,7 @@
 language: R
 install:
   - sudo apt-get update
-  - sudo apt-get -y install jq python-pip zip tree #used to get the last pandoc version
+  - sudo apt-get -y install jq python-pip zip #used to get the last pandoc version
   - sudo apt-get -y remove pandoc #remove obsolete pandoc version
   - sudo pip install --upgrade pip
   - sudo pip install pandoc-fignos #pandoc filter for numbering figures
@@ -17,7 +17,7 @@ script:
   - cd Handbook
   - make all
   - zip -r ./Exports/Hall_Handbook_html.zip ./Exports/Media ./Exports/Hall_Handbook.html  
-  - tree
+  - cd Exports && ls
 notifications:
   slack: fermiumlabs:0BfrFyD9uqr9bFhsH0Etn4wo
   email: false
@@ -26,9 +26,9 @@ deploy:
   api_key:
     secure: hnYQIAqK1XOzXzVBa+wtgHFWORiiwVBjKBNRqw7t3VPyzxQQL84SAtaMVre0B7HGzHUGYC7MQdXUGe/Yh15dbu4/oAeA3MNNVcl5ou+Ixu3snZiH4x7097kGXh3EbbFBFZ9aNiJ78vnH3k0jtH8ft8e$
   file: 
-    - Exports/Hall_Handbook.pdf
-    - Exports/Hall_Handbook_html.zip
-    - Exports/Hall_Handbook.docx
+    - Hall_Handbook.pdf
+    - Hall_Handbook_html.zip
+    - Hall_Handbook.docx
   skip_cleanup: true
   on:
     tags: true
