@@ -8,7 +8,6 @@ You can download the handbook to use the instrument here: [Latest Version](https
 
 Please note, the download links are automatically updated every 2 hours. 
 
-
 ## Corrections and Issues
 
 If you find a problem with the documentation or the code please [open an issue](https://github.com/fermiumlabs/Hall-effect-apparatus/issues/new) (you need a Github account) on this repository.
@@ -16,6 +15,8 @@ If you find a problem with the documentation or the code please [open an issue](
 > what is a repository? how do i open an issue?? i don't want this crap, just let me correct an equation!!!
 
 Email us at [support@fermiumlabs.com](mailto:support@fermiumlabs.com)
+
+If you want to contribute, fork the repository and then make a [pull request](https://help.github.com/articles/using-pull-requests/).
 
 ##How was it written?
 
@@ -39,7 +40,7 @@ make html
 make docx
 ```
 
-If you're on a osx, you can also run:
+If you're on a OS X, you can also run:
 
 ```bash
 make open_pdf
@@ -47,8 +48,9 @@ make open_html
 make open_docx
 ```
 
-
 which will open the various files with your default app.
+
+Please note, if you contribute with
 
 ## LICENSE
 This work is distributed under the terms of the [GNU Free Documentation License](http://www.gnu.org/licenses/fdl-1.3.html)
