@@ -8,7 +8,7 @@ install:
   - sudo pip install pandoc-eqnos #pandoc filter for numbering equations
   - sudo pip install pandoc-tablenos #pandoc filter for numbering tables
   - wget `curl https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.assets[] | .browser_download_url | select(endswith("deb"))'` -O pandoc.deb
-  - sudo apt-get remove pandoc #remove obsolete pandoc version
+  - sudo apt-get -y remove pandoc #remove obsolete pandoc version
   - sudo dpkg -i pandoc.deb  #new pandoc version
   - tlmgr update --self
   - tlmgr update --all
