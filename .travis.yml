@@ -18,8 +18,9 @@ install:
   - sudo apt-get -y install zip
 sudo: true
 script: 
-  - cd Handbook && make all
-  - mv Handbook/Exports/ ./build
+  - cd Handbook
+  - make all
+  - mv Exports/ ./build
   - zip -r ./build/Hall_Handbook_html.zip ./build/Media ./build/Hall_Handbook.html  
 notifications:
   slack: fermiumlabs:0BfrFyD9uqr9bFhsH0Etn4wo
