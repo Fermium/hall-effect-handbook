@@ -18,6 +18,7 @@ html: dir
 	@mkdir -p Exports/Media/
 	@pandoc Hall_Handbook.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --mathjax -s -S --toc -H Media/header.html -c Media/style.css  -o Exports/Hall_Handbook.html
 	@cp Media/* Exports/Media/
+	@sed -i".tmp" "/includegraphics/d" Exports/Hall_Handbook.html && rm Exports/Hall_Handbook.html.tmp
 	@echo "Html built"
   
 
