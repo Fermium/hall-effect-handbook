@@ -29,6 +29,6 @@ deploy:
     - Exports/Hall_Handbook.pdf
     - Exports/Hall_Handbook_html.zip
     - Exports/Hall_Handbook.docx
-  on:
-    repo: fermiumlabs/Hall-effect-apparatus
   skip_cleanup: true
+  on:
+    tags: true
