@@ -16,8 +16,8 @@ script:
   - mkdir build
   - cd Handbook
   - make all
-  - mv Exports/ ./build
-  - zip -r ./build/Hall_Handbook_html.zip ./build/Media ./build/Hall_Handbook.html  
+  - zip -r ./Exports/Hall_Handbook_html.zip ./Exports/Media ./Exports/Hall_Handbook.html  
+  - tree
 notifications:
   slack: fermiumlabs:0BfrFyD9uqr9bFhsH0Etn4wo
   email: false
@@ -26,9 +26,9 @@ deploy:
   api_key:
     secure: hnYQIAqK1XOzXzVBa+wtgHFWORiiwVBjKBNRqw7t3VPyzxQQL84SAtaMVre0B7HGzHUGYC7MQdXUGe/Yh15dbu4/oAeA3MNNVcl5ou+Ixu3snZiH4x7097kGXh3EbbFBFZ9aNiJ78vnH3k0jtH8ft8e$
   file: 
-    - Handbook/build/Hall_Handbook.pdf
-    - Handbook/build/Hall_Handbook_html.zip
-    - Handbook/build/Hall_Handbook.docx
+    - Handbook/Exports/Hall_Handbook.pdf
+    - Handbook/Exports/Hall_Handbook_html.zip
+    - Handbook/Exports/Hall_Handbook.docx
   on:
     repo: fermiumlabs/Hall-effect-apparatus
   skip_cleanup: true
