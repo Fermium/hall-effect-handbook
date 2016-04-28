@@ -16,14 +16,14 @@ script:
   - mkdir build
   - cd Handbook
   - make all
-  - zip -r ./Exports/Hall_Handbook_html.zip ./Exports/Media ./Exports/Hall_Handbook.html
-  - cd Exports && ls
+  - cd Exports
+  - zip -r Hall_Handbook_html.zip Media Hall_Handbook.html
+  - zip -r Hall_Handbook.zip ../../*
 after_success:
-  - curl --upload-file ./Hall_Handbook.pdf https://transfer.sh/Hall_Handbook.pdf 
-  - curl --upload-file ./Hall_Handbook_html.zip https://transfer.sh/Hall_Handbook_html.zip 
-  - curl --upload-file ./Hall_Handbook.docx https://transfer.sh/Hall_Handbook.docx 
+  - curl --upload-file ./Hall_Handbook.zip https://transfer.sh/Hall_Handbook.zip 
 notifications:
   slack: fermiumlabs:0BfrFyD9uqr9bFhsH0Etn4wo
+    on_start: true
   email: false
 deploy:
   provider: releases
