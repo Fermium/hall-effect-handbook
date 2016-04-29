@@ -550,7 +550,7 @@ Since in the intrinsic region (high temperature) the resistance depends on the a
 
 * J.C. Slater *Quantum Theory of matter*, mcGraw-Hill 1951.
 * C.L.Chin e C.R.Westgate, *The Hall Effect and Its Applications*, Plenum Press, NY, 1979
-* J.R.Hook , H.E.Hall *Solid State Physics*, John Wiley &Sons 1991.
+* J.R.Hook, H.E.Hall *Solid State Physics*, John Wiley &Sons 1991.
 * A. C. Melissinos *Experiments in modern Physics*, Academic Press, 1993.
 * *New Semiconductor materials. Characteristics and Properties*, 
     \newline http://www.ioffe.ru/SVA/NSM/Semicond/Ge/index.html (Electronic archive)
