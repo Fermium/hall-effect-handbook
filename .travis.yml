@@ -5,6 +5,7 @@ install:
   - sudo apt-get -y remove pandoc
   - sudo apt-get install python3
   - sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+  - sudo apt-get install --reinstall python-pkg-resources
   - sudo pip install --upgrade pip
   - sudo pip install pandoc-fignos
   - sudo pip install pandoc-eqnos
