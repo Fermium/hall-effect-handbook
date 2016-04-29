@@ -3,9 +3,8 @@ install:
   - sudo apt-get update
   - sudo apt-get -y install jq python-pip zip
   - sudo apt-get -y remove pandoc
-  - sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
   - sudo pip install --upgrade pip
-  - sudo pip install pandoc-fignos
+  - sudo pip install 'pandoc-fignos<0.11'
   - sudo pip install pandoc-eqnos
   - sudo pip install pandoc-tablenos
   - wget `curl https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.assets[] | .browser_download_url | select(endswith("deb"))'` -O pandoc.deb && sudo dpkg -i pandoc.deb && rm pandoc.deb
