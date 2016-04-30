@@ -3,7 +3,7 @@ dir:
 
 pdf: dir
 	@echo "Building Pdf..."
-	@pandoc Hall_Handbook.md --latex-engine=xelatex --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --toc -o Exports/Hall_Handbook.pdf
+	@pandoc Hall_Handbook*.md --latex-engine=xelatex --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --toc -o Exports/Hall_Handbook.pdf
 	@echo "Pdf built"
   
 open_pdf: pdf
@@ -16,7 +16,7 @@ clean_html:
 html: dir 
 	@echo "Building Html..."
 	@mkdir -p Exports/Media/
-	@pandoc Hall_Handbook.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --mathjax -s -S --toc -H Media/header.html -c Media/style.css  -o Exports/Hall_Handbook.html
+	@pandoc Hall_Handbook*.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --mathjax -s -S --toc -H Media/header.html -c Media/style.css  -o Exports/Hall_Handbook.html
 	@cp Media/* Exports/Media/
 	@sed -i".tmp" "/includegraphics/d" Exports/Hall_Handbook.html && rm Exports/Hall_Handbook.html.tmp
 	@echo "Html built"
@@ -30,15 +30,18 @@ open_html: html
 
 docx: dir 
 	@echo "Building Docx..."
-	@pandoc Hall_Handbook.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos -o Exports/Hall_Handbook.docx
+	@pandoc Hall_Handbook*.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos -o Exports/Hall_Handbook.docx
 	@echo "Docx built"
 
 
 open_docx: docx
-	o@pen Exports/Hall_Handbook.html
+	@open Exports/Hall_Handbook.html
+	
+open_all: open_pdf open_html open_docx
     
 
 all: clean pdf html docx
+	@echo "All buil!"
 
 
 
