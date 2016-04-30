@@ -8,7 +8,7 @@ The temperature is measured by a type K (Chromel-Alumel) thermocouple thermally 
 [^AD8495]: [AD8495 datasheet, Analog Semiconductors](http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html)
 
 
-![The thermocouple sensitivity (the Seebeck coefficient) does strongly depend on temperature.] (Media/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity}
+![The thermocouple sensitivity (the Seebeck coefficient) does strongly depend on temperature.](Media/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity}
 \ 
 
 In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure {@fig:seebeckNonlinearity}) of the thermocouple using the following polynomial:
