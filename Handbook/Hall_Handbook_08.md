@@ -1,4 +1,4 @@
-### Measurements at constant $I$ and $B$ while varying the temperature
+### The set-up for changing and measuring the sample temperature
 
 
 The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminum bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be cooled .
@@ -7,12 +7,13 @@ The temperature is measured by a type K (Chromel-Alumel) thermocouple thermally 
 
 [^AD8495]: [AD8495 datasheet, Analog Semiconductors](http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html)
 
-![In every type of thermocouple, the Seebeck coefficiently $\frac{\mu V}{\,^{\circ}\mathrm{C}}$ is heavly non-linear in relation to the temperature.](Media/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity}
+
+![The thermocouple sensitivity (the Seebeck coefficient) does strongly depend on temperature.] (Media/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity}
 \ 
 
 In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure {@fig:seebeckNonlinearity}) of the thermocouple using the following polynomial:
 
-$$t=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }$$ {#eq:compensatingPolynomial}
+$$t_{calc}=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }$$ {#eq:compensatingPolynomial}
 where $E$ is the output voltage of the thermocouple in $mV$.
 
 A fitting polynomial ({@eq:compensatingPolynomial}) of the fifth order is sufficient, given the precision of our equipment.
@@ -32,6 +33,15 @@ Table: Polynomial coefficients obtained from NIST K thermocouple tables ($-200< 
 
 [^srdata]: NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab
 
+Figure {@fig:NISTfit.png} shows the NIST $t(E)$ data for K thermocouple compared with the results obtained using eq. 24 and the coefficient of table 1, and the residual errors in the range ($-200< t \, [^{\circ}\mathrm{C}] <200$)
+
+![Best fit curve for NIST data and residual errors](Media\NISTfit.png){#fig:NISTfit.png}
+\
+
+[FIX] 
+
+
+
 The voltage $E$ at the thermocouple junction can be obtained[^AD8495nist] from the following equation:
 $$E=\frac { 1 }{ 2 } \frac {  V_{ outT }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
 
@@ -46,24 +56,5 @@ $$t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ 
 [^AD8495nist]: [AN-1087, Analog Semiconductors](http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF)
 \ 
 
-A possible implementation in C code is the following:
 
-
-\clearpage
-
-```c
-#define THERMOCOUPLE_OFFSET 0.00125
-#define THERMOCOUPLE_GAIN 122.4
-float b[6]={-0.383695902,25.215123839,-0.279516961,0.072045800,-0.014094503,0.001055528};
-float lin_extrap_temp(float E){ //E is the voltage at the thermocouple output
-    float t=0;
-    E=E*1000; //from V to mV
-    t=b[0]+b[1]*E+b[2]*pow(E,2)+b[3]*pow(E,3)+b[4]*pow(E,4)+b[5]*pow(E,5);
-    return t;
-  }
-Float thermocouple_voltage(float vout,float vref){
-    return ((vout)-(vref)-THERMOCOUPLE_OFFSET)/(2*THERMOCOUPLE_GAIN);
-}
-```
-
-A digitally controlled resistive element is wound around the base of the sample, allowing to heath it up after reaching room temperature. The instruments automatically shuts down if $t \ge 170\, \,^{\circ}\mathrm{C}$.
+A digitally controlled resistive element (heater) is wound around the base of the sample, allowing to heath it up after reaching room temperature. The instruments automatically shuts down the heater if $t \ge 170\, \,^{\circ}\mathrm{C}$.

@@ -11,7 +11,7 @@ $$E_g (T) = A \cdot BT$$
 where the constants $A$ is the value of $E_g$ *linearly extrapolated* to $T=0$:
 $$E^0_g = A = 0.78eV$$
 
-Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature $T$ as $exp( \frac{E_G}{2kT})$, a plot of $ln( R )$ vs $\frac{1}{2} K T$ using a linear approximation for $E_g(T)$ results in a straight line with slope $E^0_g$
+Since in the intrinsic region (high temperature) the resistance depends on the absolute temperature $T$ as $exp( \frac{E_G}{2kT})$, a plot of $ln( R )$ vs $\frac{1}{2 K T}$ using a linear approximation for $E_g(T)$ results in a straight line with slope $E^0_g$
 
 ![Temperature dependance of the energy gap](Media/Eg_vs_T.jpeg){#fig:EgTdependance}
 \ 
