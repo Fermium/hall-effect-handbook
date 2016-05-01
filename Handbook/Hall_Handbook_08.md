@@ -35,12 +35,8 @@ Table: Polynomial coefficients obtained from NIST K thermocouple tables ($-200< 
 
 Figure {@fig:NISTfit.png} shows the NIST $t(E)$ data for K thermocouple compared with the results obtained using eq. 24 and the coefficient of table 1, and the residual errors in the range ($-200< t \, [^{\circ}\mathrm{C}] <200$)
 
-![Best fit curve for NIST data and residual errors](Media\NISTfit.png){#fig:NISTfit.png}
+![Best fit curve for NIST data and residual errors](Media/NISTfit.png){#fig:NISTfit.png}
 \
-
-[FIX] 
-
-
 
 The voltage $E$ at the thermocouple junction can be obtained[^AD8495nist] from the following equation:
 $$E=\frac { 1 }{ 2 } \frac {  V_{ outT }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
