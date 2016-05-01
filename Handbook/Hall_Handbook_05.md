@@ -3,9 +3,10 @@
 The Hall effect is essentially due to the Lorentz force $\vec { F }$ acting on each electric charge $q$ moving with velocity $v$ in a magnetic field $B$.
 $$\vec { F } =q\vec { V } \wedge \vec { B }$$ {#eq:lorentzForce}
 
-Let us consider a conducting bar  immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis. The Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow in (figure {@fig:hall-effect-geometry} (independently from the charge sign).
+Let us consider a conducting bar (figure {@fig:hall-effect-geometry}
+) immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis. The Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (figure {@fig:hall-effect-geometry}) (independently from the charge sign).
 
-![Hall effect geometry $j$ is the current density](Media/hall-effect-geometry.jpeg){#fig:hall-effect-geometry}
+![Hall effect geometry](Media/hall-effect-geometry.jpeg){#fig:hall-effect-geometry}
 \ 
 
 In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.
@@ -26,6 +27,8 @@ $$ R_{ H }=V_{ d }\frac { B }{ J_{ x }B } =\frac { -1 }{ en } $$ {#eq:R_Hmn}
 or otherwise, for P-doped conductors:
 $$ R_{ H }=\frac { +1 }{ ep }$$ {#eq:R_Hp}
 
+Depending on the type of conductor, either metal ({@eq:R_Hmn}) , N-doped ({@eq:R_Hmn}) or P-doped ({@eq:R_Hp}).
+
 Measuring $R_H$ we can determine the concentration $n$ of majority carriers and their sign (if we know the direction of the vectors $\vec { B } ,\vec { J } ,\vec { E_{ h } }$ ).
 
 We can obtain relation ({@eq:R_Hmn}) by assuming identical drift velocity for all charge carriers. This is an approximate relation, found in the literature: <!--FIX, source?-->
@@ -44,9 +47,9 @@ It is worth noting that the the Lorentz force direction does not depend on the c
 
 The general expression for $R_H$, valid (see Appendix 1) <!-- FIX --> when *both electrons and holes* are present with densities $n$ and $p$ and mobility $\mu_e$ and $\mu_h$ is:
 
-$$R_{ H }=r\frac { p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e } }{ e(p\mu _{ h }+n\mu _{ e })^{ 2 } } $$ {#eq:R_hGeneralExpression}
+$$R_{ H }=r\frac { p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e } }{ e(p\mu _{ h }-n\mu _{ e })^{ 2 } } $$ {#eq:R_hGeneralExpression}
 
-Which corresponds to the relations ({@eq:R_Hmn}) and ({@eq:R_Hp}) for $p\gg n$ or $n\gg p$
+Which corresponds to the relations and ({@eq:R_Hmn}) and ({@eq:R_Hp}) for $p\gg n$ or $n\gg p$
 
 When two types of charge carriers are present the electrical conductivity becomes:
 
@@ -60,7 +63,7 @@ $$\mu _{ H }=R_{ H }\sigma =r\frac { p \mu^2_h - n \mu^2_e }{p \mu_h + n \mu_e} 
 
 From relation ({@eq:R_hGeneralExpression}) we see that by increasing the temperature in a *P-doped sample*, generating many intrinsic[^4] carriers (i.e. electron-hole pairs), the Hall coefficient $R_H$ (which is positive at room temperature in the extrinsic region) tends to decrease, and it may even change sign. This is explained by the mobility ratio $b=\mu_e/\mu_h>1$. *Note that this does not happen with a* N*-doped sample*.
 
-[^4]: *Intrinsic* term labels properties related to pure semiconductors or to doped semiconductors at high temperature, where the thermally generated carriers density is much larger than the (*extrinsic*) carrier density due to the dopant.
+[^4]: *Intrinsic* term labels properties related to pure semiconductors or to doped semiconductors at hight temperature, where the thermally generated carriers density is much larger than the (*extrinsic*) carrier density due to the dopant.
 
 From relation ({@eq:R_hGeneralExpression}) at the temperature where $R_H=0$ (“*inversion point*”) we get $nb^2=p$, with $p=N_a+N$ <!-- if it is avogadro number it should be N_A? --> and $n=N$ (where $N_a$ is the dopant density and $N$ is the thermally-generated charge density in the intrinsic zone).
 Therefore $Nb^2= N_a+N$, or $N_a/N=b^2-1$.

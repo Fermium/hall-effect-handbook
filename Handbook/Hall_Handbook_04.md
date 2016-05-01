@@ -10,7 +10,7 @@ Only when an electric field is externally applied the electron motion acquires a
 
 The drift velocity, i.e. this ordered component of the motion due to the electric field and to the the scattering of the electrons with the lattice, is simply proportional to the electric field intensity. The constant ratio between $v_d$ and $E$ (both in modulus) is called the *drift mobility* $\mu$.
 
-During a time $t$ of free motion between two collisions,the electrons subject to the force $qE$ ($q$ is the electron charge) increase their speed of the quantity:
+During a time $t$ of free motion between two collisions,the electrons subject to the force *qE* (*q* is the electron charge) increase their speed of the quantity:
 $$ a t = \frac{qE}{m}t $$ {#eq:electronsDelta} 
 
 The kinetic energy of the electrons also increases, but it can be assumed that with each collision they loose additional energy. The transfer of such energy to the lattice ions explains the Joule effect.
