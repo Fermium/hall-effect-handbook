@@ -18,8 +18,6 @@ The sample has 7 wires tin soldered in the positions shown in figure {@fig:sampl
 ![Printed circuit board with germanium sample and thermocuple](Media/sample_pcb.jpg){#fig:sample_pcb}
 \ 
 
-![Device front panel](Media/imageFrontPanel0.jpg){#fig:frontPanel}
-\ 
 
 The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger. 
 
@@ -27,6 +25,9 @@ The numbering of the contact on the sample corresponds to the number of the pins
 
 The two DAs have fixed gains $G$, set to $0.5$ for $V_{out \, R}$ and to $10$ for $V_{out \, H}$ [^GainMayChange], and they're powered from a $\pm 15V$ power supply. 
 
+
+![Device front panel](Media/imageFrontPanel0.jpg){#fig:frontPanel}
+\ 
 
 [^GainMayChange]: The gain can change due to specifications and calibration. Please refer to the values displayed on the front panel.
 
