@@ -39,10 +39,6 @@ Figure {@fig:NISTfit} shows the NIST $t(E)$ data for K thermocouple compared wit
 ![Best fit curve for NIST data and residual errors](Media/NISTfit.png){#fig:NISTfit}
 \ 
 
-[FIX] 
-
-
-
 The voltage $E$ at the thermocouple junction can be obtained[^AD8495nist] from the following equation:
 $$E=\frac { 1 }{ 2 } \frac {  V_{ outT }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
 
