@@ -33,9 +33,10 @@ Table: Polynomial coefficients obtained from NIST K thermocouple tables ($-200< 
 
 [^srdata]: NIST t-90 tables for K type thermocouples, http://srdata.nist.gov/its90/download/type_k.tab
 
-Figure {@fig:NISTfit.png} shows the NIST $t(E)$ data for K thermocouple compared with the results obtained using eq. 24 and the coefficient of table 1, and the residual errors in the range ($-200< t \, [^{\circ}\mathrm{C}] <200$)
+Figure {@fig:NISTfit} shows the NIST $t(E)$ data for K thermocouple compared with the results obtained using eq. 24 and the coefficient of table 1, and the residual errors in the range ($-200< t \, [^{\circ}\mathrm{C}] <200$)
 
-![Best fit curve for NIST data and residual errors](Media\NISTfit.png){#fig:NISTfit.png}
+
+![Best fit curve for NIST data and residual errors](Media\NISTfit.png){#fig:NISTfit}
 \
 
 
