@@ -1,5 +1,5 @@
 ---
-title: Hall Handbook
+title: Hall Effect Handbook
 header-includes:
     - \usepackage{siunitx}
     - \thispagestyle{empty} 
@@ -7,7 +7,7 @@ header-includes:
     - \pagestyle{fancy}
     - \headheight = 3cm
     - \fancyhead[R]{\includegraphics[height=1.5cm, trim=0cm 7.5cm 0cm 0cm]{Media/logo.eps}} 
-    - \fancyhead[L]{Hall Handbook}
+    - \fancyhead[L]{Hall Effect Handbook}
     - \fancyfoot[L]{\href{http://fermiumlabs.com}{fermiumlabs.com}}
     - \fancyfoot[C]{}
     - \fancyfoot[R]{\thepage}
