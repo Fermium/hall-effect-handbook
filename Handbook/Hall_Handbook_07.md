@@ -7,7 +7,7 @@ The absolute value of $B$ may be varied by changing the width of the gap between
 One of the two permanent-magnets mounted on the soft-steel structure may be moved horizontally by turning the brass-screw: increasing the gap, the value of $B$ decreases.
 
 
-![The screw device for changing the effective magnetic field](Media/screw_device.JPG){#fig:ScrewDevice  height=40%}   
+![The screw device for changing the effective magnetic field](Media/screw_device.JPG){#fig:ScrewDevice  width=65%}   
 \ 
 
 
