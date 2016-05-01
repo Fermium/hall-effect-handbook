@@ -6,7 +6,8 @@ header-includes:
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
     - \headheight = 3cm
-    - \fancyhead[R]{\includegraphics[height=1.5cm, trim=0cm 7.5cm 0cm 0cm]{Media/logo_labtrek.png}}
+    - \fancyhead[C]{\includegraphics[height=1.5cm, trim=0cm 5cm 0cm 0cm]{Media/logo_labtrek.png}}
+    - \fancyhead[R]{\includegraphics[height=1.5cm, trim=0cm 7.5cm 0cm 0cm]{Media/logo.eps}}
     - \fancyhead[L]{Hall Effect Handbook}
     - \fancyfoot[L]{\href{http://fermiumlabs.com}{fermiumlabs.com}}
     - \fancyfoot[C]{\href{http://labtrek.it}{LabTrek.it}}
@@ -44,7 +45,6 @@ Revision and new technical documentation by Davide Bortolami of Fermium LABS
 http://labtrek.it
 https://fermiumlabs.com
 
-- \fancyhead[R]{\includegraphics[height=1.5cm, trim=0cm 7.5cm 0cm 0cm]{Media/logo.eps}}
 
 
 ################################ --> 
