@@ -22,12 +22,13 @@ Figure {@fig:Output_voltages_versus_time} shows an example of the measured value
 \ 
 
 
-Figure {@fig:example}} shows an example of calculated data obtained using LoggerPro software. 
-The Hall voltage in mV $VH$ is is obtained from $V_{outH}$ by subtracting the offset 2.5 V and by accounting for the used value of the channel-H gain (here GainH=10). The resistance $R$ is calculated from $V_{outR}$ by  accounting for the used value of the channel-R gain (here GainR=0.5)and the measured value of the bias current $Ib$ .
+Figure 9  shows an example of calculated data obtained using LoggerPro software. 
+The Hall voltage $V_{H}$ (in mV) is is obtained from $V_{outH}$ by subtracting the offset 2.5 V and by accounting for the used value of the channel-H gain (here GainH=10). The resistance $R$ is calculated from $V_{outR}$ by  accounting for the used value of the channel-R gain (here GainR=0.5)and the measured value of the bias current $Ib$ .
 
 
-![Example of calculated data ](Media/example.png){#fig:example}
+![Example of calculated data ](Media/example.png){#fig:Example}
 \ 
+
 
 In order to evaluate the Ge energy gap $E_g$, a plot of $ln(R)$ vs. $1/2kT$ was built, after calculating from the Celsius temperature $Tc$ the absolute temperature $T$ ($k$ is the Boltzmann constant $k = 8.617 \cdot 10^{-5}$.
 
