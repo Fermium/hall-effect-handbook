@@ -8,7 +8,7 @@ header-includes:
     - \headheight = 3cm
     - \fancyhead[R]{\includegraphics[height=1.5cm, trim=0cm 7.5cm 0cm 0cm]{Media/logo.eps}} 
     - \fancyhead[L]{Hall Effect Handbook}
-    - \fancyfoot[L]{\href{http://fermiumlabs.com}{fermiumlabs.com}}
+    - \fancyfoot[L]{\href{http://fermiumlabs.com}{fermiumlabs.com} \href{http://labtrek.it}{labtrek.it} }
     - \fancyfoot[C]{}
     - \fancyfoot[R]{\thepage}
 include-before:
