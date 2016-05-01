@@ -27,7 +27,7 @@ The Hall voltage in mV $VH$ is is obtained from $V_{outH}$ by subtracting the of
 
 
 ![Example of calculated data ](Media/example.png){#fig:example}
-\  
+\ 
 
 In order to evaluate the Ge energy gap $E_g$, a plot of $ln(R)$ vs. $1/2kT$ was built, after calculating from the Celsius temperature $Tc$ the absolute temperature $T$ ($k$ is the Boltzmann constant $k = 8.617 \cdot 10^{-5}$.
 
