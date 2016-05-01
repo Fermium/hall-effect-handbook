@@ -12,7 +12,6 @@ install:
   - tlmgr update --all
 sudo: true
 script:
-  - mkdir build
   - cd Handbook
   - make all
   - cd Exports
