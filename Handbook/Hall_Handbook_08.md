@@ -37,7 +37,7 @@ Figure {@fig:NISTfit} shows the NIST $t(E)$ data for K thermocouple compared wit
 
 
 ![Best fit curve for NIST data and residual errors](Media/NISTfit.png){#fig:NISTfit}
-\
+\ 
 
 [FIX] 
 
