@@ -1,7 +1,7 @@
 language: R
 install:
   - sudo apt-get update
-  - sudo apt-get -y install jq python-pip zip
+  - sudo apt-get -y install jq python-pip zip ghostscript 
   - sudo apt-get -y remove pandoc
   - sudo pip install --upgrade pip
   - sudo pip install 'pandoc-fignos<0.11'
@@ -12,11 +12,10 @@ install:
   - tlmgr update --all
 sudo: true
 script:
-  - mkdir build
   - cd Handbook
-  - make all
+  - make all_compress
   - cd Exports
-  - zip -r Hall_Handbook_html.zip Media Hall_Handbook.html
+  - zip -r Hall_Handbook_html.zip Assets Hall_Handbook.html
   - zip -r Hall_Handbook.zip ../../*
 after_success:
   - curl --upload-file ./Hall_Handbook.zip https://transfer.sh/Hall_Handbook.zip 
@@ -30,6 +29,7 @@ deploy:
     secure: X6L1ozlHXnDE1yhwCIppWTRUCYxQ7kH1BeDc/NXj7o52PXKOTF+4NodNrU+NYeCBuZ1fGMyfHnGxjoiXqEWHR7ENZjSfu/dUC1UWZjFtYRrmf/kGbChT6TC4Sc4VWSS3oCliD7tWirCV5acT0mysHfo+ucyHAGCXOB7EXAY0s6a61+x0/TfYAYhU+dF7+SrXSybdLsUPLiueX7pQ3rxQu/2mPyQs1FO98j79gPxSOcILn+SOIaEUQaJRJVUTmaXWBC3kNFr0pLXwqdkNtybEuvCqwSQ0gPzQj1CtMb8gLTYUP8BZAxCX/CGiwit+PkWPPHuOMEh7v4mLIifWvA2Dy9C36xcXBQXGsPNfjZj1OGH6N6wvgx0pzZyrODV2hIAKxJONwS1NrkceuzplXvkJPd7mwYo78oRYmLtQmOdnLQFiymMlEqAelRX0ruQNNdGI+yl5cnteTzRqpFpo/ZIu0xrNMviUb69lzSjYxQmVxQkVQ0Dil7vKzs8fh0GFqHPJ/ZzsbVtS19LfRavdn68LTjYFGP+nrJaLkf7vkwzkvC+DrXyiwvbrEq2ktsphOE0roUirR+mfqr/awnEJGpwLY5C6oRpdPVLHDBWbgsCz9rbJTjfGUIhuG+soQa6YAOKBTeS5yTr7ovNNeut1INzChD9s7dh4APbE+cZ03ekeB/Y=
   file: 
     - Hall_Handbook.pdf
+    - Hall_Handbook_hires.pdf
     - Hall_Handbook_html.zip
     - Hall_Handbook.docx
   on:

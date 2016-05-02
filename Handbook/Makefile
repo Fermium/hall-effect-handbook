@@ -3,21 +3,27 @@ dir:
 
 pdf: dir
 	@echo "Building Pdf..."
-	@pandoc Hall_Handbook*.md --latex-engine=xelatex --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --toc -o Exports/Hall_Handbook.pdf
+	@pandoc Hall_Handbook*.md  --template=Assets/Template/template.latex --latex-engine xelatex --filter pandoc-fignos --filter pandoc-eqnos --filter pandoc-tablenos --toc -o Exports/Hall_Handbook.pdf
 	@echo "Pdf built"
+	
+compress_pdf: pdf
+	@echo "Compressing PDF"
+	@cp Exports/Hall_Handbook.pdf Exports/Hall_Handbook_hires.pdf
+	@rm Exports/Hall_Handbook.pdf
+	@gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dDownsampleColorImages=true -dColorImageResolution=150 -dNOPAUSE  -dBATCH -sOutputFile=Exports/Hall_Handbook.pdf Exports/Hall_Handbook_hires.pdf
   
 open_pdf: pdf
 	@open Exports/Hall_Handbook.pdf
 
 clean_html:
 	@rm -f Exports/Hall_Handbook.html
-	@rm -r -f Exports/Media
+	@rm -r -f Exports/Assets
 	
 html: dir 
 	@echo "Building Html..."
-	@mkdir -p Exports/Media/
-	@pandoc Hall_Handbook*.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --mathjax -s -S --toc -H Media/header.html -c Media/style.css  -o Exports/Hall_Handbook.html
-	@cp Media/* Exports/Media/
+	@mkdir -p Exports/Assets/
+	@pandoc Hall_Handbook*.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --mathjax -s -S --toc -c Assets/Template/style.css  -o Exports/Hall_Handbook.html
+	@cp -r Assets/* Exports/Assets/
 	@sed -i".tmp" "/includegraphics/d" Exports/Hall_Handbook.html && rm Exports/Hall_Handbook.html.tmp
 	@echo "Html built"
   
@@ -43,6 +49,8 @@ open_all: open_pdf open_html open_docx
 all: clean pdf html docx
 	@echo "All buil!"
 
+all_compress: clean compress_pdf html docx
+		@echo "All buil!"
 
 
 clean: 
