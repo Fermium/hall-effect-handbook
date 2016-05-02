@@ -18,7 +18,7 @@ Figure {@fig:Output_voltages_versus_time} shows an example of the measured value
 
 
 
-![Output voltages versus time.](Media/Out_vs_time.jpg){#fig:Output_voltages_versus_time  width=65%}
+![Output voltages versus time.](Media/Out_vs_time.jpg){#fig:Output_voltages_versus_time  width=100%}
 \ 
 
 

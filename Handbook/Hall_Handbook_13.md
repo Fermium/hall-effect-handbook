@@ -1,3 +1,5 @@
+\clearpage
+
 ##Appendix 3: Temperature dependence of $E_g$
 
 Experimental results consistently shows that the energy gap depends on temperature and for Germanium we can find in the literature the following empirical law:
