@@ -49,6 +49,8 @@ open_all: open_pdf open_html open_docx
 all: clean pdf html docx
 	@echo "All buil!"
 
+all_compress: clean pdf_compress html docx
+		@echo "All buil!"
 
 
 clean: 
