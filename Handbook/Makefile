@@ -5,6 +5,12 @@ pdf: dir
 	@echo "Building Pdf..."
 	@pandoc Hall_Handbook*.md  --template=Assets/Template/template.latex --latex-engine xelatex --filter pandoc-fignos --filter pandoc-eqnos --filter pandoc-tablenos --toc -o Exports/Hall_Handbook.pdf
 	@echo "Pdf built"
+	
+compress_pdf: pdf
+	@echo "Compressing PDF"
+	@cp Exports/Hall_Handbook.pdf Exports/Hall_Handbook_hires.pdf
+	@rm Exports/Hall_Handbook.pdf
+	@gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dDownsampleColorImages=true -dColorImageResolution=150 -dNOPAUSE  -dBATCH -sOutputFile=Exports/Hall_Handbook.pdf Exports/Hall_Handbook_hires.pdf
   
 open_pdf: pdf
 	@open Exports/Hall_Handbook.pdf
