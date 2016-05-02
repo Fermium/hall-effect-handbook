@@ -16,6 +16,7 @@ include-before:
 fontfamily: palatino
 fontsize: 12pt
 geometry: [top=1pt, bottom=5cm, left=2.1cm, right=2.1cm]
+disable-floating-figures: true
 ---
 
 <!--

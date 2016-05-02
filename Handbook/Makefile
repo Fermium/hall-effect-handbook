@@ -3,7 +3,7 @@ dir:
 
 pdf: dir
 	@echo "Building Pdf..."
-	@pandoc Hall_Handbook*.md --latex-engine=xelatex --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --toc -o Exports/Hall_Handbook.pdf
+	@pandoc Hall_Handbook*.md  --template=Media/template.latex --latex-engine xelatex --filter pandoc-fignos --filter pandoc-eqnos --filter pandoc-tablenos --toc -o Exports/Hall_Handbook.pdf
 	@echo "Pdf built"
   
 open_pdf: pdf
