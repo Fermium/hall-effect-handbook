@@ -3,7 +3,7 @@ dir:
 
 pdf: dir
 	@echo "Building Pdf..."
-	@pandoc Hall_Handbook*.md  --template=Assets/template.latex --latex-engine xelatex --filter pandoc-fignos --filter pandoc-eqnos --filter pandoc-tablenos --toc -o Exports/Hall_Handbook.pdf
+	@pandoc Hall_Handbook*.md  --template=Assets/Template/template.latex --latex-engine xelatex --filter pandoc-fignos --filter pandoc-eqnos --filter pandoc-tablenos --toc -o Exports/Hall_Handbook.pdf
 	@echo "Pdf built"
   
 open_pdf: pdf
@@ -16,8 +16,8 @@ clean_html:
 html: dir 
 	@echo "Building Html..."
 	@mkdir -p Exports/Assets/
-	@pandoc Hall_Handbook*.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --mathjax -s -S --toc -H Assets/header.html -c Assets/style.css  -o Exports/Hall_Handbook.html
-	@cp Assets/* Exports/Assets/
+	@pandoc Hall_Handbook*.md --filter pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --mathjax -s -S --toc -c Assets/Template/style.css  -o Exports/Hall_Handbook.html
+	@cp -r Assets/* Exports/Assets/
 	@sed -i".tmp" "/includegraphics/d" Exports/Hall_Handbook.html && rm Exports/Hall_Handbook.html.tmp
 	@echo "Html built"
   
