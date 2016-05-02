@@ -4,7 +4,7 @@ The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside
 
 The sample has 7 wires tin soldered in the positions shown in figure {@fig:sample_circuitry} and {@fig:sample_pcb}  as follows:
 
-![simplified schematic of the sample circuitry](Media/sample_circuitry.png){#fig:sample_circuitry  width=65%}
+![simplified schematic of the sample circuitry](Assets/Figures/sample_circuitry.png){#fig:sample_circuitry  width=65%}
 \ 
 
 
@@ -15,7 +15,7 @@ The sample has 7 wires tin soldered in the positions shown in figure {@fig:sampl
     Contact 6 is the reference point for the  Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). 
     *Three contacts* are needed for the Hall voltage because *two contacts cannot be precisely aligned.
     
-![Printed circuit board with germanium sample and thermocuple](Media/sample_pcb.jpg){#fig:sample_pcb  width=65%}
+![Printed circuit board with germanium sample and thermocuple](Assets/Figures/sample_pcb.jpg){#fig:sample_pcb  width=65%}
 \ 
 
 
@@ -26,7 +26,7 @@ The numbering of the contact on the sample corresponds to the number of the pins
 The two DAs have fixed gains $G$, set to $0.5$ for $V_{out \, R}$ and to $10$ for $V_{out \, H}$ [^GainMayChange], and they're powered from a $\pm 15V$ power supply. 
 
 
-![Device front panel](Media/imageFrontPanel0.jpg){#fig:frontPanel  width=65%}
+![Device front panel](Assets/Figures/imageFrontPanel0.jpg){#fig:frontPanel  width=65%}
 \ 
 
 [^GainMayChange]: The gain can change due to specifications and calibration. Please refer to the values displayed on the front panel.

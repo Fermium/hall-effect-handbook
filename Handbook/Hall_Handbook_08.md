@@ -8,7 +8,7 @@ The temperature is measured by a type K (Chromel-Alumel) thermocouple thermally 
 [^AD8495]: [AD8495 datasheet, Analog Semiconductors](http://www.analog.com/en/products/amplifiers/specialty-amplifiers/thermocouple-interface-amplifiers/AD8495.html)
 
 
-![The thermocouple sensitivity (the Seebeck coefficient) does strongly depend on temperature.](Media/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity  width=65%}
+![The thermocouple sensitivity (the Seebeck coefficient) does strongly depend on temperature.](Assets/Figures/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity  width=65%}
 \ 
 
 In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure {@fig:seebeckNonlinearity}) of the thermocouple using the following polynomial:
@@ -36,7 +36,7 @@ Table: Polynomial coefficients obtained from NIST K thermocouple tables ($-200< 
 Figure {@fig:NISTfit} shows the NIST $t(E)$ data for K thermocouple compared with the results obtained using eq. 24 and the coefficient of table 1, and the residual errors in the range ($-200< t \, [^{\circ}\mathrm{C}] <200$)
 
 
-![Best fit curve for NIST data and residual errors](Media/NISTfit.png){#fig:NISTfit  width=65%}
+![Best fit curve for NIST data and residual errors](Assets/Figures/NISTfit.png){#fig:NISTfit  width=65%}
 \ 
 
 
@@ -54,7 +54,7 @@ Using the fitting polynomial  ({@eq:compensatingPolynomial}) allows us to finall
 $$t={ f }_{ comp }\left( E \right)$$ {#eq:FcompE}
 $$t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) $$ {#eq:ad8494Compensated}
 
-[^AD8495nist]: [AN-1087, Analog Semiconductors](http://www.analog.com/media/en/technical-documentation/application-notes/AN-1087.PDF)
+[^AD8495nist]: [AN-1087, Analog Semiconductors](http://www.analog.com/Assets/Figures/en/technical-documentation/application-notes/AN-1087.PDF)
 \ 
 
 

@@ -1,18 +1,18 @@
 ---
 title: Hall Effect Handbook
 header-includes:
-    - \thispagestyle{empty} 
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
     - \headheight=3cm
-    - \fancyhead[R]{\includegraphics[width=3.2cm, trim=0cm 7.3cm 0cm 0cm]{Media/logo.eps}} 
-    - \fancyhead[L]{Hall Effect Handbook}
+    - \fancyhead[L]{\includegraphics[width=3.2cm, trim=0cm 7.3cm 0cm 0cm]{Assets/Template/logo.eps} } 
+    - \fancyhead[R]{\includegraphics[width=1.2cm, trim=0cm 0cm 0cm 0cm]{Assets/Template/logo_labtrek.eps}  }
+    - \fancyhead[C]{Hall Effect Handbook}
     - \fancyfoot[L]{\href{http://fermiumlabs.com}{fermiumlabs.com} \href{http://labtrek.it}{labtrek.it} }
     - \fancyfoot[C]{}
     - \fancyfoot[R]{\thepage}
 include-before:
     - \thispagestyle{empty}
-    - \begin{center}\includegraphics[height=8cm]{Media/cover.jpg}\end{center}
+    - \begin{center}\includegraphics[height=8cm]{Assets/Template/cover.jpg}\end{center}
 fontfamily: palatino
 fontsize: 12pt
 geometry: [top=1pt, bottom=5cm, left=2.1cm, right=2.1cm]
