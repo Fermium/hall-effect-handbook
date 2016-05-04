@@ -1,5 +1,5 @@
-dir:
-	@mkdir -p Exports
+all: clean pdf html docx
+	@echo "All built!"
 
 pdf: dir
 	@echo "Building Pdf..."
@@ -46,12 +46,11 @@ open_docx: docx
 open_all: open_pdf open_html open_docx
     
 
-all: clean pdf html docx
-	@echo "All buil!"
-
 all_compress: clean compress_pdf html docx
 		@echo "All buil!"
 
+dir:
+	@mkdir -p Exports
 
 clean: 
 	@rm -r -f Exports
