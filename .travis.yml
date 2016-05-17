@@ -7,7 +7,6 @@ install:
   - sudo pip install pandoc-fignos
   - sudo pip install pandoc-eqnos
   - sudo pip install pandoc-tablenos
-  - sudo apt-get upgrade -y
   - wget `curl https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.assets[] | .browser_download_url | select(endswith("deb"))'` -O pandoc.deb && sudo dpkg -i pandoc.deb && rm pandoc.deb
   - tlmgr update --self
   - tlmgr update --all
