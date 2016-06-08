@@ -1,7 +1,7 @@
 language: C
 install:
   - sudo apt-get update
-  - sudo apt-get -y install jq python-pip zip ghostscript textlive pandoc
+  - sudo apt-get -y install jq python-pip zip ghostscript texlive-full pandoc
   - sudo pip install --upgrade pip
   - sudo pip install pandoc-fignos
   - sudo pip install pandoc-eqnos
