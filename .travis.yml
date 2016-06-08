@@ -6,8 +6,8 @@ install:
   - sudo pip install pandoc-fignos
   - sudo pip install pandoc-eqnos
   - sudo pip install pandoc-tablenos
-  - tlmgr update --self
-  - tlmgr update --all
+  - sudo tlmgr update --self
+  - sudo tlmgr update --all
 sudo: required
 dist: trusty
 script:
