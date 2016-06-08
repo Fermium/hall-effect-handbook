@@ -1,23 +1,22 @@
 ---
 title: Hall Effect Handbook
 header-includes:
-    - \usepackage{siunitx}
-    - \thispagestyle{empty} 
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
-    - \headheight = 3cm
-    - \fancyhead[R]{\includegraphics[height=1.5cm, trim=0cm 7.5cm 0cm 0cm]{Media/logo.eps}} 
-    - \fancyhead[L]{Hall Effect Handbook}
+    - \headheight=3cm
+    - \fancyhead[L]{\includegraphics[width=3.2cm, trim=0cm 7.3cm 0cm 0cm]{Assets/Template/logo.eps} } 
+    - \fancyhead[R]{\includegraphics[width=1.2cm, trim=0cm 0cm 0cm 0cm]{Assets/Template/logo_labtrek.eps}  }
+    - \fancyhead[C]{Hall Effect Handbook}
     - \fancyfoot[L]{\href{http://fermiumlabs.com}{fermiumlabs.com} \href{http://labtrek.it}{labtrek.it} }
     - \fancyfoot[C]{}
     - \fancyfoot[R]{\thepage}
 include-before:
     - \thispagestyle{empty}
-    - \begin{center}\includegraphics[height=8cm]{Media/cover.jpg}\end{center}
+    - \begin{center}\includegraphics[height=8cm]{Assets/Template/cover.jpg}\end{center}
 fontfamily: palatino
 fontsize: 12pt
-geometry: [top=1pt, bottom=4cm, left=2.1cm, right=2.1cm]
-
+geometry: [top=1pt, bottom=5cm, left=2.1cm, right=2.1cm]
+disable-floating-figures: true
 ---
 
 <!--
@@ -29,18 +28,3 @@ with the Invariant Sections being "Authorship", no Front-Cover Texts, and no Bac
 A copy of the license is included in the section entitled "GNU
 Free Documentation License".
 -->
-
-<!-- ################################
-to compile this document you need pandoc with pandoc-eqnos, pandoc-fignos and pandoc-tablenos filters
-http://pandoc.org
-https://github.com/tomduck/pandoc-eqnos
-https://github.com/tomduck/pandoc-tablenos
-https://github.com/tomduck/pandoc-fignos
-
-Original paper by Giacomo Torzo of LabTrek
-Revision and new technical documentation by Davide Bortolami of Fermium LABS
-
-http://labtrek.it
-https://fermiumlabs.com
-
-################################ --> 

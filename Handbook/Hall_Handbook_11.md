@@ -4,7 +4,7 @@ An optional Extension HUB (ExtHUB)is provided with the device. This allows the u
 
 The ExtHUB must be connected between the sample and the fixed HUB (FixHUB) placed on the magnet holder using the black cable with rj45 plugs. Note: do not unplug the cable from the ExtHUB; the cable should be connected to the FixHUB and the sample cable should be connected to the ExtHUB (see Fig. {@fig:ExtensionHUB}). 
 
-![The Extension HUB connections ](Media/imageExtensionHub.jpg){#fig:ExtensionHUB}
+![The Extension HUB connections ](Assets/Figures/imageExtensionHub.jpg){#fig:ExtensionHUB  width=65%}
 \ 
 
   

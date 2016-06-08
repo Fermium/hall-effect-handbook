@@ -4,13 +4,13 @@ The sample shown in figure 3 (and used to obtain the data  in the following exam
 
 A calibration of the magnetic field intensity $B$ vs. gap $d$ between magnets is shown in figure {@fig:BvsGapD}. 
 
-![Measured $B$ values vs gap width $d$](Media/H_vs_d.jpeg){#fig:BvsGapD}
+![Measured $B$ values vs gap width $d$](Assets/Figures/H_vs_d.jpeg){#fig:BvsGapD  width=65%}
 \ 
 
 An example of the measured $V_H$ vs. magnetic field $B$ at room temperature is shown in figure {@fig:HallvsIb}.
 
 
-![Hall voltage versus magnetic field intensity $B$  .](Media/Vh_vs_B.jpeg){#fig:HallvsIb}
+![Hall voltage versus magnetic field intensity $B$  .](Assets/Figures/Vh_vs_B.jpeg){#fig:HallvsIb  width=65%}
 \ 
 
 
@@ -18,7 +18,7 @@ Figure {@fig:Output_voltages_versus_time} shows an example of the measured value
 
 
 
-![Output voltages versus time.](Media/Out_vs_time.jpg){#fig:Output_voltages_versus_time}
+![Output voltages versus time.](Assets/Figures/Out_vs_time.jpg){#fig:Output_voltages_versus_time  width=100%}
 \ 
 
 
@@ -26,7 +26,7 @@ Figure 9  shows an example of calculated data obtained using LoggerPro software.
 The Hall voltage $V_{H}$ (in mV) is is obtained from $V_{outH}$ by subtracting the offset 2.5 V and by accounting for the used value of the channel-H gain (here GainH=10). The resistance $R$ is calculated from $V_{outR}$ by  accounting for the used value of the channel-R gain (here GainR=0.5)and the measured value of the bias current $Ib$ .
 
 
-![Example of calculated data ](Media/example.png){#fig:Example}
+![Example of calculated data ](Assets/Figures/example.png){#fig:Example  width=65%}
 \ 
 
 
@@ -36,5 +36,5 @@ From the slope in the intrinsic region (high temperature region, see Fig. {@fig:
 
 
 
-![Example of linear best fit in the intrinsic region (high temperature) ](Media/ImageEgFit.jpg){#fig:EgFit}
+![Example of linear best fit in the intrinsic region (high temperature) ](Assets/Figures/ImageEgFit.jpg){#fig:EgFit  width=65%}
 \ 
