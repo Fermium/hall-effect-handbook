@@ -1,5 +1,6 @@
 language: C
 install:
+  - sudo add-apt-repository ppa:texlive-backports/ppa
   - sudo apt-get update
   - sudo apt-get -y install jq python-pip zip ghostscript texlive-full pandoc
   - sudo pip install --upgrade pip
