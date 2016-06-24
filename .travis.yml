@@ -1,16 +1,15 @@
 language: C
 install:
-  - sudo add-apt-repository -y ppa:texlive-backports/ppa
+  - wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu && chmod +x ./install-tl-ubuntu
+  - sudo ./install-tl-ubuntu
   - sudo apt-get -y update 
   - sudo apt-get -y install jq python-pip zip ghostscript texlive-full pandoc
   - sudo pip install --upgrade pip
   - sudo pip install pandoc-fignos
   - sudo pip install pandoc-eqnos
   - sudo pip install pandoc-tablenos
-  - sudo tlmgr update --self
-  - sudo tlmgr update --all
+
 sudo: required
-dist: trusty
 script:
   - cd Handbook
   - make all_compress
