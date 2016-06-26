@@ -1,4 +1,6 @@
 language: C
+sudo: required
+dist: trusty
 install:
   - wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu && chmod +x ./install-tl-ubuntu
   - sudo ./install-tl-ubuntu
@@ -11,8 +13,6 @@ install:
   - sudo pip install pandoc-eqnos
   - sudo pip install pandoc-tablenos
   
-
-sudo: required
 script:
   - cd Handbook
   - make all_compress
