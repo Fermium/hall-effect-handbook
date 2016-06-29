@@ -5,7 +5,7 @@ The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside
 The sample has 7 wires tin soldered in the positions shown in figure {@fig:sample_circuitry} and {@fig:sample_pcb}  as follows:
 
 ![simplified schematic of the sample circuitry](Assets/Figures/sample_circuitry.png){#fig:sample_circuitry  width=65%}
-\ 
+
 
 
 *   Contacts 1 and 4 are used to feed the bias current Ib produced by a constant current generator (figure {@fig:sample_circuitry}).
@@ -16,7 +16,7 @@ The sample has 7 wires tin soldered in the positions shown in figure {@fig:sampl
     *Three contacts* are needed for the Hall voltage because *two contacts cannot be precisely aligned.
     
 ![Printed circuit board with germanium sample and thermocuple](Assets/Figures/sample_pcb.jpg){#fig:sample_pcb  width=65%}
-\ 
+
 
 
 The DA outputs are amplified by Programmable Gain Amplifiers (PGA for short) whose outputs are referred to ground voltage in order to feed the signals to a data-logger. 
@@ -27,7 +27,7 @@ The two DAs have fixed gains $G$, set to $0.5$ for $V_{out \, R}$ and to $10$ fo
 
 
 ![Device front panel](Assets/Figures/imageFrontPanel0.jpg){#fig:frontPanel  width=65%}
-\ 
+
 
 [^GainMayChange]: The gain can change due to specifications and calibration. Please refer to the values displayed on the front panel.
 

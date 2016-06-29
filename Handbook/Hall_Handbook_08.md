@@ -9,7 +9,7 @@ The temperature is measured by a type K (Chromel-Alumel) thermocouple thermally 
 
 
 ![The thermocouple sensitivity (the Seebeck coefficient) does strongly depend on temperature.](Assets/Figures/seebeck_coefficient_vs_temperature.png){#fig:seebeckNonlinearity  width=65%}
-\ 
+
 
 In order to get a correct measurement it is necessary to compensate for the non-linearity (see figure {@fig:seebeckNonlinearity}) of the thermocouple using the following polynomial:
 
@@ -37,14 +37,12 @@ Figure {@fig:NISTfit} shows the NIST $t(E)$ data for K thermocouple compared wit
 
 
 ![Best fit curve for NIST data and residual errors](Assets/Figures/NISTfit.png){#fig:NISTfit  width=65%}
-\ 
+
 
 
 
 The voltage $E$ at the thermocouple junction can be obtained[^AD8495nist] from the following equation:
 $$E=\frac { 1 }{ 2 } \frac {  V_{ outT }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } $$ {#eq:voltageAtThermocoupleJunction}
-
-
 
 
 where $V_{outT}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0\,^{\circ}\mathrm{C}$, $V_{offset}$ is the error voltage at $0\,^{\circ}\mathrm{C}$ to achieve 125 mV at $25\,^{\circ}\mathrm{C}$ and $Gain$ is the internal gain of the AD8495 amplifier.
@@ -55,7 +53,6 @@ $$t={ f }_{ comp }\left( E \right)$$ {#eq:FcompE}
 $$t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right) $$ {#eq:ad8494Compensated}
 
 [^AD8495nist]: [AN-1087, Analog Semiconductors](http://www.analog.com/Assets/Figures/en/technical-documentation/application-notes/AN-1087.PDF)
-\ 
 
 
 A digitally controlled resistive element (heater) is wound around the base of the sample, allowing to heath it up after reaching room temperature. The instruments automatically shuts down the heater if $t \ge 170\, \,^{\circ}\mathrm{C}$.

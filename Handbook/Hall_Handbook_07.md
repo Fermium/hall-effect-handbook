@@ -8,7 +8,6 @@ One of the two permanent-magnets mounted on the soft-steel structure may be move
 
 
 ![The screw device for changing the effective magnetic field](Assets/Figures/screw_device.JPG){#fig:ScrewDevice  width=65%}   
-\ 
 
 
 A calibration of the magnetic field $B$ as a function of the gap $d$ may be made using a gauss-meter probe placed between the poles (see fig. {@fig:BvsGapD})

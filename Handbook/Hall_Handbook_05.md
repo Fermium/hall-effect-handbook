@@ -6,7 +6,6 @@ $$\vec { F } =q\vec { V } \wedge \vec { B }$$ {#eq:lorentzForce}
 Let us consider a conducting bar (figure {@fig:hall-effect-geometry}) immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis. The Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (figure {@fig:hall-effect-geometry}) (independently from the charge sign).
 
 ![Hall effect geometry](Assets/Figures/hall-effect-geometry.jpeg){#fig:hall-effect-geometry  width=65%}
-\ 
 
 In metals the electric current is only due to electrons. In semiconductors the charge carriers may be either electrons or holes.
 
