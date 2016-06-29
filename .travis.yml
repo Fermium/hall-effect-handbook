@@ -1,13 +1,6 @@
 language: python
 python:
-  - "2.6"
-  - "2.7"
-  - "3.2"
-  - "3.3"
-  - "3.4"
   - "3.5"
-  - "3.5-dev" # 3.5 development branch
-  - "nightly" # currently points to 3.6-dev
 sudo: required
 dist: trusty
 install:
@@ -18,7 +11,6 @@ install:
   - sudo apt-get -y install jq python-pip zip ghostscript
   # install latest pandoc release
   - wget `curl https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.assets[] | .browser_download_url | select(endswith("deb"))'` -O pandoc.deb && sudo dpkg -i pandoc.deb && rm pandoc.deb
-  - sudo pip install --upgrade pip
   - sudo pip install pandoc-fignos
   - sudo pip install pandoc-eqnos
   - sudo pip install pandoc-tablenos
