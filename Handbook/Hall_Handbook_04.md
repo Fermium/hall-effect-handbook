@@ -20,7 +20,7 @@ $$v_d=a\tau=q\tau\frac{E}{m}$$ {#eq:electronsAvgSpd}
 
 [^feynman]: See for instance *The Feynman lectures on Physics* vol.I 43-1,3 Addison-Wesley 1963.
 
-obtained from {#eq:electronsDelta} where $\tau$ is the mean free time between collisions [^meanFreeTimeBetweenCollisions], so that the drift mobility $\mu$ has the microscopic expression :
+obtained from {@eq:electronsDelta} where $\tau$ is the mean free time between collisions [^meanFreeTimeBetweenCollisions], so that the drift mobility $\mu$ has the microscopic expression :
 
 [^meanFreeTimeBetweenCollisions]: This time $\tau$ does not depend on the electric field because the average speed increment due to the applied electric field $V_d$ is very small with respect to the r.m.s. speed $V_m$ due to thermal motion .
 
