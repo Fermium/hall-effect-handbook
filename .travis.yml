@@ -1,16 +1,19 @@
-language: R
+language: python
+python:
+  - "3.5"
+sudo: required
+dist: trusty
 install:
-  - sudo apt-get update
-  - sudo apt-get -y install jq python-pip zip ghostscript 
-  - sudo apt-get -y remove pandoc
-  - sudo pip install --upgrade pip
-  - sudo pip install 'pandoc-fignos<0.11'
+  - wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu && chmod +x ./install-tl-ubuntu
+  - sudo ./install-tl-ubuntu 
+  - export PATH="/opt/texbin:$PATH"
+  - sudo apt-get -y update 
+  - sudo apt-get -y install jq python-pip zip ghostscript
+  # install latest pandoc release
+  - wget `curl https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.assets[] | .browser_download_url | select(endswith("deb"))'` -O pandoc.deb && sudo dpkg -i pandoc.deb && rm pandoc.deb
+  - sudo pip install pandoc-fignos
   - sudo pip install pandoc-eqnos
   - sudo pip install pandoc-tablenos
-  - wget `curl https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.assets[] | .browser_download_url | select(endswith("deb"))'` -O pandoc.deb && sudo dpkg -i pandoc.deb && rm pandoc.deb
-  - tlmgr update --self
-  - tlmgr update --all
-sudo: true
 script:
   - cd Handbook
   - make all_compress
