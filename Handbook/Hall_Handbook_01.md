@@ -13,7 +13,7 @@ header-includes:
 include-before:
     - \thispagestyle{empty}
     - \begin{center}\includegraphics[height=8cm]{Assets/Template/cover.jpg}\end{center}
-fontfamily: palatino
+mainfont: Roboto
 fontsize: 12pt
 geometry: [top=1pt, bottom=5cm, left=2.1cm, right=2.1cm]
 disable-floating-figures: true
