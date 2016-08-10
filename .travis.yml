@@ -1,8 +1,4 @@
 language: python
-cache:
-  directories:
-  - /opt/texbin
-  - /usr/local/texlive/2016
 python:
   - "3.5"
 sudo: required
