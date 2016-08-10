@@ -3,7 +3,6 @@ cache:
   directories:
   - /opt/texbin
   - /usr/local/texlive/2016
-  timeout: 1000
 python:
   - "3.5"
 sudo: required
