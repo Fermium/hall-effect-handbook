@@ -32,3 +32,10 @@ This Handbook was originally written by Giacomo Torzo of [Labtrek](http://labtre
 
 Integrations by Davide Bortolami and
 Statistical analysis by Simone Tosato of [Fermium LABS](http://fermiumlabs.com)
+
+#### Revision history
+For a complete revision history, check out the [Github repository](https://github.com/fermiumlabs/Hall-effect-apparatus/commits/master).
+
+The last version of this document can be downloaded at [frm.li/hallhandbookmaster](https://frm.li/hallhandbookmaster) or with the following QR code:
+
+![QR code](Assets/Figures/qr_last.jpg){width=40%}
