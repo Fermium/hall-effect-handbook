@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/fermiumlabs/Hall-effect-apparatus.svg?branch=master)](https://travis-ci.org/fermiumlabs/Hall-effect-apparatus) [![Analytics](https://ga-beacon.appspot.com/UA-69533556-3/hall-effect-apparatus/handbook/readme/?flat)](https://github.com/igrigorik/ga-beacon)
+[![Build Status](https://travis-ci.org/fermiumlabs/Hall-effect-apparatus.svg?branch=master)] [![Analytics](https://ga-beacon.appspot.com/UA-69533556-3/hall-effect-apparatus/handbook/readme/?flat)](https://github.com/igrigorik/ga-beacon)
 
 # Handbook
 
