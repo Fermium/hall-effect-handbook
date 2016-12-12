@@ -1,4 +1,5 @@
 box: fermiumlabs/latex-docker
+
 build:
   steps:
     - script:
