@@ -4,10 +4,8 @@ build:
   steps:
     - script:
         name: Build
-        code: make all_compress
-    - script:
-        name: Compress 
-        code: npm test
+        code: 
+          - make all_compress
     - script:
         name: Zip and transfer results
         code:
