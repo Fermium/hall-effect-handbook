@@ -1,0 +1,24 @@
+box: fermiumlabs/latex-docker
+
+build:
+  steps:
+    - script:
+        name: Build
+        code: |
+          make all_compress
+    - script:
+        name: Zip and transfer results
+        code: |
+          zip -r Hall_Handbook.zip Exports/
+          curl --upload-file ./Hall_Handbook.zip https://transfer.sh/Hall_Handbook.zip 
+          rm Hall_Handbook.zip 
+
+deploy:
+  steps:
+    - edgecaseadmin/install-aws-cli:
+           key: $AWS_ACCESS_KEY_ID
+           secret: $AWS_SECRET_ACCESS_KEY
+    - script:
+        name: "Push application build to S3"
+        code: |
+          aws s3 cp --recursive Exports/ s3://handbooks-autobuild/$WERCKER_GIT_REPOSITORY/
