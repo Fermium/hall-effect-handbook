@@ -16,11 +16,14 @@ build:
 
 deploy:
   steps:
-    - edgecaseadmin/install-aws-cli:
-           key: $AWS_ACCESS_KEY_ID
-           secret: $AWS_SECRET_ACCESS_KEY
+    - script:
+      name: "Install amazon s3 cli"
+      code: |
+        curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+        unzip awscli-bundle.zip
+        sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
     - script:
         name: "Push application build to S3"
         code: |
-          touch Exports/test2.txt
+          touch Exports/test1.txt
           aws s3 cp --recursive Exports/ s3://handbooks-autobuild/$WERCKER_GIT_REPOSITORY/
