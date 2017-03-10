@@ -25,5 +25,4 @@ deploy:
     - script:
         name: "Push application build to S3"
         code: |
-          touch Exports/test1.txt
           aws s3 cp --recursive Exports/ s3://handbooks-autobuild/$WERCKER_GIT_REPOSITORY/
