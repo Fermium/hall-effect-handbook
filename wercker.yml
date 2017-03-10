@@ -4,15 +4,15 @@ build:
   steps:
     - script:
         name: Build
-        code: 
-          - make all_compress
+        code: |
+          make all_compress
     - script:
         name: Zip and transfer results
-        code:
-          - cd Exports
-          - zip -r Hall_Handbook_html.zip Assets Hall_Handbook.html
-          - zip -r Hall_Handbook.zip ../../*
-          - curl --upload-file ./Hall_Handbook.zip https://transfer.sh/Hall_Handbook.zip 
+        code: |
+          cd Exports
+          zip -r Hall_Handbook_html.zip Assets Hall_Handbook.html
+          zip -r Hall_Handbook.zip ../../*
+          curl --upload-file ./Hall_Handbook.zip https://transfer.sh/Hall_Handbook.zip 
 
 deploy:
   steps:
