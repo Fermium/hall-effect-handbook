@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/fermiumlabs/Hall-effect-apparatus.svg?branch=master)](https://travis-ci.org/fermiumlabs/Hall-effect-apparatus) [![Analytics](https://ga-beacon.appspot.com/UA-69533556-3/hall-effect-apparatus/readme/?flat)](https://github.com/igrigorik/ga-beacon)
+[![wercker status](https://app.wercker.com/status/c3f211eac0371c5d15070b87bf848438/s/master "wercker status")](https://app.wercker.com/project/byKey/c3f211eac0371c5d15070b87bf848438) [![Analytics](https://ga-beacon.appspot.com/UA-69533556-3/hall-effect-apparatus/readme/?flat)](https://github.com/igrigorik/ga-beacon)
 
 
 # Hall effect apparatus
