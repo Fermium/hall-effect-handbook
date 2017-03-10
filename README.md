@@ -8,11 +8,11 @@
 
 | Version | Link |
 | --- | --- |
-| PDF, compressed (suggested) | [**Download** :floppy_disk:](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.pdf){:target="_blank"} |
-| HTML, .zip archive | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.zip){:target="_blank"} |
-| HTML, online | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.html){:target="_blank"} |
-| Microsoft Word (.docx) | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.docx){:target="_blank"} |
-| PDF, uncompressed |[Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook_hires.pdf){:target="_blank"} |
+| PDF, compressed (suggested) | [**Download** :floppy_disk:](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.pdf) |
+| HTML, .zip archive | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.zip) |
+| HTML, online | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.html) |
+| Microsoft Word (.docx) | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.docx) |
+| PDF, uncompressed |[Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook_hires.pdf) |
 
 The links are automatically updated.
 
