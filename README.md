@@ -5,9 +5,17 @@
 
 ## Downloads
 
-You can download the handbook to use the instrument here: [Latest Version](https://github.com/fermiumlabs/Hall-effect-apparatus/releases/latest/)
 
-Please note, the download links are automatically updated every 2 hours. 
+| Version | Link |
+| --- | --- |
+| PDF, compressed (suggested) | [**Download** :floppy_disk:](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.pdf) |
+| HTML, .zip archive | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.zip) |
+| HTML, online | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.html) |
+| Microsoft Word (.docx) | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.docx) |
+| PDF, uncompressed |[Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook_hires.pdf) |
+
+The links are automatically updated.
+
 
 ## Corrections and Issues
 
