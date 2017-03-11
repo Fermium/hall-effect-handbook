@@ -5,7 +5,7 @@ build:
     - script:
         name: Build
         code: |
-          make all_compress
+          make compress_pdf
     - script:
         name: Zip and transfer results
         code: |

@@ -4,15 +4,9 @@
 
 ## Downloads
 
-Format                     | Link
---------------------------- | -------------------------------------------------------------------------------------------------------
-PDF, compressed (suggested) | [**Download** :floppy_disk:](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.pdf)
-HTML, .zip archive          | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.zip)
-HTML, online                | [View](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.html)
-Microsoft Word (.docx)      | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.docx)
-PDF, uncompressed           | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook_hires.pdf)
+[:floppy_disk: **Download** hall_handbook.pdf ](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.pdf)
 
-The links are automatically updated.
+The content of the manual is automatically built from this repository.
 
 ## Corrections and Issues
 
@@ -44,19 +38,15 @@ You can use the standard make utils on any unix system
 make all #clean and build everything
 make clean #clean
 make pdf
-make html
-make docx
 ```
 
 If you're on a OS X, you can also run:
 
 ```bash
 make open_pdf
-make open_html
-make open_docx
 ```
 
-Which will open the various files with your default app. If you do not want to install all that software, check out [latex-docker](https://github.com/fermiumlabs/latex-docker).
+Which will open the pdf with your default app.
 
 ## LICENSE
 
