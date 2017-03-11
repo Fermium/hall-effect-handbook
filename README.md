@@ -4,7 +4,7 @@
 
 ## Downloads
 
-Version                     | Link
+Format                     | Link
 --------------------------- | -------------------------------------------------------------------------------------------------------
 PDF, compressed (suggested) | [**Download** :floppy_disk:](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.pdf)
 HTML, .zip archive          | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.zip)
