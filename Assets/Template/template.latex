@@ -19,7 +19,6 @@ $if(disable-floating-figures)$
     \endorigfigure
 }
 $endif$
-
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript

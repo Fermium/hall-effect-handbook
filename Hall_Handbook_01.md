@@ -10,6 +10,7 @@ header-includes:
     - \fancyfoot[L]{\href{http://fermiumlabs.com}{fermiumlabs.com} \href{http://labtrek.it}{labtrek.it} }
     - \fancyfoot[C]{}
     - \fancyfoot[R]{\thepage}
+    - \usepackage[]{tikz}
 include-before:
     - \thispagestyle{empty}
     - \begin{center}\includegraphics[height=8cm]{Assets/Template/cover.jpg}\end{center}
