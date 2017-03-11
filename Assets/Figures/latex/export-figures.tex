@@ -1,0 +1,11 @@
+% import this file with \input{export-figures.tex}
+% just before inclusion of the tikz package
+
+
+
+% set up externalization
+\usetikzlibrary{external}
+\tikzset{external/system call={pdflatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource";
+dvips -o "\image".ps "\image".dvi;
+ps2eps "\image.ps"}}
+\tikzexternalize
