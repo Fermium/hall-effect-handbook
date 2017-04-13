@@ -67,3 +67,10 @@ Which will open the various files with your default app. If you do not want to i
 This work is distributed under the terms of the [GNU Free Documentation License](http://www.gnu.org/licenses/fdl-1.3.html)
 
 Original paper by Giacomo Torzo of [Labtrek](http://labtrek.it)
+
+---
+
+<a href="https://twitter.com/intent/user?screen_name=fermiumlabs">
+    <img src="https://img.shields.io/twitter/follow/fermiumlabs.svg?style=social&label=Follow" alt="Follow Fermium LABS on Twitter" align="right" />
+</a>
+
