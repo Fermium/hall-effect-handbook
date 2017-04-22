@@ -1,6 +1,11 @@
-[![wercker status](https://app.wercker.com/status/c3f211eac0371c5d15070b87bf848438/s/master "wercker status")](https://app.wercker.com/project/byKey/c3f211eac0371c5d15070b87bf848438) [![Analytics](https://ga-beacon.appspot.com/UA-69533556-3/hall-effect-apparatus/readme/?flat)](https://github.com/igrigorik/ga-beacon)
+<a href="https://fermiumlabs.com/">
+    <img src="https://fermiumlabs.com/Assets/img/logos/Horizontal-Main_500px.png" alt="Fermium LABS logo" width="200" align="right" />
+</a>
 
 # Hall effect apparatus
+
+[![wercker status](https://app.wercker.com/status/c3f211eac0371c5d15070b87bf848438/s/master "wercker status")](https://app.wercker.com/project/byKey/c3f211eac0371c5d15070b87bf848438)
+
 
 ## Downloads
 
@@ -53,3 +58,10 @@ Which will open the pdf with your default app.
 This work is distributed under the terms of the [GNU Free Documentation License](http://www.gnu.org/licenses/fdl-1.3.html)
 
 Original paper by Giacomo Torzo of [Labtrek](http://labtrek.it)
+
+---
+
+<a href="https://twitter.com/intent/user?screen_name=fermiumlabs">
+    <img src="https://img.shields.io/twitter/follow/fermiumlabs.svg?style=social&label=Follow" alt="Follow Fermium LABS on Twitter" align="right" />
+</a>
+
