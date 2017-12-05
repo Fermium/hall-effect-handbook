@@ -2,10 +2,14 @@ box: fermiumlabs/latex-docker
 
 build:
   steps:
+	- script: 
+		name: Install R packages
+	  	code: |
+		  Rscript -e "install.packages('rmarkdown');library(rmarkdown);install.packages('bookdown')"
     - script:
         name: Build
         code: |
-          make all_compress
+          make bookdown_all_compress
     - script:
         name: Zip and transfer results
         code: |
