@@ -2,10 +2,10 @@ box: fermiumlabs/latex-docker
 
 build:
   steps:
-	- script: 
-		name: Install R packages
-	  	code: |
-		  Rscript -e "install.packages('rmarkdown');library(rmarkdown);install.packages('bookdown')"
+  - script:
+      name: Install R packages
+      code: |
+          Rscript -e "install.packages('rmarkdown');library(rmarkdown);install.packages('bookdown')"
     - script:
         name: Build
         code: |
@@ -14,8 +14,8 @@ build:
         name: Zip and transfer results
         code: |
           zip -r Hall_Handbook.zip Exports/
-          curl --upload-file ./Hall_Handbook.zip https://transfer.sh/Hall_Handbook.zip 
-          rm Hall_Handbook.zip 
+          curl --upload-file ./Hall_Handbook.zip https://transfer.sh/Hall_Handbook.zip
+          rm Hall_Handbook.zip
 
 deploy:
   steps:
