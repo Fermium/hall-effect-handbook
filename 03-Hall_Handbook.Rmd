@@ -1,4 +1,4 @@
-#A semiclassical microscopic model
+# A semiclassical microscopic model
 
 The simplest microscopic model one can use is the “free electron gas" model of metals, in which the valence electrons are supposed to be practically free from their original atoms, and thus to move in the crystal lattice formed by the metal ions. In the absence of an applied electric field, the electron velocities are randomly distributed, with zero mean value and a *root mean square* value $v_{m}$ that may be evaluated from the equation:
 \begin{equation}

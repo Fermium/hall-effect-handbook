@@ -1,4 +1,4 @@
-#The Hall effect
+# The Hall effect
 
 
 The Hall effect is essentially due to the Lorentz force $\vec { F }$ acting on each electric charge $q$ moving with velocity $v$ in a magnetic field $B$.

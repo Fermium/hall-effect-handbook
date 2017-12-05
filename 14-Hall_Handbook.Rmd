@@ -1,6 +1,6 @@
 \clearpage
 
-#Warnings
+# Warnings
 
 **Using high magnetic field require some caution:**
 
@@ -16,7 +16,7 @@
 
 \clearpage
 
-#References
+# References
 
 * J.C. Slater *Quantum Theory of matter*, mcGraw-Hill 1951.
 * C.L.Chin e C.R.Westgate, *The Hall Effect and Its Applications*, Plenum Press, NY, 1979

@@ -1,4 +1,4 @@
-#Appendix 1: Use of the optional Extension HUB
+# Appendix 1: Use of the optional Extension HUB
 
 An optional Extension HUB (ExtHUB)is provided with the device. This allows the user to measure the voltages (with respect to the ground or as differential voltages) at the 7 contacts on the Ge sample, by using an high impedance multimeter. 
 

@@ -1,4 +1,4 @@
-#Experiment Procedure
+# Experiment Procedure
 ## The experimental setup
 
 The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two Nd-Fe-B magnets and a U shaped soft-steel core, acting like a torus.

@@ -1,4 +1,4 @@
-#Appendix 2: calculation of $R_H$ for small and high magnetic field
+# Appendix 2: calculation of $R_H$ for small and high magnetic field
 
 The motion equation $(F=ma)$ for charge carriers can as well be written as:
 
