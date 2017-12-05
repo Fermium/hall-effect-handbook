@@ -2,10 +2,9 @@ box: fermiumlabs/latex-docker
 
 build:
   steps:
-  - script:
+    - script:
       name: Install R packages
       code: |
-          which Rscript
           Rscript -e "install.packages('rmarkdown',repos='https://cran.stat.unipd.it/');library(rmarkdown);install.packages('bookdown',repos='https://cran.stat.unipd.it/')"
     - script:
         name: Build
