@@ -10,12 +10,6 @@ build:
         name: Build
         code: |
           make bookdown_all_compress
-    - script:
-        name: Zip and transfer results
-        code: |
-          zip -r Hall_Handbook.zip Exports/
-          curl --upload-file ./Hall_Handbook.zip https://transfer.sh/Hall_Handbook.zip
-          rm Hall_Handbook.zip
 
 deploy:
   steps:
