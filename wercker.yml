@@ -5,7 +5,7 @@ build:
     - script:
       name: Install R packages
       code: |
-          Rscript -e "install.packages('rmarkdown',repos='https://cran.stat.unipd.it/');library(rmarkdown);install.packages('bookdown',repos='https://cran.stat.unipd.it/')"
+          Rscript -e "install.packages('devtools',repos='https://cran.stat.unipd.it/');install.packages('rmarkdown',repos='https://cran.stat.unipd.it/');library(rmarkdown);install.packages('bookdown',repos='https://cran.stat.unipd.it/')"
     - script:
         name: Build
         code: |
