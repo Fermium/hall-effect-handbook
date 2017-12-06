@@ -3,6 +3,11 @@ box: fermiumlabs/latex-docker
 build:
   steps:
     - script:
+      name: Install dependencies
+      code: |
+          apt update
+          apt install -yq libcurl4-openssl-dev libssh2-1-dev curl 
+    - script:
       name: Install R packages
       code: |
           Rscript -e "install.packages('devtools',repos='https://cran.stat.unipd.it/');install.packages('rmarkdown',repos='https://cran.stat.unipd.it/');library(rmarkdown);install.packages('bookdown',repos='https://cran.stat.unipd.it/')"
