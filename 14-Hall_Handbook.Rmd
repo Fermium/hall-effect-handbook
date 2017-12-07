@@ -38,4 +38,4 @@ For a complete revision history, check out the [Github repository](https://githu
 
 The last version of this document can be downloaded at [frm.li/hallhandbookmaster](https://frm.li/hallhandbookmaster) or with the following QR code:
 
-![](Assets/Figures/qr_last.jpg){width=40%}
+![](Assets/Figures/qr_last.jpg)
