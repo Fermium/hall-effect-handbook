@@ -3,15 +3,19 @@ box: fermiumlabs/latex-docker
 build:
   steps:
     - script:
-        name: Build
-        code: |
-          make all_compress
+      name: Install dependencies
+      code: |
+          apt-get update -yqq
+          apt-get install -yqq libcurl4-openssl-dev libssh2-1-dev curl 
     - script:
-        name: Zip and transfer results
-        code: |
-          zip -r Hall_Handbook.zip Exports/
-          curl --upload-file ./Hall_Handbook.zip https://transfer.sh/Hall_Handbook.zip 
-          rm Hall_Handbook.zip 
+      name: Install R packages
+      code: |
+          make install_r_packages
+    - script:
+      name: Build
+      code: |
+          make clean
+          make zip
 
 deploy:
   steps:
@@ -21,4 +25,4 @@ deploy:
     - script:
         name: "Push application build to S3"
         code: |
-          aws s3 cp --recursive Exports/ s3://handbooks-autobuild/$WERCKER_GIT_REPOSITORY/
+          aws s3 sync --delete Exports/ s3://handbooks-autobuild/$WERCKER_GIT_REPOSITORY/

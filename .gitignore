@@ -1,2 +1,9 @@
 Exports
-Icon
+Icon
+.Rproj.user
+.Rhistory
+.wercker*
+libs/
+*converted-to*
+Hall_Handbook*
+.wercker

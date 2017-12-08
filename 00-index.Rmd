@@ -1,5 +1,25 @@
----
-title: Hall Effect Handbook
+--- 
+title: "Hall Effect Handbook"
+author: "Prof. Giacomo Torzo"
+date: "updated on `r format(Sys.Date(),'%m-%Y')`"
+
+#documentclass: book
+#biblio-style: apalike
+link-citations: yes
+monofont: Roboto
+
+github-repo: fermiumlabs/hall-effect-handbook
+cover-image: Assets/Figures/cover.jpg
+url: https\://fermiumlabs/hall-effect-handbook
+
+bookdown::gitkook:
+  config:
+    download: 
+       - pdf
+       - epub
+#       - mobi
+    edit: https://github.com/fermiumlabs/hall-effect-handbook/edit/master/%s
+
 header-includes:
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
@@ -10,14 +30,14 @@ header-includes:
     - \fancyfoot[L]{\href{http://fermiumlabs.com}{fermiumlabs.com} \href{http://labtrek.it}{labtrek.it} }
     - \fancyfoot[C]{}
     - \fancyfoot[R]{\thepage}
-include-before:
-    - \thispagestyle{empty}
-    - \begin{center}\includegraphics[height=8cm]{Assets/Template/cover.jpg}\end{center}
-mainfont: Roboto
-fontsize: 12pt
+#include-before:
+#    - \thispagestyle{empty}
+#    - \begin{center}\includegraphics[height=8cm]{Assets/Template/cover.jpg}\end{center}
+#mainfont: Roboto
+#fontsize: 12pt
 geometry: [top=1pt, bottom=5cm, left=2.1cm, right=2.1cm]
-disable-floating-figures: true
 ---
+\newpage
 
 <!--
 Copyright (C)  2016  Labtrek srl & Fermium LABS srl.

@@ -1,0 +1,93 @@
+# Appendix 2: calculation of $R_H$ for small and high magnetic field
+
+The motion equation $(F=ma)$ for charge carriers can as well be written as:
+
+$$
+m(\frac{dv}{dt}+\frac{v}{\tau}) = qE+ q\vec{v} \wedge \vec{B} 
+(\#eq:MotionEquationForChargeCarriers)
+$$
+
+where the charge $q$ is the $\pm e$ for holes and electrons and we account for the mean time $\tau$ between collisions and for the Lorentz force.
+In stationary conditions the acceleration is zero. Therefore the velocities along $x$ ($B$ is directed along $z$) for electrons and holes are respectively:
+
+$$
+V_{ex}=-\frac{e\tau}{m}E_x+\frac{e\tau}{m}\vec{v}\wedge\vec{B}=-\mu_e v_{e\, y}B
+(\#eq:XvelocitiesForElectrons)
+$$
+
+$$
+V_{hx}=\mu_h E_x+\mu_h v_{e\, x}B
+(\#eq:XvelocitiesForHoles)
+$$
+
+And, for velocities along y:
+
+$$
+V_{ e \, y} = -\mu_e E_y- \mu_e V_{e \, x} B
+(\#eq:YvelocitiesForElectrons)
+$$
+
+
+$$
+V_{h \, y} = \mu_h E_y + \mu_h v_{h \, x}B
+(\#eq:YvelocitiesForHoles)
+$$
+
+
+The current density along the <!-- is it the x AXIS or x in some other way? -->$x$ axis $(J = e V_{h \, x} P - eV_{e \quad x} n)$ can as well be written as:
+
+
+$$
+J_x \approx e(p \mu_h + n \mu_e)E_x + e(p \mu_h v \mu_{h \, y} - n \mu_e v_{e \, y})B \approx \\
+\approx e ( p \mu_h + n \mu_e) E_x + e (p \mu_h^2 -n \mu_e^2 )BE_y
+(\#eq:currentDensityAlongX)
+$$
+
+
+where we made the approximation $v_y \approx \mu_y E_y$, neglecting here the Lorentz force.
+Recalling that $E_y \ll E_x$, for small magnetic fields $B$ \@ref(eq:currentDensityAlongX) may be approximated by:
+
+$$
+J_x \approx e(p \mu_h + n \mu_e) E_x
+(\#eq:currentDensityAlongXaproxymated)
+$$
+
+For negligible current density along y we have:
+
+$$
+J_y = e p v_{h \, y} - env_{e \, y} = 0
+(\#eq:currentDensityAlongYNegligible)
+$$
+
+or using $v_{h \, x}$ and $V_{e \, x}$ definitions:
+
+$$J_y = ep ( \mu_h E_y + \mu_h v_{h \, x} B) - en( -\mu_e E_y - \mu_e v_{e \, x}B) = 0$$
+
+$$e(p \mu_h + n \mu_e) E_y + e(p \mu_h v_{h \, x} + n \mu_e v_{e \, x}) B = 0$$
+
+$$E_y = B \frac {p \mu_h v_{h \, x} + n \mu_e v_{e \, x}}{p \mu_h + n \mu_e}$$
+
+If again we assume $v_x \approx \mu_xE_x$ (neglecting, for small B, the correction for the Lorentz force <!-- is it the lorentz force ? --> we can write:
+
+$$E_y \approx B \frac{p \mu^2_h - n \mu^2_e}{p \mu_h + n \mu_e} E_x$$
+
+In this way the Hall coefficient becomes:
+
+$$
+R_H = - \frac{E_y}{J_x B_z} \approx \frac {p \mu^2_h - n \mu_e^2}{e (p \mu_h + n \mu_e )^2}
+(\#eq:hallCoefficientBecomes)
+$$
+
+
+The formula \@ref(eq:hallCoefficientBecomes) holds true only for *small values* of $B$.
+For large $B$ values we must use \@ref(eq:hallCoefficientBecomes) for $J_x$ the definition \@ref(eq:currentDensityAlongX) instead of \@ref(eq:currentDensityAlongXaproxymated), obtaining for the Hall coefficient $R_H$:
+
+
+$$
+R_{ H }(B)=\frac { E_{ y } }{ BJ_{ x } } \approx \frac { \left[ B\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ (p\mu _{ h }+n\mu _{ e }) } E_{ x } \right] }{ Be\left[ (p\mu _{ h }+n\mu _{ e })+B^{ 2 }\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e }) } \right] { E }_{ x } } = \\
+=\frac { (p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e }) }{ e(p\mu _{ h }+n\mu _{ e })^{ 2 }\left[ 1+B^{ 2 }\frac { (p{ \mu }_{ h }^{ 2 }-n\mu ^{ 2 }_{ e })^{ 2 } }{ (p\mu _{ h }+n\mu _{ e })^{ 2 } } \right] } =\frac { R_{ H(B=0) } }{ 1+KB^{ 2 } }
+(\#eq:HallCoefficientBigEquation)
+$$
+
+<!-- yeah i know that was long... -->
+which tends to saturate at high B values.

@@ -11,10 +11,9 @@
 
 Format                     | Link
 --------------------------- | -------------------------------------------------------------------------------------------------------
+HTML, online                | [View](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/index.html)   
 PDF, compressed (suggested) | [**Download** :floppy_disk:](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.pdf)
-HTML, .zip archive          | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.zip)
-HTML, online                | [View](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.html)
-Microsoft Word (.docx)      | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.docx)
+Everything, .zip archive          | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.zip)
 PDF, uncompressed           | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook_hires.pdf)
 
 The links are automatically updated.
@@ -27,30 +26,31 @@ If you find a problem please [open an issue](https://github.com/fermiumlabs/Hall
 
 Email us at <support@fermiumlabs.com>
 
-If you want to contribute, fork the repository and then make a [pull request](https://help.github.com/articles/using-pull-requests/).
+If you want to contribute, go to the page and click the "edit" link in the top icons.
 
 ## How was it written?
 
-This document is written in Pandoc Markdown, with the use of a few extensions.
+This document is written in R [Bookdown](https://bookdown.org/home/).
 
 ## How to compile from markdown
 
 To compile this document you need installed:
 
 - [pandoc](http://pandoc.org)
-- [pandoc-eqnos](https://github.com/tomduck/pandoc-eqnos)
-- [pandoc-tablenos](https://github.com/tomduck/pandoc-tablenos)
-- [pandoc-fignos](https://github.com/tomduck/pandoc-fignos)
+- R
 - make [(osx)](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/)
+- imagemagick (optional, to compress the pdf)
 
 You can use the standard make utils on any unix system
 
 ```bash
+make install_r_packages #install dependencies
 make all #clean and build everything
+make all_compress #make all and compress the .zip
 make clean #clean
 make pdf
 make html
-make docx
+make epub
 ```
 
 If you're on a OS X, you can also run:
@@ -58,7 +58,6 @@ If you're on a OS X, you can also run:
 ```bash
 make open_pdf
 make open_html
-make open_docx
 ```
 
 Which will open the various files with your default app. If you do not want to install all that software, check out [latex-docker](https://github.com/fermiumlabs/latex-docker).
@@ -74,4 +73,3 @@ Original paper by Giacomo Torzo of [Labtrek](http://labtrek.it)
 <a href="https://twitter.com/intent/user?screen_name=fermiumlabs">
     <img src="https://img.shields.io/twitter/follow/fermiumlabs.svg?style=social&label=Follow" alt="Follow Fermium LABS on Twitter" align="right" />
 </a>
-

@@ -1,0 +1,3 @@
+book_filename: "Hall_Handbook.Rmd"
+output_dir: "Exports"
+delete_merged_file: true

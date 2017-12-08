@@ -1,6 +1,6 @@
-\clearpage
 
-##Warnings
+
+# Warnings
 
 **Using high magnetic field require some caution:**
 
@@ -14,9 +14,9 @@
 
 * The apparatus **MUST NOT** be used by people with pacemakers.
 
-\clearpage
 
-##References
+
+# References
 
 * J.C. Slater *Quantum Theory of matter*, mcGraw-Hill 1951.
 * C.L.Chin e C.R.Westgate, *The Hall Effect and Its Applications*, Plenum Press, NY, 1979
@@ -27,15 +27,13 @@
 * *The Semiconductor informations WebSite* (properties of Germanium), 
     \newline http://www.semiconductors.co.uk/propiviv5431.htm
 
-## Authorship
+# Authorship
 This Handbook was originally written by Giacomo Torzo of [Labtrek](http://labtrek.it)
 
-Integrations by Davide Bortolami and
-Statistical analysis by Simone Tosato of [Fermium LABS](http://fermiumlabs.com)
+Integrations by Davide Bortolami and Statistical analysis by Simone Tosato of [Fermium LABS](http://fermiumlabs.com)
 
-#### Revision history
+## Revision history
 For a complete revision history, check out the [Github repository](https://github.com/fermiumlabs/Hall-effect-apparatus/commits/master).
 
 The last version of this document can be downloaded at [frm.li/hallhandbookmaster](https://frm.li/hallhandbookmaster) or with the following QR code:
-
-![QR code](Assets/Figures/qr_last.jpg){width=40%}
+![](Assets/Figures/qr_last.jpg)

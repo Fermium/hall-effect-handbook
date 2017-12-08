@@ -1,26 +1,40 @@
-##A macroscopic approach to Ohm’s laws
+# A macroscopic approach to Ohm’s laws
 
 The usual *macroscopic* approach to electrical conduction is based on the following experimental observations on metallic conductors:
 
 1) The application of a steady voltage difference $V$ to a metallic wire produces a steady electric current $I$ proportional to $V$. This holds true at least for small values of $I$ when the temperature of the wire does not increase appreciably.
 
-    This allows the definition of the *electric resistance* as follows, according to the first Ohm's law:
- $$R=\frac{ V }{ I }$$ {#eq:ohmLaw1}
+This allows the definition of the *electric resistance* as follows, according to the first Ohm's law:
+
+
+$$
+R=\frac{ V }{ I }
+(\#eq:ohmLaw1)
+$$
+
 
 2) For high currents the wire temperature increases and the power $W=VI$ supplied by the generator to the moving charges, instead of accelerating more and more the circulating charge, is converted into heat (Joule effect).
 
-    It could appear that the moving charges are subjected to some kind of force, like a body falling in a viscous medium, so that they reach a steady motion and give up part of their kinetic energy to the “body” of the wire (i.e. to the crystal lattice).
+It could appear that the moving charges are subjected to some kind of force, like a body falling in a viscous medium, so that they reach a steady motion and give up part of their kinetic energy to the “body” of the wire (i.e. to the crystal lattice).
 
 3) The resistance $R$ increases with increasing temperature.
 
 4) Using wires of different length $l$ and sections $S$ the second Ohm's law determines the resistance:
 
-    $$ R= \frac{ \rho l}{S} $$ {#eq:ohmLaw2}
 
-    where the constant $\rho$ (the *electrical resistivity*) has a characteristic value for any material and increases with temperature.
+$$
+R= \frac{ \rho l}{S} 
+(\#eq:ohmLaw2)
+$$
+
+where the constant $\rho$ (the *electrical resistivity*) has a characteristic value for any material and increases with temperature.
 
 The inverse quantity, the *electrical conductivity* $\sigma$, can be expressed using the two Ohm's laws as:
 
-$$\sigma = \frac{1}{ \rho }=\frac{J}{E}$$ {#eq:conductivity}
+$$
+\sigma = \frac{1}{ \rho }=\frac{J}{E}
+(\#eq:conductivity)
+$$
+
 
 where $J$ is the current density and $E$ the electric field intensity. This is the starting relation needed to pass to a *microscopic* picture, that will allow a better understanding of the phenomena.
