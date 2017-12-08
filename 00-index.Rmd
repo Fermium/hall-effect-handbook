@@ -20,9 +20,24 @@ bookdown::gitkook:
 #       - mobi
     edit: https://github.com/fermiumlabs/hall-effect-handbook/edit/master/%s
 
-
+header-includes:
+    - \usepackage{fancyhdr}
+    - \pagestyle{fancy}
+    - \headheight=3cm
+    - \fancyhead[L]{\includegraphics[width=3.2cm, trim=0cm 7.3cm 0cm 0cm]{Assets/Template/logo.eps} } 
+    - \fancyhead[R]{\includegraphics[width=1.2cm, trim=0cm 0cm 0cm 0cm]{Assets/Template/logo_labtrek.eps}  }
+    - \fancyhead[C]{Hall Effect Handbook}
+    - \fancyfoot[L]{\href{http://fermiumlabs.com}{fermiumlabs.com} \href{http://labtrek.it}{labtrek.it} }
+    - \fancyfoot[C]{}
+    - \fancyfoot[R]{\thepage}
+#include-before:
+#    - \thispagestyle{empty}
+#    - \begin{center}\includegraphics[height=8cm]{Assets/Template/cover.jpg}\end{center}
+#mainfont: Roboto
+#fontsize: 12pt
+geometry: [top=1pt, bottom=5cm, left=2.1cm, right=2.1cm]
 ---
-
+\newpage
 
 <!--
 Copyright (C)  2016  Labtrek srl & Fermium LABS srl.
