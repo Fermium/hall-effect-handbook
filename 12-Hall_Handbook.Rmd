@@ -1,13 +1,13 @@
-\clearpage
+
 
 # Appendix 3: Temperature dependence of $E_g$
 
 Experimental results consistently shows that the energy gap depends on temperature and for Germanium we can find in the literature the following empirical law:
 
-$$\begin{equation}
+$$
 E_{ g }(T)=0.742-\frac { 4.8\cdot 10^{ -4 }T^{ 2 } }{ T+235 } \quad \quad [eV]
 (\#eq:eGempiricalLaw)
-\end{equation}$$
+$$
 
 
 This may be approximated, in the high temperature region, by a linear law

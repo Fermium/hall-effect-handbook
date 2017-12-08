@@ -5,16 +5,17 @@ build:
     - script:
       name: Install dependencies
       code: |
-          apt update
-          apt install -yq libcurl4-openssl-dev libssh2-1-dev curl 
+          apt-get update -yqq
+          apt-get install -yqq libcurl4-openssl-dev libssh2-1-dev curl 
     - script:
       name: Install R packages
       code: |
-          Rscript -e "install.packages('rmarkdown',repos='https://cran.stat.unipd.it/');install.packages('bookdown',repos='https://cran.stat.unipd.it/')"
+          make install_r_packages
     - script:
-        name: Build
-        code: |
-          make bookdown_all_compress
+      name: Build
+      code: |
+          make clean
+          make zip
 
 deploy:
   steps:
@@ -24,4 +25,4 @@ deploy:
     - script:
         name: "Push application build to S3"
         code: |
-          aws s3 cp --recursive Exports/ s3://handbooks-autobuild/$WERCKER_GIT_REPOSITORY/
+          aws s3 sync --delete Exports/ s3://handbooks-autobuild/$WERCKER_GIT_REPOSITORY/

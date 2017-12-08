@@ -1,12 +1,26 @@
 --- 
 title: "Hall Effect Handbook"
 author: "Prof. Giacomo Torzo"
-date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
-biblio-style: apalike
+date: "updated on `r format(Sys.Date(),'%m-%Y')`"
+
+#documentclass: book
+#biblio-style: apalike
 link-citations: yes
+monofont: Roboto
+
+github-repo: fermiumlabs/hall-effect-handbook
+cover-image: Assets/Figures/cover.jpg
+url: https\://fermiumlabs/hall-effect-handbook
+
+bookdown::gitkook:
+  config:
+    download: 
+       - pdf
+       - epub
+#       - mobi
+    edit: https://github.com/fermiumlabs/hall-effect-handbook/edit/master/%s
+
+
 ---
 
 
@@ -16,4 +30,3 @@ Permission is granted to copy, distribute and/or modify this document under the 
 with the Invariant Sections being "Authorship", Front-Cover Texts, and one Back-Cover Text: "This manual was written by and for Labtrek srl and Fermium LABS srl".
 A copy of the license is included in the section entitled "GNUFree Documentation License".
 -->
-

@@ -2,7 +2,5 @@ Exports
 Icon
 .Rproj.user
 .Rhistory
-_book*
 .wercker*
-_main*
 libs/

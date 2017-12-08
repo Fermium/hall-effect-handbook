@@ -1,4 +1,4 @@
-\clearpage
+
 
 # Warnings
 
@@ -14,7 +14,7 @@
 
 * The apparatus **MUST NOT** be used by people with pacemakers.
 
-\clearpage
+
 
 # References
 
