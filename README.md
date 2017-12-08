@@ -44,6 +44,7 @@ To compile this document you need installed:
 You can use the standard make utils on any unix system
 
 ```bash
+make install_r_packages #install dependencies
 make all #clean and build everything
 make all_compress #make all and compress the .zip
 make clean #clean
@@ -57,7 +58,6 @@ If you're on a OS X, you can also run:
 ```bash
 make open_pdf
 make open_html
-make open_docx
 ```
 
 Which will open the various files with your default app. If you do not want to install all that software, check out [latex-docker](https://github.com/fermiumlabs/latex-docker).

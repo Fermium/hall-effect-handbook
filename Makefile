@@ -38,8 +38,6 @@ open_pdf: pdf
 open_html: html
 	#open Exports/Hall_Handbook.html
 
-open_docx: docx
-	@open Exports/Hall_Handbook.docx
 
 open_all: open_pdf open_html open_docx
 	
