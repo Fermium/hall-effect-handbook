@@ -1,7 +1,7 @@
 # Experiment Procedure
 ## The experimental setup
 
-The apparatus uses a Ge sample, cut from a standard P-doped wafer, placed inside a isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two Nd-Fe-B magnets and a U shaped soft-steel core, acting like a torus.
+The apparatus uses a Ge sample, 20x10x1mm in size, cut from a standard P-doped wafer, placed inside a temperature-controlled isothermal aluminum case. It is placed in the gap between two poles of a permanent magnet, realized from two Nd-Fe-B magnets and a U shaped soft-steel core, acting like a torus.
 
 The sample has 7 wires tin soldered in the positions shown in Fig. \@ref(fig:sample-circuitry) and Fig. \@ref(fig:sample-pcb)  as follows:
 ```{r 'sample-circuitry', out.width='65%',fig.cap='Simplified schematic of the sample circuitry',echo=FALSE,fig.align = 'center'}
@@ -14,7 +14,7 @@ knitr::include_graphics('Assets/Figures/sample_circuitry.png')
 *   Contacts 7 and 5 are used to measure (through a differential amplifier, DA for short) the voltage across the sample, in a 4-wire resistance measurement. 
 *   Contacts 2-3 and 6 are the output of the Hall voltage and fed to the a second DA. 
 
-    Contact 6 is the reference point for the  Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). 
+    Contact 6 is the reference point for the  Hall voltage and contacts 2 and 3 are used to set the balancing potentiometer P (through two amplifier to reduce errors induced by the Seebeck effect ) after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). 
     *Three contacts* are needed for the Hall voltage because *two contacts* cannot be precisely aligned.
    
 ```{r sample-pcb, out.width='65%',fig.cap='Printed circuit board with germanium sample and thermocuple',echo=FALSE,fig.align = 'center'}
