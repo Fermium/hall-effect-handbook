@@ -1,0 +1,66 @@
+---
+title: "Thermocouple Notes"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r,include=FALSE}
+#install.packages("tidyverse")
+#install.packages("gridExtra")
+#install.packages("here")
+library(here)
+library(tidyverse)
+library(ggplot2)
+library(gridExtra)
+setwd(here())
+data<-c('Therm_K fit.csv','HallFermium2.csv')
+```
+
+**THIS DOCUMENT IS ONLY A DRAFT**
+
+# Thermocopule temperature fit
+
+```{r}
+therm.K<-read.csv(here('analysis/data',data[1]),sep=",")
+```
+
+```{r,include=FALSE}
+colnames(therm.K)<-c("T","Ek","CalcT4","Error4","CalcT5","Err5")
+attach(therm.K)
+```
+
+```{r}
+TEkPlot<-ggplot(data=therm.K,aes(x=Ek,y=T))+
+         geom_line()+
+         ggtitle('Thermocopule value vs Temperature')+
+         theme(plot.title = element_text(hjust = 0.5))
+TEkPlot
+```
+
+This document contains a few notes that explains the math behind the polynomial used to convert from the raw E of the termocouple to the temperature. The official [NIST termocouple tables](https://srdata.nist.gov/its90/download/download.html) are not provided to cover for the +-150°c temperature range the apparatus uses. For this reason, it was necessary to do some trivial fitting to recalculate the polynomials.
+
+A typical thermocouple conversion polynomial is as follow:
+
+$$
+t_{\text{calc}}=d_0+d_1 E+d_2 E^2+\ldots + d_n E^n
+$$
+
+A fitting polynomial of the fifth order is sufficient, given the precision of our equipment.
+Best fit coefficients obtained from NIST data tables ($-200 < t [^{\circ}C]<200$)
+
+| Coefficients | Value |
+:--------------|:------|
+$d_0$ | 0.3837 |
+$d_1$ | 25.22 |
+$d_2$ | 0.2795 |
+$d_3$ | 0.07205 |
+$d_4$ | 0.01409 |
+$d_5$ | 0.001056 |
+
+$$
+T = \beta_0+\beta_1 E + \ldots + \beta_5 E^5
+$$
