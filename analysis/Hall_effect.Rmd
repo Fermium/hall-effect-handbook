@@ -1,0 +1,106 @@
+---
+title: "Hall Effect Data Analysis"
+output: pdf_document
+---
+
+
+```{r,include=FALSE}
+#install.packages("tidyverse")
+#install.packages("gridExtra")
+#install.packages("here")
+library(here)
+library(tidyverse)
+library(ggplot2)
+library(gridExtra)
+setwd(here())
+data<-c('Therm_K fit.csv','HallFermium2.csv')
+```
+
+# Resistenza e Tensione di Hall al variare della temperatura
+
+```{r,include=F}
+detach(therm.K)
+```
+
+```{r}
+hall.data<-read.csv(here('data',data[2]),sep=",")
+```
+
+```{r,include=F}
+colnames(hall.data)<-c("t","Vtermoc","Vhall","Vres")
+attach(hall.data)
+Vres.fix<-c(Vres[1:2399]/2.5,Vres[-(1:2399)])
+
+```
+
+Per questo avremo bisogno intanto di calcolare la temperatura in quanto abbiamo la tensione sulla termocoppia, quindi usiamo il modello precedente e andiamo a calcolare le temperature, quindi a convertire i risultati in gradi Kelvin. Per fare questo bisogna inoltre riscalare la tensione sulla termocoppia come
+
+$$
+E = \frac{1}{2}\frac{V_{\text{out}}-2.5-1.25\cdot10^{-3}}{122.4}
+$$
+```{r}
+E<-function(Vout){
+  (1/2)*(Vout-2.5-1.25e-3)/122.4
+}
+
+temperatures<-predict(model,newdata=data.frame(Ek=E(Vtermoc)*1000))+ 273.15
+```
+
+Fatto questo possiamo disegnare il grafico dell'andamento di tensione di hall e resistenza al variare della temperatura
+```{r}
+tempVSVhall.plot<-ggplot()+
+                  geom_line(data=data.frame(x=temperatures,y=Vhall),aes(x,y),col="blue")+
+                  xlab("Temperature (°C)")+ylab("Vhall (V)")+
+                  ggtitle("Temperature VS Vhall")+
+                  theme(plot.title = element_text(hjust = 0.5))
+
+tempVSVres.plot<-ggplot()+
+                 geom_line(data=data.frame(x=temperatures,y=Vres.fix),aes(x,y),col="blue")+
+                 xlab("Temperature (°C)")+
+                 ylab("Vres (V)")+
+                 ggtitle("Temperature VS Vhall")+
+                 theme(plot.title = element_text(hjust = 0.5))
+
+grid.arrange(tempVSVhall.plot,tempVSVres.plot,ncol=2)
+```
+Applichiamo un lisciamento (a kernel normale) per eliminare i disturbi sperimentali in modo da ottenere dei grafici più chiari
+
+```{r}
+tempVSVhall<-ksmooth(temperatures,Vhall/20,"normal",bandwidth =20)
+tempVSVres<-ksmooth(temperatures,Vres.fix,"normal",bandwidth =20)
+
+tempVSVhallsmooth.plot<-ggplot()+
+                        geom_line(data=as.data.frame(tempVSVhall),aes(x,y),col="blue")+
+                        xlab("Temperature (°C)")+
+                        ylab("Vhall (V)")+
+                        ggtitle("Temperature VS Vhall")+
+                        theme(plot.title = element_text(hjust = 0.5))
+tempVSVressmooth.plot<-ggplot()+
+                       geom_line(data=as.data.frame(tempVSVres),aes(x,y),col="blue")+
+                       xlab("Temperature (°C)")+
+                       ylab("Vres (V)")+
+                       ggtitle("Temperature VS Vhall")+
+                       theme(plot.title = element_text(hjust = 0.5))
+grid.arrange(tempVSVhallsmooth.plot,tempVSVressmooth.plot,ncol=2)
+```
+
+# Energia vs log R
+
+
+Linearità nella prima parte della relazione tra eneriga e logR
+
+```{r}
+K<-8.617e-5
+energy<-1/(2*K*tempVSVres$x)
+log.Vres<-log(tempVSVres$y)
+logR<-log(tempVSVres$y/0.01)
+model.x<-energy[2660:length(log.Vres)]
+model.y<-logR[2660:length(log.Vres)]
+model.lm<-lm(model.y~model.x)
+model.lm.intercept<-model.lm$coefficients[1]
+model.lm.slope<-model.lm$coefficients[2]
+energyVsVres.plot<-ggplot()+geom_line(aes(energy,logR))+geom_abline(intercept=model.lm.intercept,slope=model.lm.slope,colour="red")
+energyVsVres.plot
+```
+
+

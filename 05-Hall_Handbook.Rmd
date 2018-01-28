@@ -17,8 +17,8 @@ knitr::include_graphics('Assets/Figures/sample_circuitry.png')
     Contact 6 is the reference point for the  Hall voltage and contacts 2 and 3 are used to set the balancing potentiometers P after having removed the sample from the magnetic field (the Hall voltage should be zero in absence of applied magnetic field). The potentiometers P are not directly connected to the sample as it would lower the impedance of the mesurement.
     *Three contacts* are needed for the Hall voltage because *two contacts* cannot be precisely aligned.
    
-```{r sample-pcb, out.width='65%',fig.cap='Printed circuit board with germanium sample and thermocuple',echo=FALSE,fig.align = 'center'}
-knitr::include_graphics('Assets/Figures/sample_pcb.jpg')
+```{r sample-pcb, out.width='65%',fig.cap='Printed circuit board with germanium sample',echo=FALSE,fig.align = 'center'}
+knitr::include_graphics('Assets/Figures/sample_pcb.png')
 ```    
 
 
