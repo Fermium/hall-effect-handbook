@@ -77,4 +77,5 @@ Using the values of the elementary charge $e = 1.6 \cdot 10^{-19 }C$ and of the 
 
 Even for very large electric fields (up to $10^2 \frac{V}{cm}$) the drift velocity $v_d=\mu E$ is thus much smaller than $v_{m}$.
 
+
 In order to check experimentally the microscopic model we must measure not only the electrical resistance (which gives the product of $n$ and $\mu$) but also the free charge density $n$: this can be obtained by performing a measurement of the Hall effect.
