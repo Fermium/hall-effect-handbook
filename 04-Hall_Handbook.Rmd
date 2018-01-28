@@ -66,7 +66,7 @@ $$
  R_{ H }=\frac { E_{ h } }{ B{ J }_{ x } } =\frac { V_{ H } }{ s } =\frac { B{ I }_{ x } }{ ts } =\frac { V_{ h }t }{ B{ I }_{ x } } 
 (\#eq:Rh)
 $$
-
+The *ltk-hall-ge* apparatus has a standard sample size of 20x10x1mm.
 
 It is worth noting that the the Lorentz force direction does not depend on the charge sign.
 
