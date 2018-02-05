@@ -28,7 +28,7 @@
     \newline http://www.semiconductors.co.uk/propiviv5431.htm
 
 # Authorship
-This Handbook was originally written by Giacomo Torzo of [Labtrek](http://labtrek.it)
+This Handbook was originally written by Giacomo Torzo from Padua University.
 
 Integrations by Davide Bortolami and Statistical analysis by Simone Tosato of [Fermium LABS](http://fermiumlabs.com)
 
