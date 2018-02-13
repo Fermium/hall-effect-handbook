@@ -36,10 +36,10 @@ open_pdf: pdf
 	@open Exports/Hall_Handbook.pdf
 
 open_html: html
-	#open Exports/Hall_Handbook.html
+	open Exports/index.html
 
 
-open_all: open_pdf open_html open_docx
+open_all: open_pdf open_html
 	
 install_r_packages:
 	@Rscript -e "install.packages('rmarkdown',repos='https://cran.rstudio.com');install.packages('bookdown',repos='https://cran.rstudio.com')"
