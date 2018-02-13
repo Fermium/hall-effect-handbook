@@ -3,7 +3,7 @@ title: "Hall Effect Handbook"
 author: "Prof. Giacomo Torzo"
 date: "Last updated on `r format(Sys.Date(),'%m-%Y')`"
 
-#documentclass: book
+documentclass: report
 #biblio-style: apalike
 link-citations: yes
 monofont: Roboto
