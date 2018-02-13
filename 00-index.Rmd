@@ -1,7 +1,7 @@
 --- 
 title: "Hall Effect Handbook"
 author: "Prof. Giacomo Torzo"
-date: "updated on `r format(Sys.Date(),'%m-%Y')`"
+date: "Last updated on `r format(Sys.Date(),'%m-%Y')`"
 
 #documentclass: book
 #biblio-style: apalike
@@ -24,10 +24,10 @@ header-includes:
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
     - \headheight=3cm
-    - \fancyhead[L]{\includegraphics[width=3.2cm, trim=0cm 7.3cm 0cm 0cm]{Assets/Template/logo.eps} } 
-    - \fancyhead[R]{\includegraphics[width=1.2cm, trim=0cm 0cm 0cm 0cm]{Assets/Template/logo_labtrek.eps}  }
+    - \fancyhead[R]{\includegraphics[width=3.2cm, trim=0cm 7.3cm 0cm 0cm]{Assets/Template/logo.eps} } 
+    - \fancyhead[L]{\includegraphics[width=1.2cm, trim=0cm 0cm 0cm 0cm]{Assets/Template/logo_labtrek.eps}  }
     - \fancyhead[C]{Hall Effect Handbook}
-    - \fancyfoot[L]{\href{http://fermiumlabs.com}{fermiumlabs.com} \href{http://labtrek.it}{labtrek.it} }
+    - \fancyfoot[L]{\href{http://labtrek.it}{labtrek.it} \href{http://fermiumlabs.com}{fermiumlabs.com} }
     - \fancyfoot[C]{}
     - \fancyfoot[R]{\thepage}
 #include-before:
