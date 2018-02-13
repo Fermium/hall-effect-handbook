@@ -1,7 +1,7 @@
-all:  pdf epub html
+all:  pdf html
 	@echo "All build!"
 	
-all_compress: compress_pdf epub  html
+all_compress: compress_pdf  html
 	@echo "All build!"
 	
 # CLEANING TARGET
