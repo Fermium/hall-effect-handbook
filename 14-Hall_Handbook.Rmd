@@ -42,5 +42,5 @@ The last version of this document can be downloaded at [frm.li/hallhandbookmaste
 
 
 ```{r QRCODE, out.width='50%',echo=FALSE,fig.align = 'center'}
-knitr::include_graphics('Assets/Figures/qr_last.jpg')
+knitr::include_graphics('Assets/Figures/qr_last.png')
 ```
