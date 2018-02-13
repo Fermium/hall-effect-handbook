@@ -45,9 +45,9 @@ This document contains a few notes that explains the math behind the polynomial 
 
 A typical thermocouple conversion polynomial is as follow:
 
-$$
+\begin{equation}
 t_{\text{calc}}=d_0+d_1 E+d_2 E^2+\ldots + d_n E^n
-$$
+\end{equation}
 
 A fitting polynomial of the fifth order is sufficient, given the precision of our equipment.
 Best fit coefficients obtained from NIST data tables ($-200 < t [^{\circ}C]<200$)
@@ -61,6 +61,6 @@ $d_3$ | 0.07205 |
 $d_4$ | 0.01409 |
 $d_5$ | 0.001056 |
 
-$$
+\begin{equation}
 T = \beta_0+\beta_1 E + \ldots + \beta_5 E^5
-$$
+\end{equation}

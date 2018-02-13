@@ -38,4 +38,9 @@ The ltk-hall-ge apparatus is a joint venture between LabTrek and FermiumLABS.
 For a complete revision history, check out the [Github repository](https://github.com/fermiumlabs/Hall-effect-apparatus/commits/master).
 
 The last version of this document can be downloaded at [frm.li/hallhandbookmaster](https://frm.li/hallhandbookmaster) or with the following QR code:
-![](Assets/Figures/qr_last.jpg)
+
+
+
+```{r QRCODE, out.width='50%',echo=FALSE,fig.align = 'center'}
+knitr::include_graphics('Assets/Figures/qr_last.jpg')
+```

@@ -3,10 +3,10 @@
 
 The Hall effect is essentially due to the Lorentz force $\vec { F }$ acting on each electric charge $q$ moving with velocity $v$ in a magnetic field $B$.
 
-$$
+\begin{equation}
 \vec { F } =q\vec { V } \wedge \vec { B }
 (\#eq:lorentzForce)
-$$
+\end{equation}
 
 Let us consider a conducting bar (Fig. \@ref(fig:hall-effect-geometry)) immersed into a uniform magnetic field $B$ directed along the $z$ axis, with an electric current $I_x$ flowing along the $x$ axis. The Lorentz force $F_L$ on moving charges, both positive and negative, acts in the direction shown by the arrow (Fig. \@ref(fig:hall-effect-geometry)) (independently from the charge sign).
 ```{r hall-effect-geometry, out.width='65%',fig.cap='Hall effect geometry',echo=FALSE,fig.align = 'center'}
@@ -23,25 +23,25 @@ In the electric field $E_x$ the electrons gain a drift velocity $v_d=–\mu E_x$
 
 This charge density increase at the sample lateral surface produces a difference of potential along the $y$ axis and therefore an electric field $E_H$. The value of the *Hall field* $E_H$ at equilibrium will correspond to an electric force $qE_H$ equal and opposite to the Lorentz force, i.e. $E_H=v_d B$. This relation tells us that the Hall field is proportional both to the current density (through $v_d$) and to the magnetic field. It is therefore convenient to define the Hall coefficient as:
 
-$$
-R_H=\frac{E_H}{J_x B_z}
-(\#eq:hallCoefficient)
-$$
+\begin{equation}
+  R_H=\frac{E_H}{J_x B_z}
+  (\#eq:hallCoefficient)
+\end{equation}
 
 Recalling the relations $J_x=-env_d$ (or $J_x=+epv_d$) we get :
 
 
-$$
-R_{ H }=V_{ d }\frac { B }{ J_{ x }B } =\frac { -1 }{ en } 
-(\#eq:RHmn)
-$$
+\begin{equation}
+  R_{ H }=V_{ d }\frac { B }{ J_{ x }B } =\frac { -1 }{ en } 
+  (\#eq:RHmn)
+\end{equation}
 
 or otherwise, for P-doped conductors:
 
-$$
- R_{ H }=\frac { +1 }{ ep }
-(\#eq:RHp)
-$$
+\begin{equation}
+  R_{ H }=\frac { +1 }{ ep }
+  (\#eq:RHp)
+\end{equation}
 
 
 Depending on the type of conductor, either metal \@ref(eq:hallCoefficient) , N-doped \@ref(eq:RHmn) or P-doped \@ref(eq:RHp).
@@ -50,10 +50,10 @@ Measuring $R_H$ we can determine the concentration $n$ of majority carriers and 
 
 We can obtain relation \@ref(eq:RHmn) by assuming identical drift velocity for all charge carriers. This is an approximate relation, found in the literature: <!--FIX, source?-->
 
-$$
- R_H = \frac{r}{nq}
-(\#eq:foundInLiterature)
-$$
+\begin{equation}
+  R_H = \frac{r}{nq}
+  (\#eq:foundInLiterature)
+\end{equation}
 
 
 where $r$ is a parameter that accounts for the statistical velocity distribution of the charge carriers, as well as the different scattering mechanisms: $r\approx 1.2$ for mainly phonon scattering (lattice vibrations) and $r\approx 1.9$ for mainly impurity scattering. <!--FIX, mainly? sounds strange-->
@@ -62,39 +62,40 @@ The Hall coefficient in semiconductors is many order of magnitude larger than th
 
 To measure $R_H$ we must know $V_H$, $I_x$, $B$ and the sample thickness $t$:
 
-$$
- R_{ H }=\frac { E_{ h } }{ B{ J }_{ x } } =\frac { V_{ H } }{ s } =\frac { B{ I }_{ x } }{ ts } =\frac { V_{ h }t }{ B{ I }_{ x } } 
-(\#eq:Rh)
-$$
+\begin{equation}
+  R_{ H }=\frac { E_{ h } }{ B{ J }_{ x } } =\frac { V_{ H } }{ s } =\frac { B{ I }_{ x } }{ ts } =\frac { V_{ h }t }{ B{ I }_{ x } } 
+  (\#eq:Rh)
+\end{equation}
+
 The *ltk-hall-ge* apparatus has a standard sample size of 20x10x1mm.
 
 It is worth noting that the the Lorentz force direction does not depend on the charge sign.
 
 The general expression for $R_H$, valid (see Appendix 1) <!-- FIX --> when *both electrons and holes* are present with densities $n$ and $p$ and mobility $\mu_e$ and $\mu_h$ is:
 
-$$
- R_{ H }=r\frac { p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e } }{ e(p\mu _{ h }-n\mu _{ e })^{ 2 } } 
-(\#eq:RhGeneralExpression)
-$$
+\begin{equation}
+  R_{ H }=r\frac { p\mu ^{ 2 }_{ h }-n\mu ^{ 2 }_{ e } }{ e(p\mu _{ h }-n\mu _{ e })^{ 2 } } 
+  (\#eq:RhGeneralExpression)
+\end{equation}
 
 Which corresponds to the relations and \@ref(eq:RHmn) and \@ref(eq:RHp) for $p\gg n$ or $n\gg p$
 
 When two types of charge carriers are present the electrical conductivity becomes:
 
-$$
-\sigma =e(p \mu_h + n \mu_e)
-(\#eq:electricalConductivity2Carriers)
-$$
+\begin{equation}
+  \sigma =e(p \mu_h + n \mu_e)
+  (\#eq:electricalConductivity2Carriers)
+\end{equation}
 
 
 The product $R_H \sigma$, is named Hall mobility $\mu_H$ (note the capital index "$H$" that distinguish it from hole mobility $\mu_h$).
 
 For a doped semiconductor the Hall mobility $\mu_H$ approximates the *majority carriers* drift mobility $\mu_{h,e}$:
 
-$$
-\mu _{ H }=R_{ H }\sigma =r\frac { p \mu^2_h - n \mu^2_e }{p \mu_h + n \mu_e} \approx r \mu_{h,e} 
-(\#eq:muApproximateDriftMobility)
-$$
+\begin{equation}
+  \mu _{ H }=R_{ H }\sigma =r\frac { p \mu^2_h - n \mu^2_e }{p \mu_h + n \mu_e} \approx r \mu_{h,e} 
+  (\#eq:muApproximateDriftMobility)
+\end{equation}
 
 
 From relation \@ref(eq:RhGeneralExpression) we see that by increasing the temperature in a *P-doped sample*, generating many intrinsic[^4] carriers (i.e. electron-hole pairs), the Hall coefficient $R_H$ (which is positive at room temperature in the extrinsic region) tends to decrease, and it may even change sign. This is explained by the mobility ratio $b=\mu_e/\mu_h>1$. *Note that this does not happen with a* N*-doped sample*.
@@ -106,10 +107,10 @@ Therefore $Nb^2= N_a+N$, or $N_a/N=b^2-1$.
 
 The intrinsic conductivity *measured* at the inversion point is:
 
-$$
-\sigma_{oi} = e(n \mu_e + p \mu_h ) = e[N( \mu_e + \mu_h)+ N_a \mu_h ] = e \mu_h [N(b+1)+N_a]
-(\#eq:intrinsicConductivityInvPoint)
-$$
+\begin{equation}
+  \sigma_{oi} = e(n \mu_e + p \mu_h ) = e[N( \mu_e + \mu_h)+ N_a \mu_h ] = e \mu_h [N(b+1)+N_a]
+  (\#eq:intrinsicConductivityInvPoint)
+\end{equation}
 
 In the extrinsic region of a P-doped sample, where the charge carrier density is constant $n=N_a$, the conductivity is proportional to the carrier mobility $\mu_h$: i.e. $\sigma_e(T) = eN_a \mu_h(T)$
 
@@ -117,24 +118,24 @@ The experimentally measured temperature dependence of the mobility is a power-la
 
 Therefore we may *extrapolate the extrinsic conductivity at the inversion point* $\sigma_{ei}$, and from the ratio ${\sigma_{oi}}/{\sigma_{ei}}$ we get the $b$ value:
 
-$$
-\frac{\sigma_{oi}}{\sigma_{ei}} =e\mu_h \frac{N(b+1) + N_a}{e N_a \mu_h}= \frac{b}{b-1}
-(\#eq:extrinsicConductivityInvPoint)
-$$
+\begin{equation}
+  \frac{\sigma_{oi}}{\sigma_{ei}} =e\mu_h \frac{N(b+1) + N_a}{e N_a \mu_h}= \frac{b}{b-1}
+  (\#eq:extrinsicConductivityInvPoint)
+\end{equation}
 
 which can as well be written as:
 
-$$
-b=\frac{R_e}{R_e-R_o}
-(\#eq:extrinsicConductivityInvPoint2)
-$$
+\begin{equation}
+  b=\frac{R_e}{R_e-R_o}
+  (\#eq:extrinsicConductivityInvPoint2)
+\end{equation}
 
 
 where $R_o$ is the measured sample resistance at the inversion point and $R_e$ is the resistance extrapolated from the extrinsic region (low temperature) to the value it would have at the inversion temperature.
 
 The dopant concentration is related to the value of the *Hall constant at the inversion point* $R_{Ho}$ (in the extrinsic region only the hole concentration is significant) by the equations \@ref(eq:RHmn) and \@ref(eq:RHp), i.e. :
 
-$$
-N_a \approx p \approx \frac{1}{e R_{Ho}}
-(\#eq:HallConstantInvPointRelation)
-$$
+\begin{equation}
+  N_a \approx p \approx \frac{1}{e R_{Ho}}
+  (\#eq:HallConstantInvPointRelation)
+\end{equation}

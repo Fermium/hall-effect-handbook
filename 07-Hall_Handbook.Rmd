@@ -16,10 +16,10 @@ The temperature is measured by a type K (Chromel-Alumel) thermocouple thermally 
 
 In order to get a correct measurement it is necessary to compensate for the non-linearity (see Fig. \@ref(fig:seebeckNonlinearity)) of the thermocouple using the following polynomial:
 
-$$
-t_{calc}=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }
-(\#eq:compensatingPolynomial)
-$$
+\begin{equation}
+  t_{calc}=d_{ 0 }+d_{ 1 }E+d_{ 2 }E^{ 2 }+...+d_{ n }E^{ n }
+  (\#eq:compensatingPolynomial)
+\end{equation}
 
 where $E$ is the output voltage of the thermocouple in $mV$.
 
@@ -55,25 +55,25 @@ knitr::include_graphics('Assets/Figures/NISTfit.png')
 
 The voltage $E$ at the thermocouple junction can be obtained[^AD8495nist] from the following equation:
 
-$$
-E=\frac { 1 }{ 2 } \frac {  V_{ outT }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } 
-(\#eq:voltageAtThermocoupleJunction)
-$$
+\begin{equation}
+  E=\frac { 1 }{ 2 } \frac {  V_{ outT }-{ V }_{ Ref }-{ V }_{ Offset } }{ Gain } 
+  (\#eq:voltageAtThermocoupleJunction)
+\end{equation}
 
 
 where $V_{outT}$ is the output of the instrument (on the front panel), $V_{Ref}=2.5V$ the voltage that indicates a temperature $T=0\,^{\circ}\mathrm{C}$, $V_{offset}$ is the error voltage at $0\,^{\circ}\mathrm{C}$ to achieve 125 mV at $25\,^{\circ}\mathrm{C}$ and $Gain$ is the internal gain of the AD8495 amplifier.
 
 Using the fitting polynomial  \@ref(eq:compensatingPolynomial) allows us to finally obtain the temperature in Celsius:
 
-$$
-t={ f }_{ comp }\left( E \right)
-(\#eq:FcompE)
-$$
+\begin{equation}
+  t={ f }_{ comp }\left( E \right)
+  (\#eq:FcompE)
+\end{equation}
 
-$$
-t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right)
-(\#eq:ad8494Compensated)
-$$
+\begin{equation}
+  t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right)
+  (\#eq:ad8494Compensated)
+\end{equation}
 
 [^AD8495nist]: [AN-1087, Analog Semiconductors](http://www.analog.com/Assets/Figures/en/technical-documentation/application-notes/AN-1087.PDF)
 

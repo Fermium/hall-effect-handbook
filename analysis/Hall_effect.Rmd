@@ -35,9 +35,9 @@ Vres.fix<-c(Vres[1:2399]/2.5,Vres[-(1:2399)])
 
 Per questo avremo bisogno intanto di calcolare la temperatura in quanto abbiamo la tensione sulla termocoppia, quindi usiamo il modello precedente e andiamo a calcolare le temperature, quindi a convertire i risultati in gradi Kelvin. Per fare questo bisogna inoltre riscalare la tensione sulla termocoppia come
 
-$$
+\begin{equation}
 E = \frac{1}{2}\frac{V_{\text{out}}-2.5-1.25\cdot10^{-3}}{122.4}
-$$
+\end{equation}
 ```{r}
 E<-function(Vout){
   (1/2)*(Vout-2.5-1.25e-3)/122.4
@@ -102,5 +102,3 @@ model.lm.slope<-model.lm$coefficients[2]
 energyVsVres.plot<-ggplot()+geom_line(aes(energy,logR))+geom_abline(intercept=model.lm.intercept,slope=model.lm.slope,colour="red")
 energyVsVres.plot
 ```
-
-
