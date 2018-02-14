@@ -1,5 +1,3 @@
-
-
 # Warnings
 
 **Using high magnetic field require some caution:**

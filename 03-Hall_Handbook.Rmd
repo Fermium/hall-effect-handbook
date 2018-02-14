@@ -12,7 +12,7 @@ where $k$ is the Boltzmann constant, $m$ the electron mass and $T$ the absolute 
 
 Only when an electric field is externally applied the electron motion acquires an ordered component with a *mean value* $v_d$ (the *drift velocity*) which turns out to be very small with respect to $v_{m}$ as we will show later.
 
-The drift velocity, i.e. this ordered component of the motion due to the electric field and to the the scattering of the electrons with the lattice, is simply proportional to the electric field intensity. The constant ratio between $v_d$ and $E$ (both in modulus) is called the *drift mobility* $\mu$.
+The drift velocity, i.e. this ordered component of the motion due to the electric field and to the scattering of the electrons with the lattice, is simply proportional to the electric field intensity. The constant ratio between $v_d$ and $E$ (both in modulus) is called the *drift mobility* $\mu$.
 
 During a time $t$ of free motion between two collisions,the electrons subject to the force *qE* (*q* is the electron charge) increase their speed of the quantity:
 
@@ -21,7 +21,7 @@ a t = \frac{qE}{m}t
 (\#eq:electronsDelta)
 \end{equation}
 
-The kinetic energy of the electrons also increases, but it can be assumed that with each collision they lose additional energy. The transfer of such energy to the lattice ions explains the Joule effect.
+The kinetic energy of the electrons also increases, but it can be assumed that with each collision they loose additional energy. The transfer of such energy to the lattice ions explains the Joule effect.
 
 It can be noticed[^feynman] that, after the application of the electric field, the average speed of the electrons is not zero but instead:
 
