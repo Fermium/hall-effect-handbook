@@ -25,13 +25,39 @@ data<-c('Therm_K fit.csv','HallFermium2.csv')
 # Thermocopule temperature fit
 
 ```{r}
+#old
 therm.K<-read.csv(here('analysis/data',data[1]),sep=",")
+
+# Nuovi aggiunti da davide
+# Temperature in the first column, voltage in volts in the second
+nisttable.b<-read.csv(here("analysis/thermocouples", "type_b_out.csv"),sep=",", header=FALSE)
+nisttable.e<-read.csv(here("analysis/thermocouples", "type_e_out.csv"),sep=",", header=FALSE)
+nisttable.j<-read.csv(here("analysis/thermocouples", "type_j_out.csv"),sep=",", header=FALSE)
+nisttable.k<-read.csv(here("analysis/thermocouples", "type_k_out.csv"),sep=",", header=FALSE)
+nisttable.n<-read.csv(here("analysis/thermocouples", "type_n_out.csv"),sep=",", header=FALSE)
+nisttable.r<-read.csv(here("analysis/thermocouples", "type_r_out.csv"),sep=",", header=FALSE)
+nisttable.s<-read.csv(here("analysis/thermocouples", "type_s_out.csv"),sep=",", header=FALSE)
+nisttable.t<-read.csv(here("analysis/thermocouples", "type_t_out.csv"),sep=",", header=FALSE)
+
 ```
+
+
+TODO: grafico che mostra come le termocoppie si comportino diversamente
+TODO: calcolare automaticamente i coefficienti del fit dato un intervallo per ogni termocoppia
+
+
 
 ```{r,include=FALSE}
 colnames(therm.K)<-c("T","Ek","CalcT4","Error4","CalcT5","Err5")
 attach(therm.K)
 ```
+
+
+```{r,include=FALSE}
+colnames(therm.K)<-c("T","Ek","CalcT4","Error4","CalcT5","Err5")
+attach(therm.K)
+```
+
 
 ```{r}
 TEkPlot<-ggplot(data=therm.K,aes(x=Ek,y=T))+
