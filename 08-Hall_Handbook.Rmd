@@ -5,17 +5,20 @@
 To obtain accurate measurements the best procedure is the following:
 
 
-1. Connect the DB25 cable from the hub board mounted on the mechanics to the main unit
+1. Connect the DB25 cable from the hub unit mounted on the mechanics to the main unit
 2. Choose a width for gap between the permanent magnets and measure the magnetic field B in the middle, using a gauss-meter. Place the sample far from the magnetic field and trim the balance-potentiometer to minimize the $V_H$ signal. Lock the potentiometer knob.
-3. Place the sample in the middle of the gap. Choose a proper value for the current $I_b$ within a suggested 5-40 mA range, and select the proper gains for $V_H$ and $V_R$ channels. Note : the resistance at higher temperature may exceed the value at room temperature by a factor 2, and  also the $V_H$ signal increase with temperature.
+3. Place the sample in the middle of the gap. Choose a proper value for the current $I_b$ within a suggested a suggested 25mA value. Optionally, adjust the gains for $V_H$, $V_R$ or $I_B$. Note : the resistance at higher temperature may exceed the value at room temperature by a factor 2, and also the $V_H$ signal increase with temperature.
 4. Check that the $V_H$ value changes sign when rotating the sample of 180° around vertical axis. Choose the orientation that gives positive $V_H$.
 5. Check and understand the mathsheet in the software NNG Logger.
 6. Fill about half of the dewar with liquid nitrogen and wait until the liquid surface is quiet.
-7. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover) as shown in Fig. \@ref(fig:ScrewDevice). Adjust the sample in the mid of the magnet-gap and start the data acquisition.
-8. Open temperature vs time graph on NNG Logger. 
-9. When the plot temperature vs time shows a slope close to zero, pause the data acquisition.
-10. Empty the dewar (e.g. transferring the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap and start a new data acquisition for increasing temperature. 
-11. When the temperature vs. time slope start approaching zero, switch ON the heater to full power.
+7. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover). Adjust the sample in the mid of the magnet-gap and start the data acquisition.
+8. Power Up the instrument on NNG Logger and create a new workspace.
+9. Open temperature vs time graph on NNG Logger. 
+10. Start data acquisition on NNG Logger
+11. When the plot temperature vs time shows a slope close to zero, pause the data acquisition.
+12. Empty the dewar (e.g. transferring the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap and start a new data acquisition for increasing temperature. 
+13. When the temperature vs. time slope start approaching zero, switch ON the heater to full power.
+14. Export the data to .csv
 
 To obtain precise measurements, at least one hour is required for the whole temperature sweep. 
 

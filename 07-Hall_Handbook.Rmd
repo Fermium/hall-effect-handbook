@@ -2,7 +2,7 @@
 ## The set-up for changing and measuring the sample temperature
 
 
-The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminum bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be cooled .
+The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminum bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be cooled.
 
 ```{r seebeckNonlinearity, fig.cap='The slope (the Seebeck coefficient) of the thermocouple output signal strongly depend on temperature (not linear).',echo=FALSE,fig.align = 'center', warning=FALSE, message=FALSE}
 #knitr::include_graphics('Assets/Figures/seebeck_coefficient_vs_temperature.png')
@@ -121,8 +121,9 @@ The table \@ref(tab:kcoefftable) shows the polynomial coefficients obtained from
 # We're interested in +-200 Celsius temperature range
 nisttable.k.interval <- filter(nisttable.k, X1 < 200 , X1 > -200 )
 
+
 # Fit a polinomial from a linear model
-fit <- lm( nisttable.k.interval$X2~poly(nisttable.k.interval$X1,5,raw = TRUE) )
+fit <- lm( nisttable.k.interval$X1~poly(nisttable.k.interval$X2,5, raw = TRUE) )
 
 knitr::kable(
   data.frame(
@@ -183,4 +184,4 @@ A digitally controlled resistive element (heater) is wound around the base of th
 
 The heater power can be set in percentage from the computer. Ltk-hall-ge will power it on-and-off (PWM - Pulse Width Modulation) with a variable duty cycle and a very long period of a few seconds. No measure is taken by the embedded datalogger during the transition period.
 
-Warning: When using an external datalogger measures could be taken during the high-current spikes when the heater is automatically powered on or off. This will result in outliar measures that must be eliminated during the statistical analysis. This is not necessary if using the embedded datalogger.
+**Warning**: When using an external datalogger measures could be taken during the high-current spikes when the heater is automatically powered on or off. This will result in outliar measures that must be eliminated during the statistical analysis. This is not necessary if using the embedded datalogger.
