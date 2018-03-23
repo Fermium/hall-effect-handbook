@@ -54,6 +54,7 @@ library(ggpubr) #guarda se funziona questa
 # old <- theme_set(theme_Publication(base_family='Roboto'))
 # theme_set(old)
 #experiment data
+
 data = read.csv(here('analysis','data','ltk-hall-ge current', 'experiment_1.csv'),header = T)
 
 data<-data[-(1:200),]#rimossi i primi 200 valori per pulizia dei dati

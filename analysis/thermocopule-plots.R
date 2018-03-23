@@ -26,3 +26,8 @@ nisttable.r$X2<-nisttable.r$X2*1000000
 nisttable.s$X2<-nisttable.s$X2*1000000
 nisttable.t$X2<-nisttable.t$X2*1000000
 
+library(plotly)
+plot_ly(z = ~volcano)
+
+
+  
