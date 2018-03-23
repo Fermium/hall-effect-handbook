@@ -12,6 +12,8 @@ library(tidyverse)
 library(ggplot2)
 library(gridExtra)
 library(readr)
+library("ggthemes")
+
 
 setwd(here())
 
@@ -88,7 +90,8 @@ ggplot() +
   ylab('Voltage (mV)') +
   labs(color='Thermocouple') + 
   scale_x_continuous(limits = c(-150, 150)) +
-  scale_y_continuous(limits = c(-10, 10))
+  scale_y_continuous(limits = c(-10, 10)) + 
+  theme_tufte()
 
 
 
