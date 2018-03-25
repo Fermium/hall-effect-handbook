@@ -1,5 +1,215 @@
+## Appendix 3: Data analysis using open-source R-Studio software
+
+Warning: You should read the whole handbook before getting your hands dirty with the data analysis.
+
+R is a popular opensource programming language specialized in statistical operations. Rstudio is a freely available IDE (Integrated Development environment) for the R language.
+
+This whole handbook is itself a [Rstudio](https://www.rstudio.com/) project, accessible at the following [link](https://github.com/fermiumlabs/hall-effect-handbook) and written using [Bookdown](https://bookdown.org/yihui/bookdown/)
+
+The following code chunks represents an efficient way of analyzing the data.
+
+It's strongy suggested to run this code on a Unix compatible machine, such as Linux or macOS. Windows operative systems may create issues with file paths.
+
+##### Code chunks
+
+The following is a code chunk:
 
 
-<!-- ##Appendix 4: Data analysis using open-source R-Studio software
+```{r, out.width='65%',fig.align = 'center'}
+print("I am code, yet i output text")
+```
 
-*This appendix is being written.* -->
+You can run a code chunk in many ways. The easiest, is to open this file (called 13-Hall_Handbook.Rmd) with Rstudio (better if you open the whole .Rproj project file first) and click on the little "play" button near the code chunk. You can also use "Run All" which will run all code chunks sequentially. 
+
+The code chunk can output text, warning messages, and sometimes graphics. We've hidden irrelevant output. This document can also be converted into HTML or PDF with all the generated outputs. You can also re-build this manual using your data if you so desire, altough this requires having installed [Pandoc](https://pandoc.org/), [Latex](https://www.latex-project.org/) and [Make](https://www.gnu.org/software/make/). 
+
+
+
+First, we need to install the missing packages and load them:
+
+```{r,fig.align = 'center', warning=FALSE, message=FALSE}
+if (!require('ggplot2')) install.packages('ggplot2'); library('ggplot2')
+if (!require('here')) install.packages('here'); library('here')
+if (!require('gridExtra')) install.packages('gridExtra'); library('gridExtra')
+if (!require('ggpubr')) install.packages('ggpubr'); library('ggpubr')
+if (!require('ggthemes')) install.packages('ggthemes'); library('ggthemes')
+```
+
+
+The input data needs to be loaded as well. In the GitHub repository for this manual we've already included some default data at the path
+"hall-effect-handbook/analysis/data/ltk-hall-ge-current/experiment_1.csv". You're invited to add your data in the folder "ltk-hall-ge current" and change the name of the variable "filename" in the following code chunk to match yours.
+
+The file needs to be exported in CSV from the software NNG Logger ltk-hall-ge comes with.
+
+```{r, out.width='65%',fig.align = 'center'}
+# CHANGE ME !
+filename = "experiment_1.csv"
+
+# Import the csv file
+data = read.csv(here('analysis','data','ltk-hall-ge current', filename),header = T)
+
+```
+
+We have tons of datapoints. Millions to be precise. Let's take a look at them before doing any matematical operation. The values of $V_H$, $V_R$, $R$, temperature should be quite clean. The values if $I$ may look noisy due to to high resolution of the measure and autoscale of the plot. We can ignore the values of $B$ for now. 
+
+```{r, out.width='65%',fig.align = 'center'}
+plot(data$Vh)
+plot(data$Vr)
+plot(data$temp)
+plot(data$R)
+
+plot(data$I)
+#plot(data$time,data$B)
+```
+
+A quick summary can also be useful:
+
+```{r, out.width='65%',fig.align = 'center'}
+summary(data)
+```
+
+We might need to manually crop our data to remove some useless datapoints. We'll also convert the "time" field from milliseconds to seconds and subtract the first time so it starts from zero.
+
+```{r, out.width='65%',fig.align = 'center'}
+
+#remove first 200 values. You can remove this if your data is clean from the start
+data<-data[-(1:200),]
+
+
+
+data$time<-(data$time)/1000 # from milliseconds to seconds
+data$time<-(data$time-data$time[1]) # remove initial offset
+```
+
+Let's take a look how $Vh$ and $Vr$ change in function of the temperature.
+```{r, out.width='65%',fig.align = 'center'}
+
+#temperatura vs vh
+plot(data$temp, -1*data$Vh, xlab = "time", ylab = "Vh")
+
+movavg()
+
+```
+
+```{r, out.width='65%',fig.align = 'center'}
+
+#temperature vs vr
+plot(data$temp, -1*data$Vr, xlab = "Time", ylab = "Vr")
+
+```
+
+
+The graphs looks quite ugly. The following code makes them again, but using a more extensive and customizeable plotting software called [Ggplot2](http://ggplot2.org/) at the expense of a bit more complex code. We'll smooth the datapoints by using a spline.
+```{r, out.width='65%',fig.align = 'center'}
+
+#temperature vs Vh
+ggplot()+ geom_line(data=data,aes(temp,-Vh),col="blue")+
+  xlab(paste("Temperature ( degree C )" )) + ylab("Vhall (V)")+
+  ggtitle("Temperature VS Vhall")+
+  theme_tufte()
+
+
+#temperature vs vr
+ggplot()+ geom_line(data=data,aes(temp,Vr),col="blue")+
+  xlab(paste("Temperature ( degree C)" ))+ylab("Vr (V)")+
+  ggtitle("Temperature VS Vr")+
+  theme_tufte()
+
+#smooth the data
+tempVSVhall.smooth <- with(data,smooth.spline(temp,-Vh))
+tempVSVres.smooth <- with(data,smooth.spline(temp,Vr))
+
+#temperature vs Vh, smooth
+ggplot()+ geom_line(data=with(tempVSVhall.smooth,data.frame(x,y)),aes(x,y),col="blue")+
+  xlab(paste( "Temperature (degree C)" ))+ylab("Vh (V)")+
+  ggtitle("Temperature VS Vh, smoothed")+
+  theme_tufte()
+
+#temperature vs Vr, smooth
+ggplot()+ geom_line(data=with(tempVSVres.smooth,data.frame(x,y)),aes(x,y),col="blue")+
+  xlab(paste("Temperature (degree C )" ))+ylab("Vr (V)")+
+  ggtitle("Temperature VS Vr, smoothed")+
+  theme_tufte()
+
+```
+
+TODO: plot name
+
+```{r, out.width='65%',fig.align = 'center'}
+
+#Boltzmann constant
+K<-8.617e-5
+
+# X axis
+energy<-1/(2*K*data$temp)
+
+#y axis
+logR<-log(data$Vr)
+
+#logR vs energy
+ggplot() + geom_line(data=data.frame(x=energy,y=logR),aes(x,y),col="blue")+
+  xlab(expression(frac(1,2*k*T)))+ylab(expression(ln(R)))+
+  ggtitle("ln(R) vs 1/2kT")+
+  theme_tufte()
+
+```
+
+To calculate the energy gap, we need to calculate the slope of the region at the start of the graph. To do that, we can fit a linear model to our data, limited to the linear region.
+
+You can manually adjust the cutoff parameter to slightly before the end of the linear region with positive slope. The cutoff parameter is also printed as a blue, vertical line. 
+
+```{r, out.width='65%',fig.align = 'center'}
+
+cutoff = 15
+
+#let's isolate the region of the graph were 1/2kt < cutoff
+xwindow<-energy[energy<cutoff]
+ywindow<-logR[energy<cutoff]
+
+#create a linear fit on our windows
+model.lm<-lm(ywindow~xwindow)
+
+#give easy name to remembers to the intercept and slope
+model.lm.intercept<-model.lm$coefficients[1]
+model.lm.slope<-model.lm$coefficients[2]
+
+ggplot()+geom_line(aes(energy,logR))+
+  geom_abline(intercept=model.lm.intercept,slope=model.lm.slope,colour="red") + #print the fit line
+  geom_vline(aes(xintercept = cutoff), color="blue") + #print the cutoff
+  xlab(expression(frac(1,2*k*T)))+ylab(expression(ln(R)))+
+  ggtitle(expression(paste("ln(R) vs ", frac(1,2*k*T))))+
+  theme_tufte() 
+```
+and print our values:
+
+```{r, out.width='65%',fig.align = 'center'}
+cat(sprintf("The intercept is %f and the slope (Eg) is %f", model.lm.intercept, model.lm.slope))
+```
+
+We can do slightly better by smoothing the data beforehand. This should give us quite a beautiful graph.
+
+```{r, out.width='65%',fig.align = 'center'}
+
+#Smooth
+energyVsVres.smooth <- smooth.spline(energy,logR)
+
+# as before
+xwindow2<-energyVsVres.smooth$x[energyVsVres.smooth$x<cutoff]
+ywindow2<-energyVsVres.smooth$y[energyVsVres.smooth$x<cutoff]
+model.lm2<-lm(ywindow2~xwindow2)
+model.lm2.intercept<-model.lm$coefficients[1]
+model.lm2.slope<-model.lm$coefficients[2]
+
+ggplot()+geom_line(data=with(energyVsVres.smooth,data.frame(x,y)),aes(x,y))+
+  geom_abline(intercept=model.lm2.intercept,slope=model.lm2.slope,colour="red")+
+  geom_vline(aes(xintercept = cutoff), color="blue") + #print the cutoff
+  xlab(expression(frac(1,2*k*T)))+ylab(expression(ln(R)))+
+  ggtitle(expression(paste("ln(R) vs ", frac(1,2*k*T))))+
+  theme_tufte() 
+```
+and print our values calculated from the smooted graph.:
+
+```{r, out.width='65%',fig.align = 'center'}
+cat(sprintf("The intercept is %f and the slope (Eg) is %f", model.lm2.intercept, model.lm2.slope))
+```
+

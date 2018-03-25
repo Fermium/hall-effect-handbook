@@ -16,10 +16,10 @@ knitr::include_graphics('Assets/Figures/Vh_vs_B.jpeg')
 ```
 
 
-Fig. \@ref(fig:Output-voltages-versus-time) shows an example of the measured values of the 3 output signals vs temperature obtained with a constant bias current $I_B=10mA$ and in a 0.4 $T$ magnetic field, using Vernier-LabPro interface. The graph shows *Potential 1*  $= V_{out \, T}$, *Potential 2* $= V_{out \,H}$, *Potential 3* $= V_{out \, R}$. 
+Fig. \@ref(fig:Output-voltages-versus-time) shows an example of the measured values of the 3 output signals vs temperature obtained with a constant bias current. 
 
 
-```{r Output-voltages-versus-time, out.width='65%',fig.cap='Output voltages versus time',echo=FALSE,fig.align = 'center'}
+```{r Output-voltages-versus-time, out.width='65%',fig.cap='Output values versus time',echo=FALSE,fig.align = 'center'}
 #knitr::include_graphics('Assets/Figures/Out_vs_time.jpg')
 
 library(ggplot2)
@@ -60,14 +60,6 @@ grid.arrange(Vhvstime.plot,Rvstime.plot,Tvstime.plot,nrow=3)
 
 
 
-Fig. \@ref(fig:Example)  shows an example of calculated data obtained using LoggerPro software. 
-The Hall voltage $V_{H}$ (in mV) is is obtained from $V_{outH}$ by subtracting the offset 2.5 V and by accounting for the used value of the channel-H gain (here GainH=10). The resistance $R$ is calculated from $V_{outR}$ by  accounting for the used value of the channel-R gain (here GainR=0.5)and the measured value of the bias current $Ib$ .
-
-```{r Example, out.width='65%',fig.cap='Example of calculated data',echo=FALSE,fig.align = 'center'}
-knitr::include_graphics('Assets/Figures/example.png')
-```
-
-
 In order to evaluate the Ge energy gap $E_g$, a plot of $ln(R)$ vs. $1/2kT$ was built, after calculating from the Celsius temperature $Tc$ the absolute temperature $T$ ($k$ is the Boltzmann constant $k = 8.617 \cdot 10^{-5}$.
 
 From the slope in the intrinsic region (high temperature region, see Fig. \@ref(fig:EgFit) ) we get the value of the energy gap $E_g$, extrapolated linearly to $T=0^{\circ}\mathrm{K}$, that can be compared to the known value for germanium ($E_g^o=0.78$, see Appendix 3)
@@ -75,4 +67,6 @@ From the slope in the intrinsic region (high temperature region, see Fig. \@ref(
 
 ```{r EgFit, out.width='65%',fig.cap='Example of linear best fit in the intrinsic region (high temperature)',echo=FALSE,fig.align = 'center'}
 knitr::include_graphics('Assets/Figures/ImageEgFit.jpg')
+
+
 ```
