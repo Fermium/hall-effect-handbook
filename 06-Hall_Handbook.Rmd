@@ -13,4 +13,4 @@ knitr::include_graphics('Assets/Figures/renderings/4.png')
 
 A calibration of the magnetic field $B$ as a function of the gap $d$ may be made using a gauss-meter probe placed between the poles (see Fig. \@ref(fig:BvsGapD))
 
-The ltk-hall-ge apparatus is provided with an included gauss-meter probe with excellent linearity, however it must be calibrated against a professional gauss-meter as it's provided uncalibrate.
+The ltk-hall-ge apparatus is provided with an included gauss-meter probe with excellent linearity.
