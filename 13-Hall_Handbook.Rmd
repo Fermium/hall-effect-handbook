@@ -112,7 +112,7 @@ Let's take a look how $Vh$ and $Vr$ change in function of the temperature:
 ```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%'}
 
 # Temperature vs Vh plot
-plot(data$temp, -1*data$Vh, xlab = "time", ylab = "Vh")
+plot(data$temp, -1*data$Vh, xlab = "Temperature (degrees K)", ylab = "Vh")
 
 
 ```
@@ -120,7 +120,7 @@ plot(data$temp, -1*data$Vh, xlab = "time", ylab = "Vh")
 ```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%'}
 
 # Temperature vs Vr plot
-plot(data$temp, -1*data$Vr, xlab = "Time", ylab = "Vr")
+plot(data$temp, -1*data$Vr, xlab = "Temperature (degrees K)", ylab = "Vr")
 
 ```
 
@@ -130,7 +130,7 @@ The graphs looks quite ugly. The following code makes them once more, but using 
 
 # Temperature vs Vh
 ggplot()+ geom_line(data=data,aes(temp,-Vh),col="blue")+
-  xlab(paste("Temperature ( degree C )" )) + ylab("Vhall (V)")+
+  xlab(paste("Temperature (degrees K)" )) + ylab("Vhall (V)")+
   ggtitle("Temperature VS Vhall")+
   theme_tufte()
 ggsave(here(outdir, "temp-vs-vh-1.png"), device = "png")
@@ -138,7 +138,7 @@ ggsave(here(outdir, "temp-vs-vh-1.png"), device = "png")
 
 # Temperature vs vr
 ggplot()+ geom_line(data=data,aes(temp,Vr),col="blue")+
-  xlab(paste("Temperature ( degree C)" ))+ylab("Vr (V)")+
+  xlab(paste("Temperature (degrees K)" ))+ylab("Vr (V)")+
   ggtitle("Temperature VS Vr")+
   theme_tufte()
 ggsave(here(outdir, "temp-vs-vr-1.png"), device = "png")
@@ -150,7 +150,7 @@ tempVSVres.smooth <- with(data,smooth.spline(temp,Vr))
 
 # Temperature vs Vh, smooth
 ggplot()+ geom_line(data=with(tempVSVhall.smooth,data.frame(x,y)),aes(x,y),col="blue")+
-  xlab(paste( "Temperature (degree C)" ))+ylab("Vh (V)")+
+  xlab(paste( "Temperature (degrees K)" ))+ylab("Vh (V)")+
   ggtitle("Temperature VS Vh, smoothed")+
   theme_tufte()
 ggsave(here(outdir, "temp-vs-vh-smooth-1.png"), device = "png")
@@ -158,7 +158,7 @@ ggsave(here(outdir, "temp-vs-vh-smooth-1.png"), device = "png")
 
 # Temperature vs Vr, smooth
 ggplot()+ geom_line(data=with(tempVSVres.smooth,data.frame(x,y)),aes(x,y),col="blue")+
-  xlab(paste("Temperature (degree C )" ))+ylab("Vr (V)")+
+  xlab(paste("Temperature (degrees K)" ))+ylab("Vr (V)")+
   ggtitle("Temperature VS Vr, smoothed")+
   theme_tufte()
 ggsave(here(outdir, "temp-vs-vr-smooth-1.png"), device = "png")
