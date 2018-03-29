@@ -77,7 +77,7 @@ We probably have tons of datapoints. Millions to be precise.
 
 Let's take a look at them before doing any matematical operation. The values of $V_H$, $V_R$, $R$, temperature should be quite clean. The values if $I$ may look noisy due to to high resolution of the measure and autoscale of the plot. We can ignore the values of $B$ for now. 
 
-```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%'}
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
 
 plot(data$Vh, ylab = "Vh")
 plot(data$Vr, ylab = "Vr")
@@ -109,7 +109,7 @@ data$time<-(data$time-data$time[1]) # remove initial offset
 
 Let's take a look how $Vh$ and $Vr$ change in function of the temperature:
 
-```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%'}
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
 
 # Temperature vs Vh plot
 plot(data$temp, -1*data$Vh, xlab = "Temperature (degrees K)", ylab = "Vh")
@@ -117,7 +117,7 @@ plot(data$temp, -1*data$Vh, xlab = "Temperature (degrees K)", ylab = "Vh")
 
 ```
 
-```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%'}
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
 
 # Temperature vs Vr plot
 plot(data$temp, -1*data$Vr, xlab = "Temperature (degrees K)", ylab = "Vr")
@@ -126,7 +126,7 @@ plot(data$temp, -1*data$Vr, xlab = "Temperature (degrees K)", ylab = "Vr")
 
 
 The graphs looks quite ugly. The following code makes them once more, but using a more extensive and customizeable plotting software called [Ggplot2](http://ggplot2.org/) at the expense of a bit more complex code. We'll smooth the datapoints by using a spline.
-```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%'}
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
 
 # Temperature vs Vh
 ggplot()+ geom_line(data=data,aes(temp,-Vh),col="blue")+
@@ -168,7 +168,7 @@ ggsave(here(outdir, "temp-vs-vr-smooth-1.png"), device = "png")
 
 Finally, we need to make the $ln(R)$ vs $\frac{1}{2kT}$ plot similarly to Fig. \@ref(fig:EgFit) We're going to calculate the two axis, improperly called "energy" and "lnR" (just because we need easy and short names for the code):
 
-```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%'}
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
 
 #Boltzmann constant
 K<-8.617e-5
@@ -195,7 +195,7 @@ We'll draw a virtual "window" between the origin of the plot and an arbitrary ve
 
 You can manually adjust the cutoff parameter to slightly before the end of the linear region with positive slope. The cutoff parameter is also printed as a blue, vertical line. 
 
-```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%'}
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
 
 # Relative to the X axis
 cutoff = 15
@@ -230,7 +230,7 @@ cat(sprintf("The intercept is %f and the slope (Eg) is %f", model.lm.intercept, 
 
 We can create a slightly better plot by smoothing the data beforehand:
 
-```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%'}
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
 
 # Smooth using a spline
 energyVsVres.smooth <- smooth.spline(energy,lnR)
