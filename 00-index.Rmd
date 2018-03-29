@@ -3,6 +3,10 @@ title: "Hall Effect Handbook"
 author: "Prof. Giacomo Torzo"
 date: "Last updated on `r format(Sys.Date(),'%m-%Y')`"
 
+# Allow html content in non-html formats
+always_allow_html: yes
+
+
 documentclass: report
 #biblio-style: apalike
 link-citations: yes

@@ -8,3 +8,6 @@ libs/
 Hall_Handbook*
 .wercker
 *-Hall_Handbook.pdf
+plot_out/*.png
+packrat/lib*/
+packrat/src/
