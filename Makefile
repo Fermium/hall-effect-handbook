@@ -27,7 +27,7 @@ compress_pdf : pdf
 	@mv Exports/Hall_Handbook.pdf Exports/Hall_Handbook_hires.pdf
 	@gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dDownsampleColorImages=true -dColorImageResolution=150 -dNOPAUSE  -dBATCH -sOutputFile=Exports/Hall_Handbook.pdf Exports/Hall_Handbook_hires.pdf
 
-zip: all_compress
+zip: all
 	@zip -r Hall_Handbook.zip Exports
 	@mv Hall_Handbook.zip Exports/
 
