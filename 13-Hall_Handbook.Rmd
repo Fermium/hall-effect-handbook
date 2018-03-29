@@ -31,6 +31,7 @@ The code chunk can output text, warning messages, and sometimes graphics. We've 
 
 This document can also be converted into HTML or PDF with all the generated outputs. You can also re-build this manual using your data if you so desire, altough this requires having installed [Pandoc](https://pandoc.org/), [Latex](https://www.latex-project.org/) and [Make](https://www.gnu.org/software/make/). 
 
+## Preliminary operations
 
 First, we need to install the required packages and load them:
 
@@ -69,6 +70,8 @@ outdir = "plot_out"
 # Print the full directory
 cat(sprintf("The file will be saved to %s", here()))
 ```
+
+## Analyzing the data
 
 We probably have tons of datapoints. Millions to be precise. 
 
