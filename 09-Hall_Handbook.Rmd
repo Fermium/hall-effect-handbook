@@ -19,7 +19,7 @@ knitr::include_graphics('Assets/Figures/Vh_vs_B.jpeg')
 Fig. \@ref(fig:Output-voltages-versus-time) shows an example of the measured values of the 3 output signals vs temperature obtained with a constant bias current. 
 
 
-```{r Output-voltages-versus-time, out.width='65%',fig.cap='Output values versus time',echo=FALSE,fig.align = 'center'}
+```{r Output-voltages-versus-time, out.width='65%',fig.cap='Output values versus time',echo=FALSE,fig.align = 'center', dev='png', dpi=600}
 #knitr::include_graphics('Assets/Figures/Out_vs_time.jpg')
 
 library(ggplot2)
