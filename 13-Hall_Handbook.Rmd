@@ -263,4 +263,4 @@ cat(sprintf("The intercept is %f and the slope (Eg) is %f", model.lm2.intercept,
 
 Any issue or question regarding the code in this handbook can be written in the repository [issue page](https://github.com/fermiumlabs/hall-effect-handbook/issues) on Github. 
 
-You're also always welcome to submit improvements using [pull requests](https://help.github.com/articles/about-pull-requests/)
+You're also always welcome to submit improvements sending an email to [LabTrek](mailto:torzog@gmail.com) or [Fermium LABS](mailto:info@fermiumlabs.com)
