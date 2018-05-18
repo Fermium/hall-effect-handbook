@@ -1,6 +1,6 @@
 --- 
 title: "Hall Effect Handbook"
-author: "Prof. Giacomo Torzo"
+#author: "Prof. Giacomo Torzo"
 date: "Last updated on `r format(Sys.Date(),'%m-%Y')`"
 
 # Allow html content in non-html formats
