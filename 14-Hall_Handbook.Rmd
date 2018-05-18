@@ -1,5 +1,3 @@
-
-
 # Warnings
 
 **Using high magnetic field require some caution:**
@@ -10,7 +8,7 @@
 
 * Do not attempt to unscrew the magnets.
 
-* The Magnets are brittle. A rapid shock with another magnet or ferromagnetic material may release shards dangerous for the eye.
+* The Magnets are brittle. A rapid shock with another magnet or ferromagnetic material may release shards dangerous for the eyes.
 
 * The apparatus **MUST NOT** be used by people with pacemakers.
 
@@ -28,12 +26,19 @@
     \newline http://www.semiconductors.co.uk/propiviv5431.htm
 
 # Authorship
-This Handbook was originally written by Giacomo Torzo of [Labtrek](http://labtrek.it)
+This Handbook was originally written by Giacomo Torzo from Padua University.
 
 Integrations by Davide Bortolami and Statistical analysis by Simone Tosato of [Fermium LABS](http://fermiumlabs.com)
+
+The ltk-hall-ge apparatus is a joint venture between LabTrek and FermiumLABS. 
 
 ## Revision history
 For a complete revision history, check out the [Github repository](https://github.com/fermiumlabs/Hall-effect-apparatus/commits/master).
 
 The last version of this document can be downloaded at [frm.li/hallhandbookmaster](https://frm.li/hallhandbookmaster) or with the following QR code:
-![](Assets/Figures/qr_last.jpg)
+
+
+
+```{r QRCODE, out.width='50%',echo=FALSE,fig.align = 'center'}
+knitr::include_graphics('Assets/Figures/qr_last.png')
+```

@@ -1,6 +1,6 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+\documentclass[$if(fontsize)\begin{equation}fontsize$,$endif\begin{equation}if(lang)\begin{equation}babel-lang$,$endif\begin{equation}if(papersize)\begin{equation}papersize$paper,$endif\begin{equation}for(classoption)\begin{equation}classoption\begin{equation}sep$,$endfor$]{$documentclass$}
 $if(fontfamily)$
-\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
+\usepackage[$for(fontfamilyoptions)\begin{equation}fontfamilyoptions\begin{equation}sep$,$endfor$]{$fontfamily$}
 $else$
 \usepackage{lmodern}
 $endif$
@@ -24,7 +24,7 @@ $endif$
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
+  \usepackage[$if(fontenc)\begin{equation}fontenc\begin{equation}else$T1$endif$]{fontenc}
   \usepackage[utf8]{inputenc}
 $if(euro)$
   \usepackage{eurosym}
@@ -40,20 +40,20 @@ $if(euro)$
   \newcommand{\euro}{€}
 $endif$
 $if(mainfont)$
-    \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
+    \setmainfont[$for(mainfontoptions)\begin{equation}mainfontoptions\begin{equation}sep$,$endfor$]{$mainfont$}
 $endif$
 $if(sansfont)$
-    \setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
+    \setsansfont[$for(sansfontoptions)\begin{equation}sansfontoptions\begin{equation}sep$,$endfor$]{$sansfont$}
 $endif$
 $if(monofont)$
-    \setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
+    \setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)\begin{equation}monofontoptions\begin{equation}sep$,$endfor\begin{equation}endif$]{$monofont$}
 $endif$
 $if(mathfont)$
-    \setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+    \setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)\begin{equation}mathfontoptions\begin{equation}sep$,$endfor$]{$mathfont$}
 $endif$
 $if(CJKmainfont)$
     \usepackage{xeCJK}
-    \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
+    \setCJKmainfont[$for(CJKoptions)\begin{equation}CJKoptions\begin{equation}sep$,$endfor$]{$CJKmainfont$}
 $endif$
 \fi
 % use upquote if available, for straight quotes in verbatim environments
@@ -64,7 +64,7 @@ $endif$
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
 $if(geometry)$
-\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+\usepackage[$for(geometry)\begin{equation}geometry\begin{equation}sep$,$endfor$]{geometry}
 $endif$
 \usepackage{hyperref}
 $if(colorlinks)$
@@ -78,13 +78,13 @@ $if(author-meta)$
             pdfauthor={$author-meta$},
 $endif$
 $if(keywords)$
-            pdfkeywords={$for(keywords)$$keywords$$sep$; $endfor$},
+            pdfkeywords={$for(keywords)\begin{equation}keywords\begin{equation}sep$; $endfor$},
 $endif$
 $if(colorlinks)$
             colorlinks=true,
-            linkcolor=$if(linkcolor)$$linkcolor$$else$Maroon$endif$,
-            citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
-            urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
+            linkcolor=$if(linkcolor)\begin{equation}linkcolor\begin{equation}else$Maroon$endif$,
+            citecolor=$if(citecolor)\begin{equation}citecolor\begin{equation}else$Blue$endif$,
+            urlcolor=$if(urlcolor)\begin{equation}urlcolor\begin{equation}else$Blue$endif$,
 $else$
             pdfborder={0 0 0},
 $endif$
@@ -92,7 +92,7 @@ $endif$
 \urlstyle{same}  % don't use monospace font for urls
 $if(lang)$
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$,$endfor$main=$babel-lang$]{babel}
+  \usepackage[shorthands=off,$for(babel-otherlangs)\begin{equation}babel-otherlangs$,$endfor$main=$babel-lang$]{babel}
 $if(babel-newcommands)$
   $babel-newcommands$
 $endif$
@@ -106,11 +106,11 @@ $endfor$
 $endif$
 $if(natbib)$
 \usepackage{natbib}
-\bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+\bibliographystyle{$if(biblio-style)\begin{equation}biblio-style\begin{equation}else$plainnat$endif$}
 $endif$
 $if(biblatex)$
 \usepackage$if(biblio-style)$[style=$biblio-style$]$endif${biblatex}
-$if(biblatexoptions)$\ExecuteBibliographyOptions{$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$}$endif$
+$if(biblatexoptions)$\ExecuteBibliographyOptions{$for(biblatexoptions)\begin{equation}biblatexoptions\begin{equation}sep$,$endfor$}$endif$
 $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
@@ -202,17 +202,17 @@ $header-includes$
 $endfor$
 
 $if(title)$
-\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+\title{$title\begin{equation}if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
 $if(subtitle)$
 \providecommand{\subtitle}[1]{}
 \subtitle{$subtitle$}
 $endif$
 $if(author)$
-\author{$for(author)$$author$$sep$ \and $endfor$}
+\author{$for(author)\begin{equation}author\begin{equation}sep$ \and $endfor$}
 $endif$
 $if(institute)$
-\institute{$for(institute)$$institute$$sep$ \and $endfor$}
+\institute{$for(institute)\begin{equation}institute\begin{equation}sep$ \and $endfor$}
 $endif$
 \date{$date$}
 
@@ -233,7 +233,7 @@ $endfor$
 $if(toc)$
 {
 $if(colorlinks)$
-\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
+\hypersetup{linkcolor=$if(toccolor)\begin{equation}toccolor\begin{equation}else$black$endif$}
 $endif$
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
@@ -256,7 +256,7 @@ $else$
 \renewcommand\refname{$biblio-title$}
 $endif$
 $endif$
-\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+\bibliography{$for(bibliography)\begin{equation}bibliography\begin{equation}sep$,$endfor$}
 
 $endif$
 $endif$

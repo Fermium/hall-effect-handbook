@@ -1,5 +1,266 @@
+# Appendix 3: Data analysis using open-source R language
+
+Warning: You should read the whole handbook before getting your hands dirty with the data analysis.
+
+[R](https://www.r-project.org/) is a popular opensource programming language specialized in statistical operations. [Rstudio](https://www.rstudio.com/) is a freely available IDE (Integrated Development environment) for the R language.
+
+This whole handbook is itself a [Rstudio](https://www.rstudio.com/) project, accessible at the following [link](https://github.com/fermiumlabs/hall-effect-handbook) and written using [Bookdown](https://bookdown.org/yihui/bookdown/)
+
+The following code chunks represents an efficient way of analyzing the data.
+
+It's strongy suggested to run this code on a Unix compatible machine, such as Linux or macOS. Windows operative systems may create issues with file paths.
+
+## Downloading the handbook
+
+This handbook is publicly available at the following link [https://github.com/fermiumlabs/hall-effect-handbook](https://github.com/fermiumlabs/hall-effect-handbook)
+
+You can download always updated as a .zip archive at this [link](https://github.com/fermiumlabs/hall-effect-handbook/archive/master.zip)
+
+## Code chunks
+
+The following is a code chunk:
 
 
-<!-- ##Appendix 4: Data analysis using open-source R-Studio software
+```{r, out.width='65%',fig.align = 'center'}
+print("I am code, yet i output text")
+```
 
-*This appendix is being written.* -->
+You can run a code chunk in many ways. The easiest, is to open this file (called 13-Hall_Handbook.Rmd) with Rstudio (better if you open the whole .Rproj project file first) and click on the little "play" button near the code chunk. You can also use "Run All" which will run all code chunks sequentially. 
+
+The code chunk can output text, warning messages, and sometimes graphics. We've hidden irrelevant output so it doesn't clutter up the handbook. 
+
+This document can also be converted into HTML or PDF with all the generated outputs. You can also re-build this manual using your data if you so desire, altough this requires having installed [Pandoc](https://pandoc.org/), [Latex](https://www.latex-project.org/) and [Make](https://www.gnu.org/software/make/). 
+
+## Preliminary operations
+
+First, we need to install the required packages and load them:
+
+```{r,fig.align = 'center', warning=FALSE, message=FALSE}
+# Install if not present, then load the package
+if (!require('ggplot2')) install.packages('ggplot2'); library('ggplot2')
+if (!require('here')) install.packages('here'); library('here')
+if (!require('gridExtra')) install.packages('gridExtra'); library('gridExtra')
+if (!require('ggpubr')) install.packages('ggpubr'); library('ggpubr')
+if (!require('ggthemes')) install.packages('ggthemes'); library('ggthemes')
+```
+
+
+The input data needs to be loaded as well. In the GitHub repository for this manual we've already included some default data at the path
+"hall-effect-handbook/analysis/data/ltk-hall-ge-current/experiment_1.csv". You're invited to add your data in the folder "ltk-hall-ge current" and change the name of the variable "filename" in the following code chunk to match yours.
+
+
+The file needs to be exported in CSV from the software NNG Logger ltk-hall-ge comes with.
+
+```{r, out.width='65%',fig.align = 'center'}
+# CHANGE ME !
+filename = "experiment_1.csv"
+
+# Import the csv file
+data = read.csv(here('analysis','data','ltk-hall-ge current', filename),header = T)
+
+
+```
+
+Let's also decide the directory where we want our file to be saved. We've reserved a directory called "plot_out" in this repository. The second part of the code will print the full path, and will be different depending on the computer the code is ran on.
+
+```{r, out.width='65%',fig.align = 'center'}
+# Where to save the files
+outdir = "plot_out"
+
+# Print the full directory
+cat(sprintf("The file will be saved to %s", here()))
+```
+
+## Analyzing the data
+
+We probably have tons of datapoints. Millions to be precise. 
+
+Let's take a look at them before doing any matematical operation. The values of $V_H$, $V_R$, $R$, temperature should be quite clean. The values if $I$ may look noisy due to to high resolution of the measure and autoscale of the plot. We can ignore the values of $B$ for now. 
+
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
+
+plot(data$Vh, ylab = "Vh")
+plot(data$Vr, ylab = "Vr")
+plot(data$temp, ylab = "Temp")
+plot(data$R, ylab = "R")
+
+plot(data$I, ylab = "I")
+
+#plot(data$time,data$B)
+```
+
+A quick summary of statistical indicators can also be useful:
+
+```{r, out.width='65%',fig.align = 'center'}
+summary(data)
+```
+
+We might need to manually crop our data to remove some useless datapoints. We'll also convert the "time" field from milliseconds to seconds and subtract the first time so it starts from zero.
+
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%'}
+
+# Remove first 200 values. You can remove this line if your data is clean from the start
+data<-data[-(1:200),]
+
+# Convert time
+data$time<-(data$time)/1000 # from milliseconds to seconds
+data$time<-(data$time-data$time[1]) # remove initial offset
+```
+
+Let's take a look how $Vh$ and $Vr$ change in function of the temperature:
+
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
+
+# Temperature vs Vh plot
+plot(data$temp, -1*data$Vh, xlab = "Temperature (degrees K)", ylab = "Vh")
+
+
+```
+
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
+
+# Temperature vs Vr plot
+plot(data$temp, -1*data$Vr, xlab = "Temperature (degrees K)", ylab = "Vr")
+
+```
+
+
+The graphs looks quite ugly. The following code makes them once more, but using a more extensive and customizeable plotting software called [Ggplot2](http://ggplot2.org/) at the expense of a bit more complex code. We'll smooth the datapoints by using a spline.
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
+
+# Temperature vs Vh
+ggplot()+ geom_line(data=data,aes(temp,-Vh),col="blue")+
+  xlab(paste("Temperature (degrees K)" )) + ylab("Vhall (V)")+
+  ggtitle("Temperature VS Vhall")+
+  theme_tufte()
+ggsave(here(outdir, "temp-vs-vh-1.png"), device = "png")
+
+
+# Temperature vs vr
+ggplot()+ geom_line(data=data,aes(temp,Vr),col="blue")+
+  xlab(paste("Temperature (degrees K)" ))+ylab("Vr (V)")+
+  ggtitle("Temperature VS Vr")+
+  theme_tufte()
+ggsave(here(outdir, "temp-vs-vr-1.png"), device = "png")
+
+
+# Smooth the data using a spline
+tempVSVhall.smooth <- with(data,smooth.spline(temp,-Vh))
+tempVSVres.smooth <- with(data,smooth.spline(temp,Vr))
+
+# Temperature vs Vh, smooth
+ggplot()+ geom_line(data=with(tempVSVhall.smooth,data.frame(x,y)),aes(x,y),col="blue")+
+  xlab(paste( "Temperature (degrees K)" ))+ylab("Vh (V)")+
+  ggtitle("Temperature VS Vh, smoothed")+
+  theme_tufte()
+ggsave(here(outdir, "temp-vs-vh-smooth-1.png"), device = "png")
+
+
+# Temperature vs Vr, smooth
+ggplot()+ geom_line(data=with(tempVSVres.smooth,data.frame(x,y)),aes(x,y),col="blue")+
+  xlab(paste("Temperature (degrees K)" ))+ylab("Vr (V)")+
+  ggtitle("Temperature VS Vr, smoothed")+
+  theme_tufte()
+ggsave(here(outdir, "temp-vs-vr-smooth-1.png"), device = "png")
+
+
+```
+
+Finally, we need to make the $ln(R)$ vs $\frac{1}{2kT}$ plot similarly to Fig. \@ref(fig:EgFit) We're going to calculate the two axis, improperly called "energy" and "lnR" (just because we need easy and short names for the code):
+
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
+
+#Boltzmann constant
+K<-8.617e-5
+
+# X axis
+energy<-1/(2*K*data$temp)
+
+# Y axis
+lnR<-log(data$Vr)
+
+# lnR vs 1/2kT
+ggplot() + geom_line(data=data.frame(x=energy,y=lnR),aes(x,y),col="blue")+
+  xlab(expression(frac(1,2*k*T)))+ylab(expression(ln(R)))+
+  ggtitle("ln(R) vs 1/2kT")+
+  theme_tufte()
+ggsave(here(outdir, "energy-gap.png"), device = "png")
+
+
+```
+
+To calculate the energy gap, we need to calculate the slope of the region at the start of the graph. To do that, we can fit a linear model to our data, limited to the linear region.
+
+We'll draw a virtual "window" between the origin of the plot and an arbitrary vertical line, we'll call "cutoff".
+
+You can manually adjust the cutoff parameter to slightly before the end of the linear region with positive slope. The cutoff parameter is also printed as a blue, vertical line. 
+
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
+
+# Relative to the X axis
+cutoff = 15
+
+# Let's isolate the region of the graph were 1/2kt < cutoff
+xwindow<-energy[energy<cutoff]
+ywindow<-lnR[energy<cutoff]
+
+# Create a linear fit on our windows
+model.lm<-lm(ywindow~xwindow)
+
+# Give easy name to remembers to the intercept and slope
+model.lm.intercept<-model.lm$coefficients[1]
+model.lm.slope<-model.lm$coefficients[2]
+
+ggplot()+geom_line(aes(energy,lnR))+
+  geom_abline(intercept=model.lm.intercept,slope=model.lm.slope,colour="red") + #print the fit line
+  geom_vline(aes(xintercept = cutoff), color="blue") + #print the cutoff
+  xlab(expression(frac(1,2*k*T)))+ylab(expression(ln(R)))+ # pretty print the x label
+  ggtitle(expression(paste("ln(R) vs ", frac(1,2*k*T))))+
+  theme_tufte() 
+ggsave(here(outdir, "energy-gap-2.png"), device = "png")
+
+
+```
+
+We can print the calculated values with a simple "printf" like function:
+
+```{r fig.align=  'center', out.width='65%'}
+cat(sprintf("The intercept is %f and the slope (Eg) is %f", model.lm.intercept, model.lm.slope))
+```
+
+We can create a slightly better plot by smoothing the data beforehand:
+
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='65%', dev='png', dpi=600}
+
+# Smooth using a spline
+energyVsVres.smooth <- smooth.spline(energy,lnR)
+
+# As before
+xwindow2<-energyVsVres.smooth$x[energyVsVres.smooth$x<cutoff]
+ywindow2<-energyVsVres.smooth$y[energyVsVres.smooth$x<cutoff]
+model.lm2<-lm(ywindow2~xwindow2)
+model.lm2.intercept<-model.lm$coefficients[1]
+model.lm2.slope<-model.lm$coefficients[2]
+
+ggplot()+geom_line(data=with(energyVsVres.smooth,data.frame(x,y)),aes(x,y))+
+  geom_abline(intercept=model.lm2.intercept,slope=model.lm2.slope,colour="red")+
+  geom_vline(aes(xintercept = cutoff), color="blue") + # print the cutoff
+  xlab(expression(frac(1,2*k*T)))+ylab(expression(ln(R)))+
+  ggtitle(expression(paste("ln(R) vs ", frac(1,2*k*T))))+
+  theme_tufte() 
+
+ggsave(here(outdir, "energy-gap-3.png"), device = "png")
+
+```
+and print our values calculated from the smooted graph:
+
+```{r, out.width='65%',fig.align = 'center'}
+cat(sprintf("The intercept is %f and the slope (Eg) is %f", model.lm2.intercept, model.lm2.slope))
+```
+
+
+## Issues and questions
+
+Any issue or question regarding the code in this handbook can be written in the repository [issue page](https://github.com/fermiumlabs/hall-effect-handbook/issues) on Github. 
+
+You're also always welcome to submit improvements using [pull requests](https://help.github.com/articles/about-pull-requests/)
