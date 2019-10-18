@@ -5,22 +5,22 @@
 To obtain accurate measurements the best procedure is the following:
 
 
-1. Connect the DB25 cable from the hub unit mounted on the mechanics to the main unit
-2. Choose a width for gap between the permanent magnets and measure the magnetic field B in the middle, using a gauss-meter. Place the sample far from the magnetic field and trim the balance-potentiometers on the bottom of the Hub unit (using the provided isolated screwdriver) to minimize the $V_H$ signal.
-3. Place the sample in the middle of the gap. Choose a proper value for the current $I_b$ within a suggested a suggested 10-25mA value. Optionally, adjust the gains for $V_H$, $V_R$ or $I_B$. Note : the resistance at higher temperature may exceed the value at room temperature by a factor 2, and also the $V_H$ signal increase with temperature.
+
+1. Connect the output cable BNC connectors to your datalogger of choice.
+1. Verify the grounding of the equipment. The equipment should be connected to ground either through a BNC connector shield or through the dedicated grounding plug. In case the ground is not properly connected, interferance may be coupled causing the apparatus to misbehave. 
+2. Only once every 5 experiments or once a year: Set the gain of the second stage DA of Vh to 1. Choose a width for gap between the permanent magnets and measure the magnetic field B in the middle, if desired using a gauss-meter. Place the sample far from the magnetic field and trim the center balance potentiometer (using the provided isolated screwdriver) to minimize the $V_H$ signal. 
+  3. You may repeat the previous step increasing the gain if desired to achieve the best performance.
+  1. In case the Vh gain is still incorrect, you may use the left and right potentiometers to adjust beyond the capabilities of the center potentiometer.
+3. Place the sample in the middle of the gap. Choose a proper value for the current $I_b$ within a suggested a suggested 5-15mA value.
+1. Optionally, adjust the gains for $V_H$ (firstly, leave the second stage gain to $1$ and adjust the first stage, then adjust the second stage), $V_R$ or $I_B$. Note : the resistance at higher temperature may exceed the value at room temperature by a factor 2, and also the $V_H$ signal increases with temperature. To avoid saturation it is recommended the the output voltage stays between $1V<V_{out}<4V$.
 4. Check that the $V_H$ value changes sign when rotating the sample of 180° around vertical axis. Choose the orientation that gives positive $V_H$.
-5. Check and understand the mathsheet in the software NNG Logger.
 6. Fill about half of the dewar with liquid nitrogen and wait until the liquid surface is quiet.
 7. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover). Adjust the sample in the mid of the magnet-gap and start the data acquisition.
-8. Power Up the instrument on NNG Logger, create a new file on NNG Logger (button to the right of the power button or menu > Experiment > Start-Stop).
-9. Open temperature vs time graph on NNG Logger clicking on the graph icon. 
-10. Start data acquisition on NNG Logger (pause/record button or menu > Experiment > "Record Data - Pause Recording").
-11. When the plot temperature vs time shows a slope close to zero, pause the data acquisition (pause/record button or menu > Experiment > "Record Data - Pause Recording").
-12. Empty the dewar (e.g. transferring the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap
-13. Start data acquisition on NNG Logger (pause/record button or menu > Experiment > "Record Data - Pause Recording").
-14. When the temperature vs. time slope start approaching zero, switch ON the heater to full power.
-15. Pause the data acquisition on NNG Logger (pause/record button or menu > Experiment > "Record Data - Pause Recording").
-16. Export the data to .CSV (menu > Export > Export to CSV)
+1. Verify your datalogger setup and start data acquisition.
+11. When the plot temperature vs time shows a slope close to zero, pause the data acquisition.
+12. Empty the dewar (e.g. transferring the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap.
+13. Resume data acquisition
+14. When the temperature vs. time slope start approaching zero, switch ON the heater to full power. Once the lights start flashing the apparatus will have reached 60°C, do not touch the sample in order to avoid burns.
 
 To obtain precise measurements, at least one and a half hour is required for the whole temperature sweep. 
 

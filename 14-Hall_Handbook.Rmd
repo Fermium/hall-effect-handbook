@@ -12,6 +12,7 @@
 
 * The apparatus **MUST NOT** be used by people with pacemakers.
 
+**always ground the equipment: while there is no safety risk, ground is required for correct operation**
 
 
 # References
@@ -28,9 +29,7 @@
 # Authorship
 This Handbook was originally written by Giacomo Torzo from Padua University.
 
-Integrations by Davide Bortolami and Statistical analysis by Simone Tosato of [Fermium LABS](http://fermiumlabs.com)
-
-The ltk-hall-ge apparatus is a joint venture between LabTrek and FermiumLABS. 
+Rewritten and integrated by Davide Bortolami and Statistical analysis by Simone Tosato of [Fermium LABS](http://fermiumlabs.com)
 
 ## Revision history
 For a complete revision history, check out the [Github repository](https://github.com/fermiumlabs/Hall-effect-apparatus/commits/master).
