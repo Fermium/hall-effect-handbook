@@ -12,7 +12,7 @@
 
 * The apparatus **MUST NOT** be used by people with pacemakers.
 
-**always ground the equipment: while there is no safety risk, ground is required for correct operation**
+**Always ground the equipment: while there is no safety risk, ground is required for correct operation**
 
 
 # References
