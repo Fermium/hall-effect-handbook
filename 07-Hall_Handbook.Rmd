@@ -7,9 +7,9 @@ output:
 ## The set-up for changing and measuring the sample temperature
 
 
-The stainless-steel dewar can be filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminum bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to be cooled.
+The stainless-steel dewar can be half-filled of liquid nitrogen or a mixture of acetone and dry-ice (solid carbon dioxyde). The cold finger (the aluminum bar screwed into the base of the sample) is surrounded by the liquid nitrogen, allowing the sample to cool down.
 
-```{r seebeckNonlinearity, fig.cap='The slope (the Seebeck coefficient) of the thermocouple output signal strongly depend on temperature (not linear).',echo=FALSE,fig.align = 'center', warning=FALSE, message=FALSE}
+```{r seebeckNonlinearity, fig.cap='The slope (the Seebeck coefficient) of the thermocouple output signal strongly depends on temperature (not linear).',echo=FALSE,fig.align = 'center', warning=FALSE, message=FALSE}
 #knitr::include_graphics('Assets/Figures/seebeck_coefficient_vs_temperature.png')
 
 library(here)
@@ -119,7 +119,7 @@ In order to get a correct measurement it is necessary to compensate for the non-
 
 where $E$ is the output voltage of the thermocouple in $mV$.
 
-A fitting polynomial \@ref(eq:compensatingPolynomial) of the fifth order is sufficient, given the precision of our equipment.
+A fitting polynomial \@ref(eq:compensatingPolynomial) of the fifth order is more than sufficient, given the precision of our equipment.
 
 The table \@ref(tab:kcoefftable) shows the polynomial coefficients obtained from a best fit of the NIST[^srdata] data tables.
 
@@ -181,11 +181,14 @@ Using the fitting polynomial  \@ref(eq:compensatingPolynomial) allows us to fina
 \end{equation}
 
 \begin{equation}
-  t={ f }_{ comp } \left( \frac { 1 }{ 2 } \frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right)
+  t={ f }_{ comp } \left(\frac { V_{ out }-2.5-1.25\cdot 10^{ -3 } }{ 122.4 } \right)
   (\#eq:ad8494Compensated)
 \end{equation}
 
 [^AD8495nist]: [AN-1087, Analog Semiconductors](http://www.analog.com/Assets/Figures/en/technical-documentation/application-notes/AN-1087.PDF)
 
 
-Two electronically  controlled resistive elements (heaters) are wound around the base of the sample, allowing to heath it up after reaching room temperature. Ltk-hall-ge automatically shuts down the heater if $t \ge 150\, \,^{\circ}\mathrm{C}$ as a safety measure.
+Two electronically  controlled resistive elements (heaters) are wound around the base of the sample, allowing it to heath up after reaching room temperature. Three leds start blinking when $t \ge 60\, \,^{\circ}\mathrm{C}$ to indicate that the sample is no longer safe to touch with naked hands.
+The apparatus shuts down the heater if $t \ge 150\, \,^{\circ}\mathrm{C}$ as a safety measure. Heating is allowed again after the sample has cooled down to $t \le 100\, \,^{\circ}\mathrm{C}$.
+
+Depending on environmental condition such as airflow, ambient temperature, and liquid nitrogen present in the dewar, it may not be possible for the apparatus to reach the desired temperature. In this case it is recommended to insulate the sample with an adeguate heath-resistant material, such as a fiberglass cloth or polyamide/Aluminium film.

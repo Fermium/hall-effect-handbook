@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Typical results
 
 The sample shown in figure 3 (and used to obtain the data  in the following examples)  has thickness $t=0.5mm$, width $w=10mm$ and lenght $l=15mm$.
@@ -60,13 +65,13 @@ grid.arrange(Vhvstime.plot,Rvstime.plot,Tvstime.plot,nrow=3)
 
 
 
-In order to evaluate the Ge energy gap $E_g$, a plot of $ln(R)$ vs. $1/2kT$ was built, after calculating from the Celsius temperature $Tc$ the absolute temperature $T$ ($k$ is the Boltzmann constant $k = 8.617 \cdot 10^{-5}$.
+In order to evaluate the Ge energy gap $E_g$, a plot of $ln(R)$ vs. $\frac{1}{2kT}$ was built, after calculating from the Celsius temperature $Tc$ the absolute temperature $T$ ($k$ is the Boltzmann constant $k = 8.617 \cdot 10^{-5} \frac{eV}{K}$.
 
 From the slope in the intrinsic region (high temperature region, see Fig. \@ref(fig:EgFit) ) we get the value of the energy gap $E_g$, extrapolated linearly to $T=0^{\circ}\mathrm{K}$, that can be compared to the known value for germanium ($E_g^o=0.78$, see Appendix 3)
 
 
-```{r EgFit, out.width='65%',fig.cap='Example of linear best fit in the intrinsic region (high temperature)',echo=FALSE,fig.align = 'center'}
-knitr::include_graphics('Assets/Figures/ImageEgFit.jpg')
+```{r EgFit, out.width='100%',fig.cap='Example of linear best fit in the intrinsic region (high temperature)',echo=FALSE,fig.align = 'center'}
+knitr::include_graphics('Assets/Figures/ImageEgFit.png')
 
 
 ```

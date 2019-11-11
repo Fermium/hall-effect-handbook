@@ -1,29 +1,43 @@
 \clearpage 
 
+
+
 ## Suggested procedure 
 
 To obtain accurate measurements the best procedure is the following:
 
 
 
-1. Connect the output cable BNC connectors to your datalogger of choice.
-1. Verify the grounding of the equipment. The equipment should be connected to ground either through a BNC connector shield or through the dedicated grounding plug. In case the ground is not properly connected, interferance may be coupled causing the apparatus to misbehave. 
-1.. Only once every 5 experiments or once a year: Set the gain of the second stage DA of Vh to 1. Choose a width for gap between the permanent magnets and measure the magnetic field B in the middle, if desired using a gauss-meter. Place the sample far from the magnetic field and trim the center balance potentiometer (using the provided isolated screwdriver) to minimize the $V_H$ signal. 
-    1. You may repeat the previous step increasing the gain if desired to achieve the best performance.
-    1. In case the Vh gain is still incorrect, you may use the left and right potentiometers to adjust beyond the capabilities of the center potentiometer.
-1. Place the sample in the middle of the gap. Choose a proper value for the current $I_b$ within a suggested a suggested 5-15mA value.
-1. Optionally, adjust the gains for $V_H$ (firstly, leave the second stage gain to $1$ and adjust the first stage, then adjust the second stage), $V_R$ or $I_B$. Note : the resistance at higher temperature may exceed the value at room temperature by a factor 2, and also the $V_H$ signal increases with temperature. To avoid saturation it is recommended the the output voltage stays between $1V<V_{out}<4V$.
+1. Connect the left output connector to your datalogger
+1. Verify the grounding of the equipment. The equipment should be connected to ground through the dedicated grounding plug. 
+    * WARNING: In case the ground is not properly connected, interferance may be coupled causing the apparatus to misbehave. 
+1. Place the sample in the middle of the gap. Choose a proper value for the current $I_b$ within a suggested a suggested 5-15mA range
+1. Optionally, adjust the gains for $V_H$ (firstly, leave the second stage gain to $1$ and adjust the first stage, then adjust the second stage), $V_R$ or $I_B$. 
+    * Note : the resistance at higher temperature may exceed the value at room temperature by a factor 2, and also the $V_H$ signal increases with temperature. To avoid saturation it is recommended the the output voltage stays between $1V<V_{out}<4V$.
 1. Check that the $V_H$ value changes sign when rotating the sample of 180° around vertical axis. Choose the orientation that gives positive $V_H$.
 1. Fill about half of the dewar with liquid nitrogen and wait until the liquid surface is quiet.
 1. Insert the cold finger into the dewar (the PTFE dewar-cover should seat stable onto the dewar mouth, and the PTFE heater cover should be set with the hole hosting the pin protruding from the dewar-cover). Adjust the sample in the mid of the magnet-gap and start the data acquisition.
-1. Verify your datalogger setup and start data acquisition.
+1. Verify your datalogger setup (see datalogger chapter) and start data acquisition.
 1. When the plot temperature vs time shows a slope close to zero, pause the data acquisition.
 1. Empty the dewar (e.g. transferring the residual liquid nitrogen into another dewar), reposition the sample in the middle of the magnets-gap.
-1. Resume data acquisition
-1. When the temperature vs. time slope start approaching zero, switch ON the heater to full power. Once the lights start flashing the apparatus will have reached 60°C, do not touch the sample in order to avoid burns.
+1. Resume data acquisition: the temperature will start increasing.
+1. When the temperature vs. time slope start approaching zero, switch ON the heater to half-power. Once the lights start flashing the apparatus will have reached 60°C, do not touch the sample in order to avoid burns.
 
 To obtain precise measurements, at least one and a half hour is required for the whole temperature sweep. 
 
 Note: it is not suggested to keep liquid nitrogen inside the dewar while heating-up the sample: the temperature would rise more slowly and more humidity would condense onto the outer surface of the aluminum probe envelope. 
 
 It is also useful to blow-off the frost in order to prevent water entering the probe envelope (this might affect the thermocouple's weak signal).
+
+Typically one hour is required to complete the full temperature span, and the recommended data acquisition rate is $0.2 sample/s$
+
+### Center balance trimming
+
+In case the $V_h$ presents an undesided offset while no magnetic field is present, it is recommended to perform the following trimming procedure
+
+1. Set bias current to $I=20mA$
+1. Set the gain of the second stage of $V_h$ to 0, take note of the voltage, it should be $V_h\simeq2.5V$
+1. Set the gain of the second stage of $V_h$ to 1. 
+1. Place the sample far from the magnetic field and trim the center balance potentiometer (using the provided isolated screwdriver) until you get the previously measured $V_h\simeq2.5V$.
+  1. You may set the gain of the second stage of $V_h$ to a value greater than 1 if your equipment is not sensitive enough.
+  1. In case the Vh gain is still incorrect, you may use the left and right potentiometers to adjust beyond the capabilities of the center potentiometer.
