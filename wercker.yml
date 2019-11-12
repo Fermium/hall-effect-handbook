@@ -10,13 +10,17 @@ build:
     - script:
       name: Install R packages
       code: |
-          make install_r_packages
+          # Install packages often required by Fermium LABS srl
+          Rscript -e "install.packages('here',repos='https://cran.rstudio.com')"
+          Rscript -e "install.packages('tidyverse',repos='https://cran.rstudio.com')"
+          Rscript -e "install.packages('gridExtra',repos='https://cran.rstudio.com')"
+          Rscript -e "install.packages('ggthemes',repos='https://cran.rstudio.com')"
+          Rscript -e "install.packages('ggpubr',repos='https://cran.rstudio.com')" 
     - script:
       name: Build
       code: |
           make clean
-          #make zip
-          make html
+          make zip
 
 deploy:
   steps:
