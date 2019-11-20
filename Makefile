@@ -41,5 +41,3 @@ open_html: html
 
 open_all: open_pdf open_html
 	
-install_r_packages:
-	@Rscript -e "install.packages('rmarkdown',repos='https://cran.rstudio.com');install.packages('bookdown',repos='https://cran.rstudio.com');install.packages('here',repos='https://cran.rstudio.com');install.packages('tidyverse',repos='https://cran.rstudio.com');install.packages('gridExtra',repos='https://cran.rstudio.com');install.packages('ggthemes',repos='https://cran.rstudio.com');"
