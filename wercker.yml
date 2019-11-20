@@ -11,11 +11,11 @@ build:
       name: Install R packages
       code: |
           # Install packages often required by Fermium LABS srl
-          Rscript -e "if (!require('ggplot2')); install.packages('here',repos='https://cran.rstudio.com')"
-          Rscript -e "if (!require('ggplot2')); install.packages('tidyverse',repos='https://cran.rstudio.com')"
-          Rscript -e "if (!require('ggplot2')); install.packages('gridExtra',repos='https://cran.rstudio.com')"
-          Rscript -e "if (!require('ggplot2')); install.packages('ggthemes',repos='https://cran.rstudio.com')"
-          Rscript -e "if (!require('ggplot2')); install.packages('ggpubr',repos='https://cran.rstudio.com')" 
+          Rscript -e "if (!require('here')) install.packages('here',repos='https://cran.rstudio.com');"
+          Rscript -e "if (!require('tidyverse')) install.packages('tidyverse',repos='https://cran.rstudio.com');"
+          Rscript -e "if (!require('gridExtra')) install.packages('gridExtra',repos='https://cran.rstudio.com');"
+          Rscript -e "if (!require('ggthemes')) install.packages('ggthemes',repos='https://cran.rstudio.com');"
+          Rscript -e "if (!require('ggpubr')) install.packages('ggpubr',repos='https://cran.rstudio.com');" 
     - script:
       name: Build
       code: |
