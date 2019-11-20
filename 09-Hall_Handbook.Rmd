@@ -10,9 +10,8 @@ The sample shown in figure 3 (and used to obtain the data  in the following exam
 A calibration of the magnetic field intensity $B$ vs. gap $d$ between magnets is shown in Fig. \@ref(fig:BvsGapD). 
 
 ```{r BvsGapD, out.width='65%',fig.cap='Measured $B$ values vs gap width $d$',echo=FALSE,fig.align = 'center'}
-knitr::include_graphics('Assets/Figures/H_vs_d.jpeg')
+knitr::include_graphics('Assets/Figures/B_vs_d.png')
 ```
-
 
 An example of the measured $V_H$ vs. magnetic field $B$ at room temperature is shown in Fig. \@ref(fig:HallvsIb).
 
@@ -21,47 +20,52 @@ knitr::include_graphics('Assets/Figures/Vh_vs_B.jpeg')
 ```
 
 
-Fig. \@ref(fig:Output-voltages-versus-time) shows an example of the measured values of the 3 output signals vs temperature obtained with a constant bias current. 
+Fig. \@ref(fig:Output-voltages-versus-time) shows an example of the measured values $V_h$, $R$ and $t$ vs time obtained with a constant bias current. 
 
 
-```{r Output-voltages-versus-time, out.width='65%',fig.cap='Output values versus time',echo=FALSE,fig.align = 'center', dev='png', dpi=600}
-#knitr::include_graphics('Assets/Figures/Out_vs_time.jpg')
-
-library(ggplot2)
-library(here)
-library(gridExtra)
-library("ggthemes")
-
-
-#TODO: if user path
-data = read.csv(here('analysis','data','ltk-hall-ge current', 'experiment_1.csv'),header = T)
-
-data<-data[-(1:200),]#rimossi i primi 200 valori per pulizia dei dati
-data$time<-(data$time-data$time[1])/1000
-
-Vhvstime.plot<-ggplot()+
-               geom_line(data=data,aes(time,-Vh),col="blue")+
-               xlab("time (s)")+ylab("Vhall (V)")+
-               ggtitle(expression("Vhall vs Time"))+
-               theme_tufte()
-
-
-Rvstime.plot<-ggplot()+
-              geom_line(data=data,aes(time,R),col="green")+
-              xlab("time (s)")+ylab(expression(paste("R (",Omega,")")))+
-              ggtitle("R vs Time")+
-              theme_tufte()
-
-
-Tvstime.plot<-ggplot()+  
-              geom_line(data=data,aes(time,temp),col="red")+
-              xlab("time (s)")+ylab(expression(paste("Temperature ( degree K )" )))+
-              ggtitle("Temperature vs Time") +
-              theme_tufte()
-
-grid.arrange(Vhvstime.plot,Rvstime.plot,Tvstime.plot,nrow=3)
-
+```{r Output-voltages-versus-time, out.width='65%',fig.cap='Measured $B$ values vs gap width $d$',echo=FALSE,fig.align = 'center'}
+knitr::include_graphics('Assets/Figures/Output-voltages-versus-time.png')
 ```
+
+
+<!-- ```{r Output-voltages-versus-time, out.width='65%',fig.cap='Output values versus time',echo=FALSE,fig.align = 'center', dev='png', dpi=600} -->
+<!-- #knitr::include_graphics('Assets/Figures/Out_vs_time.jpg') -->
+
+<!-- library(ggplot2) -->
+<!-- library(here) -->
+<!-- library(gridExtra) -->
+<!-- library("ggthemes") -->
+
+
+<!-- #TODO: if user path -->
+<!-- data = read.csv(here('analysis','data','ltk-hall-ge current', 'experiment_1.csv'),header = T) -->
+
+<!-- data<-data[-(1:200),]#rimossi i primi 200 valori per pulizia dei dati -->
+<!-- data$time<-(data$time-data$time[1])/1000 -->
+
+<!-- Vhvstime.plot<-ggplot()+ -->
+<!--                geom_line(data=data,aes(time,-Vh),col="blue")+ -->
+<!--                xlab("time (s)")+ylab("Vhall (V)")+ -->
+<!--                ggtitle(expression("Vhall vs Time"))+ -->
+<!--                theme_tufte() -->
+
+
+<!-- Rvstime.plot<-ggplot()+ -->
+<!--               geom_line(data=data,aes(time,R),col="green")+ -->
+<!--               xlab("time (s)")+ylab(expression(paste("R (",Omega,")")))+ -->
+<!--               ggtitle("R vs Time")+ -->
+<!--               theme_tufte() -->
+
+
+<!-- Tvstime.plot<-ggplot()+   -->
+<!--               geom_line(data=data,aes(time,temp),col="red")+ -->
+<!--               xlab("time (s)")+ylab(expression(paste("Temperature ( degree K )" )))+ -->
+<!--               ggtitle("Temperature vs Time") + -->
+<!--               theme_tufte() -->
+
+<!-- grid.arrange(Vhvstime.plot,Rvstime.plot,Tvstime.plot,nrow=3) -->
+
+<!-- ``` -->
 
 
 
@@ -70,8 +74,12 @@ In order to evaluate the Ge energy gap $E_g$, a plot of $ln(R)$ vs. $\frac{1}{2k
 From the slope in the intrinsic region (high temperature region, see Fig. \@ref(fig:EgFit) ) we get the value of the energy gap $E_g$, extrapolated linearly to $T=0^{\circ}\mathrm{K}$, that can be compared to the known value for germanium ($E_g^o=0.78$, see Appendix 3)
 
 
+
+```{r vhtroverTime, out.width='100%',fig.cap='$V_h$ versus $t$, $R$ versus $t$ and $t$ versus time',echo=FALSE,fig.align = 'center'}
+knitr::include_graphics('Assets/Figures/vh_t_r_overTime.png')
+```
 ```{r EgFit, out.width='100%',fig.cap='Example of linear best fit in the intrinsic region (high temperature)',echo=FALSE,fig.align = 'center'}
 knitr::include_graphics('Assets/Figures/ImageEgFit.png')
-
-
 ```
+
+It's possible to find example experimental data at the following [link](https://github.com/fermiumlabs/hall-effect-handbook/tree/master/analysis/LoggerPro)
