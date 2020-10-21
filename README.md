@@ -1,22 +1,13 @@
 <a href="https://fermiumlabs.com/">
-    <img src="https://fermiumlabs.com/wp-content/uploads/2019/02/Horizontal-Main_500px.png" alt="Fermium LABS logo" width="200" align="right" />
+    <img src="https://raw.githubusercontent.com/Fermium/presskit/master/Logo/Rasters/250h/Fermium-horizontal.png" alt="Fermium LABS logo" width="200" align="right" />
 </a>
 
 # Hall effect apparatus
-
-[![wercker status](https://app.wercker.com/status/c3f211eac0371c5d15070b87bf848438/s/master "wercker status")](https://app.wercker.com/project/byKey/c3f211eac0371c5d15070b87bf848438)
-
+[![Build Status](https://cloud.drone.io/api/badges/Fermium/latex-docker/status.svg)](https://cloud.drone.io/Fermium/latex-docker)
 
 ## Downloads
 
-Format                     | Link
---------------------------- | -------------------------------------------------------------------------------------------------------
-HTML, online                | [View](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/index.html)   
-PDF, compressed (suggested) | [**Download** :floppy_disk:](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.pdf)
-Everything, .zip archive          | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook.zip)
-PDF, uncompressed           | [Download](https://s3-eu-west-1.amazonaws.com/handbooks-autobuild/hall-effect-handbook/Hall_Handbook_hires.pdf)
-
-The links are automatically updated.
+Please check the [releases page](https://github.com/Fermium/hall-effect-handbook/releases)
 
 ## Corrections and Issues
 
@@ -24,7 +15,7 @@ If you find a problem please [open an issue](https://github.com/fermiumlabs/Hall
 
 > what is a repository? how do i open an issue?? i don't want this crap, just let me correct an equation!!!
 
-Email us at <support@fermiumlabs.com>
+Email us at <support@fermium.ltd.uk>
 
 If you want to contribute, go to the page and click the "edit" link in the top icons.
 
@@ -70,6 +61,6 @@ Original paper by Giacomo Torzo of [Labtrek](http://labtrek.it)
 
 ---
 
-<a href="https://twitter.com/intent/user?screen_name=fermiumlabs">
-    <img src="https://img.shields.io/twitter/follow/fermiumlabs.svg?style=social&label=Follow" alt="Follow Fermium LABS on Twitter" align="right" />
+<a href="https://twitter.com/intent/user?screen_name=fermium">
+    <img src="https://img.shields.io/twitter/follow/fermium.svg?style=social&label=Follow" alt="Follow Fermium on Twitter" align="right" />
 </a>
