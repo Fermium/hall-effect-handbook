@@ -25,6 +25,8 @@
       settings:
         api_key:
           from_secret: github_token
-        files: Exports/*
+        files: 
+          - Exports/Hall_Handbook.zip
+          - Exports/Hall_Handbook.pdf
       when:
         event: tag
