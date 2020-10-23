@@ -3,7 +3,7 @@
 </a>
 
 # Hall effect apparatus
-[![Build Status](https://cloud.drone.io/api/badges/Fermium/latex-docker/status.svg)](https://cloud.drone.io/Fermium/latex-docker)
+[![Build Status](https://cloud.drone.io/api/badges/Fermium/hall-effect-handbook/status.svg)](https://cloud.drone.io/Fermium/hall-effect-handbook)
 
 ## Downloads
 
